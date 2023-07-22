@@ -2,37 +2,39 @@
 #include <iostream>
 using namespace std; 
 #include <fstream> 
-// Funcion que suma los numeros del archivo 
-void sumatorio (ifstream &archivo, double &suma); 
+void promedio (ifstream &archivo, double &promedio);
 
 int main ()
 {
-    double resultado ; 
-    ifstream archivo; 
-    archivo.open("datos.txt"); 
-    if (!archivo.is_open())
-    {
-        cout << "Archivo no abierto. " << endl; 
-    } 
-    else 
-    {
-        sumatorio(archivo, resultado);
-        cout << " El resultado de la suma de los valores es de: " << resultado << endl; 
-        archivo.close(); 
-    }
-
-    return 0; 
+ifstream archivo; 
+double promedioF; 
+archivo.open("datos.txt"); 
+if (!archivo.is_open())
+{
+    cout << "El archivo no se pudo abrir " << endl ;
+}
+else 
+{
+    promedio (archivo, promedioF); 
+    cout << "El promedio de los datos del archivo es de: " << promedioF << endl;
+    archivo.close(); 
 
 }
 
-void sumatorio (ifstream &archivo, double &suma)
+}
+void promedio (ifstream &archivo, double &promedio)
 {
-    double dato; 
-    archivo >> dato; 
-    suma = 0 ; 
-    while (dato !=-1)
+    double dato, suma = 0; 
+    int contador=0; 
+    archivo >> dato;  
+    while (dato != -1 )
     {
-        suma = suma + dato; 
+        contador = contador + 1; 
+        cout << "El contador es: " << contador; 
+        suma =  suma + dato; 
         archivo >> dato; 
     }
+    promedio = suma / contador; 
+
 }
+
