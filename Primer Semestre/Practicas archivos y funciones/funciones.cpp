@@ -1,5 +1,5 @@
 //Author Fernando Huilca 
-// Programa dedicado a resolver 6 diferentes ejercicios 
+// Programa dedicado a resolver 6 diferentes ejercicios usando Funciones
 #include <iostream> 
 using namespace std; 
 #include <fstream> 
@@ -7,14 +7,20 @@ using namespace std;
 //Prototipos de Funciones  
 int menu ();
 void saludo_Ejercicio();
-void ejercicio_4();
+void ejercicio_1(); // Fernando Huilca
+void ejercicio_2();
+void ejercicio_3();
+void ejercicio_4(); //Fernando Huilca
+void ejercicio_5();
+void ejercicio_6(); // Fernando HUilca
 
 int opcion = 1;
 
 int main ()
 {
     cout << "_______BIENVENIDO A LOS EJERCICIOS DE FUNCIONES______" << endl; 
-    cout << "                             ~ AUTHOR FERNANDO HUILCA" << endl;
+    cout << "                             ~ AUTHOR Fernando Huilca" << endl;
+    cout << "                             ~ AUTHOR Mateo Quisilema" << endl;
     cout << endl; 
     while (opcion != 0) // Para presentar el menu varias veces 
     {
@@ -52,7 +58,7 @@ int main ()
  }
 
 //FUNCIONES DEL PROGRAMA
- int menu ()
+int menu ()
  {
     int opcion; 
     do 
@@ -82,12 +88,28 @@ int main ()
     while (opcion < 0 || opcion > 6); 
     return opcion; 
  }
- void saludo_Ejercicio()
+void saludo_Ejercicio()
  {
     cout << "Bienvenido al Ejercicio " << opcion << endl; 
     cout << "Autor Fernando Huilca. " << endl; 
+    cout << "Autor Mateo Quisilema. " << endl; 
     cout << endl;
  }
+void ejercicio_1()
+{
+/*1.	Realice un programa que calcule la función exponencial de un número mediante la serie de Taylor:
+ 
+Para ello el programa preguntará al usuario el número “x” con el que desea realizar el cálculo de la función exponencial y luego se realizará mediante la suma de los 10 primeros elementos de la serie, codificando tres funciones: exponencial, factorial y potencia.
+*/
+}
+void ejercicio_2()
+{
+
+}
+void ejercicio_3()
+{
+
+}
 void ejercicio_4()
 {
     /*4.	Escribir un programa en C++ que tome un número en el intervalo de 1 a 365 como entrada. El número representa el día del año. El programa produce después el nombre del mes (suponga que el año no es bisiesto). Esto se puede hacer comparando el día del año con el número de días en el año que preceden el inicio de cada mes. Por ejemplo, 59 días preceden a marzo, que tiene 31 días. Así que, si el día del año está en el intervalo de 60 a 91, entonces su programa produciría marzo. El programa debe producir un mensaje de error si el número introducido no está en el intervalo requerido. El indicador y el mensaje de error deben aclarar al usuario cómo se debe introducir el número. Asegúrese de usar el formato y comentarios apropiados en su código. El resultado se debe marcar con claridad y tener un formato nítido.*/
@@ -136,5 +158,15 @@ void ejercicio_4()
 
 
 }
+void ejercicio_5()
+{
+
+}
+void ejercicio_6()
+{
+
+}
+
+
 
 
