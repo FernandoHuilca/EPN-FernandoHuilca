@@ -14,6 +14,10 @@ void ejercicio_4(); //Fernando Huilca
 void ejercicio_5();
 void ejercicio_6(); // Fernando HUilca
 
+double factorial(int n);
+double potencia(double base, int exponente);
+double exponencial(double x);
+
 int opcion = 1;
 
 int main ()
@@ -30,6 +34,7 @@ int main ()
         {
         case 1:
             saludo_Ejercicio(); 
+            ejercicio_1();
             break;
         case 2:
             saludo_Ejercicio();
@@ -101,48 +106,17 @@ void ejercicio_1()
  
 Para ello el programa preguntará al usuario el número “x” con el que desea realizar el cálculo de la función exponencial y luego se realizará mediante la suma de los 10 primeros elementos de la serie, codificando tres funciones: exponencial, factorial y potencia.
 */
-#include <iostream>
-
-double factorial(int n) {
-    if (n == 0)
-        return 1;
-    else
-        return n * factorial(n - 1);
-}
-
-double potencia(double base, int exponente) {
-    double resultado = 1;
-    for (int i = 0; i < exponente; i++) {
-        resultado *= base;
-    }
-    return resultado;
-}
-
-double exponencial(double x) {
-    double suma = 0;
-    for (int n = 0; n < 10; n++) {
-        double term = potencia(x, n) / factorial(n);
-        suma += term;
-    }
-    return suma;
-}
-
-int main() {
-    try {
         double x;
         std::cout << "Ingrese el número 'x' para calcular la función exponencial: ";
         std::cin >> x;
 
         double resultado = exponencial(x);
         std::cout << "La función exponencial de " << x << " es: " << resultado << std::endl;
-    } catch (...) {
-        std::cout << "Error: Ingrese un número válido." << std::endl;
-    }
+        cout << endl; 
 
-    return 0;
-}
 
 }
+
 void ejercicio_2()
 {
 
@@ -208,6 +182,29 @@ void ejercicio_6()
 
 }
 
+double factorial(int n) {
+    if (n == 0)
+        return 1;
+    else
+        return n * factorial(n - 1);
+}
+
+double potencia(double base, int exponente) {
+    double resultado = 1;
+    for (int i = 0; i < exponente; i++) {
+        resultado *= base;
+    }
+    return resultado;
+}
+
+double exponencial(double x) {
+    double suma = 0;
+    for (int n = 0; n < 10; n++) {
+        double term = potencia(x, n) / factorial(n);
+        suma += term;
+    }
+    return suma;
+}
 
 
 
