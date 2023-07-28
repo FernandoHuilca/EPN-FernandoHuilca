@@ -22,9 +22,7 @@ double factorial(int n);
 double potencia(double base, int exponente);
 double exponencial(double x);
 
-//Para ejercicio 6 
-string nombre();
-void busqueda(string nombre);
+
 
 int opcion = 1;
 
@@ -88,7 +86,7 @@ int menu()
         cout << "| 3) Ejercicio           |    3    |" << endl;
         cout << "| 4) Mes por dia         |    4    |" << endl;
         cout << "| 5) Ejercicio           |    5    |" << endl;
-        cout << "| 6) Ejercicio           |    6    |" << endl;
+        cout << "| 6) Directorio Telefono |    6    |" << endl;
         cout << "|__________________________________|" << endl;
         cout << "| 0) SALIR                    0    |" << endl;
         cout << "|__________________________________|" << endl;
@@ -115,11 +113,11 @@ void ejercicio_1()
     Para ello el programa preguntará al usuario el número “x” con el que desea realizar el cálculo de la función exponencial y luego se realizará mediante la suma de los 10 primeros elementos de la serie, codificando tres funciones: exponencial, factorial y potencia.
     */
     double x;
-    cout << "Ingrese el número que desee para calcular la función exponencial: ";
+    cout << "Ingrese el numero que desee para calcular la funcion exponencial: ";
     cin >> x;
 
     double resultado = exponencial(x);
-    cout << "La función exponencial de " << x << " es: " << resultado << endl;
+    cout << "La funcion exponencial de " << x << " es: " << resultado << endl;
     cout << endl;
 
 
@@ -144,7 +142,7 @@ void ejercicio_4()
         if (dia_anio < 1 || dia_anio > 365)
         {
             cout << "Lamentablemente, el numero que has ingresado es incorrecto." << endl;
-            cout << "Por favor introduzce un valor numerico que se encuentre dentro del rango establecido,"
+            cout << "Por favor introduzce un valor numerico que se encuentre dentro del rango establecido, \n"
                 << " el cual abarca desde 1 hasta 365. " << endl;
             cout << endl;
         }
@@ -188,10 +186,51 @@ void ejercicio_5()
 void ejercicio_6()
 {
     /*6.	Escriba un programa simple de directorio telefónico en C++ que busque números en un archivo que contenga una lista de nombres y números telefónicos. Se debe indicar al usuario que introduzca el nombre y el apellido de una persona, y el programa produce entonces el número correspondiente o indica que el nombre no está en el directorio. Después de cada búsqueda, el programa debe preguntar al usuario si quiere buscar otro número y luego repetir el proceso o salir del programa. Los datos del archivo deben estar organizados de modo que cada línea contenga un nombre, un apellido y un número telefónico, separados por espacios en blanco. Puede volver al comienzo del archivo cerrándolo o abriéndolo de nuevo. Codifique la solución con funciones según sea apropiado. El resultado debe tener un formato claro y nítido y los mensajes de error deben ser informativos. No Utilizar arreglos ni estructuras.*/
-    string name = "Bob";
-    nombre();
-    busqueda(name);
+    cin.ignore();
+    char opcion = 'y';
+    while (opcion != 'n')
+    {
+        string nombre, name, apellido, phone;
+        cout << "Ingrese el nombre de la persona que desee conocer el numero " << endl;
+        getline(cin, nombre);
+        ifstream leerArchivo;
+        leerArchivo.open("directorio.txt");
+        if (!leerArchivo.is_open())
+        {
+            cout << "Archivo NO abierto " << endl;
+        }
+        else
+        {
+            while (name != "x")
+            {
+                leerArchivo >> name;
+                leerArchivo >> apellido;
+                leerArchivo >> phone;
 
+                if (nombre == name + " " + apellido)
+                {
+                    cout << "El numero telefonico de " << nombre << ": " << phone << endl;
+                    leerArchivo.close();
+                    break;
+                }
+                if (name == "x")
+                {
+                    cout << "El nombre " << nombre << " no se encuentra dentro del directorio." << endl;
+                    leerArchivo.close();
+
+                }
+            }
+
+
+
+        }
+        cout << "Desea seguir buscando? si (y) no (n): ";
+        cin >> opcion;
+        cin.ignore();
+
+    }
+    cout << "Gracias por ocupar el ejercicio 6. Adios. " << endl; 
+    cout << endl; 
 
 }
 
@@ -221,45 +260,10 @@ double exponencial(double x) {
 }
 
 
-string nombre()
-{
-    string full_name;
-    cout << "Introduzca el nombre y apellido de la persona " << endl;
-    //cin >> full_name;
-    getline(cin, full_name);  
-    cout << "El nombre de la persona es: " << full_name << endl;
 
-    return full_name;
-}
 
-void busqueda(string nombre)
-{
-    ifstream leerArchivo;
-    leerArchivo.open("directorio.txt");
-    if (!leerArchivo.is_open())
-    {
-        cout << "Archivo no abierto." << endl;
-        return;
-    }
 
-    string linea;
-    while (getline(leerArchivo, linea))
-    {
-        // Leer el nombre y el número telefónico de la línea
-        string nombre_archivo, numero_telefono;
-        istringstream iss(linea);
-        iss >> nombre_archivo >> numero_telefono;
 
-        // Comparar el nombre con el nombre del archivo (considerar mayúsculas y minúsculas)
-        if (nombre == nombre_archivo)
-        {
-            cout << "Número de teléfono de " << nombre << ": " << numero_telefono << endl;
-            return; // Terminar la búsqueda si se encuentra el nombre
-        }
-    }
-
-    cout << "Nombre no encontrado en el directorio." << endl;
-}
 
 
 
