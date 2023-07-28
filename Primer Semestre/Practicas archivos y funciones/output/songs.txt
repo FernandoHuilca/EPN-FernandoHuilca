@@ -1,0 +1,8 @@
+Numero de   Tiempo de la cancion      Tiempo total   
+cancion     Minutos     segundos   Minutos   Segundos
+-------     -------     -------    -------   ------- 
+1           0           45         0         45
+2           10          54         11        39
+3           1           18         12        57
+4           10          54         23        51
+Hay 56 minutos y 9 segundos de espacio restante en el CD DE 80 minutos
