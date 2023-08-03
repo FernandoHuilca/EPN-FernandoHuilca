@@ -13,6 +13,7 @@ const int DIM_4 = 11;
 int menu();
 void saludo_Ejercicio(int opcion);
 void imprimir_doubles(int DIM, double array[]);
+void imprimir_validio(double array[], int contador);
 void ejercicio_1();
 void ejercicio_4();
 int aleatorios(); // para ejercicio 4 
@@ -131,7 +132,7 @@ int aleatorios() {
     uniform_int_distribution<int> distribution(min, max);
     return distribution(gen);
 }
-void imprimir_doubles( int DIM, double array[])
+void imprimir_doubles(int DIM, double array[])
 {
     for (int i = 0; i < DIM; i++)
     {
@@ -149,24 +150,42 @@ void ejercicio_1()
     int const DIM_1 = 50;
     int contador = 0;
     double nota;
-    double calificaciones[DIM_1];
+    double calificaciones[DIM_1] = { 0 };
     cout << "Ingrese la calificaion" << endl;
     cout << "Ingrese -1 para salir " << endl;
     do
     {
-    
+
         cout << "Calificacion " << contador + 1 << ": ";
-        cin >> nota; 
+        cin >> nota;
+        if (nota == -1)
+        {
+            break;
+        }
         calificaciones[contador] = nota;
         contador++;
+        if (contador == 50)
+        {
+            cout << "Ya no puede ingresar mas calificaciones, llego al limite de 50." << endl; 
+        }
     } while (nota != -1 && contador < DIM_1);
 
-
-    cout << "AQUI EL ARREGLO GUARDADO " << endl; 
+    cout << "AQUI EL ARREGLO VALIDO" << endl; 
+    imprimir_validio(calificaciones, contador);
+    cout << "AQUI EL ARREGLO GUARDADO " << endl;
     imprimir_doubles(DIM_1, calificaciones);
 
 
 
 }
+
+void imprimir_validio(double array[], int contador)
+{
+    for (int i = 0; i < contador; i++)
+    {
+        cout << array[i] << endl;
+    }
+}
+
 
 
