@@ -15,6 +15,7 @@ void saludo_Ejercicio(int opcion);
 void imprimir_doubles(int DIM, double array[]);
 void imprimir_validio(double array[], int contador);
 void ejercicio_1();
+char menuEje1();
 void ejercicio_4();
 int aleatorios(); // para ejercicio 4 
 
@@ -150,6 +151,7 @@ void ejercicio_1()
     int const DIM_1 = 50;
     int contador = 0;
     double nota;
+    char desicion;
     double calificaciones[DIM_1] = { 0 };
     cout << "Ingrese la calificaion" << endl;
     cout << "Ingrese -1 para salir " << endl;
@@ -166,14 +168,44 @@ void ejercicio_1()
         contador++;
         if (contador == 50)
         {
-            cout << "Ya no puede ingresar mas calificaciones, llego al limite de 50." << endl; 
+            cout << "Ya no puede ingresar mas calificaciones, llego al limite de 50." << endl;
         }
     } while (nota != -1 && contador < DIM_1);
+    do
+    {
+        desicion = menuEje1();
+        switch (desicion) {
+        case 'a':
+            cout << "solucionar a" << endl;
 
-    cout << "AQUI EL ARREGLO VALIDO" << endl; 
+
+            break;
+        case 'b':
+            cout << "solucionar a" << endl;
+            break;
+        case 'c':
+            cout << "solucionar a" << endl;
+            break;
+        case 'd':
+            imprimir_validio(calificaciones, contador);
+            break;
+        case 'e':
+            imprimir_doubles(DIM_1, calificaciones);
+            break;
+
+        }
+
+    } while (desicion != 'x' && desicion != 'X');
+    cout << endl; 
+    cout << "Adios." << endl;
+    cout << endl;
+        
+
+
+    /*cout << "AQUI EL ARREGLO VALIDO" << endl;
     imprimir_validio(calificaciones, contador);
     cout << "AQUI EL ARREGLO GUARDADO " << endl;
-    imprimir_doubles(DIM_1, calificaciones);
+    imprimir_doubles(DIM_1, calificaciones);*/
 
 
 
@@ -185,6 +217,32 @@ void imprimir_validio(double array[], int contador)
     {
         cout << array[i] << endl;
     }
+}
+
+char menuEje1()
+{
+    char opcion; 
+    do {
+        cout << setw(41) << right << "MENU OPCIONES CALIFICACIONES" << endl;
+        cout << setw(39) << right << "-------------------------" << endl;
+        cout << endl;
+        cout << "a. Busca calificaciones" << endl;
+        cout << "b. Eliminar alguna calificacion" << endl;
+        cout << "c. Agregar calificacion nueva" << endl;
+        cout << "d. Mostrar arreglo valido" << endl; 
+        cout << "e. Mostrar arreglo completo " << endl; 
+        cout << "x. Salir" << endl;
+        cout << endl;
+        cout << "Ingrese una opcion: ";
+
+        cin >> opcion;
+        if (opcion != 'a' && opcion != 'b' && opcion != 'c' && opcion != 'd' && opcion != 'e' && opcion != 'x') {
+            cout << "Opcion seleccionada INCORRECTA." << endl;
+            cout << "Por favor, digite una letra de las opciones" << endl;
+            cout << endl;
+        }
+    } while (opcion != 'a' && opcion != 'b' && opcion != 'c' && opcion != 'd' && opcion != 'e' && opcion != 'x');
+    return opcion;
 }
 
 
