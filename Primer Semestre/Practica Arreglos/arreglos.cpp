@@ -20,6 +20,7 @@ void ejercicio_4();
 int aleatorios(); // para ejercicio 4 
 //Funcion para buscar en un arreglo recibe array y contador 
 void buscado(double array[], int contador);
+void agregar(double array[], int& contador);
 
 
 
@@ -149,9 +150,10 @@ void ejercicio_1()
                 cout << "solucionar a" << endl;
                 break;
             case 'c':
-                cout << "solucionar a" << endl;
+                agregar(calificaciones, contador);
                 break;
             case 'd':
+                cout << "CONTADOR " << contador << endl;
                 imprimir_validio(calificaciones, contador);
                 break;
             case 'e':
@@ -270,3 +272,31 @@ void imprimir_doubles(const double array[], int DIM)
         cout << array[i] << endl;
     }
 }
+
+
+
+void agregar(double array[], int & contador)
+{
+    int pos;
+    double newElemento; 
+    cout << "En que posicion desea agegar la nueva calificacion: ";
+    cin >> pos;
+    pos--;
+    cout << "Escriba la calificacion que desea agregar: ";
+    cin >> newElemento; 
+    if (pos < contador)
+    {
+        // Abrir hueco XD 
+        for (int i = contador; i > pos; i--)
+        {
+            array[i] = array[i - 1];
+        }
+        // Insertar e incrementar contador 
+        array[pos] = newElemento;
+        contador++;
+    }
+    else
+        cout << "NO hay espacio para agregar mas calificaciones" << endl; 
+}
+
+
