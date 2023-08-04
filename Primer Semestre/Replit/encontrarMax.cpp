@@ -18,6 +18,8 @@ void ejercicio_1();
 char menuEje1();
 void ejercicio_4();
 int aleatorios(); // para ejercicio 4 
+//Funcion para buscar en un arreglo recibe array y contador 
+void buscado(double array[], int contador);
 
 
 
@@ -155,73 +157,68 @@ void ejercicio_1()
     double calificaciones[DIM_1] = { 0 };
     cout << "Ingrese la calificaion" << endl;
     cout << "Ingrese -1 para salir " << endl;
-    do
+    cout << "Calificacion " << contador + 1 << ": ";
+    cin >> nota;
+    while (nota != -1 && contador < DIM_1)
     {
-
-        cout << "Calificacion " << contador + 1 << ": ";
-        cin >> nota;
-        if (nota == -1)
-        {
-            break;
-        }
         calificaciones[contador] = nota;
         contador++;
+
         if (contador == 50)
         {
             cout << "Ya no puede ingresar mas calificaciones, llego al limite de 50." << endl;
         }
-    } while (nota != -1 && contador < DIM_1);
-    do
-    {
-        desicion = menuEje1();
-        switch (desicion) {
-        case 'a':
-            cout << "solucionar a" << endl;
-
-
-            break;
-        case 'b':
-            cout << "solucionar a" << endl;
-            break;
-        case 'c':
-            cout << "solucionar a" << endl;
-            break;
-        case 'd':
-            imprimir_validio(calificaciones, contador);
-            break;
-        case 'e':
-            imprimir_doubles(DIM_1, calificaciones);
-            break;
-
+        else
+        {
+            cout << "Calificacion " << contador + 1 << ": ";
+            cin >> nota;
         }
+    }
+    if (contador != 0)
+    {
+        do
+        {
+            desicion = menuEje1();
+            switch (desicion) {
+            case 'a':
+                buscado(calificaciones, contador);
 
-    } while (desicion != 'x' && desicion != 'X');
-    cout << endl; 
+
+                break;
+            case 'b':
+                cout << "solucionar a" << endl;
+                break;
+            case 'c':
+                cout << "solucionar a" << endl;
+                break;
+            case 'd':
+                imprimir_validio(calificaciones, contador);
+                break;
+            case 'e':
+                imprimir_doubles(DIM_1, calificaciones);
+                break;
+
+            }
+
+        } while (desicion != 'x' && desicion != 'X');
+    }
+
+    cout << endl;
     cout << "Adios." << endl;
     cout << endl;
-        
-
-
-    /*cout << "AQUI EL ARREGLO VALIDO" << endl;
-    imprimir_validio(calificaciones, contador);
-    cout << "AQUI EL ARREGLO GUARDADO " << endl;
-    imprimir_doubles(DIM_1, calificaciones);*/
-
-
-
 }
 
 void imprimir_validio(double array[], int contador)
 {
     for (int i = 0; i < contador; i++)
     {
-        cout << array[i] << endl;
+        cout << "Calificacion " << i + 1 << ": " << array[i] << endl;
     }
 }
 
 char menuEje1()
 {
-    char opcion; 
+    char opcion;
     do {
         cout << setw(41) << right << "MENU OPCIONES CALIFICACIONES" << endl;
         cout << setw(39) << right << "-------------------------" << endl;
@@ -229,8 +226,8 @@ char menuEje1()
         cout << "a. Busca calificaciones" << endl;
         cout << "b. Eliminar alguna calificacion" << endl;
         cout << "c. Agregar calificacion nueva" << endl;
-        cout << "d. Mostrar arreglo valido" << endl; 
-        cout << "e. Mostrar arreglo completo " << endl; 
+        cout << "d. Mostrar arreglo valido" << endl;
+        cout << "e. Mostrar arreglo completo " << endl;
         cout << "x. Salir" << endl;
         cout << endl;
         cout << "Ingrese una opcion: ";
@@ -245,5 +242,55 @@ char menuEje1()
     return opcion;
 }
 
+
+void buscado(double array[], int contador)
+{
+        double buscado;
+        cout << "Escriba la calificacion que desea buscar: ";
+        cin >> buscado;
+        cout << "Se muestran todas las posiciones en las que se encuentra la calificaion: " << endl;
+        bool encontrado = false;
+        for (int i = 0; i < contador; i++)
+        {
+            if (buscado == array[i])
+            {
+                cout << "La calificacion buscada esta en la posicion: " << i + 1 << endl;
+                encontrado = true;
+            }
+        }
+        if (!encontrado)
+        {
+            cout << "La calificacion ingresada no se encuentra en el listado." << endl;
+        }
+        cout << endl; // para que quede bonito jeje 
+
+    /*double buscado;
+    bool encontrado = false; 
+    int max = contador++;
+    cout << "Escriba la calificacion que desea buscar: ";
+    cin >> buscado;
+    for (int i = 0; i < contador; i++)
+    {
+        if (buscado == array[i] && i > max)
+        {
+            cout << "Tambien se encuentra en la posicion: " << i + 1 << endl;
+            encontrado = true;
+        }
+        else if (buscado == array[i])
+        {
+            cout << "La calificacion buscada esta en la posicion: " << i + 1 << endl;
+            max = i;
+            encontrado = true; 
+
+        }
+        else if (!encontrado && i == 51) //AQUI ESTA EL PROBLEMA 😡😩
+        {
+            cout << "La calificacion ingresada no se encuentra en el listado." << endl;
+        }
+
+
+    }
+    cout << endl; // para que quede bonito jeje  */
+}
 
 
