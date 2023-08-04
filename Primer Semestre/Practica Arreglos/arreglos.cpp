@@ -12,7 +12,7 @@ const int DIM_4 = 11;
 // Prototipos de Funciones
 int menu();
 void saludo_Ejercicio(int opcion);
-void imprimir_doubles(const double array[],int DIM);
+void imprimir_doubles(const double array[], int DIM);
 void imprimir_validio(const double array[], int contador);
 void ejercicio_1();
 char menuEje1();
@@ -22,6 +22,8 @@ int aleatorios(); // para ejercicio 4
 void buscado(double array[], int contador);
 void agregar(double array[], int& contador);
 void eliminar(double array[], int& contador);
+//Funcion para dibujar diagrama de barras
+void dibujar_diagrama_barras(const int datos[], int tamano);
 
 
 
@@ -207,24 +209,24 @@ char menuEje1()
 
 void buscado(double array[], int contador)
 {
-        double buscado;
-        cout << "Escriba la calificacion que desea buscar: ";
-        cin >> buscado;
-        cout << "Se muestran todas las posiciones en las que se encuentra la calificaion: " << endl;
-        bool encontrado = false;
-        for (int i = 0; i < contador; i++)
+    double buscado;
+    cout << "Escriba la calificacion que desea buscar: ";
+    cin >> buscado;
+    cout << "Se muestran todas las posiciones en las que se encuentra la calificaion: " << endl;
+    bool encontrado = false;
+    for (int i = 0; i < contador; i++)
+    {
+        if (buscado == array[i])
         {
-            if (buscado == array[i])
-            {
-                cout << "La calificacion buscada esta en la posicion: " << i + 1 << endl;
-                encontrado = true;
-            }
+            cout << "La calificacion buscada esta en la posicion: " << i + 1 << endl;
+            encontrado = true;
         }
-        if (!encontrado)
-        {
-            cout << "La calificacion ingresada no se encuentra en el listado." << endl;
-        }
-        cout << endl; // para que quede bonito jeje 
+    }
+    if (!encontrado)
+    {
+        cout << "La calificacion ingresada no se encuentra en el listado." << endl;
+    }
+    cout << endl; // para que quede bonito jeje 
 
 }
 
@@ -256,6 +258,19 @@ void ejercicio_4()
     }
     cout << " -----------------------------" << endl;
     cout << endl; // para mejor visualizacion 
+    int reduc[DIM_4];
+    for (int i = 0; i < DIM_4; i++)
+    {
+        reduc[i] = (frecuencia[i]) / 1000;
+    }
+    cout << "Diagrama de Barras con los datos obtenidos: " << endl; cout << endl; 
+    dibujar_diagrama_barras(reduc, DIM_4);
+    cout << endl; 
+    cout << "En el diagrama de barras que se presenta se puede observar" << endl; 
+    cout << "la relacion funcional entre la frecuencia y la suma de los dados." << endl;
+    cout << "Se muestra la conocida Campana de Gauss, donde es evidente que la " << endl; 
+    cout << "frecuencia de la suma 7 es mayor que el resto. " << endl;
+    cout << endl; 
 }
 int aleatorios() {
     random_device rd;  // Semilla del dispositivo
@@ -275,15 +290,15 @@ void imprimir_doubles(const double array[], int DIM)
 
 
 
-void agregar(double array[], int & contador)
+void agregar(double array[], int& contador)
 {
     int pos;
-    double newElemento; 
+    double newElemento;
     cout << "En que posicion desea agegar la nueva calificacion: ";
     cin >> pos;
     pos--;
     cout << "Escriba la calificacion que desea agregar: ";
-    cin >> newElemento; 
+    cin >> newElemento;
     if (pos < contador)
     {
         // Abrir hueco XD 
@@ -296,16 +311,16 @@ void agregar(double array[], int & contador)
         contador++;
     }
     else
-        cout << "NO hay espacio para agregar mas calificaciones" << endl; 
+        cout << "NO hay espacio para agregar mas calificaciones" << endl;
 }
 
 void eliminar(double array[], int& contador)
 {
     cout << "EL CONTADOR " << contador << endl;
-    int pos; 
+    int pos;
     cout << "En que posicion desea eliminar la calificacion: ";
-    cin >> pos; 
-    pos--; 
+    cin >> pos;
+    pos--;
     for (int i = pos; i < contador - 1; i++)
     {
         array[i] = array[i + 1];
@@ -313,4 +328,34 @@ void eliminar(double array[], int& contador)
     contador--;
 }
 
+
+// Función para dibujar el diagrama de barras
+void dibujar_diagrama_barras(const int datos[], int tamano) {
+    // Encontrar el máximo valor en el arreglo 
+    int max_valor = datos[0];
+    for (int i = 1; i < tamano; i++) {
+        if (datos[i] > max_valor) {
+            max_valor = datos[i];
+        }
+    }
+
+    // Dibujar el diagrama de barras
+    for (int i = max_valor; i > 0; i--) {
+        for (int j = 0; j < tamano; j++) {
+            if (datos[j] >= i) {
+                cout << "### "; 
+            }
+            else {
+                cout << "    ";
+            }
+        }
+        cout << endl;
+    }
+
+    // Etiquetas del eje x 
+    for (int i = 0; i < tamano; i++) {
+        cout << " " << i + 2 << "  ";
+    }
+    cout << endl;
+}
 
