@@ -21,6 +21,7 @@ int aleatorios(); // para ejercicio 4
 //Funcion para buscar en un arreglo recibe array y contador 
 void buscado(double array[], int contador);
 void agregar(double array[], int& contador);
+void eliminar(double array[], int& contador);
 
 
 
@@ -147,13 +148,12 @@ void ejercicio_1()
 
                 break;
             case 'b':
-                cout << "solucionar a" << endl;
+                eliminar(calificaciones, contador);
                 break;
             case 'c':
                 agregar(calificaciones, contador);
                 break;
             case 'd':
-                cout << "CONTADOR " << contador << endl;
                 imprimir_validio(calificaciones, contador);
                 break;
             case 'e':
@@ -297,6 +297,20 @@ void agregar(double array[], int & contador)
     }
     else
         cout << "NO hay espacio para agregar mas calificaciones" << endl; 
+}
+
+void eliminar(double array[], int& contador)
+{
+    cout << "EL CONTADOR " << contador << endl;
+    int pos; 
+    cout << "En que posicion desea eliminar la calificacion: ";
+    cin >> pos; 
+    pos--; 
+    for (int i = pos; i < contador - 1; i++)
+    {
+        array[i] = array[i + 1];
+    }
+    contador--;
 }
 
 
