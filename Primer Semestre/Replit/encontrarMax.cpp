@@ -12,8 +12,8 @@ const int DIM_4 = 11;
 // Prototipos de Funciones
 int menu();
 void saludo_Ejercicio(int opcion);
-void imprimir_doubles(int DIM, double array[]);
-void imprimir_validio(double array[], int contador);
+void imprimir_doubles(const double array[],int DIM);
+void imprimir_validio(const double array[], int contador);
 void ejercicio_1();
 char menuEje1();
 void ejercicio_4();
@@ -99,49 +99,7 @@ void saludo_Ejercicio(int opcion) {
     cout << endl;
 }
 
-void ejercicio_4()
-{
-    /*4.	Dados. Escriba un programa para simular el tiro de dos dados. Después debe calcularse la suma de los dos valores. [Nota: cada dado puede
-     mostrar un valor entero del 1 al 6, por lo que la suma de los valores variará del 2 al 12, siendo 7 la suma más frecuente, mientras que 2 y 12
-     serán las sumas menos frecuentes]. En la figura 1, se muestran las 36 posibles combinaciones de los dos dados. Su programa debe tirar los dados
-     36 000 veces. Utilice un arreglo unidimensional para registrar el número de veces que aparezca cada una de las posibles sumas. Imprima los
-     resultados en formato tabular. Determine además si los totales son razonables (es decir, hay seis formas de tirar un 7, por lo que
-     aproximadamente una sexta parte de los tiros deben ser 7).*/
-    int limite = 36000, suma;
-    int frecuencia[DIM_4] = { 0 };
 
-    for (int i = 0; i < limite; i++)
-    {
-        int dado1 = aleatorios();
-        int dado2 = aleatorios();
-        int suma = dado1 + dado2;
-        frecuencia[suma - 2] += 1; // frecuencia [suma - 2] = frecuencia [suma - 2] + 1, 
-    }
-
-    cout << " -----------------------------" << endl;
-    cout << "|    Suma    |  Frecuencia    |" << endl;
-    for (int i = 0; i < DIM_4; i++)
-    {
-        cout << "|      " << setw(6) << left << i + 2 << "|     " << setw(11) << left << frecuencia[i] << "|" << endl;
-    }
-    cout << " -----------------------------" << endl;
-    cout << endl; // para mejor visualizacion 
-}
-int aleatorios() {
-    random_device rd;  // Semilla del dispositivo
-    mt19937 gen(rd()); // Inicializar semilla aleatoria
-    int min = 1;
-    int max = 6; // Rangos
-    uniform_int_distribution<int> distribution(min, max);
-    return distribution(gen);
-}
-void imprimir_doubles(int DIM, double array[])
-{
-    for (int i = 0; i < DIM; i++)
-    {
-        cout << array[i] << endl;
-    }
-}
 
 
 void ejercicio_1()
@@ -195,7 +153,7 @@ void ejercicio_1()
                 imprimir_validio(calificaciones, contador);
                 break;
             case 'e':
-                imprimir_doubles(DIM_1, calificaciones);
+                imprimir_doubles(calificaciones, DIM_1);
                 break;
 
             }
@@ -208,7 +166,7 @@ void ejercicio_1()
     cout << endl;
 }
 
-void imprimir_validio(double array[], int contador)
+void imprimir_validio(const double array[], int contador)
 {
     for (int i = 0; i < contador; i++)
     {
@@ -264,33 +222,49 @@ void buscado(double array[], int contador)
         }
         cout << endl; // para que quede bonito jeje 
 
-    /*double buscado;
-    bool encontrado = false; 
-    int max = contador++;
-    cout << "Escriba la calificacion que desea buscar: ";
-    cin >> buscado;
-    for (int i = 0; i < contador; i++)
-    {
-        if (buscado == array[i] && i > max)
-        {
-            cout << "Tambien se encuentra en la posicion: " << i + 1 << endl;
-            encontrado = true;
-        }
-        else if (buscado == array[i])
-        {
-            cout << "La calificacion buscada esta en la posicion: " << i + 1 << endl;
-            max = i;
-            encontrado = true; 
-
-        }
-        else if (!encontrado && i == 51) //AQUI ESTA EL PROBLEMA 😡😩
-        {
-            cout << "La calificacion ingresada no se encuentra en el listado." << endl;
-        }
-
-
-    }
-    cout << endl; // para que quede bonito jeje  */
 }
 
 
+void ejercicio_4()
+{
+    /*4.	Dados. Escriba un programa para simular el tiro de dos dados. Después debe calcularse la suma de los dos valores. [Nota: cada dado puede
+     mostrar un valor entero del 1 al 6, por lo que la suma de los valores variará del 2 al 12, siendo 7 la suma más frecuente, mientras que 2 y 12
+     serán las sumas menos frecuentes]. En la figura 1, se muestran las 36 posibles combinaciones de los dos dados. Su programa debe tirar los dados
+     36 000 veces. Utilice un arreglo unidimensional para registrar el número de veces que aparezca cada una de las posibles sumas. Imprima los
+     resultados en formato tabular. Determine además si los totales son razonables (es decir, hay seis formas de tirar un 7, por lo que
+     aproximadamente una sexta parte de los tiros deben ser 7).*/
+    int limite = 36000, suma;
+    int frecuencia[DIM_4] = { 0 };
+
+    for (int i = 0; i < limite; i++)
+    {
+        int dado1 = aleatorios();
+        int dado2 = aleatorios();
+        int suma = dado1 + dado2;
+        frecuencia[suma - 2] += 1; // frecuencia [suma - 2] = frecuencia [suma - 2] + 1, 
+    }
+
+    cout << " -----------------------------" << endl;
+    cout << "|    Suma    |  Frecuencia    |" << endl;
+    for (int i = 0; i < DIM_4; i++)
+    {
+        cout << "|      " << setw(6) << left << i + 2 << "|     " << setw(11) << left << frecuencia[i] << "|" << endl;
+    }
+    cout << " -----------------------------" << endl;
+    cout << endl; // para mejor visualizacion 
+}
+int aleatorios() {
+    random_device rd;  // Semilla del dispositivo
+    mt19937 gen(rd()); // Inicializar semilla aleatoria
+    int min = 1;
+    int max = 6; // Rangos
+    uniform_int_distribution<int> distribution(min, max);
+    return distribution(gen);
+}
+void imprimir_doubles(const double array[], int DIM)
+{
+    for (int i = 0; i < DIM; i++)
+    {
+        cout << array[i] << endl;
+    }
+}
