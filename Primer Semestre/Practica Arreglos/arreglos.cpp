@@ -1,14 +1,12 @@
 // Author Fernando Huilca y Alison Betancourt 
 // Programa dedicado a resolver 4 diferentes ejercicios usando Arreglos
-
 #include <iostream> 
 using namespace std;
 #include <string> 
 #include <iomanip> 
 #include <random> //para ejercicio 4
-
 const int DIM_4 = 11;
-
+const int DMDigitos = 10;//para ejercicio 2
 // Prototipos de Funciones
 int menu();
 void saludo_Ejercicio(int opcion);
@@ -16,6 +14,11 @@ void imprimir_doubles(const double array[], int DIM);
 void imprimir_validio(const double array[], int contador);
 void ejercicio_1();
 char menuEje1();
+void ejercicio_2();
+void invertir(int digitos_invertidos[], int DMDigitos);
+void es_palindromo(int digitos_invertidos[], int digitos[], int i);
+void ejercicio_3();
+const int MAX = 20;//para ejercicio 3
 void ejercicio_4();
 int aleatorios(); // para ejercicio 4 
 //Funcion para buscar en un arreglo recibe array y contador 
@@ -26,14 +29,11 @@ void eliminar(double array[], int& contador);
 void dibujar_diagrama_barras(const int datos[], int tamano);
 
 
-
-
-
 /****************************************************************************************/
 
 int main() {
     // Encabezado:
-    cout << "       BIENVENIDO A LOS EJERCICIOS DE FUNCIONES      " << endl;
+    cout << "                      BIENVENIDO A LOS EJERCICIOS DE FUNCIONES" << endl;
     cout << setw(54) << right << "~ AUTHOR Fernando Huilca" << endl;
     cout << setw(54) << right << "~ AUTHOR Alison Betancourt" << endl;
     cout << endl;
@@ -50,11 +50,11 @@ int main() {
             break;
         case 2:
             saludo_Ejercicio(opcion);
-
+            ejercicio_2();
             break;
         case 3:
             saludo_Ejercicio(opcion);
-
+            ejercicio_3();
             break;
         case 4:
             saludo_Ejercicio(opcion);
@@ -68,13 +68,6 @@ int main() {
 }
 /****************************************************************************************/
 
-
-
-
-
-
-
-
 // FUNCIONES DEL PROGRAMA
 int menu() {
     int opcion;
@@ -83,8 +76,8 @@ int menu() {
         cout << setw(40) << right << "-------------------------" << endl;
         cout << endl;
         cout << "1. Calificaciones" << endl;
-        cout << "2. Funcion Segundo mas" << endl;
-        cout << "3. Tiempo en segundos" << endl;
+        cout << "2. Palindromo" << endl;
+        cout << "3. Duplicados" << endl;
         cout << "4. Dados" << endl;
         cout << "0. Salir" << endl;
         cout << endl;
@@ -146,8 +139,6 @@ void ejercicio_1()
             switch (desicion) {
             case 'a':
                 buscado(calificaciones, contador);
-
-
                 break;
             case 'b':
                 eliminar(calificaciones, contador);
@@ -230,7 +221,95 @@ void buscado(double array[], int contador)
 
 }
 
-
+void ejercicio_2()
+{
+    /*2. Palíndromo. Dado un número entero positivo, 𝑛, determine si se trata de un palíndromo o no. Pista: utilice dos arreglos.
+    10001 – Palíndromo; 303 – Palíndromo; 669 – No es un Palíndromo.*/
+    int num, i = 0;
+    cout << "******************* NUMERO PALINDROMO ******************* " << endl;
+    cout << "Recuerde,al ingresar su numero debe ser entero y positivo." << endl;
+    cout << "Ingrese el numero a ser verificado: " << endl;
+    cin >> num;
+    if (num < 0) {
+        cout << "El numero ingresado no es positivo." << endl;
+    }
+    int digitos[DMDigitos];
+    int digitos_invertidos[DMDigitos];
+    while (num > 0) {
+        digitos[i] = num % 10;
+        digitos_invertidos[i] = num % 10;
+        num = num / 10;
+        i++;
+    }
+    invertir(digitos, i);
+    es_palindromo(digitos_invertidos, digitos, i);
+}
+void es_palindromo(int digitos_invertidos[], int digitos[], int i)
+{
+    bool ESpalindromo = true;
+    for (int j = 0; j < i; j++) {
+        if (digitos[j] != digitos_invertidos[j]) {
+            ESpalindromo = false;
+            cout << "El numero ingresado NO es un palindromo." << endl;
+            break;
+        }
+        if (digitos[j] = digitos_invertidos[j]) {
+            ESpalindromo = true;
+            cout << "El numero ingresado es un palindromo." << endl;
+            break;
+        }
+    }
+}
+void invertir(int digitos_invertidos[], int DMDigitos) {
+    int temp;
+    for (int i = 0; i < DMDigitos / 2; i++) {
+        temp = digitos_invertidos[i];
+        digitos_invertidos[i] = digitos_invertidos[DMDigitos - 1 - i];
+        digitos_invertidos[DMDigitos - 1 - i] = temp;
+    }
+}
+void ejercicio_3()
+{
+    /*3.Duplicados. Use un arreglo unidimensional para resolver el siguiente problema. Recibir como entrada 20 números,
+    cada uno de los cuales debe estar entre 10 y 100, inclusive. A medida que se lea cada número, validarlo y almacenarlo en el arreglo,
+    sólo si no es un duplicado de un número ya leído. Después de leer todos los valores, mostrar sólo los valores únicos que el usuario introdujo.
+    Prepárese para el “peor caso”, en el que los 20 números son diferentes. Use el arreglo más pequeño que sea posible para resolver este problema.*/
+    int numerosGuardados[MAX];
+    int num;
+    int contador;
+    int NV = 0; //numero de veces
+    cout << "Ingrese 20 numeros en un rango de 10 a 100: " << endl;
+    for (int i = 0; i < MAX; i++)
+    {
+        bool numero_duplicado = false;
+        cin >> num;
+        if (num >= 10 && num <= 100)
+        {
+            for (contador = 0; contador < NV; contador++)
+            {
+                if (num == numerosGuardados[contador])
+                {
+                    numero_duplicado = true;
+                    break;
+                }
+            }
+            if (!numero_duplicado)
+            {
+                numerosGuardados[NV] = num;
+                NV++;
+            }
+        }
+        else
+        {
+            cout << "El numero se encuentra fuera del rango indicado." << endl;
+        }
+    }
+    cout << "Sus valores ingresados unicos son: " << endl;
+    for (int i = 0; i < NV; i++)
+    {
+        cout << numerosGuardados[i] << endl;
+    }
+}
 void ejercicio_4()
 {
     /*4.	Dados. Escriba un programa para simular el tiro de dos dados. Después debe calcularse la suma de los dos valores. [Nota: cada dado puede
@@ -263,14 +342,14 @@ void ejercicio_4()
     {
         reduc[i] = (frecuencia[i]) / 1000;
     }
-    cout << "Diagrama de Barras con los datos obtenidos: " << endl; cout << endl; 
+    cout << "Diagrama de Barras con los datos obtenidos: " << endl; cout << endl;
     dibujar_diagrama_barras(reduc, DIM_4);
-    cout << endl; 
-    cout << "En el diagrama de barras que se presenta se puede observar" << endl; 
+    cout << endl;
+    cout << "En el diagrama de barras que se presenta se puede observar" << endl;
     cout << "la relacion funcional entre la frecuencia y la suma de los dados." << endl;
-    cout << "Se muestra la conocida Campana de Gauss, donde es evidente que la " << endl; 
+    cout << "Se muestra la conocida Campana de Gauss, donde es evidente que la " << endl;
     cout << "frecuencia de la suma 7 es mayor que el resto. " << endl;
-    cout << endl; 
+    cout << endl;
 }
 int aleatorios() {
     random_device rd;  // Semilla del dispositivo
@@ -343,7 +422,7 @@ void dibujar_diagrama_barras(const int datos[], int tamano) {
     for (int i = max_valor; i > 0; i--) {
         for (int j = 0; j < tamano; j++) {
             if (datos[j] >= i) {
-                cout << "### "; 
+                cout << "### ";
             }
             else {
                 cout << "    ";
@@ -358,4 +437,3 @@ void dibujar_diagrama_barras(const int datos[], int tamano) {
     }
     cout << endl;
 }
-
