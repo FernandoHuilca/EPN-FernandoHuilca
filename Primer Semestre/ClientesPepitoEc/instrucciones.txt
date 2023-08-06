@@ -1,0 +1,29 @@
+
+Instrucciones
+Realizar un programa en C++ que mantenga una lista de los clientes de la empresa Pepito.ec
+
+De cada cliente se almacenará:
+
+nombre
+apellidos
+edad,
+cédula o RUC (se le preguntará al usuario si desea ingresar cédula o RUC),
+teléfono,
+ciudad y
+dirección, esta debe contener:
+calle principal,
+calle secundaria y
+número.
+Se desconoce el número total de clientes (máximo 50) La información de la lista se mantiene en un archivo clientes.txt, se carga al empezar y se guarda al finalizar.
+
+La información se debe almacenar en estructuras, y utilizar funciones.
+
+El programa debe ofrecer estas opciones que se presentartán en un menú:
+
+Mostrar listado de clientes
+Añadir un nuevo cliente (se añade al final)
+Eliminar un cliente existente (de una posición específica)
+Modificar un cliente(de una posición específica)
+Salir
+
+Replit

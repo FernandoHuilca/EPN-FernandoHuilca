@@ -5,6 +5,7 @@
         "xstring": "cpp",
         "ios": "cpp",
         "utility": "cpp",
-        "xutility": "cpp"
+        "xutility": "cpp",
+        "string": "cpp"
     }
 }
