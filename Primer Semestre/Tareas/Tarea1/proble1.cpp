@@ -32,5 +32,5 @@ cout << "El promedio de las notas ingresadas es " << sumatoria/numcalifica << en
 cout << "La nota mas alta es " << mayor << endl; 
 cout << "La nota mas baja es " << menor << endl; 
 
-
+    return 0;
 }
