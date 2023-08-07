@@ -37,9 +37,9 @@ typedef struct
 //Menu para los clientes
 int menu();
 //Funcion para cargar o leer datos de un archivo
-void cargar(tLista &lista);
+void cargar(tLista& lista);
 //funcion para guardar 
-void guardar(const tLista& lista); 
+void guardar(const tLista& lista);
 //Funcion para  concatenar nombre y apellido 
 string full_name(const tCliente cliente);
 //Funcion que muestra la lista completa de clientes validos 
@@ -47,9 +47,9 @@ void mostrarClientes(tLista& lista);
 // Funcion para aniadir cliente 
 void aniadir_cliente(tLista& lista);
 //Funcion para eliminar un cliente
-void eliminar_cliente(tLista &lista);
+void eliminar_cliente(tLista& lista);
 //Funcion para modificar algun cliente
-void modificar_cliente(tLista &lista);
+void modificar_cliente(tLista& lista);
 
 
 
@@ -73,12 +73,12 @@ int main()
         case 2:
             aniadir_cliente(lista);
             break;
-        case 3: 
+        case 3:
             eliminar_cliente(lista);
             break;
         case 4:
-        modificar_cliente(lista);
-        break;
+            modificar_cliente(lista);
+            break;
         }
     } while (opcion != 0);
     guardar(lista);
@@ -120,12 +120,12 @@ int menu()
 }
 
 
-void cargar(tLista &lista)
+void cargar(tLista& lista)
 {
     tCliente cliente;
     ifstream leer_archivo;
     lista.contador = 0;
-    char aux; 
+    char aux;
     leer_archivo.open("clientes.txt");
     if (!leer_archivo.is_open())
     {
@@ -243,36 +243,36 @@ void aniadir_cliente(tLista& lista)
     }
 }
 
-void eliminar_cliente(tLista &lista)
+void eliminar_cliente(tLista& lista)
 {
     int pos;
     cout << "Cual es la posicion del cliente que desea eliminar: ";
-    cin >> pos ; 
+    cin >> pos;
     pos--;
-    if ((pos < 0 ) || (pos > lista.contador))
+    if ((pos < 0) || (pos > lista.contador))
     {
-        cout << "El elemento que desea eliminar no se encuentra en la lista" << endl; 
+        cout << "El elemento que desea eliminar no se encuentra en la lista" << endl;
     }
     else
     {
-        for (int i = pos; i < lista.contador -1 ; i++)
+        for (int i = pos; i < lista.contador - 1; i++)
         {
-            lista.elemento[i] = lista.elemento[i+1];
+            lista.elemento[i] = lista.elemento[i + 1];
         }
-        lista.contador --;
+        lista.contador--;
     }
-    
+
 }
 
-void modificar_cliente(tLista &lista)
+void modificar_cliente(tLista& lista)
 {
-    int pos; 
-    pos--;
+    int pos;
     cout << "Escroba la posicion del cliente que desea modificar: ";
     cin >> pos;
-    if ((pos < 0 ) || (pos > lista.contador-1))
+    pos--;
+    if ((pos < 0) || (pos > lista.contador - 1))
     {
-        cout << "El elemento que desea eliminar no se encuentra en la lista" << endl; 
+        cout << "El elemento que desea eliminar no se encuentra en la lista" << endl;
     }
     else
     {
@@ -296,7 +296,7 @@ void modificar_cliente(tLista &lista)
         getline(cin, lista.elemento[pos].direccion.calle_secundaria);
         cout << "Ingrese el numero de casa del cliente: ";
         cin >> lista.elemento[pos].direccion.numero_casa;
-        
+
     }
 }
 
