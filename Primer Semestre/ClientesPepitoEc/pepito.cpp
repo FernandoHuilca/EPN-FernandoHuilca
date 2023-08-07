@@ -48,6 +48,8 @@ void mostrarClientes(tLista& lista);
 void aniadir_cliente(tLista& lista);
 //Funcion para eliminar un cliente
 void eliminar_cliente(tLista &lista);
+//Funcion para modificar algun cliente
+void modificar_cliente(tLista &lista);
 
 
 
@@ -58,7 +60,7 @@ int main()
     tLista lista;
     cargar(lista);
     tCliente cliente;
-    cout << "---Gestión de Clientes empresa PEPITO.EC---" << endl;
+    cout << "   Gestión de Clientes empresa PEPITO.EC  " << endl;
     do
     {
         opcion = menu();
@@ -74,9 +76,9 @@ int main()
         case 3: 
             eliminar_cliente(lista);
             break;
-
-        default:
-            break;
+        case 4:
+        modificar_cliente(lista);
+        break;
         }
     } while (opcion != 0);
     guardar(lista);
@@ -97,13 +99,13 @@ int menu()
     int opcion;
     do
     {
-        cout << "------Menu de Clientes------" << endl;
+        cout << "          Menu de Clientes     " << endl;
         cout << "1. Mostrar el listado de clientes. " << endl;
         cout << "2. Aniadir un nuevo cliente. " << endl;
         cout << "3. Eliminar un cliente existente. " << endl;
         cout << "4. Modificar un cliente. " << endl;
         cout << "0. Salir. " << endl;
-        cout << "--------------------------------------" << endl;
+        cout << "----------------------------------" << endl;
         cout << "Opcion: ";
         cin >> opcion;
         cout << endl;
@@ -187,7 +189,7 @@ void mostrarClientes(tLista& lista)
 {
 
     cout << "--------Lista de los clientes--------" << endl;
-    cout << "-------------------------------------------" << endl;
+    //cout << "-------------------------------------------" << endl;
     cout << setw(10) << "Nombre" << setw(10) << "Edad" << setw(10) << "Cedula";
     cout << setw(10) << "Telefono" << setw(10) << "Calle principal" << setw(15);
     cout << "Ciudad" << setw(15) << "Calle secundaria" << setw(10) << "Numero de casa" << endl;
@@ -260,6 +262,42 @@ void eliminar_cliente(tLista &lista)
         lista.contador --;
     }
     
+}
+
+void modificar_cliente(tLista &lista)
+{
+    int pos; 
+    pos--;
+    cout << "Escroba la posicion del cliente que desea modificar: ";
+    cin >> pos;
+    if ((pos < 0 ) || (pos > lista.contador-1))
+    {
+        cout << "El elemento que desea eliminar no se encuentra en la lista" << endl; 
+    }
+    else
+    {
+        cout << "Ingrese los nombres del cliente: ";
+        cin.ignore();
+        getline(cin, lista.elemento[pos].nombres);
+        cout << "Ingrese los apellidos del cliente: ";
+        getline(cin, lista.elemento[pos].apellidos);
+        cout << "Ingrese la edad del cliente: ";
+        cin >> lista.elemento[pos].edad;
+        cin.ignore();
+        cout << "Ingrese la cedula del cliente: ";
+        getline(cin, lista.elemento[pos].cedula);
+        cout << "Ingrese el telefono del cliente: ";
+        getline(cin, lista.elemento[pos].telefono);
+        cout << "Ingrese la ciudad del cliente: ";
+        getline(cin, lista.elemento[pos].ciudad);
+        cout << "Ingrese la calle principal del cliente: ";
+        getline(cin, lista.elemento[pos].direccion.calle_principal);
+        cout << "Ingrese la calle secundaria del cliente: ";
+        getline(cin, lista.elemento[pos].direccion.calle_secundaria);
+        cout << "Ingrese el numero de casa del cliente: ";
+        cin >> lista.elemento[pos].direccion.numero_casa;
+        
+    }
 }
 
 
