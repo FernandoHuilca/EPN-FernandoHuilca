@@ -227,11 +227,14 @@ void ejercicio_2()
     10001 – Palíndromo; 303 – Palíndromo; 669 – No es un Palíndromo.*/
     int num, i = 0;
     cout << "******************* NUMERO PALINDROMO ******************* " << endl;
-    cout << "Recuerde,al ingresar su numero debe ser entero y positivo." << endl;
+    cout << "Verificar si el numero es palindromo o no: " << endl;
+    cout << "*Recuerde,al ingresar su numero debe ser un numero natural." << endl;
     cout << "Ingrese el numero a ser verificado: " << endl;
     cin >> num;
+    cout << endl;
     if (num < 0) {
         cout << "El numero ingresado no es positivo." << endl;
+        cout << endl;
     }
     int digitos[DMDigitos];
     int digitos_invertidos[DMDigitos];
@@ -246,16 +249,18 @@ void ejercicio_2()
 }
 void es_palindromo(int digitos_invertidos[], int digitos[], int i)
 {
-    bool ESpalindromo = true;
+    bool SI_O_NO_palindromo = true;
     for (int j = 0; j < i; j++) {
         if (digitos[j] != digitos_invertidos[j]) {
-            ESpalindromo = false;
+            SI_O_NO_palindromo = false;
             cout << "El numero ingresado NO es un palindromo." << endl;
+            cout << endl;
             break;
         }
         if (digitos[j] = digitos_invertidos[j]) {
-            ESpalindromo = true;
+            SI_O_NO_palindromo = true;
             cout << "El numero ingresado es un palindromo." << endl;
+            cout << endl;
             break;
         }
     }
