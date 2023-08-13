@@ -26,6 +26,23 @@ int main()
     cout << "Como culpar al viento por el desorden" << endl; 
     cout << "Si fui yo quien dejo la ventana abierta" << endl;
     }
+    /*
+    1. Azul 
+    2. Verde
+    3. Celeste 
+    4. Rojo 
+    5. Violeta 
+    6. Amarrillo 
+    7. Blanco
+    8. Gris 
+    9. Azul intermedio
+    10. Verde 
+    11. Verde opacio
+    12. Naranja 
+    13. Violeta 
+    14. Amarrillo
+    15. Crema
+    */
 
 
 
