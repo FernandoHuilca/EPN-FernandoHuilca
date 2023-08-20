@@ -11,3 +11,5 @@ void potencia();
 void raiz_cuadrada();
 //Funcion para calcular el factorial de un numero ingresado por el usuario 
 void factorial();
+//Funcion para calculo de fibonacci 
+void fibonacci();

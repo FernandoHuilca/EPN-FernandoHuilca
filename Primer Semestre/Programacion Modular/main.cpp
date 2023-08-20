@@ -2,6 +2,7 @@
 using namespace std; 
 #include "basicos.h"
 #include "avanzados.h"
+#include "conversiones.h"
 #include <cstdlib> // Para la función system
 #include <Windows.h>
 #define color SetConsoleTextAttribute
@@ -18,6 +19,8 @@ int menu();
 int sub_menu_1(); 
 //Para ejercicio Avanzados
 int sub_menu_2(); 
+//Submenu para ejercicio de conversiones
+int sub_menu_3();
 
 
 /*********************************************** INICIO DEL MAIN *******************************************************************/
@@ -119,20 +122,10 @@ int main()
                         cout << endl;
                         break;
                     case 4:
-                        if (division(a, b) == 0)
-                        {
-                            color(hConsole, 4);
-                            cout << "No existe division para cero" << endl;
-                            cout << endl;
-                            color(hConsole, 7);
-                        }
-                        else
-                        {
-                            color(hConsole, 11);
-                            cout << "El resultado de la division es: " << division(a, b) << endl;
-                            color(hConsole, 7);
-                            cout << endl;
-                        }
+                        color(hConsole, 11);
+                        fibonacci();
+                        color(hConsole, 7);
+                        cout << endl;
 
                         break;
                     }
@@ -144,7 +137,28 @@ int main()
             /******************************************************************************************************************/
         case 3:
             system("cls");
-            cout << "Codigo " << opcion << endl;
+            opcion_submenu = sub_menu_3();
+            switch (opcion_submenu)
+            {
+            case 1: 
+                centigrados_Kelvin();
+                break;
+            case 2:
+                libras_gramos();
+                break;
+            case 3:
+                pulgadas_centimetros();
+
+                break;
+            case 4:
+                kilometros_millas();
+                break;
+            case 5:
+
+                litros_galones();
+                break;
+            }
+            
             break;
             
         }
@@ -243,6 +257,34 @@ int sub_menu_2()
             cout << endl;
         }
     } while (opcion < 0 || opcion > 4);
+
+    return opcion;
+}
+
+
+int sub_menu_3()
+{
+    int opcion;
+    do
+    {
+        cout << "Elije una conversion de unidades:" << endl;
+        cout << "1. Centigrados a Kelvin" << endl;
+        cout << "2. Libras a Gramos" << endl;
+        cout << "3. Pulgadas a Centimetros" << endl;
+        cout << "4. Kilometros a Millas" << endl;
+        cout << "5. Litros a Galones" << endl;
+        cout << "----------------------------------" << endl;
+        cout << "Ingresa el numero de la opcion: ";
+        cin >> opcion;
+        if (opcion < 1 || opcion > 5)
+        {
+            system("cls");
+            color(hConsole, 4);
+            cout << "Valor ingresado fuera de los limites. " << endl;
+            color(hConsole, 7);
+            cout << endl;
+        }
+    } while (opcion < 1 || opcion > 5);
 
     return opcion;
 }

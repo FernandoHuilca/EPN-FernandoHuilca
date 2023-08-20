@@ -43,7 +43,7 @@ void raiz_cuadrada()
 	//Función sqrt()
 	raiz = sqrt(numero);
 
-	cout << "La raíz cuadrada de " << numero << " es: " << raiz << endl;
+	cout << "La raiz cuadrada de " << numero << " es: " << raiz << endl;
 
 }
 
@@ -78,6 +78,31 @@ void factorial()
 			cout << "El factorial del " << numero << " es: " << factorial << endl;
 		}
 	} while ((numero != static_cast<int>(numero)) || (numero < 0));
+
+
+}
+
+
+void fibonacci() 
+{
+	int extencion;
+
+	cout << "Ingresa el numero de terminos de la serie de Fibonacci que deseas ver: ";
+	cin >> extencion;
+
+	int primero = 0, segundo = 1;
+
+	cout << "Serie de Fibonacci de " << extencion<< " terminos:" << endl;
+
+	for (int i = 0; i < extencion; i++) {
+		cout << primero << " ";
+
+		int siguiente = primero + segundo;
+		primero = segundo;
+		segundo = siguiente;
+	}
+
+	cout << endl;
 
 
 }
