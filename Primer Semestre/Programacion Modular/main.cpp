@@ -108,13 +108,13 @@ int main()
                         break;
                     case 2:
                         color(hConsole, 11);
-                        cout << "El resultado de la resta es: " << resta(a, b) << endl;
+                        raiz_cuadrada();
                         color(hConsole, 7);
                         cout << endl;
                         break;
                     case 3:
                         color(hConsole, 11);
-                        cout << "El resultado de la multiplicacion es: " << multiplicacion(a, b) << endl;
+                        factorial();
                         color(hConsole, 7);
                         cout << endl;
                         break;
@@ -146,14 +146,10 @@ int main()
             system("cls");
             cout << "Codigo " << opcion << endl;
             break;
-            /******************************************************************************************************************/
-        case 4:
-            system("cls");
-            cout << "Codigo " << opcion << endl;
-            break;
+            
         }
     
-    } while (opcion != 4);
+    } while (opcion != 0);
     cout << "Adios" << endl;
 
 
@@ -172,19 +168,20 @@ int menu()
         cout << "1. Operaciones Basicas " << endl;
         cout << "2. Operaciones avanzadas " << endl;
         cout << "3. Conversion de medidas " << endl;
-        cout << "4. Salir " << endl;
+        cout << "0. Salir " << endl;
         cout << "----------------------------------" << endl;
         cout << "Opcion: ";
         cin >> opcion;
         cout << endl;
-        if (opcion < 1 || opcion > 4)
+        if (opcion < 0 || opcion > 3)
         {
+            system("cls");
             color(hConsole, 4);
             cout << "Valor ingresado fuera de los limites. " << endl;
-            cout << "Ingrese un numero del 1 al 4 por favor. " << endl;
+            cout << "Ingrese un numero del 0 al 3 por favor. " << endl;
             color(hConsole, 7);
         }
-    } while (opcion < 1 || opcion > 4);
+    } while (opcion < 0 || opcion > 3);
 
     return opcion;
 }
