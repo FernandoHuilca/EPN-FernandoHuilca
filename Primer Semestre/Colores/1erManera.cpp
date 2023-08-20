@@ -21,8 +21,7 @@ int main()
     {
             color(hConsole, i); 
 
-
-    cout << "PROGRAMA QUE IMPRIME COLORES." << endl; 
+    cout << "Color del numero: " << i << endl;
     cout << "Como culpar al viento por el desorden" << endl; 
     cout << "Si fui yo quien dejo la ventana abierta" << endl;
     }
