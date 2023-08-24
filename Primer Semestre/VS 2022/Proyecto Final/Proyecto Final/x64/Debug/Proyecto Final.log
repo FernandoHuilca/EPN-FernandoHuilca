@@ -1,2 +1,3 @@
-﻿  Proyecto Final.cpp
-  Proyecto Final.vcxproj -> C:\Users\elice\Documents\EPN-FernandoHuilca\Primer Semestre\VS 2022\Proyecto Final\x64\Debug\Proyecto Final.exe
+﻿C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(531,5): warning MSB8028: El directorio intermedio (x64\Debug\) contiene archivos compartidos de otro proyecto (Proyecto Final.vcxproj). Esto puede dar lugar a un comportamiento incorrecto de limpieza y recompilación.
+  Juego Barcos.cpp
+  Proyecto Final.vcxproj -> C:\Users\elice\Documents\EPN-FernandoHuilca\Primer Semestre\VS 2022\Proyecto Final\x64\Debug\Juego Barcos.exe
