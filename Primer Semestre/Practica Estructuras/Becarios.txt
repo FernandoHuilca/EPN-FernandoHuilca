@@ -1,0 +1,16 @@
+Fernando Huilca
+20
+Doctorado en ciencias de la computacion
+Fijo
+Mateo Quisilema
+50
+Doctorado en las economia
+Becario
+Sebastian Ramos
+40
+Master en administracion
+En practicas
+Daniel Noboa
+35
+Administracion de Empresas
+Fijo
