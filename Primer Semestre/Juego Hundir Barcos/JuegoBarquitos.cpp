@@ -7,7 +7,7 @@ using namespace std;
 HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
 
 //Constantes
-const int DIM = 4;
+const int DIM = 15;
 
 //Prototipos 
 //Funcion que devuelve un num aleatorio
@@ -20,6 +20,7 @@ int num_naves(const bool array[DIM][DIM]);
 void imprimir_tablero(const int array[DIM][DIM]);
 //Imprime matriz de enteros 
 void imprimir_Matriz(const int array[DIM][DIM]);
+
 
 
 int main()
@@ -50,13 +51,13 @@ int main()
     while (aciertos < parar)
     {
         int fila, columna;
-        cout << "____ Hundir la Flota ____" << endl;
+        cout << "____ Hundir la Flota ____" << endl << endl;
         //Preguntar al usuario por una fila
-        cout << "Numero de fila entre 1 y 4: ";
+        cout << "Numero de fila entre 1 y " << DIM << ":  ";
         cin >> fila;
         fila--;
         //Preguntar al usuario por una columna
-        cout << "Numero de columna entre 1 y 4: ";
+        cout << "Numero de columna entre 1 y " << DIM << ":  ";
         cin >> columna;
         columna--;
         system("cls");
@@ -89,6 +90,7 @@ int main()
     }
     system("cls");
     color(hConsole, 13);
+    cout << endl;
     cout << "¡Victoria, has ganado! en "
         << NumeroDeTurnos << " turnos :)";
     color(hConsole, 7);
@@ -153,13 +155,13 @@ void imprimir_tablero(const int array[DIM][DIM])
     {
         for (int j = 0; j < DIM; j++)
         {
-            if (array[i][j]==0)
+            if (array[i][j] == 0)
             {
                 color(hConsole, 11);
                 cout << "[ ? ]";
                 color(hConsole, 7);
             }
-            else if (array[i][j]==1)
+            else if (array[i][j] == 1)
             {
                 color(hConsole, 2);
                 cout << "[ Y ]";

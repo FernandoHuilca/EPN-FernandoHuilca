@@ -18,25 +18,23 @@ typedef struct
     string nombre_equipo;
     int partidos_ganados;
     int partidos_empatados;
-    int puntos;
 }tEquipo;
 typedef struct
 {
     tEquipo equipo[DIM];
     int contadorEquipos;
 }tLista_Equipos;
+void cargar(tLista_Equipos& lista, bool& ok);
+void guardar(const tLista_Equipos& lista);
 void ejercicio_1();
 int sub_menu_ejer1();
 void agregarE(tLista_Equipos& lista, tEquipo equipo, bool& ok);
 void LeerEquipo(tEquipo& equipo);
-void OrdenarEquipos(tLista_Equipos& lista);
-void mostrarEquipos(const tLista_Equipos& lista);
+
 
 
 int opcion = 1;
 
-
-/***************************************************INICIO DEL MAIN***********************************************************/
 int main() {
     cout << "_______BIENVENIDO A LOS EJERCICIOS DE ESTRUCTURAS______" << endl;
     cout << "                             ~ AUTHOR Fernando Huilca" << endl;
@@ -68,7 +66,6 @@ int main() {
     cout << "Adios. " << endl;
     return 0;
 }
-/*************************************************FIN DEL MAIN*************************************************/
 
 // FUNCIONES DEL PROGRAMA
 int menu() {
@@ -88,7 +85,6 @@ int menu() {
         cout << "| 0) SALIR                    0    |" << endl;
         cout << "|__________________________________|" << endl;
         cin >> opcion;
-        system("cls");
         if (opcion < 0 || opcion > 4) {
             color(hConsole, 4);
             cout << "Opcion seleccionada INCORRECTA." << endl;
@@ -115,7 +111,16 @@ void ejercicio_1()
     tEquipo equipo;
     bool exito = true;
     int opcion;
-    lista.contadorEquipos = 0;
+    cargar(lista, exito);
+    if (!exito)
+    {
+        color(hConsole, 4);
+        cout << "ERROR: No se puedo cargar la lista " << endl;
+        color(hConsole, 7);
+    }
+    else
+    {
+
         do
         {
             opcion = sub_menu_ejer1();
@@ -134,17 +139,63 @@ void ejercicio_1()
             }
             case 2: 
             {
-                system("cls");
-                OrdenarEquipos(lista); 
-                mostrarEquipos(lista);
+
             }
 
 
             }
+            guardar(lista);
         } while (opcion != 0);
 
 
 
+    }
+
+
+}
+void cargar(tLista_Equipos& lista, bool& ok)
+{
+    tEquipo equipo;
+    ifstream leer_archivo;
+    char aux;
+    lista.contadorEquipos = 0;
+    leer_archivo.open("Equipos.txt");
+    if (!leer_archivo.is_open())
+    {
+        ok = false;
+    }
+    else
+    {
+        ok = true;
+        getline(leer_archivo, equipo.nombre_equipo);
+        //cout << equipo.nombre_equipo << endl;
+        while ((!leer_archivo.eof()) && (lista.contadorEquipos < DIM)) //(!leer_archivo.eof() para que vaya hasta el final del archivo
+        {
+            leer_archivo >> equipo.partidos_ganados;
+            leer_archivo >> equipo.partidos_empatados;
+            leer_archivo.get(aux);
+            lista.equipo[lista.contadorEquipos] = equipo;
+            lista.contadorEquipos++;
+
+
+            getline(leer_archivo, equipo.nombre_equipo);
+
+        }
+        leer_archivo.close();
+    }
+}
+
+void guardar(const tLista_Equipos& lista)
+{
+    ofstream escribir_archivo;
+    escribir_archivo.open("Equipos.txt");
+    for (int i = 0; i < lista.contadorEquipos; i++)
+    {
+        escribir_archivo << lista.equipo[i].nombre_equipo << endl;
+        escribir_archivo << lista.equipo[i].partidos_ganados << endl;
+        escribir_archivo << lista.equipo[i].partidos_empatados << endl;
+    }
+    escribir_archivo.close();
 }
 
 int sub_menu_ejer1()
@@ -153,7 +204,7 @@ int sub_menu_ejer1()
     do {
         cout << " __________Equipos__________" << endl;
         cout << "|     1. Agregar Equipo     |" << endl;
-        cout << "|     2. Mostrar lista      |" << endl;
+        cout << "|     2. Calcular           |" << endl;
         cout << "|     0. Salir              |" << endl;
         cout << " ---------------------------" << endl;
         cout << "Opcion: ";
@@ -184,7 +235,7 @@ void agregarE(tLista_Equipos& lista, tEquipo equipo, bool& ok)
     }
 
 }
-void LeerEquipo(tEquipo& equipo)
+void LeerEquipo(tEquipo & equipo)
 {
     cin.ignore(); 
     cout << "Nombre del Equipo: "; 
@@ -194,34 +245,4 @@ void LeerEquipo(tEquipo& equipo)
     cin >> equipo.partidos_ganados; 
     cout << "Numero de partidos empatados: ";
     cin >> equipo.partidos_empatados;
-    equipo.puntos = (equipo.partidos_ganados * 3) + (equipo.partidos_empatados);
-    system("cls");
-}
-
-void OrdenarEquipos(tLista_Equipos& lista)
-{
-    for (int i = 1; i < lista.contadorEquipos; i++)
-    {
-        tEquipo actual = lista.equipo[i];
-        int j = i - 1; 
-        while (j >= 0 && lista.equipo[j].puntos > actual.puntos)
-        {
-            lista.equipo[j + 1] = lista.equipo[j];
-            j--;
-        }
-        lista.equipo[j + 1] = actual; 
-    }
-}
-
-
-void mostrarEquipos(const tLista_Equipos& lista)
-{
-    color(hConsole,11);
-    cout << " ___Tabla Ordenada por Puntos___" << endl;
-    cout << "  Nombre              Puntos    " << endl;
-    for (int i = 0; i < lista.contadorEquipos; i++)
-    {
-        cout << lista.equipo[i].nombre_equipo << "\t\t" << lista.equipo[i].puntos << endl;
-    }
-    color(hConsole, 7);
 }
