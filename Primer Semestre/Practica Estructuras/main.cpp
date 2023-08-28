@@ -8,11 +8,12 @@ using namespace std;
 #include <Windows.h>
 #define color SetConsoleTextAttribute
 HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
-// Prototipos de Funciones
+// Prototipos de Funciones del main
 int menu();
 void saludo_Ejercicio();
-//Funcion y todo lo necesario para resolver el primer ejercicio
+//Prototipos y todo lo necesario para resolver el primer ejercicio
 const int DIM = 50;
+const int DIM3 = 4; 
 typedef struct
 {
     string nombre_equipo;
@@ -31,6 +32,24 @@ void agregarE(tLista_Equipos& lista, tEquipo equipo, bool& ok);
 void LeerEquipo(tEquipo& equipo);
 void OrdenarEquipos(tLista_Equipos& lista);
 void mostrarEquipos(const tLista_Equipos& lista);
+
+//Prototipos y todo lo necesario para resolver el ejercicio 3 
+void ejercicio_3();
+typedef struct
+{
+    string nombre; 
+    int edad; 
+    string estudios; 
+    string contratacion;
+}tBecarios;
+typedef struct
+{
+    tBecarios elementos[DIM3];
+    int contadorBecarios;
+}tlistaBecarios;
+
+void cargar(tlistaBecarios& lista, bool& ok);
+void MostrarBecarios(const tlistaBecarios& lista);
 
 
 int opcion = 1;
@@ -57,7 +76,7 @@ int main() {
             break;
         case 3:
             saludo_Ejercicio();
-            //ejercicio_3();
+            ejercicio_3();
             break;
         case 4:
             saludo_Ejercicio();
@@ -225,3 +244,74 @@ void mostrarEquipos(const tLista_Equipos& lista)
     }
     color(hConsole, 7);
 }
+
+//Funciones para el ejercicio 3 
+void ejercicio_3()
+{
+    tlistaBecarios lista; 
+    bool exito = true; 
+    /*3.	Becarios. Una empresa guarda información acerca de sus N empleados (ni uno más ni uno menos). La información almacenada sobre cada empleado 
+    consiste en su nombre, su edad, su grado de estudios (Escuela, Bachillerato, título técnico, tercer nivel, Máster, Doctorado) y el tipo de contratación
+    (Fijo, En prácticas, Eventual o Becario). Realiza las declaraciones de tipos apropiadas para representar la citada información y escribe un subprograma 
+    que muestre por pantalla el nombre y la titulación de todos los becarios.*/
+    cargar(lista, exito);
+    if (!exito)
+    {
+        cout << "ERROR: no se pudo cargar los datos " << endl;
+    }
+    else
+    {
+    MostrarBecarios(lista);
+    cout << endl << endl; 
+    }
+   
+
+
+}
+
+void cargar(tlistaBecarios& lista, bool& ok)
+{
+    tBecarios becario;
+    ifstream leer_archivo;
+    char aux;
+    lista.contadorBecarios = 0;
+    leer_archivo.open("Becarios.txt");
+    if (!leer_archivo.is_open())
+    {
+        ok = false;
+    }
+    else
+    {
+        ok = true;
+        getline(leer_archivo, becario.nombre);
+        //cout << equipo.nombre_equipo << endl;
+        while ((!leer_archivo.eof()) && (lista.contadorBecarios < DIM3)) //(!leer_archivo.eof() para que vaya hasta el final del archivo
+        {
+            leer_archivo >> becario.edad;
+            leer_archivo.get(aux);
+            getline(leer_archivo, becario.estudios);
+            getline(leer_archivo, becario.contratacion);
+            lista.elementos[lista.contadorBecarios] = becario;
+            lista.contadorBecarios++;
+
+            getline(leer_archivo, becario.nombre);
+
+        }
+        leer_archivo.close();
+    }
+}
+
+
+void MostrarBecarios(const tlistaBecarios& lista)
+{
+    cout << "         _________BECARIOS LISTA_________" << endl; 
+    cout << "    Nombre                             Titulacion     " << endl << endl;
+    for (int i = 0; i < DIM3; i++)
+    {
+        cout << lista.elementos[i].nombre << "\t\t" << lista.elementos[i].estudios << endl;
+    }
+}
+
+
+
+
