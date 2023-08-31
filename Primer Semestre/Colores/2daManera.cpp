@@ -9,8 +9,48 @@ int main()
 {
 
     //system("color 0D");
-    cout << "PROGRAMA QUE IMPRIME COLORES." << endl;
+    //cout << "PROGRAMA QUE IMPRIME COLORES." << endl;
     system("color 0B"); 
+    cout << "Como culpar al viento por el desorden" << endl; 
+    cout << "Si fui yo quien dejo la ventana abierta" << endl;
+
+     system("color 1B"); 
+    cout << "Como culpar al viento por el desorden" << endl; 
+    cout << "Si fui yo quien dejo la ventana abierta" << endl;
+
+     system("color 2B"); 
+    cout << "Como culpar al viento por el desorden" << endl; 
+    cout << "Si fui yo quien dejo la ventana abierta" << endl;
+
+     system("color 3B"); 
+    cout << "Como culpar al viento por el desorden" << endl; 
+    cout << "Si fui yo quien dejo la ventana abierta" << endl;
+
+     system("color 4B"); 
+    cout << "Como culpar al viento por el desorden" << endl; 
+    cout << "Si fui yo quien dejo la ventana abierta" << endl;
+
+
+     system("color 5B"); 
+    cout << "Como culpar al viento por el desorden" << endl; 
+    cout << "Si fui yo quien dejo la ventana abierta" << endl;
+
+
+     system("color 6B"); 
+    cout << "Como culpar al viento por el desorden" << endl; 
+    cout << "Si fui yo quien dejo la ventana abierta" << endl;
+
+
+     system("color 7B"); 
+    cout << "Como culpar al viento por el desorden" << endl; 
+    cout << "Si fui yo quien dejo la ventana abierta" << endl;
+
+    system("color 8B"); 
+    cout << "Como culpar al viento por el desorden" << endl; 
+    cout << "Si fui yo quien dejo la ventana abierta" << endl;
+    
+
+    system("color 9B"); 
     cout << "Como culpar al viento por el desorden" << endl; 
     cout << "Si fui yo quien dejo la ventana abierta" << endl;
 

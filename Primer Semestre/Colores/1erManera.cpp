@@ -9,7 +9,7 @@ using namespace std;
 int main()
 {
     HANDLE hConsole = GetStdHandle( STD_OUTPUT_HANDLE ); 
-    color(hConsole, 1); 
+    color(hConsole, 55); 
 
 
     cout << "PROGRAMA QUE IMPRIME COLORES." << endl; 
