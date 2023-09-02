@@ -3,12 +3,14 @@
 using namespace std;
 #include <stdlib.h>
 #include <Windows.h>
+#include "Estructura.h"
+#include "cargar_guardar.h"
 void ColorSeleccion(const char* text, int posX, int posY, bool selected);
 
 int Menu_principal();
 int Menu_Buscar();
 int Menu_Categoria();
-int Menu_Categoria_Prueba();
+int Menu_Categoria_prueba();
 
 
 
@@ -17,70 +19,82 @@ int Menu_Categoria_Prueba();
 /**********************************COMIENZO DEL MAIN**************************************************************/
 int main()
 {
-    
-    //system("color 5B"); // color a toda la consola de fondo debe coincidir 
-    int opcion, opcion_buscar, opcion_categoria;
+    tlistaLibros lista_de_libros;
+    bool exito = true;
+    cargar(lista_de_libros, exito);
 
-    do
+    if (!exito)
     {
-        opcion = Menu_principal();
-        switch (opcion)
+        cout << "ERROR: NO SE PUDO CARGAR LA LISTA DE LIBROS!!" << endl;
+    }
+    else
+    {
+        int opcion, opcion_buscar, opcion_categoria;
+
+        do
         {
-        case 0:
-        {
-            do
+            opcion = Menu_principal();
+            switch (opcion)
             {
-                opcion_buscar = Menu_Buscar();
-                switch (opcion_buscar)
+            case 0:
+            {
+                do
                 {
-                case 0:
-                {
+                    opcion_buscar = Menu_Buscar();
+                    switch (opcion_buscar)
+                    {
+                    case 0:
+                    {
+                        cout << "Ingresar la primera letra mayúscula. Ejm: Cumbres borrascosas" << endl;
+                        break;
+                    }
+                    case 1:
+                    {
+                        cout << "Ingresar la primera letra mayúscula. Ejm: Gabriel Garcia Marqués" << endl;
+                        break;
+                    }
+                    case 2:
+                    {
+                        system("cls");
+                        opcion_categoria = Menu_Categoria();
+                        break;
+                    }
+                    case 3:
+                    {
+                        break;
+                    }
+                    case 4:
+                    {
+                        system("cls");
+                        break;
+                    }
 
-                    break;
-                }
-                case 1:
-                {
-                    break;
-                }
-                case 2:
-                {
-                    system("cls");
-                    opcion_categoria = Menu_Categoria();
-                    break;
-                }
-                case 3:
-                {
-                    break;
-                }
-                case 4:
-                {
-                    system("cls");
-                    break;
-                }
-
-                }
-            } while (opcion_buscar != 4);
-            
-
-
-            break;
-        }
-        case 1:
-        {
-            break;
-        }
-        case 2:
-        {
-            break;
-        }
-        case 3:
-        {
-            break;
-        }
+                    }
+                } while (opcion_buscar != 4);
 
 
-        }
-    } while (opcion != 4);
+
+                break;
+            }
+            case 1:
+            {
+                break;
+            }
+            case 2:
+            {
+                break;
+            }
+            case 3:
+            {
+                break;
+            }
+
+
+            }
+        } while (opcion != 4);
+    }
+
+    
 
     
 
@@ -100,7 +114,6 @@ int Menu_principal()
     int subir_bajar = 0; //para controlar la flecha que aplaste y devolver donde esta el cursor 
     int Columna = 45; //MODIFICAR LA COLUMNA EN LA QUE APARECEN 
     int FILA = 12; //MODIFICAR LA FILA EN LA QUE APARECEN 
-    int CURSOR_FLECHA = 10;//MODIFICA DONDE SE PRESENTA EL INDICAR >>
     
     do
     {
@@ -161,7 +174,7 @@ int Menu_principal()
 
 void ColorSeleccion(const char* text, int posX, int posY, bool selected)
 {
-
+                                                        
     if (selected)
     {
         rlutil::setBackgroundColor(rlutil::COLOR::LIGHTCYAN); // damos color al contorno del texto seleccionado 
@@ -189,12 +202,8 @@ int Menu_Buscar()
     int subir_bajar = 0;
     int Columna = 75; //MODIFICAR LA COLUMNA EN LA QUE APARECEN 
     int FILA = 13; //MODIFICAR LA FILA EN LA QUE APARECEN 
-    int CURSOR_FLECHA = 10;//MODIFICA DONDE SE PRESENTA EL INDICAR >>
-    rlutil::hidecursor();
     do
     {
-        //rlutil::cls();
-        //rlutil::setBackgroundColor(rlutil::COLOR::BLACK);
         rlutil::setColor(rlutil::COLOR::BLACK);
 
         ColorSeleccion(" Buscar ___________________", Columna, FILA, subir_bajar == 7);
@@ -204,24 +213,12 @@ int Menu_Buscar()
         ColorSeleccion("|     Buscar por codigo    |", Columna, FILA + 4, subir_bajar == 3);
         ColorSeleccion("|     Volver               |", Columna, FILA + 5, subir_bajar == 4);
         ColorSeleccion(" --------------------------", Columna, FILA + 6, subir_bajar == 5);
-        //rlutil::locate(30,10); // Primer numero es la columna y segundo es la fila
-        /*cout << "____Super Calculadora____" << endl;
-        rlutil::locate(30, 11);
-        cout << "1. Operaciones Basicas   " << endl;
-        rlutil::locate(30, 12);
-        cout << "2. Operaciones avanzadas " << endl;
-        rlutil::locate(30, 13);
-        cout << "3. Conversion de medidas " << endl;
-        rlutil::locate(30, 14);
-        cout << "0. Salir                 " << endl;
-        rlutil::locate(30, 15);
-        cout << "-------------------------" << endl;*/
+
         rlutil::locate(Columna - 2, FILA + 1 + subir_bajar);
         cout << (char)175 << endl; //(char)175 estamos casteando interpretando lo que se imprime
 
         key = rlutil::getkey(); //Me permite asignar un numero al aplastar una tecla 
-        //cout << "KEY: " << key << endl; 
-        //rlutil::anykey(); 
+
         switch (key)
         {
         case 14: //Subir
@@ -259,7 +256,6 @@ int Menu_Buscar()
 
 
 
-
 int Menu_Categoria()
 {
     system("color 7B");
@@ -268,13 +264,9 @@ int Menu_Categoria()
     int subir_bajar = 0;
     int Columna = 45; //MODIFICAR LA COLUMNA EN LA QUE APARECEN 
     int FILA = 12; //MODIFICAR LA FILA EN LA QUE APARECEN 
-    int CURSOR_FLECHA = 10;//MODIFICA DONDE SE PRESENTA EL INDICAR >>
     int  cantidad_de_opciones = 5;
-    rlutil::hidecursor();
     do
     {
-        //rlutil::cls();
-        //rlutil::setBackgroundColor(rlutil::COLOR::BLACK);
         rlutil::setColor(rlutil::COLOR::BLACK);
 
         const char* categoria = "|    Alegoria Politica     |";
@@ -287,24 +279,77 @@ int Menu_Categoria()
         ColorSeleccion("|         Romance          |", Columna, FILA + 5, subir_bajar == 4);
         ColorSeleccion("|         Volver           |", Columna, FILA + 6, subir_bajar == 5);
         ColorSeleccion(" --------------------------", Columna, FILA + 7, subir_bajar == 6);
-        //rlutil::locate(30,10); // Primer numero es la columna y segundo es la fila
-        /*cout << "____Super Calculadora____" << endl;
-        rlutil::locate(30, 11);
-        cout << "1. Operaciones Basicas   " << endl;
-        rlutil::locate(30, 12);
-        cout << "2. Operaciones avanzadas " << endl;
-        rlutil::locate(30, 13);
-        cout << "3. Conversion de medidas " << endl;
-        rlutil::locate(30, 14);
-        cout << "0. Salir                 " << endl;
-        rlutil::locate(30, 15);
-        cout << "-------------------------" << endl;*/
+
         rlutil::locate(Columna - 2, FILA + 1 + subir_bajar);
         cout << (char)175 << endl; //(char)175 estamos casteando interpretando lo que se imprime
 
         key = rlutil::getkey(); //Me permite asignar un numero al aplastar una tecla 
-        //cout << "KEY: " << key << endl; 
-        //rlutil::anykey(); 
+        switch (key)
+        {
+        case 14: //Subir
+        {
+            rlutil::locate(Columna - 2, FILA + 1 + subir_bajar);
+            cout << " " << endl;
+            subir_bajar--;
+            if (subir_bajar < 0)
+            {
+                subir_bajar = 0;
+            }
+            break;
+        }
+        case 15: //bajar 
+        {
+            rlutil::locate(Columna - 2, FILA + 1 + subir_bajar);
+            cout << " " << endl;
+            subir_bajar++;
+            if (subir_bajar > cantidad_de_opciones)
+            {
+                subir_bajar = cantidad_de_opciones;
+            }
+            break;
+        }
+        case 1: // Enter
+        {
+            return subir_bajar;
+
+        }
+
+        }
+
+
+
+    } while (opcion != 0);
+}
+/*****************************************************************************************/
+
+int Menu_Categoria_prueba()
+{
+    system("color 7B");
+    tlistaLibros lista_de_libros;
+    tLibros libro; 
+    const char* text; 
+    int opcion = 1;
+    int key;
+    int subir_bajar = 0;
+    int Columna = 6; //MODIFICAR LA COLUMNA EN LA QUE APARECEN 
+    int FILA = 5; //MODIFICAR LA FILA EN LA QUE APARECEN 
+    int  cantidad_de_opciones = 4;
+    do
+    {
+ 
+        rlutil::setColor(rlutil::COLOR::BLACK);
+        text = "HOLA COMO ESTA";
+
+            //text = lista_de_libros.ele_libros[i].genero;
+            ColorSeleccion(text, Columna, FILA + 0, subir_bajar == 0);
+            ColorSeleccion(text, Columna, FILA + 1, subir_bajar == 1);
+            ColorSeleccion(text, Columna, FILA + 2, subir_bajar == 2);
+            ColorSeleccion(text, Columna, FILA + 3, subir_bajar == 3);
+        
+
+        //rlutil::locate(Columna - 2, FILA + 1 + subir_bajar);
+       // cout << (char)175 << endl; //(char)175 estamos casteando interpretando lo que se imprime
+        key = rlutil::getkey(); //Me permite asignar un numero al aplastar una tecla  
         switch (key)
         {
         case 14: //Subir
@@ -344,74 +389,3 @@ int Menu_Categoria()
 
 /*********************************************************************************/
 
-int Menu_Categoria_Prueba()
-{
-    system("color 7B");
-    int opcion = 1;
-    int key;
-    int subir_bajar = 0;
-    int Columna = 45; //MODIFICAR LA COLUMNA EN LA QUE APARECEN 
-    int FILA = 12; //MODIFICAR LA FILA EN LA QUE APARECEN 
-    int CURSOR_FLECHA = 10;//MODIFICA DONDE SE PRESENTA EL INDICAR >>
-    int  cantidad_de_opciones = 5;
-    
-    rlutil::hidecursor();
-    do
-    {
-        //rlutil::cls();
-        //rlutil::setBackgroundColor(rlutil::COLOR::BLACK);
-        rlutil::setColor(rlutil::COLOR::BLACK);
-
-        const char* categoria = "|    Alegoria Politica     |";
-
-        ColorSeleccion(" Menu Categorias____________", Columna, FILA, subir_bajar == 7);
-        ColorSeleccion("|         Comedia          |", Columna, FILA + 1, subir_bajar == 0);
-        ColorSeleccion("|         Fantasia         |", Columna, FILA + 2, subir_bajar == 1);
-        ColorSeleccion("|         Historica        |", Columna, FILA + 3, subir_bajar == 2);
-        ColorSeleccion("|         Suspenso         |", Columna, FILA + 4, subir_bajar == 3);
-        ColorSeleccion("|         Romance          |", Columna, FILA + 5, subir_bajar == 4);
-        ColorSeleccion("|         Volver           |", Columna, FILA + 6, subir_bajar == 5);
-        ColorSeleccion(" --------------------------", Columna, FILA + 7, subir_bajar == 6);
-
-        rlutil::locate(Columna - 2, FILA + 1 + subir_bajar);
-        cout << (char)175 << endl; //(char)175 estamos casteando interpretando lo que se imprime
-
-        key = rlutil::getkey(); //Me permite asignar un numero al aplastar una tecla 
-        //cout << "KEY: " << key << endl; 
-        //rlutil::anykey(); 
-        switch (key)
-        {
-        case 14: //Subir
-        {
-            rlutil::locate(Columna - 2, FILA + 1 + subir_bajar);
-            cout << " " << endl;
-            subir_bajar--;
-            if (subir_bajar < 0)
-            {
-                subir_bajar = 0;
-            }
-            break;
-        }
-        case 15: //bajar 
-        {
-            rlutil::locate(Columna - 2, FILA + 1 + subir_bajar);
-            cout << " " << endl;
-            subir_bajar++;
-            if (subir_bajar > cantidad_de_opciones)
-            {
-                subir_bajar = cantidad_de_opciones;
-            }
-            break;
-        }
-        case 1: // Enter
-        {
-            return subir_bajar;
-
-        }
-
-        }
-
-
-
-    } while (opcion != 0);
-}
