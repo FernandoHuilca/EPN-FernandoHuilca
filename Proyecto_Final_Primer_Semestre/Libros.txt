@@ -1,0 +1,306 @@
+En busca del tiempo perdido
+Marcel Proust
+Ficción
+0001
+15
+0
+Crimen y castigo
+Fyodor Dostoevsky
+Ficción
+0002
+8
+0
+El principito
+Antoine de Saint-Exupéry
+Literatura infantil
+0003
+2
+0
+Matar un ruiseñor
+Harper Lee
+Ficción
+0004
+12
+0
+Cien años de soledad
+Gabriel García Márquez
+Realismo mágico
+0005
+19
+0
+Los juegos del hambre
+Suzanne Collins
+Distopía
+0007
+17
+0
+Fahrenheit 451
+Ray Bradbury
+Ciencia ficción
+0008
+10
+0
+1984
+George Orwell
+Distopía
+0009
+5
+0
+El Gran Gatsby
+F. Scott Fitzgerald
+Novela clásica
+0010
+3
+0
+Don Quijote de la Mancha
+Miguel de Cervantes
+Clásico literario
+0011
+11
+0
+Cazadores de sombras
+Cassandra Clare
+Fantasía
+0015
+1
+0
+El señor de los anillos
+J.R.R. Tolkien
+Fantasía épica
+0016
+4
+0
+Los pilares de la Tierra
+Ken Follett
+Novela histórica
+0017
+16
+0
+Moby-Dick
+Herman Melville
+Clásico literario
+0018
+14
+0
+El código Da Vinci
+Dan Brown
+Suspense
+0019
+13
+0
+Anna Karenina
+Leo Tolstoy
+Clásico literario
+0020
+20
+0
+Alicia en el país de las maravillas
+Lewis Carroll
+Fantasía
+0021
+1
+0
+La sombra del viento
+Carlos Ruiz Zafón
+Misterio
+0022
+2
+0
+El alquimista
+Paulo Coelho
+Ficción espiritual
+0023
+3
+0
+Madame Bovary
+Gustave Flaubert
+Novela realista
+0024
+4
+0
+Cumbres borrascosas
+Emily Brontë
+Clásico literario
+0025
+5
+0
+Crónicas de Narnia
+C.S. Lewis
+Literatura infantil
+0026
+6
+0
+Jane Eyre
+Charlotte Brontë
+Novela gótica
+0028
+8
+0
+Los hombres me explican cosas
+Rebecca Solnit
+Ensayo feminista
+0029
+9
+0
+La metamorfosis
+Franz Kafka
+Novela corta
+0030
+10
+0
+Matar a un elefante
+George Orwell
+Ensayo
+0031
+11
+0
+Crónica de una muerte anunciada
+Gabriel García Márquez
+Realismo mágico
+0032
+12
+0
+La Odisea
+Homero
+Épico
+0033
+13
+0
+Frankenstein
+Mary Shelley
+Terror gótico
+0034
+14
+0
+Rebelión en la granja
+George Orwell
+Alegoría política
+0035
+15
+0
+En el camino
+Jack Kerouac
+Generación Beat
+0036
+16
+0
+Lolita
+Vladimir Nabokov
+Novela controversial
+0037
+17
+0
+El amor en los tiempos del cólera
+Gabriel García Márquez
+Realismo mágico
+0038
+18
+0
+Código penal
+Federico Carlos Sainz de Robles
+Derecho
+0039
+19
+0
+20.000 leguas de viaje submarino
+Julio Verne
+Ciencia ficción
+0040
+20
+0
+La isla del tesoro
+Robert Louis Stevenson
+Aventura
+0041
+21
+0
+Ulises
+James Joyce
+Modernismo
+0042
+22
+0
+El lobo estepario
+Hermann Hesse
+Novela existencialista
+0043
+23
+0
+Pedro Páramo
+Juan Rulfo
+Realismo mágico
+0044
+24
+0
+La carretera
+Cormac McCarthy
+Novela postapocalíptica
+0045
+25
+0
+El señor de las moscas
+William Golding
+Novela distópica
+0046
+26
+0
+Los hombres invisibles
+Eduardo Galeano
+Ensayo
+0047
+27
+0
+El nombre de la rosa
+Umberto Eco
+Misterio histórico
+0048
+28
+0
+Orgullo y prejuicio
+Jane Austen
+Clásico literario
+0049
+29
+0
+El Hobbit
+J.R.R. Tolkien
+Fantasía
+0050
+30
+0
+El Extranjero
+Albert Camus
+Novela filosófica
+0051
+31
+0
+Ensayos
+Michel de Montaigne
+Ensayo
+0052
+32
+0
+Drácula
+Bram Stoker
+Terror
+0053
+33
+0
+Los miserables
+Victor Hugo
+Novela histórica
+0054
+34
+0
+Las aventuras de Tom Sawyer
+Mark Twain
+Novela de aventuras
+0058
+38
+0
+El retrato de Dorian Gray
+Oscar Wilde
+Novela gótica
+0059
+39
+0

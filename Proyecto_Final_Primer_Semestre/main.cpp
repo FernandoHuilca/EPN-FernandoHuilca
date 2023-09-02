@@ -8,6 +8,7 @@ void ColorSeleccion(const char* text, int posX, int posY, bool selected);
 int Menu_principal();
 int Menu_Buscar();
 int Menu_Categoria();
+int Menu_Categoria_Prueba();
 
 
 
@@ -276,6 +277,8 @@ int Menu_Categoria()
         //rlutil::setBackgroundColor(rlutil::COLOR::BLACK);
         rlutil::setColor(rlutil::COLOR::BLACK);
 
+        const char* categoria = "|    Alegoria Politica     |";
+
         ColorSeleccion(" Menu Categorias____________", Columna, FILA, subir_bajar == 7);
         ColorSeleccion("|         Comedia          |", Columna, FILA + 1, subir_bajar == 0);
         ColorSeleccion("|         Fantasia         |", Columna, FILA + 2, subir_bajar == 1);
@@ -330,6 +333,80 @@ int Menu_Categoria()
         {
             return subir_bajar;
            
+        }
+
+        }
+
+
+
+    } while (opcion != 0);
+}
+
+/*********************************************************************************/
+
+int Menu_Categoria_Prueba()
+{
+    system("color 7B");
+    int opcion = 1;
+    int key;
+    int subir_bajar = 0;
+    int Columna = 45; //MODIFICAR LA COLUMNA EN LA QUE APARECEN 
+    int FILA = 12; //MODIFICAR LA FILA EN LA QUE APARECEN 
+    int CURSOR_FLECHA = 10;//MODIFICA DONDE SE PRESENTA EL INDICAR >>
+    int  cantidad_de_opciones = 5;
+    
+    rlutil::hidecursor();
+    do
+    {
+        //rlutil::cls();
+        //rlutil::setBackgroundColor(rlutil::COLOR::BLACK);
+        rlutil::setColor(rlutil::COLOR::BLACK);
+
+        const char* categoria = "|    Alegoria Politica     |";
+
+        ColorSeleccion(" Menu Categorias____________", Columna, FILA, subir_bajar == 7);
+        ColorSeleccion("|         Comedia          |", Columna, FILA + 1, subir_bajar == 0);
+        ColorSeleccion("|         Fantasia         |", Columna, FILA + 2, subir_bajar == 1);
+        ColorSeleccion("|         Historica        |", Columna, FILA + 3, subir_bajar == 2);
+        ColorSeleccion("|         Suspenso         |", Columna, FILA + 4, subir_bajar == 3);
+        ColorSeleccion("|         Romance          |", Columna, FILA + 5, subir_bajar == 4);
+        ColorSeleccion("|         Volver           |", Columna, FILA + 6, subir_bajar == 5);
+        ColorSeleccion(" --------------------------", Columna, FILA + 7, subir_bajar == 6);
+
+        rlutil::locate(Columna - 2, FILA + 1 + subir_bajar);
+        cout << (char)175 << endl; //(char)175 estamos casteando interpretando lo que se imprime
+
+        key = rlutil::getkey(); //Me permite asignar un numero al aplastar una tecla 
+        //cout << "KEY: " << key << endl; 
+        //rlutil::anykey(); 
+        switch (key)
+        {
+        case 14: //Subir
+        {
+            rlutil::locate(Columna - 2, FILA + 1 + subir_bajar);
+            cout << " " << endl;
+            subir_bajar--;
+            if (subir_bajar < 0)
+            {
+                subir_bajar = 0;
+            }
+            break;
+        }
+        case 15: //bajar 
+        {
+            rlutil::locate(Columna - 2, FILA + 1 + subir_bajar);
+            cout << " " << endl;
+            subir_bajar++;
+            if (subir_bajar > cantidad_de_opciones)
+            {
+                subir_bajar = cantidad_de_opciones;
+            }
+            break;
+        }
+        case 1: // Enter
+        {
+            return subir_bajar;
+
         }
 
         }
