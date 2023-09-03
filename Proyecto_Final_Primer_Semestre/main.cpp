@@ -5,12 +5,15 @@ using namespace std;
 #include <Windows.h>
 #include "Estructura.h"
 #include "cargar_guardar.h"
-void ColorSeleccion(const char* text, int posX, int posY, bool selected);
+void ColorSeleccion(string text, int posX, int posY, bool selected);
 
 int Menu_principal();
 int Menu_Buscar();
 int Menu_Categoria();
-int Menu_Categoria_prueba();
+void dibujo_libro();
+void Dibujar_contorno();
+void Dibujar_contorno_menu_principal();
+void letras_biblio();
 
 
 
@@ -33,6 +36,8 @@ int main()
 
         do
         {
+
+            
             opcion = Menu_principal();
             switch (opcion)
             {
@@ -78,6 +83,13 @@ int main()
             }
             case 1:
             {
+                int atras; 
+                system("cls");
+                rlutil::setColor(rlutil::COLOR::BLACK);
+                Dibujar_contorno();
+                dibujo_libro();
+                cin >> atras; 
+                system("cls");
                 break;
             }
             case 2:
@@ -109,17 +121,18 @@ int main()
 int Menu_principal()
 {
     system("color 7B"); //Pinta la consola
-    int opcion = 1; //para presentar una y otra vez lo mismo en consola 
     int key; //almacenar el valor de cada tecla tecleada xd 
     int subir_bajar = 0; //para controlar la flecha que aplaste y devolver donde esta el cursor 
     int Columna = 45; //MODIFICAR LA COLUMNA EN LA QUE APARECEN 
     int FILA = 12; //MODIFICAR LA FILA EN LA QUE APARECEN 
     
-    do
+    while (true)
     {
         
         rlutil::setColor(rlutil::COLOR::BLACK); //Le da color a las letras 
 
+        Dibujar_contorno();
+        Dibujar_contorno_menu_principal();
         ColorSeleccion(" Menu principal____________", Columna, FILA, subir_bajar == 7);
         ColorSeleccion("           BUSCA            ", Columna, FILA +1, subir_bajar == 0);
         ColorSeleccion("           AGREGAR          ", Columna, FILA + 2, subir_bajar == 1);
@@ -169,10 +182,10 @@ int Menu_principal()
 
 
 
-    } while (opcion != 0);
+    } 
 }
 
-void ColorSeleccion(const char* text, int posX, int posY, bool selected)
+void ColorSeleccion(string text, int posX, int posY, bool selected)
 {
                                                         
     if (selected)
@@ -191,18 +204,18 @@ void ColorSeleccion(const char* text, int posX, int posY, bool selected)
     //rlutil::locate(posX, posY);
     //cout << text << endl; //Escribimos en pantalla
 
+
 }
 
 /***************************************************************************************/
 int Menu_Buscar()
 {
     system("color 7B");
-    int opcion = 1;
     int key;
     int subir_bajar = 0;
     int Columna = 75; //MODIFICAR LA COLUMNA EN LA QUE APARECEN 
     int FILA = 13; //MODIFICAR LA FILA EN LA QUE APARECEN 
-    do
+    while (true)
     {
         rlutil::setColor(rlutil::COLOR::BLACK);
 
@@ -251,7 +264,7 @@ int Menu_Buscar()
 
         }
 
-    } while (opcion != 0);
+    } 
 }
 
 
@@ -259,17 +272,15 @@ int Menu_Buscar()
 int Menu_Categoria()
 {
     system("color 7B");
-    int opcion = 1;
     int key;
     int subir_bajar = 0;
     int Columna = 45; //MODIFICAR LA COLUMNA EN LA QUE APARECEN 
     int FILA = 12; //MODIFICAR LA FILA EN LA QUE APARECEN 
     int  cantidad_de_opciones = 5;
-    do
+
+    while (true)
     {
         rlutil::setColor(rlutil::COLOR::BLACK);
-
-        const char* categoria = "|    Alegoria Politica     |";
 
         ColorSeleccion(" Menu Categorias____________", Columna, FILA, subir_bajar == 7);
         ColorSeleccion("|         Comedia          |", Columna, FILA + 1, subir_bajar == 0);
@@ -318,74 +329,119 @@ int Menu_Categoria()
 
 
 
-    } while (opcion != 0);
+    } 
 }
-/*****************************************************************************************/
 
-int Menu_Categoria_prueba()
+
+void dibujo_libro()
 {
-    system("color 7B");
-    tlistaLibros lista_de_libros;
-    tLibros libro; 
-    const char* text; 
-    int opcion = 1;
-    int key;
-    int subir_bajar = 0;
-    int Columna = 6; //MODIFICAR LA COLUMNA EN LA QUE APARECEN 
-    int FILA = 5; //MODIFICAR LA FILA EN LA QUE APARECEN 
-    int  cantidad_de_opciones = 4;
-    do
-    {
- 
-        rlutil::setColor(rlutil::COLOR::BLACK);
-        text = "HOLA COMO ESTA";
 
-            //text = lista_de_libros.ele_libros[i].genero;
-            ColorSeleccion(text, Columna, FILA + 0, subir_bajar == 0);
-            ColorSeleccion(text, Columna, FILA + 1, subir_bajar == 1);
-            ColorSeleccion(text, Columna, FILA + 2, subir_bajar == 2);
-            ColorSeleccion(text, Columna, FILA + 3, subir_bajar == 3);
+
+
+        rlutil::locate(65, 5);
+            cout << " (`/\\ " << endl;
+            rlutil::locate(65, 6);
+            cout << " `=\\/\\ __...--~~~~~-._   _.-~~~~~--...__" << endl;
+            rlutil::locate(65, 7);
+            cout << "  `=\\/\\               \\ /               \\\\" << endl;
+            rlutil::locate(65, 8);
+            cout << "   `=\\/                V                 \\\\" << endl;
+            rlutil::locate(65, 9);
+            cout << "    //_\\___--~~~~~~-._  |  _.-~~~~~~--...__\\\\" << endl;
+            rlutil::locate(65, 10);
+            cout << "   //  ) (..----~~~~._\\ | /_.~~~~----.....__\\\\" << endl;
+            rlutil::locate(65, 11);
+            cout << "  ===( FER )==========\\\\|//====================" << endl;
+            rlutil::locate(65, 12);
+            cout << " _____\\___/____________`---`____________________" << endl;
         
-
-        //rlutil::locate(Columna - 2, FILA + 1 + subir_bajar);
-       // cout << (char)175 << endl; //(char)175 estamos casteando interpretando lo que se imprime
-        key = rlutil::getkey(); //Me permite asignar un numero al aplastar una tecla  
-        switch (key)
-        {
-        case 14: //Subir
-        {
-            rlutil::locate(Columna - 2, FILA + 1 + subir_bajar);
-            cout << " " << endl;
-            subir_bajar--;
-            if (subir_bajar < 0)
-            {
-                subir_bajar = 0;
-            }
-            break;
-        }
-        case 15: //bajar 
-        {
-            rlutil::locate(Columna - 2, FILA + 1 + subir_bajar);
-            cout << " " << endl;
-            subir_bajar++;
-            if (subir_bajar > cantidad_de_opciones)
-            {
-                subir_bajar = cantidad_de_opciones;
-            }
-            break;
-        }
-        case 1: // Enter
-        {
-            return subir_bajar;
-           
-        }
-
-        }
-
-
-
-    } while (opcion != 0);
 }
 
-/*********************************************************************************/
+void Dibujar_contorno()
+{
+    // Línea superior
+    for (int i = 4; i < 118; i++)
+    {
+        rlutil::locate(i, 3);
+        cout << (char)205;
+    }
+
+    // Título en el centro
+
+
+    // Líneas verticales izquierda y derecha
+    for (int i = 4; i < 28; i++)
+    {
+        rlutil::locate(3, i);
+        cout << (char)186;
+
+        rlutil::locate(118, i);
+        cout << (char)186;
+    }
+    rlutil::locate(3, 2);
+    letras_biblio();
+    // Línea inferior
+    for (int i = 4; i < 118; i++)
+    {
+        rlutil::locate(i, 28);
+        cout << (char)205;
+    }
+
+    // Nombre en el centro inferior
+    rlutil::locate(50, 28);
+    cout << " FERNANDO HUILCA ";
+}
+
+void Dibujar_contorno_menu_principal()
+{
+    // Línea superior
+    rlutil::locate(39, 10);
+    cout << (char)218;
+    for (int i = 40; i <= 77; i++) // Cambié < por <=
+    {
+        rlutil::locate(i, 10);
+        cout << (char)196;
+    }
+    cout << (char)191;
+    // Líneas verticales izquierda 
+    for (int i = 11; i < 20; i++) // Comencé en 11 en lugar de 10
+    {
+        rlutil::locate(39, i); // Cambié 42 por 40
+        cout << (char)179;
+    }
+    rlutil::locate(39, 20);
+    cout << (char)192;
+    // Lineas verticales derecha
+    for (int i = 11; i < 20; i++)
+    { 
+        rlutil::locate(78, i);
+        cout << (char)179;
+    }
+    rlutil::locate(78, 20);
+    cout << (char)217;
+
+    // Línea inferior
+    for (int i = 40; i <= 77; i++) // Cambié < por <=
+    {
+        rlutil::locate(i, 20);
+        cout << (char)196;
+    }
+}
+
+void letras_biblio()
+{
+    cout << "____    _    ____" << endl;
+    rlutil::locate(3, 3);
+    cout << "| __ )  | |  | __ )  " << endl;
+    rlutil::locate(3, 4);
+    cout << "| _ \\   | |  | _ \\" << endl;
+    rlutil::locate(3, 5);
+    cout << "| |_) | | |  | |_) |" << endl;
+    rlutil::locate(3, 6);
+    cout << "|____/  |_|  |____/" << endl;
+    rlutil::locate(3, 7);
+    cout << "  " << endl;
+
+}
+
 
