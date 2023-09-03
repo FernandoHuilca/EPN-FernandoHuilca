@@ -5,12 +5,13 @@ using namespace std;
 #include <Windows.h>
 #include "Estructura.h"
 #include "cargar_guardar.h"
+#include "presentar_libro.h"
+#include "buscar.h"
 void ColorSeleccion(string text, int posX, int posY, bool selected);
 
 int Menu_principal();
 int Menu_Buscar();
 int Menu_Categoria();
-void dibujo_libro();
 void Dibujar_contorno();
 void Dibujar_contorno_menu_principal();
 void letras_biblio();
@@ -50,12 +51,29 @@ int main()
                     {
                     case 0:
                     {
-                        cout << "Ingresar la primera letra mayÃºscula. Ejm: Cumbres borrascosas" << endl;
+                        bool existente;
+                        int pos; 
+                        system("cls");
+                        Dibujar_contorno();
+                        pos = buscar_nombre(lista_de_libros, existente);
+                        if (!existente)
+                        {
+                            system("cls");
+                            cout << "EROR: El nombre que ingresaste no corresponde a ningun libro de la liblioteca." << endl;
+                        }
+                        else
+                        {
+                            system("cls");
+                            Dibujar_contorno();
+                            presentar_Info_libro(lista_de_libros, pos);
+                            presentar_opciones_libro();
+                            cin >> pos; 
+                        }
                         break;
                     }
                     case 1:
                     {
-                        cout << "Ingresar la primera letra mayÃºscula. Ejm: Gabriel Garcia MarquÃ©s" << endl;
+                        cout << "Ingresar la primera letra mayúscula. Ejm: Gabriel Garcia Marqués" << endl;
                         break;
                     }
                     case 2:
@@ -271,6 +289,7 @@ int Menu_Buscar()
 
 int Menu_Categoria()
 {
+
     system("color 7B");
     int key;
     int subir_bajar = 0;
@@ -281,7 +300,7 @@ int Menu_Categoria()
     while (true)
     {
         rlutil::setColor(rlutil::COLOR::BLACK);
-
+        Dibujar_contorno();
         ColorSeleccion(" Menu Categorias____________", Columna, FILA, subir_bajar == 7);
         ColorSeleccion("|         Comedia          |", Columna, FILA + 1, subir_bajar == 0);
         ColorSeleccion("|         Fantasia         |", Columna, FILA + 2, subir_bajar == 1);
@@ -333,43 +352,21 @@ int Menu_Categoria()
 }
 
 
-void dibujo_libro()
-{
 
-
-
-        rlutil::locate(65, 5);
-            cout << " (`/\\ " << endl;
-            rlutil::locate(65, 6);
-            cout << " `=\\/\\ __...--~~~~~-._   _.-~~~~~--...__" << endl;
-            rlutil::locate(65, 7);
-            cout << "  `=\\/\\               \\ /               \\\\" << endl;
-            rlutil::locate(65, 8);
-            cout << "   `=\\/                V                 \\\\" << endl;
-            rlutil::locate(65, 9);
-            cout << "    //_\\___--~~~~~~-._  |  _.-~~~~~~--...__\\\\" << endl;
-            rlutil::locate(65, 10);
-            cout << "   //  ) (..----~~~~._\\ | /_.~~~~----.....__\\\\" << endl;
-            rlutil::locate(65, 11);
-            cout << "  ===( FER )==========\\\\|//====================" << endl;
-            rlutil::locate(65, 12);
-            cout << " _____\\___/____________`---`____________________" << endl;
-        
-}
 
 void Dibujar_contorno()
 {
-    // LÃ­nea superior
+    // Línea superior
     for (int i = 4; i < 118; i++)
     {
         rlutil::locate(i, 3);
         cout << (char)205;
     }
 
-    // TÃ­tulo en el centro
+    // Título en el centro
 
 
-    // LÃ­neas verticales izquierda y derecha
+    // Líneas verticales izquierda y derecha
     for (int i = 4; i < 28; i++)
     {
         rlutil::locate(3, i);
@@ -380,7 +377,7 @@ void Dibujar_contorno()
     }
     rlutil::locate(3, 2);
     letras_biblio();
-    // LÃ­nea inferior
+    // Línea inferior
     for (int i = 4; i < 118; i++)
     {
         rlutil::locate(i, 28);
@@ -394,19 +391,19 @@ void Dibujar_contorno()
 
 void Dibujar_contorno_menu_principal()
 {
-    // LÃ­nea superior
+    // Línea superior
     rlutil::locate(39, 10);
     cout << (char)218;
-    for (int i = 40; i <= 77; i++) // CambiÃ© < por <=
+    for (int i = 40; i <= 77; i++) // Cambié < por <=
     {
         rlutil::locate(i, 10);
         cout << (char)196;
     }
     cout << (char)191;
-    // LÃ­neas verticales izquierda 
-    for (int i = 11; i < 20; i++) // ComencÃ© en 11 en lugar de 10
+    // Líneas verticales izquierda 
+    for (int i = 11; i < 20; i++) // Comencé en 11 en lugar de 10
     {
-        rlutil::locate(39, i); // CambiÃ© 42 por 40
+        rlutil::locate(39, i); // Cambié 42 por 40
         cout << (char)179;
     }
     rlutil::locate(39, 20);
@@ -420,8 +417,8 @@ void Dibujar_contorno_menu_principal()
     rlutil::locate(78, 20);
     cout << (char)217;
 
-    // LÃ­nea inferior
-    for (int i = 40; i <= 77; i++) // CambiÃ© < por <=
+    // Línea inferior
+    for (int i = 40; i <= 77; i++) // Cambié < por <=
     {
         rlutil::locate(i, 20);
         cout << (char)196;
@@ -430,7 +427,7 @@ void Dibujar_contorno_menu_principal()
 
 void letras_biblio()
 {
-    cout << "____    _    ____" << endl;
+    cout << " ____    _    ____" << endl;
     rlutil::locate(3, 3);
     cout << "| __ )  | |  | __ )  " << endl;
     rlutil::locate(3, 4);
