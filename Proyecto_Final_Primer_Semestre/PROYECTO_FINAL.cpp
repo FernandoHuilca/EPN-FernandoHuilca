@@ -7,6 +7,9 @@ using namespace std;
 #include "cargar_guardar.h"
 #include "presentar_libro.h"
 #include "buscar.h"
+#include "Registros.h"
+
+
 void ColorSeleccion(string text, int posX, int posY, bool selected);
 
 int Menu_principal();
@@ -26,6 +29,8 @@ int main()
     tlistaLibros lista_de_libros;
     bool exito = true;
     cargar(lista_de_libros, exito);
+    Tlista_usuarios lista;
+    int pos_usuario;
 
     if (!exito)
     {
@@ -33,95 +38,104 @@ int main()
     }
     else
     {
-        int opcion, opcion_buscar, opcion_categoria;
-
-        do
+        if (cargar(lista))
         {
+            if (login(lista, pos_usuario))
+            {
+                system("cls");
+                int opcion, opcion_buscar, opcion_categoria;
 
-            
-            opcion = Menu_principal();
-            switch (opcion)
-            {
-            case 0:
-            {
                 do
                 {
-                    opcion_buscar = Menu_Buscar();
-                    switch (opcion_buscar)
+
+
+                    opcion = Menu_principal();
+                    switch (opcion)
                     {
                     case 0:
                     {
-                        bool existente;
-                        int pos; 
-                        system("cls");
-                        Dibujar_contorno();
-                        pos = buscar_nombre(lista_de_libros, existente);
-                        if (!existente)
+                        do
                         {
-                            system("cls");
-                            cout << "EROR: El nombre que ingresaste no corresponde a ningun libro de la liblioteca." << endl;
-                        }
-                        else
-                        {
-                            system("cls");
-                            Dibujar_contorno();
-                            presentar_Info_libro(lista_de_libros, pos);
-                            presentar_opciones_libro();
-                            cin >> pos; 
-                        }
+                            opcion_buscar = Menu_Buscar();
+                            switch (opcion_buscar)
+                            {
+                            case 0:
+                            {
+                                bool existente;
+                                int pos;
+                                system("cls");
+                                Dibujar_contorno();
+                                pos = buscar_nombre(lista_de_libros, existente);
+                                if (!existente)
+                                {
+                                    system("cls");
+                                    cout << "EROR: El nombre que ingresaste no corresponde a ningun libro de la liblioteca." << endl;
+                                }
+                                else
+                                {
+                                    system("cls");
+                                    Dibujar_contorno();
+                                    presentar_Info_libro(lista_de_libros, pos);
+                                    presentar_opciones_libro();
+                                    cin >> pos;
+                                }
+                                break;
+                            }
+                            case 1:
+                            {
+                                cout << "Ingresar la primera letra mayúscula. Ejm: Gabriel Garcia Marqués" << endl;
+                                break;
+                            }
+                            case 2:
+                            {
+                                system("cls");
+                                opcion_categoria = Menu_Categoria();
+                                break;
+                            }
+                            case 3:
+                            {
+                                break;
+                            }
+                            case 4:
+                            {
+                                system("cls");
+                                break;
+                            }
+
+                            }
+                        } while (opcion_buscar != 4);
+
+
+
                         break;
                     }
                     case 1:
                     {
-                        cout << "Ingresar la primera letra mayúscula. Ejm: Gabriel Garcia Marqués" << endl;
+                        int atras;
+                        system("cls");
+                        rlutil::setColor(rlutil::COLOR::BLACK);
+                        Dibujar_contorno();
+                        dibujo_libro();
+                        cin >> atras;
+                        system("cls");
                         break;
                     }
                     case 2:
                     {
-                        system("cls");
-                        opcion_categoria = Menu_Categoria();
                         break;
                     }
                     case 3:
                     {
                         break;
                     }
-                    case 4:
-                    {
-                        system("cls");
-                        break;
-                    }
+
 
                     }
-                } while (opcion_buscar != 4);
-
-
-
-                break;
+                } while (opcion != 4);
             }
-            case 1:
-            {
-                int atras; 
-                system("cls");
-                rlutil::setColor(rlutil::COLOR::BLACK);
-                Dibujar_contorno();
-                dibujo_libro();
-                cin >> atras; 
-                system("cls");
-                break;
-            }
-            case 2:
-            {
-                break;
-            }
-            case 3:
-            {
-                break;
-            }
-
-
-            }
-        } while (opcion != 4);
+        }
+        
+        
     }
 
     
@@ -138,6 +152,7 @@ int main()
 
 int Menu_principal()
 {
+
     system("color 7B"); //Pinta la consola
     int key; //almacenar el valor de cada tecla tecleada xd 
     int subir_bajar = 0; //para controlar la flecha que aplaste y devolver donde esta el cursor 

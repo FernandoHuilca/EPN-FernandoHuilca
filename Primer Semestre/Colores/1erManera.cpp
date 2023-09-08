@@ -9,21 +9,22 @@ using namespace std;
 int main()
 {
     HANDLE hConsole = GetStdHandle( STD_OUTPUT_HANDLE ); 
-    color(hConsole, 55); 
-
+    color(hConsole, 70); 
+    int aux; 
 
     cout << "PROGRAMA QUE IMPRIME COLORES." << endl; 
     cout << "Como culpar al viento por el desorden" << endl; 
     cout << "Si fui yo quien dejo la ventana abierta" << endl;
 
     //Para ver todos los colores que puede imprimir hare un for 
-    for (int i = 1; i < 101; i++)
+    for (int i = 64; i < 80; i++)
     {
             color(hConsole, i); 
 
     cout << "Color del numero: " << i << endl;
     cout << "Como culpar al viento por el desorden" << endl; 
     cout << "Si fui yo quien dejo la ventana abierta" << endl;
+    cin >> aux;
     }
     /*
     1. Azul 
