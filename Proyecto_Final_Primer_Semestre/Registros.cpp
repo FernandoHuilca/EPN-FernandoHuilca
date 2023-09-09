@@ -40,10 +40,24 @@ bool login(Tlista_usuarios& lista, int& pos_usuario)
 {
 	string usuario;
 	string contrasenia;
-	bool acceso = true;
+	bool acceso = true, correcto = false;
 	while (acceso)
 	{
+
 		system("color 7B");
+
+		if (correcto)
+		{
+			system("cls");
+			rlutil::locate(56, 21);
+			rlutil::setColor(rlutil::COLOR::RED);
+			cout << "ERROR: ";
+			rlutil::locate(48, 22);
+			rlutil::setColor(rlutil::COLOR::BLACK);
+			cout << "Intente nuevamente.";
+			rlutil::locate(48, 23);
+			cout << "¿Olvidó su contraseña ? " << endl;
+		}
 
 		rlutil::setColor(rlutil::COLOR::BLACK);
 		Dibujar_contorno_login();
@@ -67,20 +81,13 @@ bool login(Tlista_usuarios& lista, int& pos_usuario)
 				pos_usuario = i;
 				acceso = false;
 			}
+			else
+			{
+				correcto = true;
+			}
+		}
 
-		}
-		if (acceso)
-		{
-			system("cls");
-			rlutil::locate(56, 21);
-			rlutil::setColor(rlutil::COLOR::RED);
-			cout << "ERROR: ";
-			rlutil::locate(48, 22);
-			rlutil::setColor(rlutil::COLOR::WHITE);
-			cout << "Intente nuevamente.";
-			rlutil::locate(48, 23);
-			cout << "¿Olvidó su contraseña ? " << endl;
-		}
+
 
 	}
 

@@ -3,3 +3,4 @@
 #include "rlutil.h"
 
 int buscar_nombre(const tlistaLibros lista, bool& encontrado);
+void buscar_autor(const tlistaLibros lista);

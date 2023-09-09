@@ -15,13 +15,13 @@ void ColorSeleccion(string text, int posX, int posY, bool selected);
 int Menu_principal();
 int Menu_Buscar();
 int Menu_Categoria();
-void Dibujar_contorno();
+void Dibujar_contorno(string& nombre);
 void Dibujar_contorno_menu_principal();
 void letras_biblio();
 
 
 
-
+string Nombre_Del_Usuario;
 
 /**********************************COMIENZO DEL MAIN**************************************************************/
 int main()
@@ -31,6 +31,7 @@ int main()
     cargar(lista_de_libros, exito);
     Tlista_usuarios lista;
     int pos_usuario;
+ 
 
     if (!exito)
     {
@@ -42,13 +43,12 @@ int main()
         {
             if (login(lista, pos_usuario))
             {
+                Nombre_Del_Usuario = " " + lista.elemen_usuarios[pos_usuario].user + " ";
                 system("cls");
                 int opcion, opcion_buscar, opcion_categoria;
 
                 do
                 {
-
-
                     opcion = Menu_principal();
                     switch (opcion)
                     {
@@ -64,17 +64,24 @@ int main()
                                 bool existente;
                                 int pos;
                                 system("cls");
-                                Dibujar_contorno();
+                                Dibujar_contorno(Nombre_Del_Usuario);
                                 pos = buscar_nombre(lista_de_libros, existente);
                                 if (!existente)
                                 {
                                     system("cls");
-                                    cout << "EROR: El nombre que ingresaste no corresponde a ningun libro de la liblioteca." << endl;
+                                    rlutil::locate(25, 14);
+                                    rlutil::setColor(rlutil::COLOR::RED);
+                                    cout << "ERROR: ";
+                                    rlutil::locate(25, 16);
+                                    rlutil::setColor(rlutil::COLOR::BLACK);
+                                    cout << "El nombre que ingresaste no corresponde";
+                                    rlutil::locate(25, 17);
+                                    cout << "a ningun libro de la liblioteca." << endl;
                                 }
                                 else
                                 {
                                     system("cls");
-                                    Dibujar_contorno();
+                                    Dibujar_contorno(Nombre_Del_Usuario);
                                     presentar_Info_libro(lista_de_libros, pos);
                                     presentar_opciones_libro();
                                     cin >> pos;
@@ -83,7 +90,9 @@ int main()
                             }
                             case 1:
                             {
-                                cout << "Ingresar la primera letra mayúscula. Ejm: Gabriel Garcia Marqués" << endl;
+                                system("cls");
+                                Dibujar_contorno(Nombre_Del_Usuario);
+                                buscar_autor(lista_de_libros);
                                 break;
                             }
                             case 2:
@@ -114,7 +123,7 @@ int main()
                         int atras;
                         system("cls");
                         rlutil::setColor(rlutil::COLOR::BLACK);
-                        Dibujar_contorno();
+                        Dibujar_contorno(Nombre_Del_Usuario);
                         dibujo_libro();
                         cin >> atras;
                         system("cls");
@@ -164,7 +173,7 @@ int Menu_principal()
         
         rlutil::setColor(rlutil::COLOR::BLACK); //Le da color a las letras 
 
-        Dibujar_contorno();
+        Dibujar_contorno(Nombre_Del_Usuario);
         Dibujar_contorno_menu_principal();
         ColorSeleccion(" Menu principal____________", Columna, FILA, subir_bajar == 7);
         ColorSeleccion("           BUSCA            ", Columna, FILA +1, subir_bajar == 0);
@@ -243,7 +252,7 @@ void ColorSeleccion(string text, int posX, int posY, bool selected)
 /***************************************************************************************/
 int Menu_Buscar()
 {
-    system("color 7B");
+    //system("color 7B");
     int key;
     int subir_bajar = 0;
     int Columna = 75; //MODIFICAR LA COLUMNA EN LA QUE APARECEN 
@@ -315,7 +324,7 @@ int Menu_Categoria()
     while (true)
     {
         rlutil::setColor(rlutil::COLOR::BLACK);
-        Dibujar_contorno();
+        Dibujar_contorno(Nombre_Del_Usuario);
         ColorSeleccion(" Menu Categorias____________", Columna, FILA, subir_bajar == 7);
         ColorSeleccion("|         Comedia          |", Columna, FILA + 1, subir_bajar == 0);
         ColorSeleccion("|         Fantasia         |", Columna, FILA + 2, subir_bajar == 1);
@@ -369,10 +378,10 @@ int Menu_Categoria()
 
 
 
-void Dibujar_contorno()
+void Dibujar_contorno(string &nombre)
 {
     // Línea superior
-    for (int i = 4; i < 118; i++)
+    for (int i = 24; i < 118; i++)
     {
         rlutil::locate(i, 3);
         cout << (char)205;
@@ -381,15 +390,21 @@ void Dibujar_contorno()
     // Título en el centro
 
 
-    // Líneas verticales izquierda y derecha
-    for (int i = 4; i < 28; i++)
+    // Líneas verticales izquierda 
+    for (int i = 8; i < 28; i++)
     {
         rlutil::locate(3, i);
         cout << (char)186;
 
+    }
+    // Lineas verticales derecha
+    for (int i = 4; i < 28; i++)
+    {
+
         rlutil::locate(118, i);
         cout << (char)186;
     }
+
     rlutil::locate(3, 2);
     letras_biblio();
     // Línea inferior
@@ -401,7 +416,7 @@ void Dibujar_contorno()
 
     // Nombre en el centro inferior
     rlutil::locate(50, 28);
-    cout << " FERNANDO HUILCA ";
+    cout << nombre;
 }
 
 void Dibujar_contorno_menu_principal()
@@ -418,7 +433,7 @@ void Dibujar_contorno_menu_principal()
     // Líneas verticales izquierda 
     for (int i = 11; i < 20; i++) // Comencé en 11 en lugar de 10
     {
-        rlutil::locate(39, i); // Cambié 42 por 40
+        rlutil::locate(39, i); 
         cout << (char)179;
     }
     rlutil::locate(39, 20);
