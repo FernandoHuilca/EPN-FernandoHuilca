@@ -1,15 +1,17 @@
 #include <iostream>
 #include "rlutil.h"
-using namespace std;
+using namespace std;                               
 #include <stdlib.h>
 #include <Windows.h>
 #include "Estructura.h"
 #include "cargar_guardar.h"
-#include "presentar_libro.h"
+#include "presentar_libro.h"                                  
 #include "buscar.h"
 #include "Registros.h"
+#include "share_return_book.h"
 
 
+//Prototipos de funciones
 void ColorSeleccion(string text, int posX, int posY, bool selected);
 
 int Menu_principal();
@@ -27,10 +29,17 @@ string Nombre_Del_Usuario;
 int main()
 {
     tlistaLibros lista_de_libros;
+    tUserslist lista_de_pretamistas; 
     bool exito = true;
+    bool devolvio = true;
+    bool Control_prestamos = true; 
     cargar(lista_de_libros, exito);
     Tlista_usuarios lista;
     int pos_usuario;
+    bool funciona = true;
+    cargar_prestamistas(lista_de_pretamistas, funciona);
+
+    
  
 
     if (!exito)
@@ -41,9 +50,9 @@ int main()
     {
         if (cargar(lista))
         {
-            if (login(lista, pos_usuario))
+            if (true) //login(lista, pos_usuario))
             {
-                Nombre_Del_Usuario = " " + lista.elemen_usuarios[pos_usuario].user + " ";
+                Nombre_Del_Usuario = " " + lista.elemen_usuarios[1].user + " "; //pos_usuario].user + " ";
                 system("cls");
                 int opcion, opcion_buscar, opcion_categoria;
 
@@ -56,6 +65,7 @@ int main()
                     {
                         do
                         {
+                            Dibujar_contorno(Nombre_Del_Usuario);
                             opcion_buscar = Menu_Buscar();
                             switch (opcion_buscar)
                             {
@@ -83,8 +93,30 @@ int main()
                                     system("cls");
                                     Dibujar_contorno(Nombre_Del_Usuario);
                                     presentar_Info_libro(lista_de_libros, pos);
-                                    presentar_opciones_libro();
-                                    cin >> pos;
+                                    switch (presentar_opciones_libro())
+                                    {
+                                    case 0: 
+                                    {
+                                        if (!funciona)
+                                        {
+                                            cout << "ERROR: NO SE PUDO CARGAR LA LISTA DE LIBROS!!" << endl;
+                                        }
+                                        else
+                                        {
+                                            alquilar(lista_de_libros, lista_de_pretamistas,Control_prestamos, pos);
+                                            Guardar_prestados(lista_de_pretamistas);
+                                        }
+                                        break;
+                                    }
+                                    case 1:
+                                    {
+
+
+                                        break;
+                                    }
+                                    default:
+                                        break;
+                                    }
                                 }
                                 break;
                             }
@@ -98,11 +130,15 @@ int main()
                             case 2:
                             {
                                 system("cls");
-                                opcion_categoria = Menu_Categoria();
+                                buscar_por_categoria(lista_de_libros, Menu_Categoria());
+                                
                                 break;
                             }
                             case 3:
                             {
+                                system("cls");
+                                Dibujar_contorno(Nombre_Del_Usuario);
+                                buscar_codigo(lista_de_libros);
                                 break;
                             }
                             case 4:
@@ -243,8 +279,6 @@ void ColorSeleccion(string text, int posX, int posY, bool selected)
         cout << " " << text << endl;
     }
 
-    //rlutil::locate(posX, posY);
-    //cout << text << endl; //Escribimos en pantalla
 
 
 }
@@ -326,11 +360,11 @@ int Menu_Categoria()
         rlutil::setColor(rlutil::COLOR::BLACK);
         Dibujar_contorno(Nombre_Del_Usuario);
         ColorSeleccion(" Menu Categorias____________", Columna, FILA, subir_bajar == 7);
-        ColorSeleccion("|         Comedia          |", Columna, FILA + 1, subir_bajar == 0);
-        ColorSeleccion("|         Fantasia         |", Columna, FILA + 2, subir_bajar == 1);
-        ColorSeleccion("|         Historica        |", Columna, FILA + 3, subir_bajar == 2);
-        ColorSeleccion("|         Suspenso         |", Columna, FILA + 4, subir_bajar == 3);
-        ColorSeleccion("|         Romance          |", Columna, FILA + 5, subir_bajar == 4);
+        ColorSeleccion("|         Ficcion          |", Columna, FILA + 1, subir_bajar == 0);
+        ColorSeleccion("|         Fantasía         |", Columna, FILA + 2, subir_bajar == 1);
+        ColorSeleccion("|         Educacion        |", Columna, FILA + 3, subir_bajar == 2);
+        ColorSeleccion("|         Juvenil          |", Columna, FILA + 4, subir_bajar == 3);
+        ColorSeleccion("|         Clasicos         |", Columna, FILA + 5, subir_bajar == 4);
         ColorSeleccion("|         Volver           |", Columna, FILA + 6, subir_bajar == 5);
         ColorSeleccion(" --------------------------", Columna, FILA + 7, subir_bajar == 6);
 

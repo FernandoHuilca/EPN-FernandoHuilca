@@ -50,12 +50,11 @@ void presentar_Info_libro(tlistaLibros& lista, int pos)
 
 int presentar_opciones_libro()
 {
-    //system("color 7B"); //Pinta la consola
     int key; //almacenar el valor de cada tecla tecleada xd 
     int subir_bajar = 0; //para controlar la flecha que aplaste y devolver donde esta el cursor 
     int Columna = 73; //MODIFICAR LA COLUMNA EN LA QUE APARECEN 
-    int FILA = 17; //MODIFICAR LA FILA EN LA QUE APARECEN 
-    int numero_de_opciones = 4;
+    int FILA = 18; //MODIFICAR LA FILA EN LA QUE APARECEN 
+    int numero_de_opciones = 3;
 
     while (true)
     {
@@ -64,9 +63,8 @@ int presentar_opciones_libro()
         ColorSeleccion_presentar("Menu de opciones____________", Columna, FILA, subir_bajar == 7);
         ColorSeleccion_presentar("           ALQUILAR          ", Columna, FILA + 1, subir_bajar == 0);
         ColorSeleccion_presentar("           DEVOLVER          ", Columna, FILA + 2, subir_bajar == 1);
-        ColorSeleccion_presentar("           NO SE Q +         ", Columna, FILA + 3, subir_bajar == 2);
-        ColorSeleccion_presentar("           SALIR             ", Columna, FILA + 4, subir_bajar == 3);
-        ColorSeleccion_presentar("----------------------------", Columna, FILA + 5, subir_bajar == 4);
+        ColorSeleccion_presentar("           SALIR             ", Columna, FILA + 3, subir_bajar == 2);
+        ColorSeleccion_presentar("----------------------------", Columna, FILA + 4, subir_bajar == 3);
 
         rlutil::locate(Columna - 2, FILA + 1 + subir_bajar);
         cout << (char)175 << endl; //(char)175 estamos casteando interpretando lo que se imprime

@@ -46,11 +46,11 @@ void buscar_autor(const tlistaLibros lista)
             }
 
             rlutil::locate(15+cambioColumna, 13 + contador);
-            rlutil::setColor(rlutil::COLOR::BROWN); 
-            cout << numeracion << ". " <<  lista.ele_libros[i].nombre;
+            rlutil::setColor(rlutil::COLOR::LIGHTMAGENTA);
+            cout << numeracion << ". " << "\"" <<  lista.ele_libros[i].nombre << "\"" << " Código: " << lista.ele_libros[i].codigo;
             if (contador % 11 == 0 )
             {
-                cambioColumna += 30; 
+                cambioColumna += 38; 
                 contador = 1; 
             }
             
@@ -68,35 +68,27 @@ void buscar_autor(const tlistaLibros lista)
 }
 
 
-/*void buscar_codigo(const tlistaLibros lista)
+void buscar_codigo(const tlistaLibros lista)
 {
     string codigo;
     cin.sync();
+    int contador = 0;
     rlutil::locate(30, 10);
-    int contador = 0, cambioColumna = 0, numeracion = 0;
     cout << "Ingrese el codigo del libro que busca: ";
     getline(cin, codigo);
     for (int i = 0; i < lista.contador_libros; i++) {
         if (lista.ele_libros[i].codigo == codigo)
         {
-            numeracion++;
-            contador++;
-            if (contador == 1)
-            {
-                rlutil::locate(15, 13);
-                rlutil::setColor(rlutil::COLOR::BLACK);
-                cout << "Los libros de codigo " << "\"" << codigo << "\"" << " son: ";
-                contador = 2;
-            }
 
-            rlutil::locate(15 + cambioColumna, 13 + contador);
-            rlutil::setColor(rlutil::COLOR::BROWN);
-            cout << numeracion << ". " << lista.ele_libros[i].nombre;
-            if (contador % 11 == 0)
-            {
-                cambioColumna += 30;
-                contador = 1;
-            }
+            rlutil::locate(15, 13);
+            rlutil::setColor(rlutil::COLOR::BLACK);
+            cout << "El libro de codigo " << "\"" << codigo << "\"" << " es: ";
+      
+
+            rlutil::locate(15, 15);
+            rlutil::setColor(rlutil::COLOR::LIGHTMAGENTA);
+            cout << "1. " << "\"" << lista.ele_libros[i].nombre << "\"" << " del escritor: " << lista.ele_libros[i].autor;
+            contador = 1;
 
         }
     }
@@ -107,6 +99,123 @@ void buscar_autor(const tlistaLibros lista)
         cout << "ERROR:";
         rlutil::locate(10, 17);
         rlutil::setColor(rlutil::COLOR::BLACK);
-        cout << "No se encontró ningun libro del autor: " << autor;
+        cout << "No se encontró ningun libro con el código: " << codigo;
     }
-}*/
+}
+
+void buscar_por_categoria(tlistaLibros lista, int num_categoria)
+{
+    switch (num_categoria)
+    {
+    case 0:
+    {
+        int contador = 0;
+        system("cls");
+        rlutil::locate(8, 8);
+        rlutil::setColor(rlutil::COLOR::BLACK);
+        cout << "Los libros de la categoría " << "\"" << "ficción" << "\"" << " son: ";
+        for (int i = 0; i < lista.contador_libros; i++)
+        {
+            if (lista.ele_libros[i].genero == "Ficción")
+            {
+                contador++;
+                rlutil::locate(9, 9+contador);
+                rlutil::setColor(rlutil::COLOR::LIGHTMAGENTA);
+                cout << contador << ". " << "\"" << lista.ele_libros[i].nombre << "\"" << " del escritor: " << lista.ele_libros[i].autor;
+                
+
+            }
+        }
+        break;
+    }
+    case 1:
+    {
+        int contador = 0;
+        system("cls");
+        rlutil::locate(8, 8);
+        rlutil::setColor(rlutil::COLOR::BLACK);
+        cout << "Los libros de la categoría " << "\"" << "fantasía" << "\"" << " son: ";
+        for (int i = 0; i < lista.contador_libros; i++)
+        {
+            if (lista.ele_libros[i].genero == "Fantasía")
+            {
+                contador++;
+                rlutil::locate(9, 9 + contador);
+                rlutil::setColor(rlutil::COLOR::LIGHTMAGENTA);
+                cout << contador << ". " << "\"" << lista.ele_libros[i].nombre << "\"" << " del escritor: " << lista.ele_libros[i].autor;
+
+
+            }
+        }
+        break;
+    }
+    case 2:
+    {
+        int contador = 0;
+        system("cls");
+        rlutil::locate(8, 8);
+        rlutil::setColor(rlutil::COLOR::BLACK);
+        cout << "Los libros de la categoría " << "\"" << "educación" << "\"" << " son: ";
+        for (int i = 0; i < lista.contador_libros; i++)
+        {
+            if (lista.ele_libros[i].genero == "Educación")
+            {
+                contador++;
+                rlutil::locate(9, 9 + contador);
+                rlutil::setColor(rlutil::COLOR::LIGHTMAGENTA);
+                cout << contador << ". " << "\"" << lista.ele_libros[i].nombre << "\"" << " del escritor: " << lista.ele_libros[i].autor;
+
+
+            }
+        }
+        break;
+    }
+    case 3:
+    {
+        int contador = 0;
+        system("cls");
+        rlutil::locate(8, 8);
+        rlutil::setColor(rlutil::COLOR::BLACK);
+        cout << "Los libros de la categoría " << "\"" << "juvenil" << "\"" << " son: ";
+        for (int i = 0; i < lista.contador_libros; i++)
+        {
+            if (lista.ele_libros[i].genero == "Juvenil")
+            {
+                contador++;
+                rlutil::locate(9, 9 + contador);
+                rlutil::setColor(rlutil::COLOR::LIGHTMAGENTA);
+                cout << contador << ". " << "\"" << lista.ele_libros[i].nombre << "\"" << " del escritor: " << lista.ele_libros[i].autor;
+
+
+            }
+        }
+        break;
+    }
+    case 4:
+    {
+        int contador = 0;
+        system("cls");
+        rlutil::locate(8, 8);
+        rlutil::setColor(rlutil::COLOR::BLACK);
+        cout << "Los libros de la categoría " << "\"" << "clásicos" << "\"" << " son: ";
+        for (int i = 0; i < lista.contador_libros; i++)
+        {
+            if (lista.ele_libros[i].genero == "Clásicos")
+            {
+                contador++;
+                rlutil::locate(9, 9 + contador);
+                rlutil::setColor(rlutil::COLOR::LIGHTMAGENTA);
+                cout << contador << ". " << "\"" << lista.ele_libros[i].nombre << "\"" << " del escritor: " << lista.ele_libros[i].autor;
+
+
+            }
+        }
+        break;
+    }
+    default:
+    {
+        rlutil::setColor(rlutil::COLOR::LIGHTMAGENTA);
+    }
+        break;
+    }
+}
