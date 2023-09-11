@@ -9,6 +9,7 @@ using namespace std;
 #include "buscar.h"
 #include "Registros.h"
 #include "share_return_book.h"
+#include "Agregar_libro.h"  
 
 
 //Prototipos de funciones
@@ -20,6 +21,7 @@ int Menu_Categoria();
 void Dibujar_contorno(string& nombre);
 void Dibujar_contorno_menu_principal();
 void letras_biblio();
+int Menu_Enter_Para_salir();
 
 
 
@@ -30,9 +32,11 @@ int main()
 {
     tlistaLibros lista_de_libros;
     tUserslist lista_de_pretamistas; 
+    tLibros EsteLibro;
     bool exito = true;
     bool devolvio = true;
     bool Control_prestamos = true; 
+    bool AgregarLibroOK;
     cargar(lista_de_libros, exito);
     Tlista_usuarios lista;
     int pos_usuario;
@@ -50,9 +54,9 @@ int main()
     {
         if (cargar(lista))
         {
-            if (true) //login(lista, pos_usuario))
+            if (login(lista, pos_usuario))
             {
-                Nombre_Del_Usuario = " " + lista.elemen_usuarios[1].user + " "; //pos_usuario].user + " ";
+                Nombre_Del_Usuario = " " + lista.elemen_usuarios[pos_usuario].user + " ";
                 system("cls");
                 int opcion, opcion_buscar, opcion_categoria;
 
@@ -103,9 +107,29 @@ int main()
                                         }
                                         else
                                         {
+                                            system("cls");
+                                            Dibujar_contorno(Nombre_Del_Usuario);
                                             alquilar(lista_de_libros, lista_de_pretamistas,Control_prestamos, pos);
-                                            Guardar_prestados(lista_de_pretamistas);
+                                            /*if (!Control_prestamos)
+                                            {
+                                                system("cls");
+                                                rlutil::locate(25, 14);
+                                                rlutil::setColor(rlutil::COLOR::RED);
+                                                cout << "ERROR: ";
+                                                rlutil::locate(25, 16);
+                                                rlutil::setColor(rlutil::COLOR::BLACK);
+                                                cout << "El usuario ya ha alquilado un libro.";
+                                                rlutil::locate(25, 17);
+                                                cout << "devuélvalo para poder alquilar otro." << endl;
+                                            }
+                                            else
+                                            {
+                                                Guardar_prestados(lista_de_pretamistas);
+                                            }
+                                            Menu_Enter_Para_salir();*/
+                                            
                                         }
+                                        system("cls");
                                         break;
                                     }
                                     case 1:
@@ -115,6 +139,9 @@ int main()
                                         break;
                                     }
                                     default:
+                                    {
+                                        system("cls");
+                                    }
                                         break;
                                     }
                                 }
@@ -160,8 +187,9 @@ int main()
                         system("cls");
                         rlutil::setColor(rlutil::COLOR::BLACK);
                         Dibujar_contorno(Nombre_Del_Usuario);
-                        dibujo_libro();
-                        cin >> atras;
+                        leer_libro(lista_de_libros, EsteLibro, AgregarLibroOK);
+                        insertar_Insertar(lista_de_libros, EsteLibro, AgregarLibroOK);
+                        Menu_Enter_Para_salir();
                         system("cls");
                         break;
                     }
@@ -505,4 +533,61 @@ void letras_biblio()
 
 }
 
+int Menu_Enter_Para_salir()
+{
+
+    int key;
+    int subir_bajar = 0;
+    int Columna = 88; //MODIFICAR LA COLUMNA EN LA QUE APARECEN 
+    int FILA = 25; //MODIFICAR LA FILA EN LA QUE APARECEN 
+    int  cantidad_de_opciones = 0;
+
+    while (true)
+    {
+        rlutil::setColor(rlutil::COLOR::BLACK);
+        Dibujar_contorno(Nombre_Del_Usuario);
+        ColorSeleccion(" Menu _____________________", Columna, FILA, subir_bajar == 7);
+        ColorSeleccion("         Volver           ", Columna, FILA + 1, subir_bajar == 0);
+        ColorSeleccion(" --------------------------", Columna, FILA + 2, subir_bajar == 6);
+      
+        rlutil::locate(Columna - 2, FILA + 1 + subir_bajar);
+        cout << (char)175 << endl; //(char)175 estamos casteando interpretando lo que se imprime
+
+        key = rlutil::getkey(); //Me permite asignar un numero al aplastar una tecla 
+        switch (key)
+        {
+        case 14: //Subir
+        {
+            rlutil::locate(Columna - 2, FILA + 1 + subir_bajar);
+            cout << " " << endl;
+            subir_bajar--;
+            if (subir_bajar < 0)
+            {
+                subir_bajar = 0;
+            }
+            break;
+        }
+        case 15: //bajar 
+        {
+            rlutil::locate(Columna - 2, FILA + 1 + subir_bajar);
+            cout << " " << endl;
+            subir_bajar++;
+            if (subir_bajar > cantidad_de_opciones)
+            {
+                subir_bajar = cantidad_de_opciones;
+            }
+            break;
+        }
+        case 1: // Enter
+        {
+            return subir_bajar;
+
+        }
+
+        }
+
+
+
+    }
+}
 

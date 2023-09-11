@@ -19,7 +19,7 @@ typedef struct
 }tlistaLibros;
 typedef struct
 {
-    string usuario, cedula, telefono;
+    string usuario, cedula, telefono, libro;
     int anio, mes;
     int dia;
 }tUsuarios;

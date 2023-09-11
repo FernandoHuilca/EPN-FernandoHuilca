@@ -4,7 +4,8 @@
 using namespace std;
 #include <fstream>
 #include "Estructura.h"
-
+#include "presentar_libro.h"
+#include "rlutil.h"
 void alquilar(tlistaLibros& lista, tUserslist& list, bool& control, int& pos);
 // modifica la estrucutura de libros y usuarios
 void devolver(tlistaLibros& lista, tUserslist& list, bool& control);
