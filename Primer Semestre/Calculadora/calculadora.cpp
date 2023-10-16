@@ -14,7 +14,7 @@ int opcion = 1;
 double a, b, resultadodiv; 
 string nombre; 
 
-main ()
+int main ()
 {
    cout << "******* BIENVENIDO A LA POLICALCULADORA *******" << endl; 
    saludo (); 
