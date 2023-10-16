@@ -4,7 +4,7 @@ sabemos como se hace un white
 Sabemos como se hace un if 
 Resolucion de porblemas (no hay un camino específico para cada uno)
 REFINAMIENTO: detallar los datos y el problema 
-EL ALGORITMO.- Secuencia de acciones que ha de realizar el programador para conseguir resolver el problema DINITO
+EL ALGORITMO.- Secuencia de acciones que ha de realizar el programador para conseguir resolver el problema FINITO
 DIAGRAMAS DE FLUJO .- 
 ESTRUCTURA DE ALGORITMOS
 ELEMENTOS DE LOS DIAGRAMAS DE ALGORITMOS estudiar anki

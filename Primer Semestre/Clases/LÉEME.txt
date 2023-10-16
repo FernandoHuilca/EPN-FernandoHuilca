@@ -1,0 +1,2 @@
+Aquí se encuentran anotaciones y código que se desarrollo en las clases donde hubo necesidad de apuntes. De este modo, algunos de los códigos no compilan pues 
+solo los uso como guía y mas no como algo funcional (también porque las clases se acababan antes y me da pereza jeje)

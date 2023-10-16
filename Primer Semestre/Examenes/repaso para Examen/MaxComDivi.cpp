@@ -1,5 +1,5 @@
 // Author Fernando Huilca 
-/*Escribir un programa que lea 3 numeros enteros e imprima en pantalla el maximo comun divisor de ellos*/
+/*Escribir un programa que lea 2 numeros enteros e imprima en pantalla el maximo comun divisor de ellos*/
 #include <iostream> 
 using namespace std;
 
@@ -8,7 +8,7 @@ int main()
     int a, b;
     char opcion;
     char aux;
- 
+
     do
     {
         cout << "Escriba el primer numero " << endl;
