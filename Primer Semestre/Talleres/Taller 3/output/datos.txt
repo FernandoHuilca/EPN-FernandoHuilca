@@ -1,4 +1,0 @@
-50 3600 Calentadorees FEF
-50 7200 Zapatillas Nike
-40 800 Gorras Nike
--1
