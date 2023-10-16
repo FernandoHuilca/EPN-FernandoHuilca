@@ -1,5 +1,7 @@
 #include <iostream>
 using namespace std;
+#include <chrono>
+#include <thread>
 #include <random>
 #include <cstdlib> // Para la función system
 #include <Windows.h>
@@ -7,9 +9,11 @@ using namespace std;
 HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
 
 //Constantes
-const int DIM = 15;
+const int DIM = 6;
 
 //Prototipos 
+// Funcion que realiza una carga en pantalla
+void carga_pantalla();
 //Funcion que devuelve un num aleatorio
 int aleatorios();
 //Funcion que imprime una matriz
@@ -46,6 +50,8 @@ int main()
     int aciertos = 0;
     int NumeroDeTurnos = 0;
     int parar = num_naves(naves);
+    carga_pantalla(); //Muestra la carga en pantalla (imnecesario pero queda bonito)
+    system("cls");
 
     //Permitir al jugador seguir jugando hasta que destruya n naves
     while (aciertos < parar)
@@ -177,4 +183,29 @@ void imprimir_tablero(const int array[DIM][DIM])
         }
         cout << endl;
     }
+}
+void carga_pantalla()
+{
+    cout << "Realizando carga en pantalla..." << endl;
+    int aux = 0; //para usar los colores sin pasarme del 15 (porque si no se pinta el contorno de las letras y no quiero xd)
+    const int numFrames = 30;
+    const int frameDelayMs = 100;
+
+    const char frames[] = { '-', '\\', '|', '/' };
+
+    for (int i = 0; i < numFrames; ++i)
+    {
+        aux++;
+        color(hConsole, aux);
+        if (aux == 15)
+        {
+            aux = 0;
+        }
+        cout << "Cargando " << frames[i % 4] << "\r";
+        cout.flush();
+
+        this_thread::sleep_for(chrono::milliseconds(frameDelayMs));
+    }
+
+    cout << endl << "Carga completada." << endl;
 }
