@@ -23,7 +23,7 @@ int main()
         int horas_trabajadas;
         double precio_hora, sueldo_pagar;
 
-        cin.ignore();
+        cin.ignore(); //Genera un error, hay que aplastar "enter" para que funcione
 
         cout << "Ingrese el nombre del trabajador: " << endl;
         getline(cin, nombre);

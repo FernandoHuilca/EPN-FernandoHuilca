@@ -3,7 +3,7 @@ using namespace std;
 
 int main() {
     int numTerminos;
-    
+
     cout << "Ingresa el numero de términos de la serie de Fibonacci que deseas ver: ";
     cin >> numTerminos;
 
