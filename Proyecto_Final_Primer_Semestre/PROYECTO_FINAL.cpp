@@ -134,7 +134,9 @@ int main()
                                     }
                                     case 1:
                                     {
-
+                                        system("cls");
+                                        Dibujar_contorno(Nombre_Del_Usuario); 
+                                        devolver(lista_de_libros, lista_de_pretamistas); 
 
                                         break;
                                     }
@@ -195,10 +197,25 @@ int main()
                     }
                     case 2:
                     {
+                        int atras;
+                        system("cls");
+                        rlutil::setColor(rlutil::COLOR::BLACK); 
+                        Dibujar_contorno(Nombre_Del_Usuario); 
+                        eliminar(lista_de_libros);
+                        Menu_Enter_Para_salir(); 
+                        system("cls"); 
                         break;
                     }
                     case 3:
                     {
+                        int atras;
+                        system("cls"); 
+                        rlutil::setColor(rlutil::COLOR::BLACK);  
+                        Dibujar_contorno(Nombre_Del_Usuario); 
+                        modificar(lista_de_libros);  
+                        Menu_Enter_Para_salir(); 
+                        system("cls"); 
+
                         break;
                     }
 

@@ -7,3 +7,5 @@ void ColorSeleccionn(string text, int posX, int posY, bool selected);
 int seleccion_categoria();
 void insertar_Insertar(tlistaLibros &lista, tLibros &libro, bool& ok);
 void leer_libro(tlistaLibros& lista, tLibros& libro, bool& ok);
+void eliminar(tlistaLibros& lista);
+void modificar(tlistaLibros& lista);

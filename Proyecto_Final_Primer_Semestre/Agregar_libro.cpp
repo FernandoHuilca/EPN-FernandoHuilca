@@ -170,3 +170,136 @@ void ColorSeleccionn(string text, int posX, int posY, bool selected)
 
 
 }
+
+//Elimina todos los componentes de los elementos de una lista
+void eliminar(tlistaLibros& lista) {
+    string codigo;
+    bool ok = false;
+    int indice;
+    int columna = 11, fila = 10;
+    rlutil::locate(columna, fila); 
+    cout << "Ingrese el codigo del libro que desea eliminar: ";
+    cin >> codigo;
+    for (int i = 0; i < lista.contador_libros; i++) {
+        if (codigo == lista.ele_libros[i].codigo) {
+            ok = true;
+            indice = i;
+        }
+    }
+    if (ok == true) {
+        for (int i = indice; i < lista.contador_libros - 1; i++) {
+            lista.ele_libros[i] = lista.ele_libros[i + 1];
+        }
+        lista.contador_libros--;
+
+        rlutil::locate(columna, fila + 2);
+        cout << "El libro ha sido eliminado..." << endl;
+    }
+    else {
+        rlutil::locate(columna, fila + 2);
+        cout << "El libro ingresado no existe..." << endl;
+    }
+}
+
+//Modifica todos los componenetes excepto el codigo, ya que es unico
+void modificar(tlistaLibros& lista) {
+    string codigo, author, nombre, genero;
+    bool ok = false;
+    int indice, opc, ejemplares;
+    int columna = 11, fila = 10;
+    rlutil::locate(columna, fila);
+    cout << "*** Tenga mucho cuidado al momento de modificar informacion ***" << endl;
+    rlutil::locate(columna, fila+2);
+    cout << "Ingrese el codigo del libro que desea modificar: ";
+    cin >> codigo;
+    for (int i = 0; i < lista.contador_libros; i++) {
+        if (codigo == lista.ele_libros[i].codigo) {
+            ok = true;
+            indice = i;
+        }
+    }
+    if (ok == true) {
+        do {
+            do {
+                rlutil::locate(columna, fila + 4);
+                cout << "|| Desea Modificar ||" << endl;
+                rlutil::locate(columna, fila + 5);
+                cout << "1. Nombre. " << endl;
+                rlutil::locate(columna, fila + 6);
+                cout << "2. Autor. " << endl;
+                rlutil::locate(columna, fila + 7);
+                cout << "3. Genero. " << endl;
+                rlutil::locate(columna, fila + 8);
+                cout << "4. Numero de ejemplares. " << endl;
+                rlutil::locate(columna, fila + 9);
+                cout << "0. Terminar. " << endl;
+                rlutil::locate(columna, fila + 11);
+                cout << "Opcion: ";
+                cin >> opc;
+
+            } while ((opc < 0) || (opc > 4));
+            system("cls");
+
+            switch (opc) {
+            case 0: {
+                //system("cls");
+            }
+                  break;
+            case 1: {
+                //cin.ignore();
+                rlutil::locate(columna, fila);
+                cout << "Ingrese el nuevo nombre: " << endl;
+                cin.ignore();
+                rlutil::locate(columna, fila + 1);
+                getline(cin, nombre);
+                lista.ele_libros[indice].nombre = nombre;
+                system("cls");
+            }
+                  break;
+            case 2: {
+                rlutil::locate(columna, fila);
+                cout << "Ingrese el nuevo autor: " << endl;
+                cin.ignore();
+                rlutil::locate(columna, fila + 1);
+                getline(cin, author);
+                lista.ele_libros[indice].autor = author;
+                system("cls");
+            }
+                  break;
+            case 3: {
+                rlutil::locate(columna, fila);
+                cout << "Ingrese el nuevo genero: " << endl;
+                cin.ignore();
+                rlutil::locate(columna, fila + 1);
+                getline(cin, genero);
+                lista.ele_libros[indice].genero = genero;
+                system("cls");
+            }
+                  break;
+            case 4: {
+                rlutil::locate(columna, fila);
+                cout << "Ingrese el nuevo numero de ejemplares: ";
+                cin >> ejemplares;
+                if (ejemplares >= 0) {
+                    lista.ele_libros[indice].existentes = ejemplares;
+                    //system("cls"); 
+                }
+                else {
+                    rlutil::locate(columna, fila + 2);
+                    cout << "Valor ingresado incorrecto..." << endl;
+                    system("cls");
+                }
+            }
+                  break;
+            }
+        } while (opc != 0);
+    }
+    else {
+        rlutil::locate(columna, fila + 4);
+        cout << "El codigo ingresado no corresponde a ningun libro registrado..." << endl;
+    }
+    
+    
+
+
+}

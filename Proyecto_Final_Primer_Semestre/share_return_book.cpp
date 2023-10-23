@@ -60,6 +60,7 @@ void alquilar(tlistaLibros& lista, tUserslist& list, bool& control, int& pos) {
 
 }
 
+//Funcion para regresar el libro a la biblioteca
 void devolver(tlistaLibros& lista, tUserslist& list) {
     string cedula1, control;
     string codigo;
@@ -102,6 +103,12 @@ void devolver(tlistaLibros& lista, tUserslist& list) {
                     list.user[i] = list.user[i + 1];
                 }
                 list.contador--;
+
+                for (int i = 0; i < lista.contador_libros; i++) {
+                    if (codigo == lista.ele_libros[i].codigo) {
+                        lista.ele_libros[i].prestados--;
+                    }
+                }
                 rlutil::locate(columna, fila + 15);
                 cout << "!!Gracias!!" << endl;
 
