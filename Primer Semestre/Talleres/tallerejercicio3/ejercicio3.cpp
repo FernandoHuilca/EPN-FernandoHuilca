@@ -7,17 +7,9 @@ using namespace std;
 
 int main ()
 {
-    string letra; 
-    ifstream archivoL; 
-    ofstream archivoE; 
-    archivoL.open("texto.txt");
-    if (!archivoL.is_open())
-    { cout << "El archivo no esta abierto" << endl; }
-    else
-    {
-        archivoL >> letra; 
-    }
-    archivoE.open("magia.txt");
-    archivoE << letra; 
+    cout << "░▀▀█░█░█░█▀▀░█▀▀░█▀█░░░█▀▄░█▀▀░█░░░░░█▀█░█░█░█▀█░█▀▄░█▀▀░█▀█░█▀▄░█▀█" << endl;
+    cout << "░░░█░█░█░█▀▀░█░█░█░█░░░█░█░█▀▀░█░░░░░█▀█░█▀█░█░█░█▀▄░█░░░█▀█░█░█░█░█" << endl;
+    cout << "░▀▀░░▀▀▀░▀▀▀░▀▀▀░▀▀▀░░░▀▀░░▀▀▀░▀▀▀░░░▀░▀░▀░▀░▀▀▀░▀░▀░▀▀▀░▀░▀░▀▀░░▀▀▀" << endl;
+
 
 }
