@@ -1,7 +1,5 @@
 public class Estudiante {
-    // características del concepto
-// atributos, field
-// Un estudiante TIENE...
+    //Constantes
     public static final int PROMEDIO_MINIMO = 70;
     public static final int NOTA_MINIMA = 0;
     public static final int NOTA_MAXIMA = 100;
