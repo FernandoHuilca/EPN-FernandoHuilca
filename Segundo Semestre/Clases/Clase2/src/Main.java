@@ -9,33 +9,26 @@ public class Main {
     public static void main(String[] args) {
         //Estudiante dos
         //creo un objeto de la clase Estudiante y lo inicializo
-        Estudiante estudiante1 = new Estudiante(); // estudiante1 ES UN estudiante, estudiante1 ES DE TIPO estudiante
-        //le doy valores a sus atributos
-        estudiante1.setNombre("Jaimito");
-        estudiante1.correo = "jaimito.com";
-        estudiante1.nota1 = -2;
-        estudiante1.nota2 = 90;
-        //Estudiante dos
-        Estudiante estudiante2 = new Estudiante();
-        estudiante2.nombre = "Juanito";
-        estudiante2.correo = "juanito.com";
-        estudiante2.nota1 = 70;
-        estudiante2.nota2 = 90;
-
+        Estudiante estudiante1 = new Estudiante("Jaimito", "jaimito.com", -2, 90); // estudiante1 ES UN estudiante, estudiante1 ES DE TIPO estudiante
+        Estudiante estudiante2 = new Estudiante("Juanito", "juanito.com", 70, 90);
 
         if (estudiante1.tieneNotasDentroDeRango()) {
             estudiante1.calcularPromedio();
             System.out.println(estudiante1.imprimirResultado());
         } else {
-            System.out.println("ERROR: Una de las notas de " + estudiante1.nombre + " esta fuera del rango.");
+            System.out.println("ERROR: Una de las notas de " + estudiante1.getNombre() + " esta fuera del rango.");
         }
 
-        //PARA EL ESTUDIANTE DOS
         if (estudiante2.tieneNotasDentroDeRango()) {
             estudiante2.calcularPromedio();
             System.out.println(estudiante2.imprimirResultado());
         } else {
-            System.out.println("ERROR: Una de las notas de " + estudiante2.nombre + " esta fuera del rango.");
+            System.out.println("ERROR: Una de las notas de " + estudiante2.getNombre() + " esta fuera del rango.");
         }
+
+        Estudiante estudiante3 = estudiante1;
+        System.out.println(estudiante1);
+        System.out.println(estudiante2);
+        System.out.println(estudiante3.getNombre());
     }
 }

@@ -11,6 +11,16 @@ public class Estudiante {
     private double nota2;
     private double promedio;
 
+    //Metodo constructor
+    public Estudiante(String nombre, String correo, double nota1, double nota2) {
+        //Utilizar los metodos setter o inicializar
+        this.nombre = nombre;
+        this.correo = correo;
+        this.nota1 = nota1;
+        this.nota2 = nota2;
+
+    }
+
     // métodos
     public boolean tieneNotasDentroDeRango() {
         return (nota1 >= NOTA_MINIMA && nota1 <= NOTA_MAXIMA) &&
@@ -21,8 +31,7 @@ public class Estudiante {
         promedio = (nota1 + nota2) / 2;
         return promedio;
     }*/
-    public void calcularPromedio()
-    {
+    public void calcularPromedio() {
         promedio = (nota1 + nota2) / 2;
     }
 
@@ -33,6 +42,7 @@ public class Estudiante {
             return "El estudiante " + nombre + " alumno reprueba la asignatura";
         }
     }
+
     //Metodo sett
     public void setNombre(String nombre) {
         this.nombre = nombre;
