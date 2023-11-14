@@ -10,6 +10,7 @@ public class Raton {
     private String color;
 
     //Metodos
+    // Metodo constructor
     public Raton(String marca, int DPI, boolean clic_Derecho, boolean clic_Izquierdo, boolean rueda, String color) {
         this.marca = marca;
         this.DPI = DPI;
