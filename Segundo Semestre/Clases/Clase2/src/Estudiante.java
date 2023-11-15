@@ -32,6 +32,7 @@ public class Estudiante {
         return promedio;
     }*/
     public void calcularPromedio() {
+
         promedio = (nota1 + nota2) / 2;
     }
 
@@ -45,11 +46,13 @@ public class Estudiante {
 
     //Metodo sett
     public void setNombre(String nombre) {
+
         this.nombre = nombre;
     }
     //Metodo gett
 
     public String getNombre() {
+
         return nombre;
     }
 }

@@ -1,0 +1,21 @@
+@startuml
+class Botella{
+- color: String
+- capacidadLitros: double
+- material: Material
+- pesoOnzas: double
+- capacidadMáximaLitros: double
+- capacidadActualLitros: double
+- tapado: bolean
++ llenar(cantidadLitros: double)
++ vaciar()
++ llenar()
++ tapar()
++ destapar()
++ estaTapado()
+
+
+
+
+}
+@enduml
