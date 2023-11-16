@@ -1,0 +1,24 @@
+@startuml
+class Pie {
+  - talla: int
+}
+
+class Zapato {
+  - color: String
+  - marca: String
+  - material: String
+  - atado: boolean
+  - talla: int
+  - estadoDeUso: boolean
+  + ponerZapato()
+  + sacarZapato()
+  + atarCordones()
+  + desatarCordones()
+  + imprimirSiLoEstanOcupando()
+}
+
+
+
+Pie -- Zapato: Usa
+
+@enduml

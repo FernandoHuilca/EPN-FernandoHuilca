@@ -1,0 +1,18 @@
+@startuml
+class Ukelele{
+- marca: String
+- tipoDeUkelele: String
+- trastes: Traste[12]
+- cuerdas: Cuerda[4]
+- clavijas: Clavija[4]
+- notas: Notas[17]
+- notaSonidoProducido: String
++ tocarCuerda(numeroDeCuerda: int, numeroTraste: int)
++ tocarAcorde(
+
+}
+
+class Cuerda{
+}
+
+@enduml

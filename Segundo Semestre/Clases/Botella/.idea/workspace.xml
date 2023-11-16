@@ -4,9 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="89b40e1d-12dc-4009-a30f-4a7634c9f8e2" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../Clase2/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Clase2/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Clase2/src/Estudiante.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Clase2/src/Estudiante.java" afterDir="false" />
+    <list default="true" id="0be744da-84ff-48ca-abc0-4344fb62f6c4" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../Ukelele/Ukelele.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Ukelele/src/Apuntes.Ukelele.excalidraw" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Ukelele/src/Ukelele.puml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Botella.puml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Botella.puml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Botella/Botella.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Botella/Botella.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Raton/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Raton/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,12 +31,9 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
   </component>
   <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 2
+  "associatedIndex": 4
 }]]></component>
-  <component name="ProjectId" id="2YCJTr7bsRymLKjQJf7Z9WAl6AK" />
-  <component name="ProjectLevelVcsManager">
-    <ConfirmationsSetting value="1" id="Add" />
-  </component>
+  <component name="ProjectId" id="2YEqeHkQsas3kUhidFiB2Yye5Vg" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -40,8 +43,10 @@
     "DefaultPlantUmlFileTemplate": "UML Class",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "main",
+    "last_opened_file_path": "C:/Users/Fernando_Huilca/Documents/Git-Fernando_Huilca/EPN-FernandoHuilca/Segundo Semestre/Clases/Raton",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -52,18 +57,19 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
+      <recent name="Botella1" />
       <recent name="Botella" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="89b40e1d-12dc-4009-a30f-4a7634c9f8e2" name="Changes" comment="" />
-      <created>1700023638819</created>
+      <changelist id="0be744da-84ff-48ca-abc0-4344fb62f6c4" name="Changes" comment="" />
+      <created>1700101182382</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1700023638819</updated>
-      <workItem from="1700023640031" duration="1404000" />
+      <updated>1700101182382</updated>
+      <workItem from="1700101183282" duration="9261000" />
     </task>
     <servers />
   </component>
@@ -75,7 +81,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Main.java</url>
-          <line>12</line>
+          <line>43</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>
