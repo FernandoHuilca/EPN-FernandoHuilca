@@ -1,0 +1,16 @@
+@startuml
+class Camiseta{
+- color: String
+- talla: String
+- estadoDeLimpieza: boolean
+- usos: boolean
+- arreglos: int
+- lavados: int
+
++ usar()
++ lavar()
++ arreglar()
++ eliminar()
+}
+
+@enduml

@@ -1,0 +1,10 @@
+@startuml
+class Usuario{
+ - nombre : String
+ - contrasenia : String
+ - publicaciones: Publicaciones
+ - amigos: Amigos
+ - chats: Chat
+}
+
+@enduml

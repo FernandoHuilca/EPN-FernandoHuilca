@@ -40,5 +40,7 @@ public class Main {
         botella.llenarConOtraBotella(botella2);
         botella.imprimirCapacidadActual(); // capacidadActualLitros = 2
         botella2.imprimirCapacidadActual(); // capacidadActualLitros = 1
+
+
     }
 }

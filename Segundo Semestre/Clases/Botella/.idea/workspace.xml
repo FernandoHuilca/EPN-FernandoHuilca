@@ -5,14 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0be744da-84ff-48ca-abc0-4344fb62f6c4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../Ukelele/Ukelele.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Ukelele/src/Apuntes.Ukelele.excalidraw" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Ukelele/src/Ukelele.puml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Camiseta/Camiseta.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Camiseta/src/Camiseta.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Caralibro/Caralibro.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Caralibro/src/DiagramaClases.puml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Botella.puml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Botella.puml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Botella/Botella.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Botella/Botella.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Raton/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Raton/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,15 +23,16 @@
       <list>
         <option value="UML Class" />
         <option value="Class" />
+        <option value="new-sketch" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 4
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4
+}</component>
   <component name="ProjectId" id="2YEqeHkQsas3kUhidFiB2Yye5Vg" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -46,12 +46,13 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/Users/Fernando_Huilca/Documents/Git-Fernando_Huilca/EPN-FernandoHuilca/Segundo Semestre/Clases/Raton",
+    "last_opened_file_path": "C:/Users/Fernando_Huilca/Documents/Git-Fernando_Huilca/EPN-FernandoHuilca/Segundo Semestre/Clases/Botella",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "onboarding.tips.debug.path": "C:/Users/Fernando_Huilca/Documents/Git-Fernando_Huilca/EPN-FernandoHuilca/Segundo Semestre/Clases/Botella/src/Main.java",
+    "settings.editor.selected.configurable": "preferences.lookFeel",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -70,6 +71,10 @@
       <option name="presentableId" value="Default" />
       <updated>1700101182382</updated>
       <workItem from="1700101183282" duration="9261000" />
+      <workItem from="1700161732818" duration="7303000" />
+      <workItem from="1700187343806" duration="3859000" />
+      <workItem from="1700248268608" duration="4295000" />
+      <workItem from="1700351109323" duration="1152000" />
     </task>
     <servers />
   </component>
@@ -81,7 +86,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Main.java</url>
-          <line>43</line>
+          <line>45</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>

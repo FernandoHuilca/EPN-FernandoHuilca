@@ -34,24 +34,21 @@ public class Botella {
         llenarCiertaCantidad(capacidadMáximaLitros);
     }
 
-    /*public void llenarConOtraBotella(Botella otraBotella) {
-        if (otraBotella.estaTapado() || this.estaTapado()) {
-            return;
-        }
-        this.llenarCiertaCantidad(otraBotella.capacidadActualLitros);
-        otraBotella.vaciarPorCompleto(); // solo sale bien porque la otra botella es más grande
-    }*/
     public void llenarConOtraBotella(Botella otraBotella) {
         if (estaTapado() || otraBotella.estaTapado()) {
             return;
         }
         if (DarMasDeLoQueRecibe(otraBotella)) {
-            otraBotella.vaciarCiertaCantidad(capacidadMáximaLitros);
+            otraBotella.vaciarCiertaCantidad(this.espacioLibreEnBotella());
             this.llenarPorCompleto();
         } else {
             this.llenarCiertaCantidad(otraBotella.capacidadActualLitros);
             otraBotella.vaciarPorCompleto();
         }
+    }
+
+    private double espacioLibreEnBotella() {
+        return capacidadMáximaLitros - capacidadActualLitros;
     }
 
     private boolean DarMasDeLoQueRecibe(Botella otraBotella) {
@@ -95,6 +92,7 @@ public class Botella {
     }
 
     public void imprimirCapacidadActual() {
+
         System.out.println(color + ": " + capacidadActualLitros + " litros");
     }
 }
