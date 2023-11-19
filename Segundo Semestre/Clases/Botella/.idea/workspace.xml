@@ -5,13 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0be744da-84ff-48ca-abc0-4344fb62f6c4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../Camiseta/Camiseta.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Camiseta/src/Camiseta.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Caralibro/Caralibro.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Caralibro/src/DiagramaClases.puml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Botella/Botella.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Botella/Botella.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Camiseta2.1/src/Camiseta.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,6 +34,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
     "DefaultPlantUmlFileTemplate": "UML Class",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
@@ -74,7 +69,7 @@
       <workItem from="1700161732818" duration="7303000" />
       <workItem from="1700187343806" duration="3859000" />
       <workItem from="1700248268608" duration="4295000" />
-      <workItem from="1700351109323" duration="1152000" />
+      <workItem from="1700351109323" duration="1424000" />
     </task>
     <servers />
   </component>
