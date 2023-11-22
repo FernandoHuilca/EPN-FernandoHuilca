@@ -1,0 +1,30 @@
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.11.20)  20 NOV 2023 20:02
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**Ejercicio_1T2.qdm.tex
+(./Ejercicio_1T2.qdm.tex
+LaTeX2e <2023-11-01>
+L3 programming layer <2023-11-09>
+
+! LaTeX Error: File `scrartcl.cls' not found.
+
+Type X to quit or <RETURN> to proceed,
+or enter new name. (Default extension: cls)
+
+Enter file name: 
+! Emergency stop.
+<read *> 
+         
+l.10 ^^M
+         
+Here is how much of TeX's memory you used:
+ 32 strings out of 476922
+ 647 string characters out of 5804219
+ 1916189 words of memory out of 5000000
+ 22003 multiletter control sequences out of 15000+600000
+ 558069 words of font info for 36 fonts, out of 8000000 for 9000
+ 14 hyphenation exceptions out of 8191
+ 19i,0n,29p,115b,17s stack positions out of 10000i,1000n,20000p,200000b,200000s
+
+No pages of output.
