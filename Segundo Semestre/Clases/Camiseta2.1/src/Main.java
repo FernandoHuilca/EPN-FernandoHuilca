@@ -19,7 +19,7 @@ public class Main {
 
         System.out.println("CASO DE PRUEBA 2: ");
         //Prueba para verificar que No se puede poner una camiseta daniada, se dania cuando se lava tres veces
-        for (int i = 0; i < 3; i++){
+        for (int i = 0; i < 3; i++) {
             camiseta2.poner();
             camiseta2.imprimirEstadoDeUso(); // SI esta en uso X3
             camiseta2.sacar();
@@ -31,8 +31,8 @@ public class Main {
 
         System.out.println("CASO DE PRUEBA 3: ");
         //Prueba para verificar que NO la puedo usar en caso de arreglarla 5 veces porque se dania definitivamente
-        for (int i = 0; i < 5; i++){
-            for (int j = 0; j < 3; j++){
+        for (int i = 0; i < 5; i++) {
+            for (int j = 0; j < 3; j++) {
                 camiseta3.poner();
                 camiseta3.imprimirEstadoDeUso(); // Si esta en uso X15
                 camiseta3.sacar();

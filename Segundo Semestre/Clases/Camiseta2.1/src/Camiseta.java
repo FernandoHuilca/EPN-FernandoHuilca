@@ -1,13 +1,13 @@
 public class Camiseta {
-
+// la camiseta esta y tiene:
     private String color;
     private String talla;
-    private boolean suciedad;
-    private boolean danio;
-    private boolean estadoDeUso;
+    private boolean suciedad; // TODO: Sucio
+    private boolean danio; // TODO:daniada
+    private boolean estadoDeUso; // TODO:usado
     private int arreglos;
     private int lavados;
-    private boolean danioIrreparable;
+    private boolean danioIrreparable; // TODO:destruida
 
     public Camiseta(String color, String talla) {
         this.color = color;
@@ -21,7 +21,7 @@ public class Camiseta {
     }
 
 
-    public void poner() {
+    public void poner() { //REVISAR
         if (!suciedad && !danio && !danioIrreparable) {
             estadoDeUso = true;
         }
