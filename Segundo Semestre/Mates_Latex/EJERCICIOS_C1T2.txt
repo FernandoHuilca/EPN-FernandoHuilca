@@ -1,0 +1,14 @@
+## Ejercicio 51
+En los ejercicios 48 al 52, determine si cada par de conjuntos es igual
+51. $A=\{x|x^2+x=2\}$,$B=\{1,-2\}$
+
+$$
+\begin{align*}
+x^2 + x &= 2 \\
+x^2 + x - 2 &= 0 \\
+(x + 2)(x - 1) &= 0 \\
+x_1 = -2 \quad& x_2 = 1\\
+\end{align*}
+$$
+$\therefore A=\{1,-2\}$=$B=\{1,-2\}$
+ **Por lo tanto el par de conjuntos son iguales**

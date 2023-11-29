@@ -1,5 +1,7 @@
 public class Camiseta {
-// la camiseta esta y tiene:
+    public static final int MAXIMO_LAVADAS = 3;
+    public static final int MAXIMO_ARREGLOS = 5;
+    // la camiseta esta y tiene:
     private String color;
     private String talla;
     private boolean suciedad; // TODO: Sucio
@@ -47,7 +49,7 @@ public class Camiseta {
         if (suciedad && !estadoDeUso) {
             suciedad = false;
             lavados++;
-            if (lavados == 3) {
+            if (lavados == MAXIMO_LAVADAS) {
                 danio = true;
                 lavados = 0;
             }
@@ -58,7 +60,7 @@ public class Camiseta {
         if (danio && !estadoDeUso){
             danio = false;
             arreglos++;
-            if (arreglos == 5){
+            if (arreglos == MAXIMO_ARREGLOS){
                 danioIrreparable = true;
             }
         }

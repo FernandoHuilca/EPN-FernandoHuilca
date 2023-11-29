@@ -1,0 +1,36 @@
+---
+title: "Ejercicio_C1T4"
+author: "Fernando Huilca"
+toc: true
+toc-title: "Contenido"
+number-sections: true
+highlight-style: pygments
+format: 
+  html:
+    code-fold: true
+    embed-resources: true
+    html-math-method: katex
+  pdf:
+    code-line-numbers: true
+    geometry: 
+        - top = 30mm
+        - left = 30mm
+  docx: default 
+---
+
+# Ejercicio 32 - Lógica y demostraciones
+
+32.  Formule la expresión simbólica en palabras usando:
+
+    p: Hoy es lunes.
+
+    q: Está lloviendo.
+
+    r: Hace calor.
+
+
+p →  q: 
+
+Si **hoy es lunes**, entonces **está lloviendo.**
+
+

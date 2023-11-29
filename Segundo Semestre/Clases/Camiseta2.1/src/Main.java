@@ -21,7 +21,6 @@ public class Main {
         //Prueba para verificar que No se puede poner una camiseta daniada, se dania cuando se lava tres veces
         for (int i = 0; i < 3; i++) {
             camiseta2.poner();
-            camiseta2.imprimirEstadoDeUso(); // SI esta en uso X3
             camiseta2.sacar();
             camiseta2.lavar();
         }
@@ -34,7 +33,6 @@ public class Main {
         for (int i = 0; i < 5; i++) {
             for (int j = 0; j < 3; j++) {
                 camiseta3.poner();
-                camiseta3.imprimirEstadoDeUso(); // Si esta en uso X15
                 camiseta3.sacar();
                 camiseta3.lavar();
             }

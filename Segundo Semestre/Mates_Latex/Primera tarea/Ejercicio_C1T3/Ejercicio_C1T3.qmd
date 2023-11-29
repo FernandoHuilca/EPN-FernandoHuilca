@@ -1,0 +1,32 @@
+---
+title: "Ejercicio_C1T3"
+author: "Fernando Huilca"
+toc: true
+toc-title: "Contenido"
+number-sections: true
+highlight-style: pygments
+format: 
+  html:
+    code-fold: true
+    embed-resources: true
+    html-math-method: katex
+  pdf:
+    code-line-numbers: true
+    geometry: 
+        - top = 30mm
+        - left = 30mm
+  docx: default 
+---
+
+# Ejercicio 20 - Lógica y demostraciones
+1.  Escriba la tabla de verdad de la siguiente proposicion:
+
+    -   $(\neg P \vee \neg Q) \vee P$
+
+
+| $P$ | $Q$ | $\neg P$ |$\neg Q$| $(\neg P \vee \neg Q)$ | $(\neg P \vee \neg Q) \vee P$ |
+|-----|-----|----------|--------|------------------------|-------------------------------|
+| v   | v   | f        |  f     | f                      |  V                            |
+| f   | v   | v        |  f     | v                      |  V                            |
+| v   | f   | f        |  v     | v                      |  V                            |
+| f   | f   | v        |  v     | v                      |  V                            |

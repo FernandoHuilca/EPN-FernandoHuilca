@@ -1,0 +1,41 @@
+\-\--
+
+title: "Ejercicio_C1T2"
+
+author: "Fernando Huilca"
+
+toc: true
+
+toc-title: "Contenido"
+
+number-sections: true
+
+highlight-style: pygments
+
+format:
+
+html:
+
+code-fold: true
+
+embed-resources: true
+
+html-math-method: katex
+
+pdf:
+
+code-line-numbers: true
+
+geometry:
+
+ - top = 30mm
+
+ - left = 30mm
+
+docx: default
+
+\-\--
+
+\# Ejercicios - Reglas de inferencia
+
+27\. Un grupo de 191 estudiantes, de los cuales 10 toman francés, negocios y música; 36 toman francés y negocios; 20 están en francés y música; 18 en negociosy música; 65 en francés; 76 en negocios y 63 toman música
