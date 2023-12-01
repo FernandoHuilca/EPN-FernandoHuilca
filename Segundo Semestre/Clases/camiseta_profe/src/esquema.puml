@@ -1,0 +1,26 @@
+@startuml
+'https://plantuml.com/class-diagram
+class ArmarioA {
+-camisetas: Camiseta[n]
+}
+class ArmarioB {
++guardar:(Camiseta)
++sacar:(Camiseta)
++abrir()
++cerrar()
+}
+
+class Camiseta {
+-{static} NUMERO_MAX_LAVADAS = 3
+-{static} NUMERO_MAX_ARREGLOS = 5
+-sucio: boolean
+-roto: boolean
+-destruida: boolean
+-numeroLavadas: int
+-numeroArreglos: int
++usar()
++lavar()
++arreglar()
+}
+ArmarioB -->"0..n" Camiseta: camisetas
+@enduml

@@ -12,9 +12,9 @@ public class Camiseta {
     private boolean danioIrreparable; // TODO:destruida
 
     public Camiseta(String color, String talla) {
-        this.color = color;
-        this.talla = talla;
-        this.suciedad = false;
+        this.color = color; 
+        this.talla = talla; 
+        this.suciedad = false; 
         this.danio = false;
         this.estadoDeUso = false;
         this.arreglos = 0;
@@ -23,7 +23,7 @@ public class Camiseta {
     }
 
 
-    public void poner() { //REVISAR
+    public void poner() { //TODO: REVISAR
         if (!suciedad && !danio && !danioIrreparable) {
             estadoDeUso = true;
         }
