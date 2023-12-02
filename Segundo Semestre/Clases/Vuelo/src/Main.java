@@ -1,20 +1,22 @@
-// Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
-// then press Enter. You can now see whitespace characters in your code.
+
 public class Main {
     public static void main(String[] args) {
-        //1 Crear el ticket
-        //Fecha para el vuelo
-        //3 Origen del vuelo y destino a llegar
-        // 4. Consultar el numero de asientos libres
-        // 5.
 
-        //Crear un vuelo
-        Vuelo vuelo = new Vuelo("Quito", "Argentina", "11/30/2023",50, 100);
-        Ticket ticket = new Ticket();
+        //Primero, vamos a crear un vuelo
+        Vuelo vuelo1 = new Vuelo("Cathay Pacific", "Quito", "Argentina",
+                "30/11/2023", "14:00h", 50, 100);
 
-        //Crear un ticket
-        // :)
-        //Necesitamos comprar un ticket
-        vuelo.comprarTicketPremium();
+
+        Vuelo vuelo2 = null;
+        System.out.println("*********************** CASO DE PRUEBA 1. Comprar ticket  *************************");
+        //Crear un ticket de vuelo
+        Ticket ticket1 = new Ticket();
+        Ticket ticket2 = new Ticket();
+        ticket1.comprar("Fernando Huilca", 0, vuelo2);
+        ticket1.imprimirTicket();
+        ticket2.comprarEconomica();
+
+        Ticket ticket3 = vuelo1.comprarTicket("Fernando Huilca", 0); //Este metodo devulve un ticket comprado
+        vuelo1.informacionGeneral();
     }
 }

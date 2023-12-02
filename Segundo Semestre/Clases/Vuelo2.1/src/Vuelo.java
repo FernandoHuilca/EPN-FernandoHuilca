@@ -1,13 +1,14 @@
 public class Vuelo {
-    public static final String RESET = "\u001B[0m";
-    public static final String ROJO = "\u001B[31m";
-    public static final String VERDE = "\u001B[32m";
+    private static final String RESET = "\u001B[0m";
+    private static final String ROJO = "\u001B[31m";
+    private static final String VERDE = "\u001B[32m";
+
     private String companiaDelVuelo;
     private String origen;
     private String destino;
-    private String fecha;
-    private String hora;
-    private int asientosTotal;
+    private String fechaDeSalida;
+    private String horaDeSalida;
+    private int asientosTotales;
     private int capacidadAsientosEconomica;
     private int contadorAsientosEconomicaOcupados;
     private int contadorAsientosPremiumOcupados;
@@ -15,72 +16,40 @@ public class Vuelo {
     private Ticket[] ticketsPremium;
     private Ticket[] ticketsEconomica;
 
-    public Vuelo(String companiaDelVuelo, String origen, String destino, String fecha, String hora,
+    public Vuelo(String companiaDelVuelo, String origen, String destino, String fechaDeSalida, String horaDeSalida,
                  int capacidadAsientosPremium, int capacidadAsientosEconomica) {
 
         this.companiaDelVuelo = companiaDelVuelo;
         this.origen = origen;
         this.destino = destino;
-        this.fecha = fecha;
-        this.hora = hora;
+        this.fechaDeSalida = fechaDeSalida;
+        this.horaDeSalida = horaDeSalida;
         this.capacidadAsientosPremium = capacidadAsientosPremium;
         contadorAsientosPremiumOcupados = 0;
         this.capacidadAsientosEconomica = capacidadAsientosEconomica;
         contadorAsientosEconomicaOcupados = 0;
-        this.asientosTotal = capacidadAsientosEconomica + capacidadAsientosPremium;
+        this.asientosTotales = capacidadAsientosEconomica + capacidadAsientosPremium;
         ticketsEconomica = new Ticket[capacidadAsientosEconomica];
         ticketsPremium = new Ticket[capacidadAsientosPremium];
 
     }
 
     public void asientosDisponibles() {
-        System.out.println("Los asientos disponibles totales son: " + (asientosTotal - (contadorAsientosEconomicaOcupados + contadorAsientosPremiumOcupados)));
-        System.out.println("Los asientos Premium disponibles totales son: "+ (capacidadAsientosPremium - contadorAsientosPremiumOcupados));
-        for (int i = 0; i < capacidadAsientosPremium; i++){
-            if (ticketsPremium[i] == null){
-                System.out.print( ROJO + " " + i + "Y " + RESET);
-            }
-            else {
-                System.out.print( VERDE + " " + i + "X " + RESET);
-            }
-            if (i!=0 && i % 10 == 0){
-                System.out.println(" ");
-            }
-        }
-        System.out.println(" ");
-        System.out.println("Los asientos clase Economica disponibles totales son: " + (capacidadAsientosEconomica - contadorAsientosEconomicaOcupados));
-        for (int i = 0; i < capacidadAsientosEconomica; i++){
-            if (ticketsEconomica[i] == null){
-                System.out.print( ROJO + " " + i + "Y " + RESET);
-            }
-            else {
-                System.out.print( VERDE + " " + i + "X " + RESET);
-            }
-            if (i!=0 && i % 10 == 0){
-                System.out.println(" ");
-            }
-        }
-        System.out.println(" ");
+        // Asientos premium
+        mostrarAsientosDisponibles("Premium", ticketsPremium, capacidadAsientosPremium);
+
+        // Asientos de clase económica
+        mostrarAsientosDisponibles("Economica", ticketsEconomica, capacidadAsientosEconomica);
     }
 
-    public void informacion() {
+    public void informacionGeneral() {
         System.out.println("Vuelo de la compania: " + companiaDelVuelo + ".");
-        System.out.println("El vuelo sale desde: " + origen + " hacia: " + destino + ". Con una capacidad de: " + asientosTotal + " pasajeros" );
-        System.out.println("El vuelo sale en el horario: " + fecha + " a las: " + hora + ".");
+        System.out.println("El vuelo sale desde: " + origen + " hacia: " + destino + ". Con una capacidad de: " + asientosTotales + " pasajeros" );
+        System.out.println("El vuelo sale en el horario: " + fechaDeSalida + " a las: " + horaDeSalida + ".");
 
     }
 
-    public String imprimirOrigen() {
-        return origen;
-    }
 
-    public int contadorAsientosPremiumOcupados() {
-        return contadorAsientosPremiumOcupados;
-    }
-
-    public int capacidadAsientosPremium() {
-        return capacidadAsientosPremium;
-    }
 
     public void guardar(Ticket ticket) {
         if (ticket.getTipoDeTicket() == "Premium") {
@@ -94,7 +63,53 @@ public class Vuelo {
 
     }
 
+
+/*********************No interesa***********************************/
+    private void mostrarAsientosDisponibles(String clase, Ticket[] tickets, int capacidad) {
+        System.out.println("Los asientos disponibles de clase " + clase + " son: " + (capacidad - contarAsientosOcupados(tickets)));
+        for (int i = 0; i < capacidad; i++) {
+            if (tickets[i] == null) {
+                System.out.print(ROJO + " " + i + "Y " + RESET);
+            } else {
+                System.out.print(VERDE + " " + i + "X " + RESET);
+            }
+            if (i != 0 && i % 10 == 0) {
+                System.out.println(" ");
+            }
+        }
+        System.out.println(" ");
+    }
+    private int contarAsientosOcupados(Ticket[] tickets) {
+        int contador = 0;
+        for (Ticket ticket : tickets) {
+            if (ticket != null) {
+                contador++;
+            }
+        }
+        return contador;
+
+    }
+
     public Ticket[] getTicketsPremium() {
         return ticketsPremium;
+    }
+    public int contadorAsientosPremiumOcupados() {
+        return contadorAsientosPremiumOcupados;
+    }
+
+    public int capacidadAsientosPremium() {
+        return capacidadAsientosPremium;
+    }
+
+    public int contadorAsientosEconomicaOcupados() {
+        return contadorAsientosEconomicaOcupados;
+    }
+
+    public int capacidadAsientosEconomica() {
+        return capacidadAsientosEconomica;
+    }
+
+    public Ticket[] getTicketsEconomica() {
+        return ticketsEconomica;
     }
 }

@@ -2,12 +2,19 @@ public class Ticket {
     private String pasajeroPropietario;
     private int posicionDelAsiento;
     private boolean comprado = false;
-    private String origen;
     private String tipoDeTicket;
 
 
     public void comprarPremium(String pasajeroPropietario, int posicionDelAsiento, Vuelo vuelo) {
-        if (estanVendidosTodosLosAsientos(vuelo)) {
+        comprarTicket(pasajeroPropietario, posicionDelAsiento, vuelo, "Premium");
+
+    }
+    public void comprarEconomica(String pasajeroPropietario, int posicionDelAsiento, Vuelo vuelo) {
+        comprarTicket(pasajeroPropietario, posicionDelAsiento, vuelo, "Economica");
+    }
+
+    private void comprarTicket(String pasajeroPropietario, int posicionDelAsiento, Vuelo vuelo, String claseDeTicket) {
+        if (estanVendidosTodosLosAsientos(vuelo, claseDeTicket)) {
             System.out.println("Todos los asientos estan vendidos!!");
             return;
         }
@@ -15,16 +22,18 @@ public class Ticket {
             System.out.println("El voleto ya esta vendido a: " + pasajeroPropietario);
             return;
         }
-        if (vuelo.getTicketsPremium()[posicionDelAsiento] == null) {
+        if (laPosicionYaEstaOcupada(posicionDelAsiento, vuelo, tipoDeTicket)) {
             this.pasajeroPropietario = pasajeroPropietario;
             this.posicionDelAsiento = posicionDelAsiento;
-            tipoDeTicket = "Premium";
+            this.tipoDeTicket = claseDeTicket;
             comprado = true;
+            System.out.println("Compra Exitosa!! Disfrute su vuelo estimad@ " + pasajeroPropietario);
         }else {
             System.out.println("No se puede comprar porque el numero de asiento ya esta ocupado!!");
         }
-
     }
+
+
 
 
     /***********Esto no interesa***************************/
@@ -32,8 +41,13 @@ public class Ticket {
         return comprado;
     }
 
-    private static boolean estanVendidosTodosLosAsientos(Vuelo vuelo) {
-        return vuelo.contadorAsientosPremiumOcupados() >= vuelo.capacidadAsientosPremium();
+    private static boolean estanVendidosTodosLosAsientos(Vuelo vuelo, String claseDeTicket) {
+        if (claseDeTicket == "Premium") {
+            return vuelo.contadorAsientosPremiumOcupados() >= vuelo.capacidadAsientosPremium();
+        }
+        else
+            return vuelo.contadorAsientosEconomicaOcupados() >= vuelo.capacidadAsientosEconomica();
+
     }
 
     public String getTipoDeTicket() {
@@ -46,10 +60,21 @@ public class Ticket {
 
     public void informacion() {
         System.out.println("El propietario de este ticket es: " + pasajeroPropietario);
-        System.out.println("XD");
+        //System.out.println("COMPLETAR ESTO XD");
     }
 
     public boolean getComprado() {
         return comprado;
     }
+    private static boolean laPosicionYaEstaOcupada(int posicionDelAsiento, Vuelo vuelo, String tipoDeTicket) {
+
+        if (tipoDeTicket == "Premium") {
+            return vuelo.getTicketsPremium()[posicionDelAsiento] == null;
+        }
+        else
+            return vuelo.getTicketsEconomica()[posicionDelAsiento] == null;
+
+    }
+
+
 }

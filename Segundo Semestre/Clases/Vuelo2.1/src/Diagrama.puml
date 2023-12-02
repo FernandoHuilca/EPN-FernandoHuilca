@@ -4,23 +4,32 @@ class Vuelo{
 - companiaDelVuelo: String
 - origen: String
 - destino: String
-- fecha: String
-- hora: String
-- asientosTotal: int
+- fechaDeSalida: String
+- horaDeSalida: String
+- asientosTotal: int //Totales
 - cantidadDeAsientosPremium: int
 - cantidadDeAsientosEconomica: int
 - ticketsPremium: Ticket[cantidadDeAsientosPremium]
 - ticketsEconomica: Ticket[cantidadDeAsientosEconomica]
++ guardarTicket(ticket: Ticket)
++ asientosDisponibles()
++ informacionGeneral()
 }
 
 class Ticket{
 - pasajero: String
-- precio: double
-- vendido: boolean
-+ comprar()
+- posicion: int
+- comprado: boolean
+- tipoDeTicket
++ comprarPremium()
++ comprarEconomica()
 + devolver()
++ informacion();
 
 }
+
+
+Vuelo --> Ticket
 
 
 @enduml

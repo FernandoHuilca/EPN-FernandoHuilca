@@ -1,24 +1,35 @@
 @startuml
 
-class Ticket {
-- tipoDeTicket: String
-- numeroDeAsiento: int
-- fechaDeVuelo: int //Imprimir no mas
-- pasajero: String
-- origen: String //Imprimir no mas
-- destino: String //Imprimir no mas
-- vendido: boolean
-- cancelado: boolean
-- libre: boolean
-
-
-+ comprarTicket()
-+ cancelarTicket()
-
-}
-
 class Vuelo{
-ticketsClaseEconomica[n]: Ticket //mal escrito
-ticketsClasePremium[n]: Ticket
+- companiaDelVuelo: String
+- origen: String
+- destino: String
+- fechaDeSalida: String
+- horaDeSalida: String
+- asientosTotal: int //Totales
+- cantidadDeAsientosPremium: int
+- cantidadDeAsientosEconomica: int
+- ticketsPremium: Ticket[cantidadDeAsientosPremium]
+- ticketsEconomica: Ticket[cantidadDeAsientosEconomica]
++ guardarTicket(ticket: Ticket)
++ asientosDisponibles()
++ informacionGeneral()
 }
+
+class Ticket{
+- pasajero: String
+- posicion: int
+- comprado: boolean
+- tipoDeTicket
++ comprarPremium()
++ comprarEconomica()
++ devolver()
++ informacion();
+
+}
+
+
+Vuelo --> Ticket
+
+
 @enduml
