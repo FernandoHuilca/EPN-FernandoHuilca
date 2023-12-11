@@ -1,0 +1,30 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class Tarea{
+    - descripción: String
+    - fechaDeVencimiento: String
+    - estado: Estado
+    + toString: String
+}
+class ListaTareas{
+    - titulo: String
+    - contadorTareas
+    + agregarTarea(descripcion: String, fechaDeVencimiento: String, estado: Estado)
+    + imprimirListaTareas()
+    + imprimirListaTareasPendientes()
+    + imprimirListaTareasCompletada()
+    + imprimirListaTareasEnProgreso()
+}
+ListaTareas --> "*" Tarea : -tareas
+
+
+@enduml
+
+
+Diseña una clase Tarea con atributos como descripción, fecha de vencimiento y estado
+(pendiente, completada, en progreso).
+Crea una clase ListaTareas que contenga una lista de tareas.
+Implementa métodos para agregar nuevas tareas, marcar tareas como
+completadas y mostrar la lista de tareas pendientes.
+ */
