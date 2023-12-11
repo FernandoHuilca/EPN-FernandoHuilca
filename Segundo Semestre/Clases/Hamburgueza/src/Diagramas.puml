@@ -1,0 +1,22 @@
+@startuml
+Class Restaurante{
+}
+Restaurante --> "*" Cliente : - Cliente
+class Cliente   {
+ - nombre: String
+}
+Restaurante -> "*" Hamburguesa : - Hamburguesa
+class Hamburguesa{
+}
+Cliente --> Pedido: -Pedido
+class Pedido {
+}
+Pedido --> Hamburguesa: -Hamburguesa
+class Simple {
+ - ingredientes : String[n]
+ -
+}
+Simple -> Hamburguesa
+Explisiva -> Hamburguesa
+Infarto -> Hamburguesa
+@enduml

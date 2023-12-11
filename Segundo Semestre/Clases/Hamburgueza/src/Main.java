@@ -1,5 +1,13 @@
-// Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
-// then press Enter. You can now see whitespace characters in your code.
+/* En un restaurante de comida rapida de haburguesas vende
+solamente tres tipos de hamburguesa (con sus ingredientes y
+su respectivo precio ).
+Simple: carne, tomate, cebolla, queso suizo
+Explisiva: carne, chili picante, queso cheddar
+Infarto: carne, tocino, queso suizo, queso cheddar, cebolla
+Este restaurante tambien tiene un catalogo de sus clientes (con sus nombres).
+ Se desea administrar los pedidos que ellos realizan y calcular el valor a pagar.
+*/
+
 public class Main {
     public static void main(String[] args) {
         // Press Alt+Enter with your caret at the highlighted text to see how
