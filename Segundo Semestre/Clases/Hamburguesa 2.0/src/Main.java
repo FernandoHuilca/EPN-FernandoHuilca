@@ -6,6 +6,10 @@ Este restaurante tambien tiene un catalogo de sus clientes (con sus nombres). Se
 */
 public class Main {
     public static void main(String[] args) {
-
+        System.out.println("\nCaso 1. Crear un restaurante y un cliente_______________________ ");
+        Restaurante McDonalds = new Restaurante("McDonalds");
+        McDonalds.crearPedido(new Cliente("Fernando Huilca"), 0); //Imprime el pedido tambien xd
+        System.out.println("\nCaso 2. Venden Donas?___________________________________________ ");
+        McDonalds.crearPedido(new Cliente("Bad Bunny"),69);
     }
 }
