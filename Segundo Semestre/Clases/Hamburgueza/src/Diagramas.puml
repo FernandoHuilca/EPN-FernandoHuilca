@@ -9,6 +9,7 @@ Restaurante -> "*" Hamburguesa : - Hamburguesa
 class Hamburguesa{
 }
 Cliente --> Pedido: -Pedido
+Restaurante --> "*"Pedido
 class Pedido {
 }
 Pedido --> Hamburguesa: -Hamburguesa

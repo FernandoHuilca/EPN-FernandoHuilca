@@ -1,0 +1,16 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class Restaurante {
+}
+Restaurante --> "*" Cliente
+Cliente --> Pedido
+Pedido --> Hamburguesa
+class Hamburguesa {
+    - tipoDeHamburguesa: String
+}
+Hamburguesa -|> HamburguesaSimple
+Hamburguesa -|> HamburguesaExplosiva
+Hamburguesa -|> HamburguesaInfarto
+Restaurante --> Hamburguesa
+@enduml
