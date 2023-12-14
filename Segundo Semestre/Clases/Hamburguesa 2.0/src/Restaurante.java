@@ -21,7 +21,7 @@ public class Restaurante {
 
     public void crearPedido(Cliente cliente, int numeroTipoDeHamburguesa) {
         if (cliente.nombre() == "Bad Bunny" && numeroTipoDeHamburguesa == 69){
-            System.out.println("\u001B[36m"+"En McDonald's no venden Donas!! :) " + "\u001B[0m");
+            System.out.println("\u001B[36m"+"En McDonald's no venden Donas!! :D " + "\u001B[0m");
             return;
         }
         registroCliente(cliente);
