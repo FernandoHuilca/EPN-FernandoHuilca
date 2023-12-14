@@ -31,4 +31,8 @@ public enum Suscripcion {
     public double getPrecio() {
         return  precio;
     }
+
+    public int numPerfiles() {
+        return numeroMaximoDePerfiles;
+    }
 }

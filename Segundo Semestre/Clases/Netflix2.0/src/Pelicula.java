@@ -7,11 +7,13 @@ public class Pelicula {
     this.genero = genero;
     }
 
-    public String getNombre() {
-        return nombrePeli;
+
+
+    @Override
+    public String toString() {
+        return
+                "\n\tNombrePelicula: " + nombrePeli
+                        + "\n\tGenero: " + genero;
     }
 
-    public String getGenero() {
-        return genero;
-    }
 }

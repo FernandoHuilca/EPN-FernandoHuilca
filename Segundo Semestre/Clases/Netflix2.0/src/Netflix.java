@@ -1,8 +1,10 @@
+import java.util.Arrays;
+
 public class Netflix {
 
     private Cuenta[] cuentas;
     private int contadorDeCuentas;
-    private Pelicula[] peliculas;
+    private static Pelicula[] peliculas; //TODO:preguntar esto a Carlitos God :)
     private int contadorDePeliculas;
     private Serie[] series;
     private int contadorDeSeries;
@@ -14,6 +16,10 @@ public class Netflix {
         contadorDePeliculas = 0;
         series = new Serie[1000];
         contadorDeSeries = 0;
+    }
+
+    public static Pelicula regresarPeli(int numeroDePeli) {
+        return peliculas[numeroDePeli];
     }
 
 
@@ -41,8 +47,7 @@ public class Netflix {
             System.out.println("\u001B[31m" + "ERROR: " + "\u001B[0m" + " Su cuenta no tiene una suscripcion valida para ver pelis o series!!" );
             return;
         }
-        System.out.println("Disfurte de la peli!!!" + "\n\t nombreDeLaPeli: " + peliculas[numeroDePelicula].getNombre()
-                + "\n\t Genero: " + peliculas[numeroDePelicula].getGenero());
+        System.out.println("Disfurte de la peli!!!"  + peliculas[numeroDePelicula]);
     }
 
     public void agregarPelicula(String nombrePeli, String genero) {
@@ -73,4 +78,40 @@ public class Netflix {
         }
         System.out.println("Disfurte de la Serie!!!"  + series[numSerie]);
     }
+
+
+    @Override
+    public String toString() {
+        return "Netflix:" +
+                "\ncuentas = " + contadorDeCuentas + imprimirTodasLasCuentas() +
+                "\n\npeliculas = " + contadorDePeliculas + imprimirTodasLasPeliculas() +
+                "\n\nseries = " + contadorDeSeries + imprimirTodasLasSeries();
+                
+    }
+
+    private String imprimirTodasLasSeries() {
+        StringBuilder result = new StringBuilder();
+        for (int i = 0; i < contadorDeSeries; i++) {
+            result.append("\n\t").append(series[i].toString());
+        }
+        return result.toString();
+    }
+
+    private String imprimirTodasLasPeliculas() {
+        StringBuilder result = new StringBuilder();
+        for (int i = 0; i < contadorDePeliculas; i++) {
+            result.append("\n\t").append(peliculas[i].toString());
+        }
+        return result.toString();
+    }
+
+    private String imprimirTodasLasCuentas() {
+        StringBuilder result = new StringBuilder();
+        for (int i = 0; i < contadorDeCuentas; i++) {
+            result.append("\n\t").append(cuentas[i].toString());
+        }
+        return result.toString();
+    }
+
+
 }

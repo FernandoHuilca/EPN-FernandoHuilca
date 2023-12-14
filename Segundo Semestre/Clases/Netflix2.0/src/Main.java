@@ -4,11 +4,11 @@ import java.sql.SQLOutput;
 public class Main {
     public static void main(String[] args) {
         Animacion logo = new Animacion();
-        logo.presentar();
 
         System.out.println("\n\tCaso 1. Crear Netflix y una cuenta___________________________________________");
         Netflix netflix = new Netflix();
-        Cuenta cuentaFernando = netflix.crearCuenta("Fernando Huilca", "1234", Suscripcion.ESTANDAR, 7.99);
+        logo.presentar();
+        Cuenta cuentaFernando = netflix.crearCuenta("Fernando Huilca", "1234", Suscripcion.PREMIUM, 10.99);
 
 
 
@@ -46,6 +46,21 @@ public class Main {
         System.out.println("\n\tCaso 7. Intentar ver Peli  o serie que no este en el catalogo___________________");
         netflix.reproducirPelicula(cuentaFernando, 1);
         netflix.reproducirSerie(cuentaFernando, 1, 1,8);
+
+
+
+        System.out.println("\n\tCaso 8. Crear un perfil en una cuenta con suscripcion de pago___________________");
+        Perfil perfilFranz = cuentaFernando.crearPerfil("Franz Kafka");
+
+
+
+        System.out.println("\n\tCaso 9. Agregar una Peli a la lista de un perfil valido__________________________");
+        perfilFranz.agregarPeliAList(0);
+        System.out.println(perfilFranz);
+
+
+        System.out.println("\n\tCaso 10. Imprimir Info de Netflix_________________________________________________");
+        System.out.println(netflix);
 
     }
 }

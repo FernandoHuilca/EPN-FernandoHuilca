@@ -2,12 +2,12 @@
 'https://plantuml.com/class-diagram
 
 
-Netflix --> Cuenta
-Netflix --> Pelicula
-Netflix --> Serie
-Cuenta --> Suscripcion
-Suscripcion --> Perfil
-Perfil --> List
+Netflix --> "*" Cuenta
+Netflix --> "*"Pelicula
+Netflix --> "*"Serie
+Cuenta --> "1" Suscripcion
+Cuenta --> "num Depende de la suscripcion"Perfil
+Perfil --> "1" List
 
 class Netflix {
 }
@@ -17,11 +17,13 @@ enum Suscripcion{
     PREMIUM
     SIN_PAGAR
 }
-class Pelicula {
-    - genero: String
+class Pelicula  {
+    - nombre: String []
+    - genero: String []
 }
 class Serie {
     - capitulos : int [n]
+    - temporadas : int [n]
 }
 class List {
     - peliculasPorVer : Pelicula[n]
