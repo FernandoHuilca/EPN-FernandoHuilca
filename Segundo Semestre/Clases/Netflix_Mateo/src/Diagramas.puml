@@ -1,0 +1,43 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+enum subscripción{
+    BASICO
+    ESTANDAR
+    PREMIUM
+    SIN_PAGAR
+}
+class Netflix{
+    +crearCuenta()
+    +eliminarCuenta()
+    +verPelicula()
+    +verSeries()
+}
+class Cuenta{
+    -mail: String
+
+}
+
+class Perfil{
+    -nombre: String[]
+}
+class Catalogo{
+    series = Serie[]
+    película = Película[]
+}
+class Serie{
+    -nombreDeSerie: String
+}
+class Película{
+    -nombreDePelicula: String
+}
+Netflix --> "*" Cuenta
+Cuenta --> Suscripción
+Cuenta -> "*" Perfil
+Netflix --> Catalogo
+Catalogo ---> Película
+Catalogo --> Serie
+Netflix --> Suscripción
+
+
+@enduml

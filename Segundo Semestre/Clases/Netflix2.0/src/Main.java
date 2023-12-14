@@ -1,17 +1,51 @@
-// Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
-// then press Enter. You can now see whitespace characters in your code.
+import java.sql.SQLOutput;
+
+//Author Fernando Huilca
 public class Main {
     public static void main(String[] args) {
-        // Press Alt+Enter with your caret at the highlighted text to see how
-        // IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        Animacion logo = new Animacion();
+        logo.presentar();
 
-        // Press Ctrl+F5 or click the green arrow button in the gutter to run the code.
-        for (int i = 1; i <= 5; i++) {
+        System.out.println("\n\tCaso 1. Crear Netflix y una cuenta___________________________________________");
+        Netflix netflix = new Netflix();
+        Cuenta cuentaFernando = netflix.crearCuenta("Fernando Huilca", "1234", Suscripcion.ESTANDAR, 7.99);
 
-            // Press Alt+F5 to start debugging your code. We have set one breakpoint
-            // for you, but you can always add more by pressing F9.
-            System.out.println("i = " + i);
-        }
+
+
+
+
+        System.out.println("\n\tCaso 2. Crear una cuenta con dinero insuficiente o demas______________________");
+        Cuenta cuentaEdgar = netflix.crearCuenta("Edgar Poe", "1234", Suscripcion.PREMIUM, 7.99);
+        Cuenta cuentaGabriel = netflix.crearCuenta("Gabriel Garcia", "1234", Suscripcion.PREMIUM, 11.99);
+
+
+
+
+        System.out.println("\n\tCaso 3. Agregar una peli a netflix____________________________________________");
+        netflix.agregarPelicula("Interestelar", "Ciencia Ficcion");
+
+
+
+
+        System.out.println("\n\tCaso 4. Agregar una serie a netflix____________________________________________");
+        netflix.agregarSerie("Blue Eyes Samurai", "Anime", 1, 8);
+
+
+
+
+        System.out.println("\n\tCaso 5. Ver pelicula y serie__________________________________________________");
+        netflix.reproducirPelicula(cuentaFernando, 0);
+        netflix.reproducirSerie(cuentaFernando, 0, 1,8);
+
+
+        System.out.println("\n\tCaso 6. Ver pelicula y serie desde una cuenta sin acceso______________________");
+        Cuenta cuentaOscar = netflix.crearCuenta("Oscar Wilde", "1234", Suscripcion.SIN_PAGAR, 0.0);
+        netflix.reproducirPelicula(cuentaOscar, 0);
+        netflix.reproducirSerie(cuentaOscar, 0, 1,8);
+
+        System.out.println("\n\tCaso 7. Intentar ver Peli  o serie que no este en el catalogo___________________");
+        netflix.reproducirPelicula(cuentaFernando, 1);
+        netflix.reproducirSerie(cuentaFernando, 1, 1,8);
+
     }
 }
