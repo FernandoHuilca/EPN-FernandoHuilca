@@ -1,0 +1,18 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class Empresa {
+    + imprimirTurnosDelDia()
+}
+
+class Cliente {
+}
+
+class Turno {
+
+}
+
+Empresa --> "*" Turno
+Turno --> "1" Cliente
+
+@enduml

@@ -14,7 +14,7 @@ public class Main {
 
 
 
-        System.out.println("\n\tCaso 2. Crear una cuenta con dinero insuficiente o demas______________________");
+        System.out.println("\n\tCaso 2. Crear una cuenta con dinero insuficiente o en exceso______________________");
         Cuenta cuentaEdgar = netflix.crearCuenta("Edgar Poe", "1234", Suscripcion.PREMIUM, 7.99);
         Cuenta cuentaGabriel = netflix.crearCuenta("Gabriel Garcia", "1234", Suscripcion.PREMIUM, 11.99);
 
@@ -55,7 +55,9 @@ public class Main {
 
 
         System.out.println("\n\tCaso 9. Agregar una Peli a la lista de un perfil valido__________________________");
-        perfilFranz.agregarPeliAList(0);
+        //perfilFranz.agregarPeliAList(0);
+        perfilFranz.agregarPeliAList(netflix.regresarPeli(0));
+
         System.out.println(perfilFranz);
 
 

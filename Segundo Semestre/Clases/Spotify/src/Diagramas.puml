@@ -1,0 +1,22 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class Spotify{
+}
+
+enum Categorias {
+}
+enum Suscripciones{
+}
+
+Spotify --> Musica
+Spotify --> Login
+Spotify --> Cuentas
+Cuentas --> PlayList
+Spotify --> Podcast
+PlayList --> Musica
+PlayList --> Podcast
+Musica --> Categorias
+Cuentas --> Suscripciones
+
+@enduml

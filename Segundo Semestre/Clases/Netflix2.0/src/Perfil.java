@@ -24,8 +24,8 @@ public class Perfil {
                         + "\n\tList de Series: " + contadorSeriesEnList;
     }
 
-    public void agregarPeliAList(int numeroDePeli) {
-        miListPelis[contadorPeliculasEnList] = Netflix.regresarPeli(numeroDePeli);
+    public void agregarPeliAList(Pelicula pelicula) {
+        miListPelis[contadorPeliculasEnList] = pelicula;
         System.out.println("Pelicula agregada a MiList con EXITO!!" + miListPelis[contadorPeliculasEnList++]);
     }
 }

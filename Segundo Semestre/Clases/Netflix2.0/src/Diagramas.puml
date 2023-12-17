@@ -24,6 +24,7 @@ class Pelicula  {
 class Serie {
     - capitulos : int [n]
     - temporadas : int [n]
+    - genero: String []
 }
 class List {
     - peliculasPorVer : Pelicula[n]

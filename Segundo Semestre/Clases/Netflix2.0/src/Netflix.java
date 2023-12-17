@@ -4,7 +4,7 @@ public class Netflix {
 
     private Cuenta[] cuentas;
     private int contadorDeCuentas;
-    private static Pelicula[] peliculas; //TODO:preguntar esto a Carlitos God :)
+    private Pelicula[] peliculas; //TODO:preguntar esto a Carlitos God :)
     private int contadorDePeliculas;
     private Serie[] series;
     private int contadorDeSeries;
@@ -18,7 +18,8 @@ public class Netflix {
         contadorDeSeries = 0;
     }
 
-    public static Pelicula regresarPeli(int numeroDePeli) {
+    public Pelicula regresarPeli(int numeroDePeli) { //TODO: Aquí ocupo pasar el arreglo
+
         return peliculas[numeroDePeli];
     }
 
@@ -39,15 +40,15 @@ public class Netflix {
             System.out.println("\u001B[31m" + "ERROR:" + "\u001B[0m" + " La cuenta no existe!!");
             return;
         }
-        if (peliculas[numeroDePelicula] == null){
+        if (peliculas[numeroDePelicula] == null) {
             System.out.println("\u001B[31m" + "ERROR:" + "\u001B[0m" + " La peli no esta en el arreglo!!");
             return;
         }
         if (cuenta.tipoDeSuscripcion() == Suscripcion.SIN_PAGAR) {
-            System.out.println("\u001B[31m" + "ERROR: " + "\u001B[0m" + " Su cuenta no tiene una suscripcion valida para ver pelis o series!!" );
+            System.out.println("\u001B[31m" + "ERROR: " + "\u001B[0m" + " Su cuenta no tiene una suscripcion valida para ver pelis o series!!");
             return;
         }
-        System.out.println("Disfurte de la peli!!!"  + peliculas[numeroDePelicula]);
+        System.out.println("Disfurte de la peli!!!" + peliculas[numeroDePelicula]);
     }
 
     public void agregarPelicula(String nombrePeli, String genero) {
@@ -68,15 +69,15 @@ public class Netflix {
             System.out.println("\u001B[31m" + "ERROR:" + "\u001B[0m" + " La cuenta no existe!!");
             return;
         }
-        if (series[numSerie] == null){
+        if (series[numSerie] == null) {
             System.out.println("\u001B[31m" + "ERROR:" + "\u001B[0m" + " La serie no esta en el arreglo!!");
             return;
         }
         if (cuenta.tipoDeSuscripcion() == Suscripcion.SIN_PAGAR) {
-            System.out.println("\u001B[31m" + "ERROR: " + "\u001B[0m" + " Su cuenta no tiene una suscripcion valida para ver pelis o series!!" );
+            System.out.println("\u001B[31m" + "ERROR: " + "\u001B[0m" + " Su cuenta no tiene una suscripcion valida para ver pelis o series!!");
             return;
         }
-        System.out.println("Disfurte de la Serie!!!"  + series[numSerie]);
+        System.out.println("Disfurte de la Serie!!!" + series[numSerie]);
     }
 
 
@@ -86,7 +87,7 @@ public class Netflix {
                 "\ncuentas = " + contadorDeCuentas + imprimirTodasLasCuentas() +
                 "\n\npeliculas = " + contadorDePeliculas + imprimirTodasLasPeliculas() +
                 "\n\nseries = " + contadorDeSeries + imprimirTodasLasSeries();
-                
+
     }
 
     private String imprimirTodasLasSeries() {

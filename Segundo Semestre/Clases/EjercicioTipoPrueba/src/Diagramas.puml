@@ -1,0 +1,24 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class Autolavado {
+}
+enum Lavada {
+        BASICO
+        SUPER
+        BLACK
+}
+Autolavado --> Cliente
+Cliente --> Ticket
+Cliente --> Vehiculo
+Autolavado --> Lavada
+enum Vehiculo {
+        PEQUENIO
+        GRANDE
+}
+
+
+
+
+
+@enduml
