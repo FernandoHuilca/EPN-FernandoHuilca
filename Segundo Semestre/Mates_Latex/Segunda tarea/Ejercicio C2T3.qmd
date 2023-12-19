@@ -1,0 +1,73 @@
+---
+title: "EJERCICIOS C2T3"
+author:
+- Betancourt Alison
+- Angulo Javier
+- Anrango Stalin
+- Huilca Fernando
+- Sarasti Sebastian
+- Simbaña Mateo
+toc: true
+toc-title: "Contenido"
+number-sections: true   
+highlight-style: pygments
+format:
+  html:
+    code-fold: true
+    embed-resources: true
+    html-math-method: katex
+  pdf:
+    code-line-numbers: true
+    geometry: 
+      - top=30mm
+      - left=30mm
+  docx: default
+---
+
+# Ejercicios - Relaciones
+
+## Ejercicio 22
+
+Los ejercicios 19 al 24 se refieren a la relación \( R \) en el conjunto \( \{1, 2, 3, 4, 5\} \) definida por la regla \( (x, y) \in R \) si \( 3 \) divide a \( x - y \).
+
+**22. Encuentre el rango de \( R \).**
+
+Para determinar el rango de \( R \), primero identificamos los pares ordenados que lo componen.
+
+Se tiene que cumplir que:
+
+\
+x - y mod 3 = 0
+\
+
+Se examina para todos los casos del conjunto \( \{1, 2, 3, 4, 5\} \):
+
+\[
+\begin{align*}
+&(1,1): 1 - 1 \mod 3 = 0 \\
+&(1,3): 1 - 3 \mod 3 = 0 \\
+&(1,5): 1 - 5 \mod 3 = 0 \\
+&(2,1): 2 - 1 \mod 3 = 0 \\
+&(2,3): 2 - 3 \mod 3 = 0 \\
+&(2,5): 2 - 5 \mod 3 = 0 \\
+&(3,1): 3 - 1 \mod 3 = 0 \\
+&(3,2): 3 - 2 \mod 3 = 0 \\
+&(3,4): 3 - 4 \mod 3 = 0 \\
+&(3,5): 3 - 5 \mod 3 = 0 \\
+&(4,1): 4 - 1 \mod 3 = 0 \\
+&(4,2): 4 - 2 \mod 3 = 0 \\
+&(4,4): 4 - 4 \mod 3 = 0 \\
+&(4,5): 4 - 5 \mod 3 = 0 \\
+&(5,1): 5 - 1 \mod 3 = 0 \\
+&(5,2): 5 - 2 \mod 3 = 0 \\
+&(5,3): 5 - 3 \mod 3 = 0 \\
+&(5,4): 5 - 4 \mod 3 = 0 \\
+\end{align*}
+\]
+
+Entonces la relación \( R \) es: 
+
+\[ R = \{(1,1), (1,3), (1,5), (2,1), (2,3), (2,5), (3,1), (3,2), (3,4), (3,5), (4,1), (4,2), (4,4), (4,5), (5,1), (5,2), (5,3), (5,4)\} \]
+
+Finalmente, el Rango de \( R \) es: 
+\[ \text{Rango} = \{1, 2, 3, 4, 5\} \]
