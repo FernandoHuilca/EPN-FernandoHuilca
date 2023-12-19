@@ -1,0 +1,64 @@
+---
+title: "EJERCICIOS C2T2"
+author:
+- Betancourt Alison
+- Angulo Javier
+- Anrango Stalin
+- Huilca Fernando
+- Sarasti Sebastian
+- Simbaña Mateo
+toc: true
+toc-title: "Contenido"
+number-sections: true   
+highlight-style: pygments
+format:
+  html:
+    code-fold: true
+    embed-resources: true
+    html-math-method: katex
+  pdf:
+    code-line-numbers: true
+    geometry: 
+      - top=30mm
+      - left=30mm
+  docx: default
+---
+
+# Ejercicios - El lenguaje de las matematicas
+## Ejercicio 21
+
+Responda a los ejercicios 17 al 24 para la sucesión \(v\) definida por 
+$$
+\begin{align*}
+V_n = n! + 2, \quad n \geq 1.
+\end{align*}
+$$
+**21. ¿Es \(v\) creciente?**
+
+Para determinar si la función es creciente, podemos analizar la derivada:
+
+\
+\begin{align*}
+V'_n &= \frac{d}{dn} (n! + 2) \\
+V'_n &= n! \cdot \ln(n)
+\end{align*}
+\
+
+Ahora evaluamos la derivada en \(n = 1\) y \(n = 2\):
+
+\
+\begin{align*}
+V'_1 &= 1! \cdot \ln(1) \\
+V'_1 &= 0 \\
+V'_2 &= 2! \cdot \ln(2)
+\end{align*}
+\
+
+Para \(n = 2\), los valores siempre son positivos; por lo tanto, la función es creciente para \(n \geq 2\).
+
+Esto también se puede comprobar con la gráfica:
+
+![Diagrama de la función \(v_n\)](ejercicio 21 .png)
+
+
+
