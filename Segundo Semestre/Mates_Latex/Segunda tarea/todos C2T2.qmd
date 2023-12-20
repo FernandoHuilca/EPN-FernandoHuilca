@@ -1,0 +1,180 @@
+---
+title: "EJERCICIOS C2T3"
+author:
+- Betancourt Alison
+- Angulo Javier
+- Anrango Stalin
+- Huilca Fernando
+- Sarasti Sebastian
+- Simbaña Mateo
+toc: true
+toc-title: "Contenido"
+number-sections: true   
+highlight-style: pygments
+format:
+  html:
+    code-fold: true
+    embed-resources: true
+    html-math-method: katex
+  pdf:
+    code-line-numbers: true
+    geometry: 
+      - top=30mm
+      - left=30mm
+  docx: default
+---
+
+# EJERCICIO 2
+
+En el siguiente ejercicio,escriba la relación como un conjunto de pares ordenados:
+
+| a   | 3   |
+|-----|-----|
+| b   | 1   |
+| b   | 1   |
+| c   | 1   |
+
+$R={(a,3),(b,1),(b,4),(c,1)}$
+
+# EJERCICIO 10
+
+En los ejercicios 9 al 12 dibuje la digráfica de la relación.
+
+La relación $R=\{(1, 2), (2, 1), (3, 3), (1, 1), (2, 2)\}$ sobre $X =\{1, 2, 3\}$
+
+Digráfica:
+
+![Digrafica](https://imgur.com/a/ws4IQnW)
+
+
+# EJERCICIO 12
+
+Dibuje la diagráfica de la relación.
+La relación \( R \) en \( \{1,2,3,4\} \) está definida por \( (x, y) \in R \) si \( x^2 >= y \).
+Los pares ordenados son:
+
+\begin{center}
+   \( (1,1) \), \( (2,2) \), \( (2,1) \), \( (3,1) \), \( (4,4) \), \( (4,2) \), \( (4,1) \) .  
+     \end{center}
+![Diagráfica](https://imgur.com/at7x2EQ)
+  
+# EJERCICIO 22
+
+Los ejercicios 19 al 24 se refieren a la relación \( R \) en el conjunto \( \{1, 2, 3, 4, 5\} \) definida por la regla \( (x, y) \in R \) si \( 3 \) divide a \( x - y \).
+
+*22. Encuentre el rango de \( R \).*
+
+Para determinar el rango de \( R \), primero identificamos los pares ordenados que lo componen.
+
+Se tiene que cumplir que:
+
+\
+x - y mod 3 = 0
+\
+
+Se examina para todos los casos del conjunto \( \{1, 2, 3, 4, 5\} \):
+
+\[
+\begin{align*}
+&(1,1): 1 - 1 \mod 3 = 0 \\
+&(1,3): 1 - 3 \mod 3 = 0 \\
+&(1,5): 1 - 5 \mod 3 = 0 \\
+&(2,1): 2 - 1 \mod 3 = 0 \\
+&(2,3): 2 - 3 \mod 3 = 0 \\
+&(2,5): 2 - 5 \mod 3 = 0 \\
+&(3,1): 3 - 1 \mod 3 = 0 \\
+&(3,2): 3 - 2 \mod 3 = 0 \\
+&(3,4): 3 - 4 \mod 3 = 0 \\
+&(3,5): 3 - 5 \mod 3 = 0 \\
+&(4,1): 4 - 1 \mod 3 = 0 \\
+&(4,2): 4 - 2 \mod 3 = 0 \\
+&(4,4): 4 - 4 \mod 3 = 0 \\
+&(4,5): 4 - 5 \mod 3 = 0 \\
+&(5,1): 5 - 1 \mod 3 = 0 \\
+&(5,2): 5 - 2 \mod 3 = 0 \\
+&(5,3): 5 - 3 \mod 3 = 0 \\
+&(5,4): 5 - 4 \mod 3 = 0 \\
+\end{align*}
+\]
+
+Entonces la relación \( R \) es: 
+
+\[ R = \{(1,1), (1,3), (1,5), (2,1), (2,3), (2,5), (3,1), (3,2), (3,4), (3,5), (4,1), (4,2), (4,4), (4,5), (5,1), (5,2), (5,3), (5,4)\} \]
+
+Finalmente, el Rango de \( R \) es: 
+\[ \text{Rango} = \{1, 2, 3, 4, 5\} \]
+
+  
+# EJERCICIO 30
+
+30. Determine si la relación definida en el conjunto de enteros positivos es reflexiva, simétrica, antisimétrica, transitiva y/o de un orden parcial.
+
+$(x, y) \in R$ si $x > y$
+
+*Reflexiva*
+
+$\forall a \in \mathbb{Z}^{+}\Rightarrow (x,x) \in R$
+
+$x>x$
+
+Como $x$ no es mayor que sí misma, no es reflexiva.
+
+*Simétrica*
+
+$\forall (x,y) \in R \Leftrightarrow (y,x) \in R$
+
+$x>y$
+
+$=-y>-x$
+
+$=-(y)>-(x)$
+
+$(y,x) \notin R$
+
+No es simétrica.
+
+*Antisimétrica*
+
+$\forall (x,y) \in R \wedge x \neq y \Rightarrow (y,x) \notin R$
+
+$x>y$
+
+$=-y>-x$
+
+$=-(y)>-(x)$
+
+$(y,x) \notin R$, puesto que no son enteros positivos.
+
+Es antisimétrica.
+
+*Transitiva*
+
+$\forall (x,y) \in R \wedge (y,z) \in R \Rightarrow (x,z) \in R$
+
+$(x>y) \wedge (y>z)$
+
+$= x>y>z$
+
+$= x>z$
+
+$(x,z) \in R$
+
+Es transitiva.
+
+Como $R$ no es reflexiva, la relación del conjunto no es de *orden parcial*.
+
+# EJERCICIO 39
+
+*Proporcione ejemplos de relaciones en $A = \{1, 2, 3, 4\}$ que tengan las propiedades especificadas en los ejercicios 39 al 43.*
+
+*-Reflexiva, simétrica, y no transitiva*
+
+Una relación que cumpliría con las tres propiedades sería:
+
+$V= \{(1,1),\ (2,2),\ (3,3),\ (4,4),\ (3,4),\ (4,3)\}$
+
+¿Por qué es reflexiva? V es reflexiva si $(x,x) \in R$ para todo $x \in A$
+
+¿Por qué es simétrica? V es simétrica si $(x,y) \in R$ entonces $(y,x) \in R$
+
+¿Por qué es no transitiva? V no es transtiva porque *NO* cumple con que si $(a,b) \in R$ y $(b,c) \in R$ entonces $(a,c) \in R$

@@ -58,7 +58,7 @@ Para \(n = 2\), los valores siempre son positivos; por lo tanto, la función es 
 
 Esto también se puede comprobar con la gráfica:
 
-![Diagrama de la función \(v_n\)](ejercicio 21 .png)
+![Diagrama de la función v_n](https://imgur.com/uUDPgdt)
 $F
 
 

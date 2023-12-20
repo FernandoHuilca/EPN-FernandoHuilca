@@ -1,0 +1,307 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+%
+\documentclass[
+  letterpaper,
+  DIV=11,
+  numbers=noendperiod]{scrartcl}
+
+\usepackage{amsmath,amssymb}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else  
+    % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\usepackage[top=30mm,left=30mm]{geometry}
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\setcounter{secnumdepth}{5}
+% Make \paragraph and \subparagraph free-standing
+\ifx\paragraph\undefined\else
+  \let\oldparagraph\paragraph
+  \renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+  \let\oldsubparagraph\subparagraph
+  \renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+
+\KOMAoption{captions}{tableheading}
+\makeatletter
+\makeatother
+\makeatletter
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\AtBeginDocument{%
+\ifdefined\contentsname
+  \renewcommand*\contentsname{Table of contents}
+\else
+  \newcommand\contentsname{Table of contents}
+\fi
+\ifdefined\listfigurename
+  \renewcommand*\listfigurename{List of Figures}
+\else
+  \newcommand\listfigurename{List of Figures}
+\fi
+\ifdefined\listtablename
+  \renewcommand*\listtablename{List of Tables}
+\else
+  \newcommand\listtablename{List of Tables}
+\fi
+\ifdefined\figurename
+  \renewcommand*\figurename{Figure}
+\else
+  \newcommand\figurename{Figure}
+\fi
+\ifdefined\tablename
+  \renewcommand*\tablename{Table}
+\else
+  \newcommand\tablename{Table}
+\fi
+}
+\@ifpackageloaded{float}{}{\usepackage{float}}
+\floatstyle{ruled}
+\@ifundefined{c@chapter}{\newfloat{codelisting}{h}{lop}}{\newfloat{codelisting}{h}{lop}[chapter]}
+\floatname{codelisting}{Listing}
+\newcommand*\listoflistings{\listof{codelisting}{List of Listings}}
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\@ifpackageloaded{subcaption}{}{\usepackage{subcaption}}
+\makeatother
+\makeatletter
+\makeatother
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same} % disable monospaced font for URLs
+\hypersetup{
+  pdftitle={EJERCICIOS C2T2},
+  pdfauthor={Betancourt Alison; Angulo Javier; Anrango Stalin; Huilca Fernando; Sarasti Sebastian; Simbaña Mateo},
+  colorlinks=true,
+  linkcolor={blue},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={Blue},
+  pdfcreator={LaTeX via pandoc}}
+
+\title{EJERCICIOS C2T2}
+\author{Betancourt Alison \and Angulo Javier \and Anrango
+Stalin \and Huilca Fernando \and Sarasti Sebastian \and Simbaña Mateo}
+\date{}
+
+\begin{document}
+\maketitle
+\renewcommand*\contentsname{Contenido}
+{
+\hypersetup{linkcolor=}
+\setcounter{tocdepth}{3}
+\tableofcontents
+}
+\hypertarget{ejercicio-1}{%
+\section{EJERCICIO 1}\label{ejercicio-1}}
+
+Encuentre \(S_{1}\),donde \(S\) es una sucesión definida como:
+
+\begin{itemize}
+\tightlist
+\item
+  \(c, d, d, c, d, c\)
+\end{itemize}
+
+R ) c
+
+\hypertarget{ejercicio-7}{%
+\section{EJERCICIO 7}\label{ejercicio-7}}
+
+Dada la fórmula \(t_n = 2n - 1\), encontrar el valor de \(t_{2077}\).
+
+Resolución:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Sustituimos \(n = 2077\) en la fórmula:
+
+  \begin{center}
+    $ t_{2077} = 2 \times 2077 - 1$
+    \end{center}
+\item
+  Calculamos:
+\end{enumerate}
+
+\begin{center}
+  $t_{2077} = 4154 - 1$
+  
+  $t_{2077} = 4153$
+  \end{center}
+
+\hypertarget{ejercicio-10}{%
+\section{EJERCICIO 10}\label{ejercicio-10}}
+
+Responda a los ejercicios 4 al 16 para la sucesión t definida por:
+
+\[t_n= 2n − 1, n ≥ 1\]
+
+Encuentre \[ \prod_{i=1}^{3} t_i = 1*3*5 = 15\].
+
+Para \(i = 1\), \(t_1 = 2(1)-1 = 1\)
+
+Para \(i = 2\), \(t_2 = 2(2)-1 = 3\)
+
+Para \(i = 3\), \(t_3 = 2(3)-1 = 5\)
+
+\hypertarget{ejercicio-21}{%
+\section{EJERCICIO 21}\label{ejercicio-21}}
+
+Responda a los ejercicios 17 al 24 para la sucesión (v) definida por \[
+\begin{align*}
+V_n = n! + 2, \quad n \geq 1.
+\end{align*}
+\] 21. ¿Es (v) creciente?
+
+Para determinar si la función es creciente, podemos analizar la
+derivada:
+
+\hfill\break
+\begin{align*}
+V'_n &= \frac{d}{dn} (n! + 2) \\
+V'_n &= n! \cdot \ln(n)
+\end{align*}\\
+
+Ahora evaluamos la derivada en (n = 1) y (n = 2):
+
+\hfill\break
+\begin{align*}
+V'_1 &= 1! \cdot \ln(1) \\
+V'_1 &= 0 \\
+V'_2 &= 2! \cdot \ln(2)
+\end{align*}\\
+
+Para (n = 2), los valores siempre son positivos; por lo tanto, la
+función es creciente para (n \geq 2).
+
+Esto también se puede comprobar con la gráfica:
+
+\begin{figure}
+
+{\centering \includegraphics{todos C2T2_files/mediabag/uUDPgdt.pdf}
+
+}
+
+\caption{Diagrama de la función v\_n}
+
+\end{figure}
+
+\hypertarget{ejercicio-24}{%
+\section{EJERCICIO 24}\label{ejercicio-24}}
+
+\textbf{Responda a los ejercicios 17 al 24 para la sucesión V definida
+por \(V_{n} = n! + 2, \ n \geq 1\).} ¿Es V no decreciente?
+
+Para poder determinar si es no decreciente, hay que plasmar la sucesión.
+
+\(V_{1} = 1! + 2 \ = 3\)
+
+\(V_{2} = 2! + 2 \ = 4\)
+
+\(V_{3} = 3! + 2 \ = 8\)
+
+\(V_{4} = 4! + 2 \ = 26\)
+
+La sucesión es: 3, 4, 8, 26, \ldots{}
+
+Para determinar si es \emph{no decreciente} se establece:
+
+\{=tex\}
+
+\begin{center}
+$S_{n} \leq S_{n+1}$
+\end{center}
+
+\(¿V_{1} \leq V_{2}? \rightarrow \ VERDADERO\)
+
+\(¿V_{2} \leq V_{3}? \rightarrow \ VERDADERO\)
+
+\(¿V_{3} \leq V_{4}? \rightarrow \ VERDADERO\)
+
+También se puede denotar que los valores de V siempre van aumentando,
+por lo tanto, \emph{V si es NO decreciente}.
+
+\hypertarget{ejercicio-40}{%
+\section{EJERCICIO 40}\label{ejercicio-40}}
+
+\emph{Dada la sucesión definida por:}
+
+\(a_{n} = n^{2} - 3n + 3 , n \geq 1\)
+
+Encuentre \(\displaystyle\sum_{j=3}^{5} a_i\)
+
+\(\displaystyle\sum_{j=3}^{5} a_i = (3^{2}-3(3)+3) +(4^{2}-3(4)+3) + (5^{2}-3(5)+3)\)
+
+\(\displaystyle\sum_{j=3}^{5} a_i = (9-9+3) + (16-12+3)+(25-15+3)\)
+
+\(\displaystyle\sum_{j=3}^{5} a_i = 3 + 7 + 13\)
+
+\(\displaystyle\sum_{j=3}^{5} a_i = 23\)
+
+
+
+\end{document}
