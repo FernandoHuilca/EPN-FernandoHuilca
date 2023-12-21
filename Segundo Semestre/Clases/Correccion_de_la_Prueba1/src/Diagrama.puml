@@ -7,10 +7,13 @@ class Empresa {
 Empresa --> "*" Cliente
 Empresa --> "*" Turno
 Cliente "1"<- Turno
-
-enum Turno {
-    NORMAL
+Turno --> TipoDeTurno
+enum TipoDeTurno {
     URGENTE
+    NORMAL
 }
+
+
+
 
 @enduml
