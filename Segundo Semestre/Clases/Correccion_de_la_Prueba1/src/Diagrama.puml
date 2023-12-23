@@ -8,6 +8,7 @@ Empresa --> "*" Cliente
 Empresa --> "*" Turno
 Cliente "1"<- Turno
 Turno --> TipoDeTurno
+Turno --> Fecha
 enum TipoDeTurno {
     URGENTE
     NORMAL

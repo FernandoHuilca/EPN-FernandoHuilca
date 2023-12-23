@@ -1,4 +1,4 @@
-public class Camiseta {
+public class Camiseta extends PrendaDeVestir{
     private static final int NUMERO_MAX_LAVADAS = 3;
     private static final int NUMERO_MAX_ARREGLOS = 5;
     private boolean sucio;
@@ -7,6 +7,7 @@ public class Camiseta {
     private int numeroLavadas;
     private int numeroArreglos;
     public Camiseta() {
+        super();
         sucio = false;
         roto = false;
         destruido = false;

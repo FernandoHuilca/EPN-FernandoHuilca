@@ -18,23 +18,17 @@ public class Main {
         armario.guardar(camiseta); //no se puede, la camiseta está sucia o en mal estado
         armario.cerar();
         armario.abrir();
-        Camiseta camiseta3 = armario.sacar(1);
-        Camiseta camiseta2 = armario.sacar(camiseta);
+        //Camiseta camiseta3 = armario.sacar(1);
 
 
+        System.out.println("\n\t\u001B[34m Caso 1. Crear prenda y guardar una prenda en armario_______________\u001B[0m");
+        //PrendaDeVestir prendaDeVestir = new PrendaDeVestir("rojo");
+        armario.guardar(camiseta);
 
 
 
 
     }
-
-
-
-
-
-
-
-
 
 
 
