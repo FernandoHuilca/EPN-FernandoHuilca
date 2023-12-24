@@ -1,3 +1,5 @@
+import java.time.LocalDate;
+
 public class Supermercado {
     private Cliente[] clientes;
     private int contadorClientes;
@@ -7,6 +9,8 @@ public class Supermercado {
     private int contadorProductoDeVentas;
     private Ganacia[] ganacias;
     private int contadorDeGanancias;
+    private Empleado[] empleados;
+    private int contadorDeEmpleados;
 
 
     //CONSTRUCTOR:
@@ -19,6 +23,8 @@ public class Supermercado {
         contadorProductoDeVentas = 0;
         ganacias = new Ganacia[1000];
         contadorDeGanancias = 0;
+        empleados = new Empleado[100];
+        contadorDeEmpleados = 0;
     }
 
 
@@ -49,7 +55,7 @@ public class Supermercado {
 
     public void registrarProductoDeVenta(ProductoDeVenta producto) {
         productoDeVentas[contadorVentas++] = producto;
-        System.out.println("Producto: " + producto.getNombre() + " registrado con exito!!");
+        System.out.println("Producto: " + producto.getNombre() + " registrado con éxito!!");
     }
 
     public void imprimirGananciasTotales() {
@@ -58,5 +64,26 @@ public class Supermercado {
             GananciasTotales += ganacias[i].getDinero();
         }
         System.out.println("Las ganancias Totales del Supermercado son: $" + GananciasTotales);
+    }
+
+    public void imprimirGananciasDelDia(LocalDate fechaParaImprimir) {
+        double GananciasTotales = 0;
+        System.out.println("Las ganancias de la fecha: " + fechaParaImprimir + " son:" );
+        for (int i = 0; i < contadorDeGanancias; i++){
+            if (ganacias[i].getFecha().equals(fechaParaImprimir)){
+                System.out.println("\n\t $" + ganacias[i].getDinero());
+                GananciasTotales += ganacias[i].getDinero();
+            }
+        }
+        System.out.println("\nTotal = $" + GananciasTotales);
+    }
+
+    public void registrarEmpleado(Empleado empleado) {
+        empleados[contadorDeEmpleados++] = empleado;
+        System.out.println("Empleado: " + empleado.getNombre() + " registrado con éxito!!");
+    }
+
+    public void calcularCuantoHayQuePagar(Empleado empleado) {
+        System.out.println("YA ME DIO PEREZA, PAGALE NO MAS LO QUE QUIERAS 🥱");
     }
 }

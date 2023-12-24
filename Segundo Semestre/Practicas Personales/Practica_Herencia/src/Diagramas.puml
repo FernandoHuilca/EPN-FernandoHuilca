@@ -9,7 +9,7 @@ Electrodomestico --|> ProductoDeVenta
 Bebida --|> ProductoDeVenta
 Alimento --|> ProductoDeVenta
 Ropa --|> ProductoDeVenta
-Vino --|> Bebida
+Licor --|> Bebida
 Leche --|> Bebida
 
 

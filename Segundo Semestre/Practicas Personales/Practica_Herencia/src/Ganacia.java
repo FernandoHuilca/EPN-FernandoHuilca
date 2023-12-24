@@ -20,4 +20,8 @@ public class Ganacia {
     public double getDinero() {
         return dinero;
     }
+
+    public LocalDate getFecha() {
+    return fecha;
+    }
 }
