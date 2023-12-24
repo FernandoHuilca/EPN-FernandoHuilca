@@ -1,0 +1,12 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class WhatsApp {
+}
+
+WhatsApp -->"*" Usuario
+Usuario --> Amigo
+Usuario --> "*" Chat
+Chat -> "1" Amigo
+Mensajes <- "*" Chat
+@enduml
