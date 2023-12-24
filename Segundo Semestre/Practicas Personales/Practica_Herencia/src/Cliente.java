@@ -12,4 +12,8 @@ public class Cliente {
     public String getNombre() {
         return nombreCliente;
     }
+
+    public String getCelular() {
+    return celular;
+    }
 }

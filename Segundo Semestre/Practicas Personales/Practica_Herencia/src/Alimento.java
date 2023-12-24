@@ -1,5 +1,5 @@
 public class Alimento extends ProductoDeVenta {
-    public Alimento(double precio) {
-        super(precio);
+    public Alimento(double precio, String nombre) {
+        super(precio,nombre);
     }
 }

@@ -1,16 +1,30 @@
 //Author: Fernando Huilca
+import java.time.LocalDate;
 public class Main {
     public static void main(String[] args) {
 
         Supermercado comisariato = new Supermercado();
 
 
-        System.out.println("\n\t\u001B[34m Caso 1. Registrar a un cliente_____________________________________________\u001B[0m");
+        System.out.println("\n\t\u001B[34m Caso 1. Registrar a un par de clientes_____________________________________________\u001B[0m");
         comisariato.registrarCliente(new Cliente("Fernando Huilca", "0987654321", "1755534532"));
+        Cliente cliente1 = new Cliente("Carlos Anchundia", "0987654321", "1789456123");
+        comisariato.registrarCliente(cliente1);
 
-        comisariato.venderProducto(0,0, 0, 23.50);
+
+        System.out.println("\n\t\u001B[34m Caso 2. Registrar un producto a la lista de productos para vender__________________\u001B[0m");
+        Lampara lampara = new Lampara("5LCF05B",19.99, "West Point Home", "Lámpara Led");
+        comisariato.registrarProductoDeVenta(lampara);
 
 
+
+        System.out.println("\n\t\u001B[34m Caso 3. Vender un producto a un cliente e imprimir Factura__________________________\u001B[0m");
+        comisariato.venderProducto(0,0, 19.99);
+        comisariato.venderProducto(1,0, 19.99);
+
+
+        System.out.println("\n\t\u001B[34m Caso 4. Imprimir Ganancias Totales del Supermercado__________________________\u001B[0m");
+        comisariato.imprimirGananciasTotales();
 
 
     }
