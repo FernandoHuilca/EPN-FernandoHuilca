@@ -1,0 +1,40 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class Supermercado {
+}
+
+Lampara --|> Electrodomestico
+Electrodomestico --|> ProductoDeVenta
+Bebida --|> ProductoDeVenta
+Alimento --|> ProductoDeVenta
+Ropa --|> ProductoDeVenta
+Vino --|> Bebida
+Leche --|> Bebida
+
+
+Supermercado -> ProductoDeVenta
+Supermercado --> Empleado
+Supermercado --> Ventas
+Cajero --|> Empleado
+Guardia --|> Empleado
+Supermercado --> Cliente
+Supermercado --> Baño
+Baño --> TipoBaño
+Supermercado --> Ganancias
+Ganancias --> Fecha
+Cliente --> Historial
+Historial --> Factura
+Empleado --> Salario
+
+class Ganancias {
+
+}
+
+enum TipoBaño {
+    HOMBRE
+    MUJER
+    OTRE
+}
+
+@enduml

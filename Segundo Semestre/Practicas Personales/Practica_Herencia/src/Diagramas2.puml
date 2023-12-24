@@ -1,0 +1,79 @@
+@startuml
+
+class Supermercado {
+}
+
+class Electrodomestico {
+}
+
+class ProductoDeVenta {
+}
+
+class Bebida {
+}
+
+class Alimento {
+}
+
+class Ropa {
+}
+
+class Vino {
+}
+
+class Leche {
+}
+
+class Empleado {
+}
+
+class Cajero {
+}
+
+class Guardia {
+}
+
+class Cliente {
+}
+
+class Parqueadero {
+}
+
+class Ganancias {
+}
+
+class Fecha {
+}
+
+class Historial {
+}
+
+class Factura {
+}
+
+enum TipoParqueadero {
+    NORMAL,
+    DISCAPACIDAD
+}
+
+Supermercado -- ProductoDeVenta
+Supermercado -- Empleado
+Cajero --|> Empleado
+Guardia --|> Empleado
+Supermercado -- Cliente
+Supermercado -- Parqueadero
+Parqueadero --> TipoParqueadero
+Supermercado -- Ganancias
+Ganancias -- Fecha
+Cliente -- Historial
+Historial -- Factura
+Empleado -- Salario
+
+Electrodomestico --|> ProductoDeVenta
+Bebida --|> ProductoDeVenta
+Alimento --|> ProductoDeVenta
+Ropa --|> ProductoDeVenta
+Vino --|> Bebida
+Leche --|> Bebida
+
+@enduml

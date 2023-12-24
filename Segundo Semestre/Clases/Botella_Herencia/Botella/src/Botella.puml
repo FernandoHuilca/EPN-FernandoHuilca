@@ -1,0 +1,35 @@
+
+@startuml
+class Botella {
+    '-color: String
+
+    '-material: Material
+    -pesoOnzas: double
+    -tapado: boolean
+    +Botella(color, capacidadMáximaLitros, material, pesoOnzas)
+    +llenar(cantidadLitros: double)
+    +destapar()
+    -estáTapado(): boolean
+    -seRebasaCapacidad(cantidadALlenar): boolean
+}
+
+BotellaTérmica --|> Botella
+
+Botella -u-|> Recipiente
+
+class Material
+
+class Recipiente{
+    -capacidadMáximaLitros: double
+    -capacidadActualLitros: double
+
+    +vaciar()
+    +tapar()
+}
+
+
+Recipiente --> Material: "-material"
+Recipiente --> String: "-color"
+
+Zapato --> Pie
+@enduml
