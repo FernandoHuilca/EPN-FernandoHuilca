@@ -15,7 +15,7 @@ Leche --|> Bebida
 
 Supermercado -> ProductoDeVenta
 Supermercado --> Empleado
-Supermercado --> Ventas
+Supermercado --> Venta
 Cajero --|> Empleado
 Guardia --|> Empleado
 Supermercado --> Cliente

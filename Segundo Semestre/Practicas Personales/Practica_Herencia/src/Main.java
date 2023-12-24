@@ -8,7 +8,7 @@ public class Main {
         System.out.println("\n\t\u001B[34m Caso 1. Registrar a un cliente_____________________________________________\u001B[0m");
         comisariato.registrarCliente(new Cliente("Fernando Huilca", "0987654321", "1755534532"));
 
-        comisariato.venderProducto(0,0, 23.50);
+        comisariato.venderProducto(0,0, 0, 23.50);
 
 
 

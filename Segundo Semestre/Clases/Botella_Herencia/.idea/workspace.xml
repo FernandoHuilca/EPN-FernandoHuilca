@@ -5,9 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0be744da-84ff-48ca-abc0-4344fb62f6c4" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../../Practicas Personales/Practica_Herencia/src/Lampara.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Practicas Personales/Practica_Herencia/src/Venta.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Camiseta2.1/src/Camiseta.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Camiseta2.1/src/Camiseta.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Camiseta2.1/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Camiseta2.1/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Botella/src/Botella.java" beforeDir="false" afterPath="$PROJECT_DIR$/Botella/src/Botella.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Practicas Personales/Practica_Herencia/src/Alimento.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Practicas Personales/Practica_Herencia/src/Alimento.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Practicas Personales/Practica_Herencia/src/Diagramas.puml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Practicas Personales/Practica_Herencia/src/Diagramas.puml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Practicas Personales/Practica_Herencia/src/Electrodomestico.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Practicas Personales/Practica_Herencia/src/Electrodomestico.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Practicas Personales/Practica_Herencia/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Practicas Personales/Practica_Herencia/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Practicas Personales/Practica_Herencia/src/ProductoDeVenta.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Practicas Personales/Practica_Herencia/src/ProductoDeVenta.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Practicas Personales/Practica_Herencia/src/Ropa.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Practicas Personales/Practica_Herencia/src/Ropa.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Practicas Personales/Practica_Herencia/src/Supermercado.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Practicas Personales/Practica_Herencia/src/Supermercado.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,7 +52,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/Users/Fernando_Huilca/Documents/Git-Fernando_Huilca/EPN-FernandoHuilca/Segundo Semestre/Clases/Camiseta2.1",
+    "last_opened_file_path": "C:/Users/Fernando_Huilca/Documents/Git-Fernando_Huilca/EPN-FernandoHuilca/Segundo Semestre/Clases/Botella_Herencia",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -74,6 +83,7 @@
       <workItem from="1700351109323" duration="1424000" />
       <workItem from="1701198732088" duration="1198000" />
       <workItem from="1701282351532" duration="205000" />
+      <workItem from="1703388175926" duration="1946000" />
     </task>
     <servers />
   </component>
