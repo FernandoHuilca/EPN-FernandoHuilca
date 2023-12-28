@@ -5,8 +5,14 @@ class WhatsApp {
 }
 
 WhatsApp -->"*" Usuario
-Usuario --> Amigo
+Usuario --> "*"Amigo
 Usuario --> "*" Chat
 Chat -> "1" Amigo
-Mensajes <- "*" Chat
+Mensaje <- "*" Chat
+Mensaje --> TipoDeMensaje
+enum TipoDeMensaje{
+    ENVIADO
+    RECIBIDO
+    LEIDO
+}
 @enduml
