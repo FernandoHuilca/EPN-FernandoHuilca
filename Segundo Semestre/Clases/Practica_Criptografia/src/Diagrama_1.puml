@@ -1,0 +1,11 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class Mensaje {
+}
+class AlgoritmoCifrado {
+}
+class MensajeCifrado {
+}
+
+@enduml

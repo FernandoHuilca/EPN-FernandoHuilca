@@ -8,7 +8,7 @@ WhatsApp -->"*" Usuario
 Usuario --> "*"Amigo
 Usuario --> "*" Chat
 Chat -> "1" Amigo
-Mensaje <- "*" Chat
+Chat --> "*" Mensaje
 Mensaje --> TipoDeMensaje
 Usuario --> ListaDeAmigosPendientes
 Usuario --> ListaSolicitudesDeAmistad
