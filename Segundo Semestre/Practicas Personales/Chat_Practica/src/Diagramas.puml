@@ -10,9 +10,17 @@ Usuario --> "*" Chat
 Chat -> "1" Amigo
 Mensaje <- "*" Chat
 Mensaje --> TipoDeMensaje
+Usuario --> ListaDeAmigosPendientes
+Usuario --> ListaSolicitudesDeAmistad
 enum TipoDeMensaje{
     ENVIADO
     RECIBIDO
     LEIDO
 }
+
+class Usuario {
+    nombre: String
+}
+
+
 @enduml
