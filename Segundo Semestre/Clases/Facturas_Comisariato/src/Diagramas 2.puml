@@ -1,0 +1,28 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class Supermercado {
+}
+
+class Cliente {
+}
+
+Supermercado --> "1...*" Factura
+
+Supermercado --> "1...*" ProductoDeVenta
+
+ProductoSinIVA --u|> ProductoDeVenta
+ProductoConIVA --u|> ProductoDeVenta
+Cliente --> "1...*"CarritoCompras
+CarritoCompras -> "1...*" ItemCarrito
+ItemCarrito -> ProductoDeVenta
+Factura -> "1" Cliente
+
+abstract class ProductoDeVenta{
+    - nombre: String
+    - precioDeVenta: double
+
+}
+
+
+@enduml
