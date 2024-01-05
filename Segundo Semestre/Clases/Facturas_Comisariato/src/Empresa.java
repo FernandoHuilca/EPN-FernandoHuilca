@@ -3,6 +3,7 @@ public class Empresa {
     private ProductoDeVenta[] productoDeVentas;
     private int contadorDeFacturas;
 
+
     public Empresa() {
         facturas = new Factura[1000];
         productoDeVentas = new ProductoDeVenta[1000];
