@@ -1,10 +1,10 @@
 
 public class CarritoCompras {
-    private Item[] items;
+    private ItemCarrito[] productosEnCarrito;
     private int contadorItems;
 
     public CarritoCompras() {
-        items = new Item[1000];
+        productosEnCarrito = new ItemCarrito[1000];
         contadorItems = 0;
     }
 
@@ -14,13 +14,12 @@ public class CarritoCompras {
                 item.aumentarCantidad(cantidadDelProducto);
                 return;
             }
-        }*/ //TODO: Hacer que esto funcione
-
-        items[contadorItems++] = new Item(productoDeVenta, cantidadDelProducto);
+        }*/
+        productosEnCarrito[contadorItems++] = new ItemCarrito(productoDeVenta, cantidadDelProducto);
     }
 
-    public Item[] getItems() {
-        return items;
+    public ItemCarrito[] itemEnCarrito() {
+        return productosEnCarrito;
     }
 
     public int getContadorItems() {

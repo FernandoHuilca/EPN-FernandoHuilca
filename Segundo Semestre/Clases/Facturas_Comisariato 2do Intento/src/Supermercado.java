@@ -10,7 +10,7 @@ public class Supermercado {
 
         //Inicializo algunos productos, pero esto lo puedo hacer mejor desde un archivo de texto ir leyéndolo
         productoDeVentas[1] = new ProductoConIVA("Televisión 4k Amazon", 5, 168.99);
-        productoDeVentas[2] = new ProductoSinIVA(" 30 tabletas Paracetamol 500 mg", 50, 1.09);
+        productoDeVentas[2] = new ProductoSinIVA("Paracetamol 500 mg", 50, 1.09);
     }
 
     public ProductoDeVenta productoDeVenta(int numProductoDeVenta) {

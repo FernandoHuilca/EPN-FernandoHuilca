@@ -17,7 +17,7 @@ Cliente --> "1...*"CarritoCompras
 CarritoCompras -> "1...*" ItemCarrito
 ItemCarrito -> ProductoDeVenta
 Factura -> "1" Cliente
-Factura -> "1" ItemCarrito
+
 Cliente <|-- ClienteManaba
 
 abstract class ProductoDeVenta{

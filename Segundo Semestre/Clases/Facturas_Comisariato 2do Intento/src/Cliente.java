@@ -12,15 +12,11 @@ public class Cliente {
         carritoCompras.agregarProducto(productoDeVenta, cantidadDelProducto);
     }
 
-    public String getNombre() {
-        return nombre;
-    }
-
-
-
     public CarritoCompras devolverCarritoDeCompras() {
     return carritoCompras;
     }
 
-
+    public String getNombre() {
+        return nombre;
+    }
 }

@@ -14,15 +14,12 @@ Supermercado --> "1...*" ProductoDeVenta
 ProductoSinIVA --u|> ProductoDeVenta
 ProductoConIVA --u|> ProductoDeVenta
 Cliente --> "1...*"CarritoCompras
-CarritoCompras -> "1...*" ItemCarrito
-ItemCarrito -> ProductoDeVenta
+CarritoCompras -> "1...*" ProductoDeVenta
 Factura -> "1" Cliente
-Factura -> "1" ItemCarrito
-Cliente <|-- ClienteManaba
 
 abstract class ProductoDeVenta{
     - nombre: String
-    - precioDeVenta: double
+    - precio: double
 
 }
 
