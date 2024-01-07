@@ -1,0 +1,39 @@
+---
+title: "EJERCICIOS C3T1"
+author:
+- Betancourt Alison
+- Angulo Javier
+- Anrango Stalin
+- Huilca Fernando
+- Sarasti Sebastian
+- Simbaña Mateo
+toc: true
+toc-title: "Contenido"
+number-sections: true   
+highlight-style: pygments
+format:
+  html:
+    code-fold: true
+    embed-resources: true
+    html-math-method: katex
+  pdf:
+    code-line-numbers: true
+    geometry: 
+      - top=30mm
+      - left=30mm
+  docx: default
+---
+
+## Ejercicio 6
+
+El sistema Braille para representar caracteres fue desarrollado a
+principios del siglo IX por Louis Braille. Los caracteres especiales
+para el invidente consisten en puntos en relieve. Las posiciones
+para los puntos se seleccionan en dos columnas verticales de tres puntos
+cada una. Debe haber al menos un punto en relieve. ¿Cuántos
+caracteres distintos de Braille puede haber?
+$$
+\begin{align*}
+Caracteres Distintos = 3* 3 = 9.
+\end{align*}
+$$

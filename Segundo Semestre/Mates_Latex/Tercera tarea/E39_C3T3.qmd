@@ -1,0 +1,69 @@
+---
+title: "EJERCICIOS C3T3"
+author:
+- Betancourt Alison
+- Angulo Javier
+- Anrango Stalin
+- Huilca Fernando
+- Sarasti Sebastian
+- Simbaña Mateo
+toc: true
+toc-title: "Contenido"
+number-sections: true   
+highlight-style: pygments
+format:
+  html:
+    code-fold: true
+    embed-resources: true
+    html-math-method: katex
+  pdf:
+    code-line-numbers: true
+    geometry: 
+      - top=30mm
+      - left=30mm
+  docx: default
+---
+
+## Ejercicio 39
+
+Los ejercicios 35 al 40 se refieren a una bolsa que contiene 20 pelotas:
+6 rojas, 6 verdes y 8 moradas.
+
+Se sacan 5 pelotas sin remplazarlas. Después se sacan otras 5 pelotas.
+¿De cuántas maneras puede hacerse esto si las pelotas se
+consideran diferentes?
+
+
+* Numero de maneras de sacar 5 pelotas sin reemplazarlas: 
+
+$$
+\
+\begin{align*}
+C(20,5) &= \frac{20!}{5!(20 - 5)!} &= 15504 \\
+\end{align*}
+\
+$$
+
+* Numero de maneras de sacar 5 pelotas luego de haber sacado las 5 primeras: 
+
+$$
+\
+\begin{align*}
+C(15,5) &= \frac{15!}{5!(15 - 5)!} &= 3003 \\
+\end{align*}
+\
+$$
+
+* Total: 
+
+$$
+\
+\begin{align*}
+15504 * 3003  &= 46. 558. 512 \\
+\end{align*}
+\
+$$
+
+
+
+
