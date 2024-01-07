@@ -11,19 +11,28 @@ public class Factura {
     public Factura(Cliente cliente) {
         this.cliente = cliente;
         this.subTotal = calcularSubTotal();
-        IVAaPagar = calcularIVAaPagar();
+        IVAaPagar = calcularIVAaPagar(cliente);
         totalTotal = subTotal + IVAaPagar;
         items = cliente.getItems();
         contadorDeItems = 0;
     }
 
-    private double calcularIVAaPagar() {
+    private double calcularIVAaPagar(Cliente cliente) {
+
         double IVA = 0;
         for (Item productoDeVenta : items){
-            IVA +=
+            IVA += productoDeVenta.getIVA() * ;
         }
         return IVA;
     }
+
+
+
+
+
+
+
+
 
     private double calcularSubTotal() {
         return 0;
