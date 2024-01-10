@@ -26,7 +26,5 @@ public class Cliente {
     }
 
 
-    public
-
 
 }
