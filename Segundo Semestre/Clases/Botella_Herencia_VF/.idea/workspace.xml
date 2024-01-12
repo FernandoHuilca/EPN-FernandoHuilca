@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="0be744da-84ff-48ca-abc0-4344fb62f6c4" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../Alison_Mateo_y_yo/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Alison_Mateo_y_yo/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Alison_Mateo_y_yo/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Alison_Mateo_y_yo/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Alison_Mateo_y_yo/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Alison_Mateo_y_yo/Alison_Mateo_y_yo.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Alison_Mateo_y_yo/src/Cliente.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Alison_Mateo_y_yo/src/ClienteManaba.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Alison_Mateo_y_yo/src/Diagramas.puml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Alison_Mateo_y_yo/src/Empresa.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Alison_Mateo_y_yo/src/Factura.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Alison_Mateo_y_yo/src/Item.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Alison_Mateo_y_yo/src/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Alison_Mateo_y_yo/src/ProductoConIVA.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Alison_Mateo_y_yo/src/ProductoDeVenta.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Alison_Mateo_y_yo/src/ProductoSinIVA.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Banco/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Banco/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Banco/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Banco/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Banco/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Banco/Banco.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Banco/src/Banco.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Banco/src/Cliente.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Banco/src/Cuenta.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Banco/src/Diagrama.puml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Banco/src/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Banco/src/Transferencia.java" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="UML Class" />
+        <option value="Class" />
+        <option value="new-sketch" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4
+}</component>
+  <component name="ProjectId" id="2YEqeHkQsas3kUhidFiB2Yye5Vg" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;DefaultPlantUmlFileTemplate&quot;: &quot;UML Class&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Fernando_Huilca/Documents/Git-Fernando_Huilca/EPN-FernandoHuilca/Segundo Semestre/Clases/Botella_Herencia&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/Fernando_Huilca/Documents/Git-Fernando_Huilca/EPN-FernandoHuilca/Segundo Semestre/Clases/Botella/src/Main.java&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="Botella1" />
+      <recent name="Botella" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="0be744da-84ff-48ca-abc0-4344fb62f6c4" name="Changes" comment="" />
+      <created>1700101182382</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1700101182382</updated>
+      <workItem from="1700101183282" duration="9261000" />
+      <workItem from="1700161732818" duration="7303000" />
+      <workItem from="1700187343806" duration="3859000" />
+      <workItem from="1700248268608" duration="4295000" />
+      <workItem from="1700351109323" duration="1424000" />
+      <workItem from="1701198732088" duration="1198000" />
+      <workItem from="1701282351532" duration="205000" />
+      <workItem from="1703388175926" duration="1946000" />
+      <workItem from="1704936855068" duration="366000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Main.java</url>
+          <line>45</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

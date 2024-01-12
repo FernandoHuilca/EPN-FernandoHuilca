@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="34a1cb04-783e-44f6-8eba-d5fae93c1119" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../Alison_Mateo_y_yo/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Alison_Mateo_y_yo/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Alison_Mateo_y_yo/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Alison_Mateo_y_yo/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Alison_Mateo_y_yo/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Alison_Mateo_y_yo/Alison_Mateo_y_yo.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Alison_Mateo_y_yo/src/Cliente.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Alison_Mateo_y_yo/src/ClienteManaba.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Alison_Mateo_y_yo/src/Diagramas.puml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Alison_Mateo_y_yo/src/Empresa.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Alison_Mateo_y_yo/src/Factura.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Alison_Mateo_y_yo/src/Item.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Alison_Mateo_y_yo/src/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Alison_Mateo_y_yo/src/ProductoConIVA.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Alison_Mateo_y_yo/src/ProductoDeVenta.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Alison_Mateo_y_yo/src/ProductoSinIVA.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Banco/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Banco/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Banco/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Banco/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Banco/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Banco/Banco.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Banco/src/Banco.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Banco/src/Cliente.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Banco/src/Cuenta.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Banco/src/Diagrama.puml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Banco/src/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Banco/src/Transferencia.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Botella_Herencia/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Botella_Herencia/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Botella_Herencia/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Botella_Herencia/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Botella_Herencia/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Botella_Herencia/Botella.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Botella_Herencia/Botella/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Botella_Herencia/Botella/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Botella_Herencia/Botella/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Botella_Herencia/Botella/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Botella_Herencia/Botella/Botella.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Botella_Herencia/Botella/src/Botella.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Botella_Herencia/Botella/src/Botella.puml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Botella_Herencia/Botella/src/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Botella_Herencia/Botella/src/Recipiente.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Botella_Herencia/__MACOSX/._Botella" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Botella_Herencia/__MACOSX/Botella/._.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Botella_Herencia/__MACOSX/Botella/._.idea" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Botella_Herencia/__MACOSX/Botella/._Botella.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Botella_Herencia/__MACOSX/Botella/._out" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Botella_Herencia/__MACOSX/Botella/._src" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Botella_Herencia/__MACOSX/Botella/.idea/._.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Botella_Herencia/__MACOSX/Botella/.idea/._misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Botella_Herencia/__MACOSX/Botella/.idea/._modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Botella_Herencia/__MACOSX/Botella/.idea/._workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Botella_Herencia/__MACOSX/Botella/src/._Botella.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Botella_Herencia/__MACOSX/Botella/src/._Botella.puml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Botella_Herencia/__MACOSX/Botella/src/._Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Botella_Herencia/__MACOSX/Botella/src/._Recipiente.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Botella_Herencia/src/Botella.puml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Botella_Herencia/src/Botella/Botella.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Botella_Herencia/src/Botella/apuntesPrueba.excalidraw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Botella_Herencia/src/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Camiseta.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DiagramaDeClases.puml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+        <option value="UML Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8
+}</component>
+  <component name="ProjectId" id="2YNUy2sJrqmmWxJRmX3qzmC01kj" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "DefaultPlantUmlFileTemplate": "UML Class",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "C:/Users/Fernando_Huilca/Documents/Git-Fernando_Huilca/EPN-FernandoHuilca/Segundo Semestre/Clases/Camiseta2.1",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "onboarding.tips.debug.path": "C:/Users/Fernando_Huilca/Documents/Git-Fernando_Huilca/EPN-FernandoHuilca/Segundo Semestre/Clases/Camiseta2.1/src/Main.java",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="34a1cb04-783e-44f6-8eba-d5fae93c1119" name="Changes" comment="" />
+      <created>1700365782108</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1700365782108</updated>
+      <workItem from="1700365783106" duration="6767000" />
+      <workItem from="1700679633177" duration="6090000" />
+      <workItem from="1700866174658" duration="1919000" />
+      <workItem from="1701198686453" duration="2285000" />
+      <workItem from="1701282365627" duration="2206000" />
+      <workItem from="1701371671430" duration="2016000" />
+      <workItem from="1703186399748" duration="1218000" />
+      <workItem from="1703292484635" duration="2607000" />
+      <workItem from="1703874308453" duration="4426000" />
+      <workItem from="1704937359492" duration="1840000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
