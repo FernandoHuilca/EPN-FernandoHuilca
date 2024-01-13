@@ -1,0 +1,15 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class Calculadora {
+}
+Calculadora --> Operacion
+Suma --u|> Operacion
+Calculadora --> SistemaNumerico
+Decimal --u|> SistemaNumerico
+Binario --u|> SistemaNumerico
+Hexadecimal --u|> SistemaNumerico
+class SistemaNumerico {
+transformarADecimal();
+}
+@enduml
