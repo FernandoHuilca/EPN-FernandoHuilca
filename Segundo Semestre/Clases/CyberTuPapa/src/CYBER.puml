@@ -1,6 +1,0 @@
-@startuml
-'https://plantuml.com/class-diagram
-
-CYBER -->"*" Computadora
-COmputadora --> CLiente
-@enduml
