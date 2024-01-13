@@ -1,0 +1,41 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+abstract class Vehículo {
+    - númeroDeLlantas: int
+    - capacidad: int
+    + acelerar()
+    + frenar()
+    + {abstract} alistarSeguridad()
+}
+
+abstract class VehículoConMotor{
+    - matrícula: String
+    + arrancar()
+    + apagar()
+}
+
+class Bicicleta{
+    +ponerCasco()
+}
+
+class Asiento{
+
+}
+
+class Bus{
++agarrarElTubo()
+}
+
+class Carro{
++ponerCinturón()
+}
+
+
+
+Vehículo -u-> VehículoConMotor
+Vehículo -u-> Asiento
+Vehículo <|-- Bicicleta
+VehículoConMotor <|-- Moto
+VehículoConMotor <|-- Bus
+@enduml

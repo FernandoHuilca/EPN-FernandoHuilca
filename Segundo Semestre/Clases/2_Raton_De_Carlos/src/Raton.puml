@@ -1,0 +1,18 @@
+@startuml
+class Ratón{
+- marca: String
+- botónIzquierdo: Botón
+- botónDerecho: Botón
+- rueda: Rueda
+- pilas: Pila[2]
+- sensor: SensorMovimiento
+- conector: ConectorBT
++ Ratón()
++ darClicIzquierdo()
++ darClicDerecho()
++ girarRueda(dirección: Dirección)
++ desplazar()
+
+}
+
+@enduml
