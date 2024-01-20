@@ -1,5 +1,5 @@
 ---
-title: "EJERCICIOS C3T1"
+title: "EJERCICIOS C3T5"
 author:
 - Betancourt Alison
 - Angulo Javier
@@ -24,16 +24,26 @@ format:
   docx: default
 ---
 
-## Ejercicio 6
+## Ejercicio 30
 
-El sistema Braille para representar caracteres fue desarrollado a
-principios del siglo IX por Louis Braille. Los caracteres especiales
-para el invidente consisten en puntos en relieve. Las posiciones
-para los puntos se seleccionan en dos columnas verticales de tres puntos
-cada una. Debe haber al menos un punto en relieve. ¿Cuántos
-caracteres distintos de Braille puede haber?
+Pruebe la ecuación (6.7.5) por inducción
 $$
 \begin{align*}
-Caracteres Distintos = 3* 3 = 9.
+\ \sum_{K=1}^{n+1} K C\cdot \binom{n+1}{K} &= \sum_{k=1}^{n} \left( K \cdot \binom{n}{k-1} + \binom{n}{k} \right) + (n+1) \cdot \binom{n+1}{n+1}
+\end{align*}
+$$
+$$
+\begin{align*}
+ &= \sum_{k=1}^{n+1} \binom{n}{k-1} + \sum_{k=1}^{n+1} \binom{n}{k}
+\end{align*}
+$$
+$$
+\begin{align*}
+ &= \sum_{k=1}^{n+1} (k-1) \cdot \binom{n}{k-1} + \sum_{k=1}^{n+1} \binom{n}{k-1} + \sum_{k=1}^{n} \binom{n}{k}
+\end{align*}
+$$
+$$
+\begin{align*}
+&=   n2^{n-1} + 2^n + n^2 \cdot 2^{n-1} = (n+1) \cdot 2^n
 \end{align*}
 $$

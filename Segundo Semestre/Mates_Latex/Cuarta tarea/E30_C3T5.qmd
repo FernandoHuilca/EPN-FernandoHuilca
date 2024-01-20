@@ -1,0 +1,49 @@
+---
+title: "EJERCICIOS C3T5"
+author:
+- Betancourt Alison
+- Angulo Javier
+- Anrango Stalin
+- Huilca Fernando
+- Sarasti Sebastian
+- Simbaña Mateo
+toc: true
+toc-title: "Contenido"
+number-sections: true   
+highlight-style: pygments
+format:
+  html:
+    code-fold: true
+    embed-resources: true
+    html-math-method: katex
+  pdf:
+    code-line-numbers: true
+    geometry: 
+      - top=30mm
+      - left=30mm
+  docx: default
+---
+
+## Ejercicio 30
+
+Pruebe la ecuación (6.7.5) por inducción
+$$
+\begin{align*}
+\ \sum_{K=1}^{n+1} K C\cdot \binom{n+1}{K} &= \sum_{k=1}^{n} \left( K \cdot \binom{n}{k-1} + \binom{n}{k} \right) + (n+1) \cdot \binom{n+1}{n+1}
+\end{align*}
+$$
+$$
+\begin{align*}
+ &= \sum_{k=1}^{n+1} \binom{n}{k-1} + \sum_{k=1}^{n+1} \binom{n}{k}
+\end{align*}
+$$
+$$
+\begin{align*}
+ &= \sum_{k=1}^{n+1} (k-1) \cdot \binom{n}{k-1} + \sum_{k=1}^{n+1} \binom{n}{k-1} + \sum_{k=1}^{n} \binom{n}{k}
+\end{align*}
+$$
+$$
+\begin{align*}
+&=   n2^{n-1} + 2^n + n^2 \cdot 2^{n-1} = (n+1) \cdot 2^n
+\end{align*}
+$$
