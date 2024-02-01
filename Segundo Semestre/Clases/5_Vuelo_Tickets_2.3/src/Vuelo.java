@@ -58,10 +58,9 @@ public class Vuelo {
         return ticket;
     }
 
-    public Ticket venderTicketEconomica(String duenioDelTicket, int posicionDelAsiento) {
+    public Ticket venderTicketEconomica(String duenioDelTicket, int posicionDelAsiento) throws AsientoOcupado{
         if (estaElAsientoEconomicaOcupado(posicionDelAsiento)) {
-            System.out.println("ERROR: El asiento numero " + posicionDelAsiento + " ya esta ocupado.");
-            return null;
+           throw new AsientoOcupado();
         }
         if (estanVendidosTodosLosTicketsEconomica()) {
             System.out.println("ERROR: Todos los asientos están vendidos.");

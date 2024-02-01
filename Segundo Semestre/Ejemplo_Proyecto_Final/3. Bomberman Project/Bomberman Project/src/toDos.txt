@@ -1,0 +1,246 @@
+//toDo
+
+1. Change the names in the entire Project ------- DONE
+2. Change at the end of the refactor the out file
+3. Change Font -> MenuFrame, GameFrame
+
+
+
+Cambios
+
+|¿Qué cambiar? | Dónde? (Clase)|
+| ----------- | -----------|
+| Animación explosión (cambia solo la imagen) | Explosion valores fire_x, fire_y width-height|
+|Cambiar los bloques rompibles a irrompibles| Poner en el archivo levels 1 en lugar del 2|
+|Aumentar Bombas --infinitas-- (no se puede agregar solo una bomba)| en bomberman en la 136 cambiar el false por el true|
+|cambiar velocidad Bomber| bomber cambiar atributo move_speed |
+|||
+
+Bombas infinitas.
+- Que no te haga daño un enemigo.
+- Crear un nuevo enemigo.
+- Agregar un nuevo mapa.
+- Reset scores.
+- Colocar un jugador en (x posición).
+- Un nuevo bomberman(espejo).
+
+|¿Qué cambiar? | Dónde? (Clase)|
+| ----------- | -----------|
+| Animación explosión (cambia solo la imagen) | Explosion valores fire_x, fire_y width-height|
+|Cambiar los bloques rompibles a irrompibles| Poner en el archivo levels 1 en lugar del 2|
+|Aumentar Bombas --infinitas-- (no se puede agregar solo una bomba)| en bomberman en la 136 cambiar el false por el true|
+|cambiar velocidad Bomber| bomber cambiar atributo move_speed |
+|||
+-------------------------------------------------------------------------------------
+|el primer mapa que aparece es el level 0 del levels.xml donde se modifica||
+|en el archivo scores.txt se quedan almacenados los scores se borran todos para empezar de nuevo||
+----------------------------------------------------------------
+
+ //   Como crear un cueno bomberman //
+ Se van a la clase map--> metodo loadEntities
+ y asignar un caso no vanor de un solo numero
+ case'2':
+ entityManager.addEntity( new Bomberman(gameManager, x, y));
+
+                    x +=32
+y asignar el malos en level xml
+
+----------------------------------------
+
+ // como crear un nuevo enemigo//
+ -->hacer una nueva clase que extienda de enemigo y el el contructor modificar velocidad ejempo
+ public class Ballom extends Enemy{
+
+    public Ballom(GameManager gameManager, float x, float y) {
+        super(gameManager, x, y);
+        speed = 2F;
+    }
+    @Override
+    public void render(Graphics g) {
+        g.drawImage(getCurrentAnimationFrame(), (int) x, (int) y, width, height, null);
+
+    }
+
+    private BufferedImage getCurrentAnimationFrame() {
+        return enemyAnimation.getCurrentSprite();
+    }
+}
+-->ir a la clase mapa asignar un valor en el metodo loadEntities
+    ejemplo
+                    case'9':
+                    entityManager.addEntity(new Ballom(gameManager, x, y));
+                    x += 32;
+                    break;
+----------------------------------------------------
+Evitar que el enemigo te haga dano
+ en el if de la clase enemifo del metodo booleano checkCollisionWithPlayer cambiar con false
+           Antes
+       public final boolean checkCollisionWithPlayer(float xOffset, float yOffset) {
+        if (getCollisionBounds(0f, 0f).intersects(bomberman.getCollisionBounds(xOffset, yOffset))) {
+            bomberman.setX(Map.BOMBERMAN_X_SPAWN);
+            bomberman.setY(Map.BOMBERMAN_Y_SPAWN);
+            bomberman.setHealth(bomberman.getHealth() - 0);
+       -->     return true;
+        }
+        return false;
+    }
+
+    despues
+        public final boolean checkCollisionWithPlayer(float xOffset, float yOffset) {
+        if (getCollisionBounds(0f, 0f).intersects(bomberman.getCollisionBounds(xOffset, yOffset))) {
+            bomberman.setX(Map.BOMBERMAN_X_SPAWN);
+            bomberman.setY(Map.BOMBERMAN_Y_SPAWN);
+            bomberman.setHealth(bomberman.getHealth() - 0);
+     -->ojo       return false;
+        }
+        return false;
+    }
+--------------------------------------------------------------
+Aumentar un nivel
+agragr un nivel si quiere mas de cuatro
+porque en el xml hay 4 y en la corrida del juego hay tres niveles
+!!!!! ojo el livel 0 es el 1 realmente el 1 el dos y asi susecivamente del xml de levels
+paso 2
+ir a la clase door metodo checkCollisionWithPlayer
+ejemplo del ultimo nivel ese 4 puede ir el sucesor
+
+if (gameManager.getMap().getId() == 4) {
+                gameManager.getMap().getEntityManager().getEntities().clear();
+                gameManager.getMap().getSpecialEntityManager().getSpecialEntities().clear();
+                gameManager.getMap().setId(0);
+                EntityManager.getPlayer().setScore(EntityManager.getPlayer().getScore() + POINTS_FOR_PASSING_LEVEL);
+                EntityManager.getPlayer().setScore(EntityManager.getPlayer().getScore() + (EntityManager.getPlayer().getHealth() * POINTS_PER_LIFE) + (EntityManager.getPlayer().getRemainingTime() / 1000));
+                EntityManager.getPlayer().endGame("Congratulations! You Win");
+                Frame.setState(gameManager.getGame().menuFrame);
+            }
+
+en el anterior nivel deber ir
+
+if (gameManager.getMap().getId() == 3) {
+                gameManager.getMap().getSpecialEntityManager().getSpecialEntities().clear();
+                Bomberman bomberman3 = EntityManager.getPlayer();
+                gameManager.getMap().getEntityManager().getEntities().clear();
+                gameManager.getMap().getEntityManager().getEntities().add(bomberman3);
+                EntityManager.getPlayer().setSpeed(Bomberman.PLAYER_SPEED);
+                EntityManager.getPlayer().setX(Map.BOMBERMAN_X_SPAWN);
+                EntityManager.getPlayer().setY(Map.BOMBERMAN_Y_SPAWN);
+                EntityManager.getPlayer().setFireUpLevel(0);
+                bomberman3.setScore(bomberman3.getScore() + POINTS_FOR_PASSING_LEVEL);
+                bomberman3.setCanSetBomb(true);
+                gameManager.getMap().setId(4);<------cambiar aqui por su mapa siguiente
+                gameManager.getMap().loadEntities(LevelManager.level2);
+                gameManager.getMap().loadMap(LevelManager.level2);    <----- ahi va el nivel tomando en cuanta como dunciona   si el id es 4  va el 3 ahi
+                return true;
+            }
+-----------------------------------------------------
+
+
+|¿Qué cambiar? | Dónde? (Clase)|
+| ----------- | -----------|
+| Animación explosión (cambia solo la imagen) | Explosion valores fire_x, fire_y width-height|
+|Cambiar los bloques rompibles a irrompibles| Poner en el archivo levels 1 en lugar del 2|
+|Aumentar Bombas --infinitas-- (no se puede agregar solo una bomba)| en bomberman en la 136 cambiar el false por el true|
+|cambiar velocidad Bomber| bomber cambiar atributo move_speed |
+|||
+-------------------------------------------------------------------------------------
+|el primer mapa que aparece es el level 0 del levels.xml donde se modifica||
+|en el archivo scores.txt se quedan almacenados los scores se borran todos para empezar de nuevo||
+----------------------------------------------------------------
+
+ //   Como crear un cueno bomberman //
+ Se van a la clase map--> metodo loadEntities
+ y asignar un caso no vanor de un solo numero
+ case'2':
+ entityManager.addEntity( new Bomberman(gameManager, x, y));
+
+                    x +=32
+y asignar el malos en level xml
+
+----------------------------------------
+
+ // como crear un nuevo enemigo//
+ -->hacer una nueva clase que extienda de enemigo y el el contructor modificar velocidad ejempo
+ public class Ballom extends Enemy{
+
+    public Ballom(GameManager gameManager, float x, float y) {
+        super(gameManager, x, y);
+        speed = 2F;
+    }
+    @Override
+    public void render(Graphics g) {
+        g.drawImage(getCurrentAnimationFrame(), (int) x, (int) y, width, height, null);
+
+    }
+
+    private BufferedImage getCurrentAnimationFrame() {
+        return enemyAnimation.getCurrentSprite();
+    }
+}
+-->ir a la clase mapa asignar un valor en el metodo loadEntities
+    ejemplo
+                    case'9':
+                    entityManager.addEntity(new Ballom(gameManager, x, y));
+                    x += 32;
+                    break;
+----------------------------------------------------
+Evitar que el enemigo te haga dano
+ en el if de la clase enemifo del metodo booleano checkCollisionWithPlayer cambiar con false
+           Antes
+       public final boolean checkCollisionWithPlayer(float xOffset, float yOffset) {
+        if (getCollisionBounds(0f, 0f).intersects(bomberman.getCollisionBounds(xOffset, yOffset))) {
+            bomberman.setX(Map.BOMBERMAN_X_SPAWN);
+            bomberman.setY(Map.BOMBERMAN_Y_SPAWN);
+            bomberman.setHealth(bomberman.getHealth() - 0);
+       -->     return true;
+        }
+        return false;
+    }
+
+    despues
+        public final boolean checkCollisionWithPlayer(float xOffset, float yOffset) {
+        if (getCollisionBounds(0f, 0f).intersects(bomberman.getCollisionBounds(xOffset, yOffset))) {
+            bomberman.setX(Map.BOMBERMAN_X_SPAWN);
+            bomberman.setY(Map.BOMBERMAN_Y_SPAWN);
+            bomberman.setHealth(bomberman.getHealth() - 0);
+     -->ojo       return false;
+        }
+        return false;
+    }
+--------------------------------------------------------------
+Aumentar un nivel
+agragr un nivel si quiere mas de cuatro
+porque en el xml hay 4 y en la corrida del juego hay tres niveles
+!!!!! ojo el livel 0 es el 1 realmente el 1 el dos y asi susecivamente del xml de levels
+paso 2
+ir a la clase door metodo checkCollisionWithPlayer
+ejemplo del ultimo nivel ese 4 puede ir el sucesor
+
+if (gameManager.getMap().getId() == 4) {
+                gameManager.getMap().getEntityManager().getEntities().clear();
+                gameManager.getMap().getSpecialEntityManager().getSpecialEntities().clear();
+                gameManager.getMap().setId(0);
+                EntityManager.getPlayer().setScore(EntityManager.getPlayer().getScore() + POINTS_FOR_PASSING_LEVEL);
+                EntityManager.getPlayer().setScore(EntityManager.getPlayer().getScore() + (EntityManager.getPlayer().getHealth() * POINTS_PER_LIFE) + (EntityManager.getPlayer().getRemainingTime() / 1000));
+                EntityManager.getPlayer().endGame("Congratulations! You Win");
+                Frame.setState(gameManager.getGame().menuFrame);
+            }
+
+en el anterior nivel deber ir
+
+if (gameManager.getMap().getId() == 3) {
+                gameManager.getMap().getSpecialEntityManager().getSpecialEntities().clear();
+                Bomberman bomberman3 = EntityManager.getPlayer();
+                gameManager.getMap().getEntityManager().getEntities().clear();
+                gameManager.getMap().getEntityManager().getEntities().add(bomberman3);
+                EntityManager.getPlayer().setSpeed(Bomberman.PLAYER_SPEED);
+                EntityManager.getPlayer().setX(Map.BOMBERMAN_X_SPAWN);
+                EntityManager.getPlayer().setY(Map.BOMBERMAN_Y_SPAWN);
+                EntityManager.getPlayer().setFireUpLevel(0);
+                bomberman3.setScore(bomberman3.getScore() + POINTS_FOR_PASSING_LEVEL);
+                bomberman3.setCanSetBomb(true);
+                gameManager.getMap().setId(4);<------cambiar aqui por su mapa siguiente
+                gameManager.getMap().loadEntities(LevelManager.level2);
+                gameManager.getMap().loadMap(LevelManager.level2);    <----- ahi va el nivel tomando en cuanta como dunciona   si el id es 4  va el 3 ahi
+                return true;
+            }
+-----------------------------------------------------
