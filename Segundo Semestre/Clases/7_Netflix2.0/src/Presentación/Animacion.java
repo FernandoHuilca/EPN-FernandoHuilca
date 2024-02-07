@@ -30,7 +30,6 @@ public class Animacion {
                 System.out.flush();
             }
         } catch (Exception e) {
-            // Manejar excepciones si ocurren
             e.printStackTrace();
         }
 

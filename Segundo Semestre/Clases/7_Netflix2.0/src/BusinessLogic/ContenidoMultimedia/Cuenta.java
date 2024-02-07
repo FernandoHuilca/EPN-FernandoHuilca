@@ -1,3 +1,5 @@
+import ControlDeExcepciones.MaximoDePerfiles;
+
 public class Cuenta {
     private String contrasenia;
     private Suscripcion tipoDeSuscripcion;
@@ -18,6 +20,14 @@ public class Cuenta {
     }
 
     public Perfil crearPerfil(String nombreDelPerfil) {
+        if (tipoDeSuscripcion.getNumeroMáximoDePerfiles() == contadorNumeroDePerfiles){
+            try {
+                throw new MaximoDePerfiles();
+            } catch (MaximoDePerfiles e) {
+                System.out.println(e.getMessage());
+            }
+            return null;
+        }
         Perfil nuevoPerfil = new Perfil(nombreDelPerfil);
         perfiles[contadorNumeroDePerfiles] = nuevoPerfil;
         System.out.println("\u001B[32m" + "Perfil creado con exito!! \t"+ "\u001B[0m" +  perfiles[contadorNumeroDePerfiles++]

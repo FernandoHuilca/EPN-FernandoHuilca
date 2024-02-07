@@ -1,4 +1,5 @@
-import java.util.Arrays;
+import ContenidoMultimedia.Pelicula;
+import ContenidoMultimedia.Serie;
 
 public class Perfil {
     private String nombreDelPerfil;
@@ -26,6 +27,6 @@ public class Perfil {
 
     public void agregarPeliAList(Pelicula pelicula) {
         miListPelis[contadorPeliculasEnList] = pelicula;
-        System.out.println("Pelicula agregada a MiList con EXITO!!" + miListPelis[contadorPeliculasEnList++]);
+        System.out.println("ContenidoMultimedia.Pelicula agregada a MiList con EXITO!!" + miListPelis[contadorPeliculasEnList++]);
     }
 }

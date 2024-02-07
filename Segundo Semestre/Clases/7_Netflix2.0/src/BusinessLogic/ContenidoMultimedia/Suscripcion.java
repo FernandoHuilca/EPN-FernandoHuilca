@@ -35,4 +35,8 @@ public enum Suscripcion {
     public int numPerfiles() {
         return numeroMaximoDePerfiles;
     }
+
+    public int getNumeroMáximoDePerfiles() {
+        return numeroMaximoDePerfiles;
+    }
 }

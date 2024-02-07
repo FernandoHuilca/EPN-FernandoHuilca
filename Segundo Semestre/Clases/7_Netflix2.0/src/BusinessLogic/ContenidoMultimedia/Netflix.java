@@ -1,10 +1,13 @@
-import java.util.Arrays;
+import ContenidoMultimedia.Pelicula;
+import ContenidoMultimedia.Serie;
+import ControlDeExcepciones.DineroInsuficiente;
+import ControlDeExcepciones.VerContenidoCuentaSinPagar;
 
 public class Netflix {
 
     private Cuenta[] cuentas;
     private int contadorDeCuentas;
-    private Pelicula[] peliculas; //TODO:preguntar esto a Carlitos God :)
+    private Pelicula[] peliculas;
     private int contadorDePeliculas;
     private Serie[] series;
     private int contadorDeSeries;
@@ -24,29 +27,40 @@ public class Netflix {
     }
 
 
-    public Cuenta crearCuenta(String nombreUsuario, String contrasenia, Suscripcion tipoDeSuscripcion, double dineroDelUsuario) {
+    public Cuenta crearCuenta(String nombreUsuario, String contrasenia, Suscripcion tipoDeSuscripcion, double dineroDelUsuario) throws DineroInsuficiente {
         if (dineroDelUsuario != tipoDeSuscripcion.getPrecio()) {
-            System.out.println("\u001B[31m" + "ERROR:" + "\u001B[0m" + " el dinero depositado no es el correcto!!");
-            return null;
+            throw new DineroInsuficiente();
         }
         Cuenta nuevaCuenta = new Cuenta(nombreUsuario, contrasenia, tipoDeSuscripcion);
         cuentas[contadorDeCuentas++] = nuevaCuenta;
         System.out.println("\u001B[32m" + "Felicidades!! Ahora usted tiene una cuenta " + tipoDeSuscripcion.getNombreDeSuscripcion() + "\u001B[0m");
-        return nuevaCuenta;
+        return nuevaCuenta;    //TODO: Preguntar a Carlos, porque el código luego del if no se ejecuta si lanzo el error
     }
 
     public void reproducirPelicula(Cuenta cuenta, int numeroDePelicula) {
-        if (cuenta == null) {
-            System.out.println("\u001B[31m" + "ERROR:" + "\u001B[0m" + " La cuenta no existe!!");
-            return;
+        if (cuenta == null ) {
+            try {
+                throw new NullPointerException("\u001B[31m" + "ERROR:" + "\u001B[0m" + " La cuenta no existe!!");
+            } catch (NullPointerException e){
+                System.out.println(e.getMessage());
+                return;
+            }
         }
         if (peliculas[numeroDePelicula] == null) {
-            System.out.println("\u001B[31m" + "ERROR:" + "\u001B[0m" + " La peli no esta en el arreglo!!");
-            return;
+            try {
+                throw new NullPointerException("\u001B[31m" + "ERROR:" + "\u001B[0m" + " La peli no está en el arreglo!!");
+            } catch (NullPointerException e){
+                System.out.println(e.getMessage());
+                return;
+            }
         }
         if (cuenta.tipoDeSuscripcion() == Suscripcion.SIN_PAGAR) {
-            System.out.println("\u001B[31m" + "ERROR: " + "\u001B[0m" + " Su cuenta no tiene una suscripcion valida para ver pelis o series!!");
-            return;
+            try {
+                throw new VerContenidoCuentaSinPagar();
+            } catch (VerContenidoCuentaSinPagar e){
+                System.out.println(e.getMessage());
+                return;
+            }
         }
         System.out.println("Disfurte de la peli!!!" + peliculas[numeroDePelicula]);
     }
@@ -54,30 +68,38 @@ public class Netflix {
     public void agregarPelicula(String nombrePeli, String genero) {
         Pelicula nuevaPelicula = new Pelicula(nombrePeli, genero);
         peliculas[contadorDePeliculas++] = nuevaPelicula;
-        System.out.println("\u001B[32m" + "Pelicula \"" + nombrePeli + "\" agregada con EXITO!!" + "\u001B[0m");
+        System.out.println("\u001B[32m" + "ContenidoMultimedia.Pelicula \"" + nombrePeli + "\" agregada con EXITO!!" + "\u001B[0m");
     }
 
     public void agregarSerie(String nombreSerie, String genero, int numTemporada, int numCapitulos) {
         Serie nuevaSerie = new Serie(nombreSerie, genero, numTemporada, numCapitulos);
         series[contadorDeSeries++] = nuevaSerie;
-        System.out.println("\u001B[32m" + "Serie \"" + nombreSerie + "\" agregada con EXITO!!" + "\u001B[0m");
+        System.out.println("\u001B[32m" + "ContenidoMultimedia.Serie \"" + nombreSerie + "\" agregada con EXITO!!" + "\u001B[0m");
 
     }
 
     public void reproducirSerie(Cuenta cuenta, int numSerie, int numTemporada, int numCapitulo) {
-        if (cuenta == null) {
-            System.out.println("\u001B[31m" + "ERROR:" + "\u001B[0m" + " La cuenta no existe!!");
-            return;
-        }
-        if (series[numSerie] == null) {
-            System.out.println("\u001B[31m" + "ERROR:" + "\u001B[0m" + " La serie no esta en el arreglo!!");
-            return;
+        if (cuenta == null || series[numSerie] == null ) {
+            try {
+                if (cuenta == null) {
+                    throw new NullPointerException("\u001B[31m" + "ERROR:" + "\u001B[0m" + " La cuenta no existe!!");
+                }else {
+                    throw new NullPointerException("\u001B[31m" + "ERROR:" + "\u001B[0m" + " La serie no esta en el arreglo!!");
+                }
+            } catch (NullPointerException e){
+                System.out.println(e.getMessage());
+                return;
+            }
         }
         if (cuenta.tipoDeSuscripcion() == Suscripcion.SIN_PAGAR) {
-            System.out.println("\u001B[31m" + "ERROR: " + "\u001B[0m" + " Su cuenta no tiene una suscripcion valida para ver pelis o series!!");
+            try {
+                throw new VerContenidoCuentaSinPagar();
+            } catch (VerContenidoCuentaSinPagar e) {
+                System.out.println(e.getMessage());
+            }
             return;
         }
-        System.out.println("Disfurte de la Serie!!!" + series[numSerie]);
+        System.out.println("Disfrute de la ContenidoMultimedia.Serie!!!" + series[numSerie]);
     }
 
 

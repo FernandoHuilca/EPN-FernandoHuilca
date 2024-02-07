@@ -1,3 +1,5 @@
+package ContenidoMultimedia;
+
 public class Serie {
     private String genero;
     private String nombreSerie;
