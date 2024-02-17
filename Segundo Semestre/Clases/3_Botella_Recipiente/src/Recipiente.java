@@ -14,9 +14,9 @@ public class Recipiente {
         capacidadActualLitros = 0;
     }
 
-    public void llenarCiertaCantidad(double cantidadALlenar) {
+    public void llenarCiertaCantidad(double cantidadALlenar) throws CantidadNegativa{
         if (cantidadALlenar < 0) {
-            return;
+            throw new CantidadNegativa();
         }
         capacidadActualLitros =
                 seRebasaLaCapacidad(cantidadALlenar) ?
@@ -26,11 +26,15 @@ public class Recipiente {
     private boolean seRebasaLaCapacidad(double cantidadALlenar) {
         return cantidadALlenar + capacidadActualLitros > capacidadMáximaLitros;
     }
-    public void llenarPorCompleto() {
-        llenarCiertaCantidad(capacidadMáximaLitros);
+    public void llenarPorCompleto(){
+        try {
+            llenarCiertaCantidad(capacidadMáximaLitros);
+        } catch (CantidadNegativa e) {
+            System.out.println(e.getMessage());
+        }
     }
 
-    public void llenarConOtroRecipiente(Recipiente otroRecipiente) {
+    public void llenarConOtroRecipiente(Recipiente otroRecipiente) throws CantidadNegativa {
         if (DarMasDeLoQueRecibe(otroRecipiente)) {
             otroRecipiente.vaciarCiertaCantidad(this.espacioLibreEnRecipiente());
             this.llenarPorCompleto();

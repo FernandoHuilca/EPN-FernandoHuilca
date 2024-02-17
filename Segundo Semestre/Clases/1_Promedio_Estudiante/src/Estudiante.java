@@ -27,10 +27,6 @@ public class Estudiante {
                 (nota2 >= NOTA_MINIMA && nota2 <= NOTA_MAXIMA);
     }
 
-    /*public double calcularPromedio() {
-        promedio = (nota1 + nota2) / 2;
-        return promedio;
-    }*/
     public void calcularPromedio() {
 
         promedio = (nota1 + nota2) / 2;

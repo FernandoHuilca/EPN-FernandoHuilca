@@ -14,6 +14,7 @@ public class Main {
         System.out.println(".................CASO DE PRUEBA 2................. \n * Vender dos tickets del vuelo diferente clase:");
         Ticket ticket1 = vuelo1.venderTicketPremium("Fernando Huilca", 0);
 
+
         try {
             Ticket ticket3 = vuelo1.venderTicketEconomica("Eliceo Villagomez", 24);
         } catch (AsientoOcupado e) {

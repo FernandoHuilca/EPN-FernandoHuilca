@@ -1,3 +1,5 @@
+package Presentación;
+
 public class Animacion {
     private String COLOR_Rojo;
     private String COLOR_Blanco;

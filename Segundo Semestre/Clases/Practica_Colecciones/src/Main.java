@@ -39,15 +39,31 @@ public class Main {
         System.out.println(Collections.max(adg));
         System.out.println(Collections.min(adg));      */
 
-        ArrayList<Estudiante> ad;
-        ad = new ArrayList<Estudiante>();
-        
+        ArrayList<String> ad;
+        ad = new ArrayList<String>();
+        ad.add("Hola");
+        ad.add("Como estás");
+        System.out.println(ad.size());
+        System.out.println(ad.get(0));
+        System.out.println(ad.get(1));
+        if (ad.get(2) == null){
+            System.out.println("El resultado es igual a null");
+        }
+
+
 
     }
 
+    private static void agregarString(ArrayList<String> ad, int a) {
+        try {
+            System.out.println(ad.get(a));
+        } catch (IndexOutOfBoundsException e){
+            System.out.println(e.getMessage());
+            return;
+        }
 
-
-
+        System.out.println("Viendo si esto funciona aun ");
+    }
 
 
     private static void imprimir1(int[] arreglo) {

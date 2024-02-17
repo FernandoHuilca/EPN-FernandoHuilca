@@ -1,32 +1,36 @@
-import ContenidoMultimedia.Pelicula;
-import ContenidoMultimedia.Serie;
+package BusinessLogic.ContenidoMultimedia;
+
+import BusinessLogic.ContenidoMultimedia.Pelicula;
+import BusinessLogic.ContenidoMultimedia.Serie;
+
+import java.util.ArrayList;
 
 public class Perfil {
     private String nombreDelPerfil;
-    private Pelicula[] miListPelis;
-    private int contadorPeliculasEnList;
-    private Serie[] miListSeries;
-    private int contadorSeriesEnList;
+    private ArrayList <Pelicula> miListPelis;
+    private ArrayList <Serie>  miListSeries;
 
     public Perfil(String nombreDelPerfil) {
 
         this.nombreDelPerfil = nombreDelPerfil;
-        miListPelis = new Pelicula[100];
-        contadorPeliculasEnList = 0;
-        miListSeries = new Serie[100];
-        contadorSeriesEnList = 0;
+        miListPelis = new ArrayList<Pelicula>();
+        miListSeries = new ArrayList<Serie>();
     }
 
     @Override
     public String toString() {
         return
                 "\n\tNombre Perfil: " + nombreDelPerfil
-                        + "\n\tList de Peliculas: " + contadorPeliculasEnList
-                        + "\n\tList de Series: " + contadorSeriesEnList;
+                        + "\n\tList de Películas: " + miListPelis.size()
+                        + "\n\tList de Series: " + miListSeries.size();
     }
 
     public void agregarPeliAList(Pelicula pelicula) {
-        miListPelis[contadorPeliculasEnList] = pelicula;
-        System.out.println("ContenidoMultimedia.Pelicula agregada a MiList con EXITO!!" + miListPelis[contadorPeliculasEnList++]);
+        miListPelis.add(pelicula);
+        System.out.println("Película agregada a MiList con ÉXITO!!" + pelicula);
+    }
+    public void agregarSerieAList(Serie serie) {
+        miListSeries.add(serie);
+        System.out.println("Serie agregada a MiList con ÉXITO!!" + serie);
     }
 }

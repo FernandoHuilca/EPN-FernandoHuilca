@@ -1,0 +1,16 @@
+@startuml
+class Empresa{
+    + agregarCandidato()
+}
+CV -->"*" Título
+CV -->"*" Trabajo
+CV -->"*" Competencia
+class Candidato
+Candidato -->"1" CV
+Empresa --> Candidato
+class Título {
+    - fecha : LocalDate
+    - universidad : String
+    - nivel : int
+}
+@enduml

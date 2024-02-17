@@ -1,4 +1,4 @@
-package ContenidoMultimedia;
+package BusinessLogic.ContenidoMultimedia;
 
 public class Pelicula {
     private String genero;

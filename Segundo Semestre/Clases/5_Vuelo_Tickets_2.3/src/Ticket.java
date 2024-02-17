@@ -8,10 +8,14 @@ public class Ticket {
 
     public void vender() {
         if (vendido) {
-            System.out.println("ERROR: No se puede vender el ticket porque ya esta vendido. ");
-            return;
+            try {
+                throw new TicketVendido();
+            } catch (TicketVendido e) {
+                System.out.println(e.getMessage());
+            }
+        } else {
+            vendido = true;
+            System.out.println("Ticket vendido con exito, el duenio es: \"" + duenioDelTicket + "\"");
         }
-        vendido = true;
-        System.out.println("Ticket vendido con exito, el duenio es: \"" + duenioDelTicket + "\"");
     }
 }

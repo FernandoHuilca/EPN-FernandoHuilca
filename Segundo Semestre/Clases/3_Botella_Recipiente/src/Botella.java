@@ -13,15 +13,23 @@ public class Botella extends Recipiente {
             System.out.println("No se puede llenar porque la botella esta tapada");
             return;
         }
-        super.llenarCiertaCantidad(cantidadALlenar);
+        try {
+            super.llenarCiertaCantidad(cantidadALlenar);
+        } catch (CantidadNegativa e) {
+            System.out.println(e.getMessage());
+        }
     }
 
-    public void llenarConOtraBotella(Botella otraBotella) {
+    public void llenarConOtraBotella(Botella otraBotella)  {
         if (estaTapado() || otraBotella.estaTapado()) {
             System.out.println("ERROR: La botella esta tapada no se puede llenar con el otro recipiente");
             return;
         }
-        super.llenarConOtroRecipiente(otraBotella);
+        try {
+            super.llenarConOtroRecipiente(otraBotella);
+        } catch (CantidadNegativa e) {
+            System.out.println(e.getMessage());
+        }
     }
 
 

@@ -1,3 +1,5 @@
+package BusinessLogic.ContenidoMultimedia;
+
 public enum Suscripcion {
     BASICO(1, 4.99),
     ESTANDAR(2, 7.99),

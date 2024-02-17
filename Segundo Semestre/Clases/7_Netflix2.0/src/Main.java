@@ -1,4 +1,9 @@
-import java.sql.SQLOutput;
+import BusinessLogic.ContenidoMultimedia.ControlDeExcepciones.DineroInsuficiente;
+import BusinessLogic.ContenidoMultimedia.Cuenta;
+import BusinessLogic.ContenidoMultimedia.Netflix;
+import BusinessLogic.ContenidoMultimedia.Perfil;
+import BusinessLogic.ContenidoMultimedia.Suscripcion;
+import Presentación.Animacion;
 
 //Author Fernando Huilca
 public class Main {
@@ -8,17 +13,26 @@ public class Main {
         System.out.println("\n\tCaso 1. Crear Netflix y una cuenta___________________________________________");
         Netflix netflix = new Netflix();
         logo.presentar();
-        Cuenta cuentaFernando = netflix.crearCuenta("Fernando Huilca", "1234", Suscripcion.PREMIUM, 10.99);
 
-
-
+        Cuenta cuentaFernando = null;
+        try {
+            cuentaFernando = netflix.crearCuenta("Fernando Huilca", "1234", Suscripcion.PREMIUM, 10.99);
+        } catch (DineroInsuficiente e) {
+            System.out.println(e.getMessage());
+        }
 
 
         System.out.println("\n\tCaso 2. Crear una cuenta con dinero insuficiente o en exceso______________________");
-        Cuenta cuentaEdgar = netflix.crearCuenta("Edgar Poe", "1234", Suscripcion.PREMIUM, 7.99);
-        Cuenta cuentaGabriel = netflix.crearCuenta("Gabriel Garcia", "1234", Suscripcion.PREMIUM, 11.99);
-
-
+        try {
+            Cuenta cuentaEdgar = netflix.crearCuenta("Edgar Poe", "1234", Suscripcion.PREMIUM, 7.99);
+        } catch (DineroInsuficiente e) {
+            System.out.println(e.getMessage());
+        }
+        try {
+            Cuenta cuentaGabriel = netflix.crearCuenta("Gabriel Garcia", "1234", Suscripcion.PREMIUM, 11.99);
+        } catch (DineroInsuficiente e) {
+            System.out.println(e.getMessage());
+        }
 
 
         System.out.println("\n\tCaso 3. Agregar una peli a netflix____________________________________________");
@@ -38,8 +52,14 @@ public class Main {
         netflix.reproducirSerie(cuentaFernando, 0, 1,8);
 
 
-        System.out.println("\n\tCaso 6. Ver pelicula y serie desde una cuenta sin acceso______________________");
-        Cuenta cuentaOscar = netflix.crearCuenta("Oscar Wilde", "1234", Suscripcion.SIN_PAGAR, 0.0);
+        System.out.println("\n\tCaso 6. Ver pelicula y serie desde una cuenta nula y sin acceso______________________");
+        Cuenta cuentaOscar = null;
+        netflix.reproducirPelicula(cuentaOscar, 0);
+        try {
+            cuentaOscar = netflix.crearCuenta("Oscar Wilde", "1234", Suscripcion.SIN_PAGAR, 0.0);
+        } catch (DineroInsuficiente e) {
+            System.out.println(e.getMessage());
+        }
         netflix.reproducirPelicula(cuentaOscar, 0);
         netflix.reproducirSerie(cuentaOscar, 0, 1,8);
 

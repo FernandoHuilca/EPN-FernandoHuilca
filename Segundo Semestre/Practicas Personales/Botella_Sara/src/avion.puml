@@ -1,0 +1,28 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class Ticket{
+    -nombreDelPasajero : String
+    -tipoDeVuelo : String
+    -destino : String
+    -vigente : String
+    -horario : int
+    -codigo : int
+    -comprado : boolean
+    +comprar()
+    +mostrarHorario()
+    +mostrarCódigo()
+}
+
+class Vuelo{
+    -capacidadDeAsientos : int
+    -tickets : Ticket[capacidadDeAsientos]
+    -asientosReservados : int
+    +guardarTicket()
+    +validarTicket()
+    +cancelarTicket()
+}
+
+Vuelo-->Ticket
+
+@enduml

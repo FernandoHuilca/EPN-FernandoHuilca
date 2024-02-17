@@ -1,4 +1,6 @@
-import ControlDeExcepciones.MaximoDePerfiles;
+package BusinessLogic.ContenidoMultimedia;
+
+import BusinessLogic.ContenidoMultimedia.ControlDeExcepciones.MaximoDePerfiles;
 
 public class Cuenta {
     private String contrasenia;
@@ -30,7 +32,7 @@ public class Cuenta {
         }
         Perfil nuevoPerfil = new Perfil(nombreDelPerfil);
         perfiles[contadorNumeroDePerfiles] = nuevoPerfil;
-        System.out.println("\u001B[32m" + "Perfil creado con exito!! \t"+ "\u001B[0m" +  perfiles[contadorNumeroDePerfiles++]
+        System.out.println("\u001B[32m" + "Perfil creado con éxito!! \t"+ "\u001B[0m" +  perfiles[contadorNumeroDePerfiles++]
                             + "\n\tPerfiles Creados: " + contadorNumeroDePerfiles + "\n\tPerfiles disponibles: " + (tipoDeSuscripcion.numPerfiles() - contadorNumeroDePerfiles));
         return nuevoPerfil;
     }
@@ -40,7 +42,7 @@ public class Cuenta {
     public String toString() {
         return
                 "\n\tNombre de la cuenta: " + nombreUsuario
-                        + "\n\tTipo de Suscripcion: " + tipoDeSuscripcion.getNombreDeSuscripcion() +
+                        + "\n\tTipo de Suscripción: " + tipoDeSuscripcion.getNombreDeSuscripcion() +
                         "\n\tPerfiles: " + contadorNumeroDePerfiles;
     }
 }

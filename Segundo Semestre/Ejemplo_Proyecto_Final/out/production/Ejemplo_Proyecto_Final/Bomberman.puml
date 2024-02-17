@@ -1,0 +1,596 @@
+@startuml
+skinparam roundcorner 20
+skinparam linetype polyline
+skinparam linetype ortho
+skinparam stereotypeCBackgroundColor Red
+skinparam class {
+BackgroundColor White
+ArrowColor Black
+BorderColor Gray
+}
+
+
+package presentation {
+    abstract class Frame {
+        - currentFrame: Frame
+        - gameManager: GameManager
+        + setState(Frame frame): void
+        + getState(): Frame
+        + update(): void
+        + render(): void
+    }
+    class MenuFrame {
+        + update(): void
+        + render(): void
+    }
+    class Scoreboard {
+        - scoresArray: ArrayList<String>
+        - highscores: String[]
+        - scoreComparator(): Comparator<String>
+        + compare(String s1, String s2): int
+        + update(): void
+        + writeScore(): void
+        + choose5Scores(): void
+        + getScoresArray(): ArrayList<String>
+        + getHighscores(): String[]
+    }
+    class Map {
+        - LEVEL_WIDTH : int
+        - LEVEL_HEIGHT : int
+        - BOMBERMAN_X_SPAWN : int
+        - BOMBERMAN_Y_SPAWN : int
+        - gameManager: GameManager
+        - blocks: int[][]
+        - width: int
+        - height: int
+        - spawnX: int
+        - spawnY: int
+        - entityManager: EntityManager
+        - specialEntityManager: SpecialEntityManager
+        - id: int
+        - level: String
+        + update(): void
+        + render(): void
+        + getBlock(): Block
+        + loadMap(): void
+        + loadEntities(): void
+        + getEntityManager(): EntityManager
+        + getSpecialEntityManager(): SpecialEntityManager
+        + getId(): int
+        + setId(): void
+    }
+    class GamePanel {
+        - frame: JFrame
+        - canvas: Canvas
+        - title: String
+        - width: int
+        - height: int
+        - createDisplay(): void
+        + getCanvas(): Canvas
+        + getFrame(): JFrame
+        + getWidth(): int
+    }
+    class GameFrame {
+        - map: Map
+        + update: void
+        + render: void
+    }
+    class Game {
+        - GAME_WINDOW_WIDTH : int
+        - GAME_WINDOW_HEIGHT : int
+        - FRAMES_PER_SECOND : int
+        - gamePanel: GamePanel
+        - running: boolean
+        - thread: Thread
+        - bufferStrategy: BufferStrategy
+        - graphics: Graphics
+        - keyDetector: KeyDetector
+        - mouseDetector: MouseDetector
+        - gameManager: GameManager
+        - xScale: int
+        - yScale: int
+        + width: int
+        + height: int
+        + title: String
+        + paused: boolean
+        + gameFrame: Frame
+        + menuFrame: Frame
+        + init(): void
+        + update(): void
+        + render(): void
+        + run(): void
+        + start(): void
+        + stop(): void
+        + getKeyDetector(): KeyDetector
+        + getMouseDetector(): MouseDetector
+        + getWidth(): int
+        + getHeight(): int
+        + setWidth(int width): void
+        + setHeight(int height): void
+        + getThread(): Thread
+        + getDisplay(): GamePanel
+        + getxScale(): float
+        + getyScale(): float
+    }
+    package presentationManagers {
+        class AnimationManager {
+            - speed: int
+            - index: int
+            - lastTime: long
+            - timer: long
+            + update(): void
+            + getCurrentFrame(): BufferedImage
+            + getFrame(): BufferedImage
+        }
+        class ImageManager {
+            + width: int
+            + height: int
+            + block: BufferedImage[]
+            + solidBlock: BufferedImage[]
+            + floorBlock: BufferedImage[]
+            + speedUp: BufferedImage[]
+            + door: BufferedImage[]
+            + fireUp: BufferedImage[]
+            + playerDown: BufferedImage[]
+            + playerUp: BufferedImage[]
+            + playerLeft: BufferedImage[]
+            + playerRight: BufferedImage[]
+            + bomb: BufferedImage[]
+            + enemyAnimation: BufferedImage[]
+            + rightExplosion: BufferedImage[]
+            + leftExplosion: BufferedImage[]
+            + topExplosion: BufferedImage[]
+            + bottomExplosion: BufferedImage[]
+            + init(): void
+            + loadImage(String path): BufferedImage
+            + crop(int x, int y, int width, int height): BufferedImage
+
+        }
+        class GameManager {
+            - game: Game
+            - map: Map
+            + getMouseDetector(): MouseDetector
+            + getKeyDetector(): KeyDetector
+            + getWidth(): int
+            + getHeight(): int
+            + getGame(): Game
+            + setGame(Game game): void
+            + getMap(): Map
+            + setMap(Map map): void
+        }
+
+        class KeyDetector <<KeyListener>>{
+            - keys: boolean[]
+            + up: boolean
+            + down: boolean
+            + left: boolean
+            + right: boolean
+            + pause: boolean
+            + unpause: boolean
+            + gameGame: Game
+            + gameManager: GameManager
+            + update(): void
+            + keyTyped(KeyEvent e): void
+            + keyPressed(KeyEvent e): void
+            + keyReleased(KeyEvent e): void
+        }
+        class MouseDetector <<MouseMotionListener>> <<MouseListener>>{
+            - leftPressed: boolean
+            - rightPressed: boolean
+            - mouseX: int
+            - mouseY: int
+            + isleftPressed(): boolean
+            + isRightPressed(): boolean
+            + getMouseX(): int
+            + getMouseY(): int
+            + mousePressed(MouseEvent e): void
+            + mouseClicked(MouseEvent e): void
+            + unpress(): void
+            + mouseReleased(MouseEvent e): void
+            + mouseEntered(MouseEvent e): void
+            + mouseExited(MouseEvent e): void
+            + mouseDragged(MouseEvent e): void
+            + mouseMoved(MouseEvent e): void
+            + mouseOver(int x, int y, int width, int height): boolean
+        }
+    }
+}
+
+package logic {
+
+    package blocks {
+        class Block {
+            + blocks: Block[]
+            + floorBlock: Block
+            + solidBlock: Block
+            + DEFAULT_BLOCK_WIDTH: int
+            + DEFAULT_BLOCK_HEIGHT: int
+            - texture: BufferedImage
+            - id: int
+            + update(): void
+            + render(Graphics g, int x, int y): void
+            + isSolid(): boolean
+            + getId(): int
+            + getTiles(): Block[]
+            + setBlocks(Block[] blocks): void
+        }
+        class FloorBlock {
+            + FloorBlock(): void
+        }
+        class SolidBlock {
+            + SolidBlock(): void
+        }
+        class SoftBlock {
+            + update(): void
+            + die(): void
+            + render(Graphics g): void
+        }
+        class Door {
+            - POINTS_FOR_PASSING_LEVEL : int
+            - POINTS_PER_LIFE : int
+            - frame: JFrame
+            - player: Bomberman
+            + update(): void
+            + render(Graphics g): void
+            + checkCollisionWithPlayer(float xOffset, float yOffset): boolean
+        }
+        class BlockWithDoor {
+            + update(): void
+            + die(): void
+            + render(Graphics g): void
+        }
+        class BlockWithSpeedUp {
+            + update(): void
+            + die(): void
+            + render(Graphics g): void
+        }
+        class BlockWithFireUp {
+            + update(): void
+            + die(): void
+            + render(Graphics g): void
+        }
+
+    }
+    package bomb {
+        class Bomb {
+            - TIME_TO_EXPLODE : int
+            - lastTime: long
+            - timer: long
+            - bombed: boolean
+            - rightExplosionPlaced: boolean
+            - leftExplosionPlaced: boolean
+            - topExplosionPlaced: boolean
+            - bottomExplosionPlaced: boolean
+            - bomb: AnimationManager
+            + update(): void
+            + die(): void
+            + render(Graphics g): void
+            + getCurrentAnimationFrame(): BufferedImage
+            # timerUpdate(): void
+            + setBombed(boolean bombed): void
+            + isBombed(): boolean
+            + getTimer(): long
+        }
+        class Explosion{
+            - FIRE_X_WIDTH : int
+            - FIRE_X_HEIGHT : int
+            - FIRE_Y_WIDTH : int
+            - FIRE_Y_HEIGHT : int
+            - FIRE_TIME_OF_LIFE : int
+            - timer : long
+            # updateTimer() : void
+            # collisionWithBlock(x : int, y : int) : boolean
+            # checkBlockCollision() : void
+            # checkExplosionCollision(xOffset : float, yOffset : float);
+        }
+        class BottomExplosion {
+            - bottomExplosion: AnimationManager
+            - lastTime: long
+            - timer: long
+            - hurtBounds: Rectangle
+            + update(): void
+            + die(): void
+            + render(Graphics g): void
+            + getHurtCollisionBounds(): Rectangle
+            # checkExplosionCollision(float xOffset, float yOffset): void
+            # checkBlockCollision(): void
+            - getCurrentAnimationSpriteOfBottomExplosion(): BufferedImage
+            - updateTimer(): void
+            - collidionWithBlock(int x, int y): void
+        }
+        class LeftExplosion {
+            - leftExplosion: AnimationManager
+            - lastTime: long
+            - timer: long
+            - hurtBounds: Rectangle
+            + update(): void
+            + die(): void
+            + render(Graphics g): void
+            + getHurtCollisionBounds(): Rectangle
+            # checkExplosionCollision(float xOffset, float yOffset): void
+            # checkBlockCollision(): void
+            - getCurrentAnimationSpriteOfLeftExplosion(): BufferedImage
+            - updateTimer(): void
+            - collidionWithBlock(int x, int y): void
+        }
+        class RightExplosion {
+            - rightExplosion: AnimationManager
+            - lastTime: long
+            - timer: long
+            - hurtBounds: Rectangle
+            + update(): void
+            + die(): void
+            + render(Graphics g): void
+            + getHurtCollisionBounds(): Rectangle
+            # checkExplosionCollision(float xOffset, float yOffset): void
+            # checkBlockCollision(): void
+            - getCurrentAnimationSpriteOfRightExplosion(): BufferedImage
+            - updateTimer(): void
+            - collidionWithBlock(int x, int y): void
+        }
+        class TopExplosion {
+            - topExplosion: AnimationManager
+            - lastTime: long
+            - timer: long
+            - hurtBounds: Rectangle
+            + update(): void
+            + die(): void
+            + render(Graphics g): void
+            + getHurtCollisionBounds(): Rectangle
+            # checkExplosionCollision(float xOffset, float yOffset): void
+            # checkBlockCollision(): void
+            - getCurrentAnimationSpriteOfTopExplosion(): BufferedImage
+            - updateTimer(): void
+            - collidionWithBlock(int x, int y): void
+        }
+    }
+
+    package characters {
+        class Enemy {
+            + ENEMY_HEALTH : int
+            - ENEMY_SPEED : int
+            - POINT_FOR_ENEMY : int
+            + UP_DIRECTION: int
+            + DOWN_DIRECTION: int
+            + LEFT_DIRECTION: int
+            + RIGHT_DIRECTION: int
+            + currentDirection: int
+            + player: Bomberman
+            - enemyAnimation: AnimationManager
+            + update(): void
+            + die(): void
+            + render(Graphics g): void
+            + getCurrentAnimationFrame(): BufferedImage
+            + move(): void
+            + moveInX(): void
+            + moveInY(): void
+            + checkCollisionWithPlayer(float xOffset, float yOffset): boolean
+            + checkCollisionWithBlock(int x, int y): boolean
+            - changeDirection(): void
+        }
+        class Bomberman {
+            + GAME_TIME : int
+            + PLAYER_SPEED : float
+            - downAnimation: AnimationManager
+            - upAnimation: AnimationManager
+            - leftAnimation: AnimationManager
+            - rightAnimation: AnimationManager
+            - xMovement: float
+            - yMovement: float
+            - bomb: Bomb
+            - canSetBomb: boolean
+            - score: int
+            - name: String
+            - remaningTime: int
+            - lastTime: int
+            - fireUpLevel: int
+            - frame: Frame
+            + update(): void
+            + move(): void
+            + moveInX(): void
+            + moveInY(): void
+            + checkHealth(): void
+            + setBomb(float x, float y): void
+            + setBomb(float x, float y): void
+            + getInput(): void
+            + render(Graphics g): void
+            + die(): void
+            + hurt(): void
+            + getCurrentAnimationFrame(): BufferedImage
+            + endGame(String endGameMessage): void
+            + setCanSetBomb(boolean canSetBomb): void
+            + getScore(): int
+            + setScore(int score): void
+            + getName(): String
+            + setName(String name): void
+            + getxMovement(): float
+            + setxMovement(float xMovement): void
+            + getyMovement(): float
+            + setyMovement(float yMovement): void
+            + getRemaningTime(): int
+            - timerUpdate(): void
+        }
+    }
+    package entities {
+        abstract class Character {
+            + DEFAULT_SPEED: float
+            + DEFAULT_CHARACTER_WIDTH: int
+            + DEFAULT_CHARACTER_HEIGHT: int
+            - speed: float
+            + die(): void
+            + move(): void
+            + moveInX(): void
+            + moveInY(): void
+            - checkCollisionWithBlock(int x, int y): boolean
+            + getHealth(): int
+            + setHealth(int health): void
+            + getSpeed(): float
+            + setSpeed(float speed): void
+        }
+        abstract class Entity {
+            - DEFAULT_HEALTH : int
+            - gameManager: GameManager
+            - x: float
+            - y: float
+            - width: int
+            - height: int
+            - active: boolean
+            + DEFAULT_HEALTH: int
+            + abstract die(): void
+            + hurt(): void
+            + checkEntityCollision(float xOffset, float yOffset): boolean
+            + getHurtCollisionBounds(float xOffset, float yOffset): Rectangle
+            + abstract update(): void
+            + abstract render(Graphics g): void
+            + getX(): float
+            + setX(float x): void
+            + getY(): float
+            + setY(float y): void
+            + getWidth(): int
+            + setWidth(int width): void
+            + getHeight(): int
+            + setHeight(int height): void
+            + getHealth: void
+            + setHealth(int health): void
+            + isActive(): boolean
+            + setActive(boolean active): void
+        }
+        abstract class SpecialEntity {
+            - gameManager: GameManager
+            - x: float
+            - y: float
+            - width: int
+            - height: int
+            - bounds: Rectangle
+            - active: boolean
+            - abstract update(): void
+            - abstract render(Graphics g): void
+            - getHurtCollisionBounds(float xOffset, float yOffset): Rectangle
+            - isActive(): boolean
+            - setActive(boolean active): void
+        }
+        abstract class StaticEntity {
+        }
+    }
+    package logicManagers {
+        class EntityManager {
+            - gameManager: GameManager
+            - entities: ArrayList<Entity>
+            - player: Bomberman
+            - enemy: Enemy
+            + update(): void
+            + render(Graphics g): void
+            + getManager(): GameManager
+            + setManager(GameManager gameManager): void
+            + addEntity(Entity e): void
+            + getPlayer(): Bomberman
+            + setPlayer(Player player): void
+            + getEnemy(): Enemy
+            + setEnemy(Enemy enemy): void
+            + getEntities(): ArrayList<Entity>
+            + setEntities(ArrayList<Entity> entities): void
+            }
+        class LevelManager {
+            + xmlLevels: String
+            + level0: String
+            + level1: String
+            + level2: String
+            + level3: String
+            + parseLevels(): void
+        }
+        class SpecialEntityManager {
+            - gameManager: GameManager
+            - specialEntities: ArrayList<SpecialEntity>
+            + update(): void
+            + render(Graphics g): void
+            + getSpecialEntities(): ArrayList<SpecialEntity>
+            + addSpecialEntity(SpecialEntity se): void
+        }
+
+    }
+    package powerUps {
+        class FireUp {
+            + player: Bomberman
+            + update(): void
+            + render(Graphics g): void
+            + checkCollisionWithPlayer(float xOffset, float yOffset): boolean
+        }
+        class SpeedUp {
+            + player: Bomberman
+            + update(): void
+            + render(Graphics g): void
+            + checkCollisionWithPlayer(float xOffset, float yOffset): boolean
+        }
+    }
+}
+Game --> GamePanel
+Game --> GameManager
+Game --> GameFrame
+Game --> MenuFrame
+
+GameFrame --|> Frame
+MenuFrame --|> Frame
+GameFrame --> Map
+MenuFrame --> Scoreboard
+
+Map --> Bomberman
+Map --> EntityManager
+Map --> SpecialEntityManager
+
+EntityManager --> SoftBlock
+EntityManager --> SolidBlock
+EntityManager --> Enemy
+EntityManager --> BlockWithFireUp
+EntityManager --> BlockWithSpeedUp
+EntityManager --> BlockWithDoor
+
+EntityManager --> Entity
+SpecialEntityManager --> SpecialEntity
+AnimationManager ..> ImageManager
+
+SpecialEntity <|-- Door
+SpecialEntity <|-- FireUp
+SpecialEntity <|-- SpeedUp
+
+Entity --> Character
+Character <|-- Bomberman
+Character <|-- Enemy
+
+Entity <|-- SoftBlock
+Entity <|-- BlockWithDoor
+Entity <|-- BlockWithSpeedUp
+Entity <|-- BlockWithFireUp
+Entity <|-- Bomb
+Explosion <|-- TopExplosion
+Explosion <|-- BottomExplosion
+Explosion <|-- RightExplosion
+Explosion <|-- LeftExplosion
+
+Bomberman --> Bomb
+Bomb --> Explosion
+Explosion  <|-- Entity
+Bomberman ..> AnimationManager
+Bomberman ..> GameManager
+
+Enemy ..> EntityManager
+Enemy ..> AnimationManager
+
+BlockWithDoor --> Door
+BlockWithFireUp --> FireUp
+BlockWithSpeedUp --> SpeedUp
+
+Block <|-- FloorBlock
+Block <|-- SolidBlock
+
+Bomb --> TopExplosion
+Bomb --> BottomExplosion
+Bomb --> RightExplosion
+Bomb --> LeftExplosion
+Bomb ..> AnimationManager
+
+TopExplosion ..> AnimationManager
+BottomExplosion ..> AnimationManager
+RightExplosion ..> AnimationManager
+LeftExplosion ..> AnimationManager
+
+@enduml

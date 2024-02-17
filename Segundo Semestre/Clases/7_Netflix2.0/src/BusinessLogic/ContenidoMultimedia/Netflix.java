@@ -1,29 +1,25 @@
-import ContenidoMultimedia.Pelicula;
-import ContenidoMultimedia.Serie;
-import ControlDeExcepciones.DineroInsuficiente;
-import ControlDeExcepciones.VerContenidoCuentaSinPagar;
+package BusinessLogic.ContenidoMultimedia;
+
+import BusinessLogic.ContenidoMultimedia.ControlDeExcepciones.DineroInsuficiente;
+import BusinessLogic.ContenidoMultimedia.ControlDeExcepciones.VerContenidoCuentaSinPagar;
+
+import java.util.ArrayList;
 
 public class Netflix {
 
-    private Cuenta[] cuentas;
-    private int contadorDeCuentas;
-    private Pelicula[] peliculas;
-    private int contadorDePeliculas;
-    private Serie[] series;
-    private int contadorDeSeries;
+    private ArrayList<Cuenta> cuentas;
+    private ArrayList<Pelicula> peliculas;
+    private ArrayList<Serie> series;
 
     public Netflix() {
-        cuentas = new Cuenta[1000];
-        contadorDeCuentas = 0;
-        peliculas = new Pelicula[1000];
-        contadorDePeliculas = 0;
-        series = new Serie[1000];
-        contadorDeSeries = 0;
+        cuentas = new ArrayList<Cuenta>();
+        peliculas = new ArrayList<Pelicula>();
+        series = new ArrayList<Serie>();
     }
 
     public Pelicula regresarPeli(int numeroDePeli) {
 
-        return peliculas[numeroDePeli];
+        return peliculas.get(numeroDePeli);
     }
 
 
@@ -32,24 +28,24 @@ public class Netflix {
             throw new DineroInsuficiente();
         }
         Cuenta nuevaCuenta = new Cuenta(nombreUsuario, contrasenia, tipoDeSuscripcion);
-        cuentas[contadorDeCuentas++] = nuevaCuenta;
+        cuentas.add(nuevaCuenta);
         System.out.println("\u001B[32m" + "Felicidades!! Ahora usted tiene una cuenta " + tipoDeSuscripcion.getNombreDeSuscripcion() + "\u001B[0m");
         return nuevaCuenta;    //TODO: Preguntar a Carlos, porque el código luego del if no se ejecuta si lanzo el error
     }
 
     public void reproducirPelicula(Cuenta cuenta, int numeroDePelicula) {
-        if (cuenta == null ) {
+        if (cuenta == null) {
             try {
                 throw new NullPointerException("\u001B[31m" + "ERROR:" + "\u001B[0m" + " La cuenta no existe!!");
-            } catch (NullPointerException e){
+            } catch (NullPointerException e) {
                 System.out.println(e.getMessage());
                 return;
             }
         }
-        if (peliculas[numeroDePelicula] == null) {
+        if (numeroDePelicula >= peliculas.size()) {
             try {
                 throw new NullPointerException("\u001B[31m" + "ERROR:" + "\u001B[0m" + " La peli no está en el arreglo!!");
-            } catch (NullPointerException e){
+            } catch (NullPointerException e) {
                 System.out.println(e.getMessage());
                 return;
             }
@@ -57,36 +53,34 @@ public class Netflix {
         if (cuenta.tipoDeSuscripcion() == Suscripcion.SIN_PAGAR) {
             try {
                 throw new VerContenidoCuentaSinPagar();
-            } catch (VerContenidoCuentaSinPagar e){
+            } catch (VerContenidoCuentaSinPagar e) {
                 System.out.println(e.getMessage());
                 return;
             }
         }
-        System.out.println("Disfurte de la peli!!!" + peliculas[numeroDePelicula]);
+        System.out.println("Disfrute de la peli!!!" + peliculas.get(numeroDePelicula));
     }
 
     public void agregarPelicula(String nombrePeli, String genero) {
-        Pelicula nuevaPelicula = new Pelicula(nombrePeli, genero);
-        peliculas[contadorDePeliculas++] = nuevaPelicula;
-        System.out.println("\u001B[32m" + "ContenidoMultimedia.Pelicula \"" + nombrePeli + "\" agregada con EXITO!!" + "\u001B[0m");
+        peliculas.add(new Pelicula(nombrePeli, genero));
+        System.out.println("\u001B[32m" + "Película \"" + nombrePeli + "\" agregada con ÉXITO!!" + "\u001B[0m");
     }
 
     public void agregarSerie(String nombreSerie, String genero, int numTemporada, int numCapitulos) {
-        Serie nuevaSerie = new Serie(nombreSerie, genero, numTemporada, numCapitulos);
-        series[contadorDeSeries++] = nuevaSerie;
-        System.out.println("\u001B[32m" + "ContenidoMultimedia.Serie \"" + nombreSerie + "\" agregada con EXITO!!" + "\u001B[0m");
+        series.add(new Serie(nombreSerie, genero, numTemporada, numCapitulos));
+        System.out.println("\u001B[32m" + "Serie \"" + nombreSerie + "\" agregada con EXITO!!" + "\u001B[0m");
 
     }
 
     public void reproducirSerie(Cuenta cuenta, int numSerie, int numTemporada, int numCapitulo) {
-        if (cuenta == null || series[numSerie] == null ) {
+        if (cuenta == null || numSerie >= series.size()) {
             try {
                 if (cuenta == null) {
                     throw new NullPointerException("\u001B[31m" + "ERROR:" + "\u001B[0m" + " La cuenta no existe!!");
-                }else {
+                } else {
                     throw new NullPointerException("\u001B[31m" + "ERROR:" + "\u001B[0m" + " La serie no esta en el arreglo!!");
                 }
-            } catch (NullPointerException e){
+            } catch (NullPointerException e) {
                 System.out.println(e.getMessage());
                 return;
             }
@@ -99,39 +93,39 @@ public class Netflix {
             }
             return;
         }
-        System.out.println("Disfrute de la ContenidoMultimedia.Serie!!!" + series[numSerie]);
+        System.out.println("Disfrute de la Serie!!!" + series.get(numSerie));
     }
 
 
     @Override
     public String toString() {
         return "Netflix:" +
-                "\ncuentas = " + contadorDeCuentas + imprimirTodasLasCuentas() +
-                "\n\npeliculas = " + contadorDePeliculas + imprimirTodasLasPeliculas() +
-                "\n\nseries = " + contadorDeSeries + imprimirTodasLasSeries();
+                "\ncuentas = " + cuentas.size() + imprimirTodasLasCuentas() +
+                "\n\npelículas = " + peliculas.size() + imprimirTodasLasPeliculas() +
+                "\n\nseries = " + series.size() + imprimirTodasLasSeries();
 
     }
 
     private String imprimirTodasLasSeries() {
         StringBuilder result = new StringBuilder();
-        for (int i = 0; i < contadorDeSeries; i++) {
-            result.append("\n\t").append(series[i].toString());
+        for (Serie magia : series) {
+            result.append("\n\t").append(magia.toString());
         }
         return result.toString();
     }
 
     private String imprimirTodasLasPeliculas() {
         StringBuilder result = new StringBuilder();
-        for (int i = 0; i < contadorDePeliculas; i++) {
-            result.append("\n\t").append(peliculas[i].toString());
+        for (Pelicula magia : peliculas) {
+            result.append("\n\t").append(magia.toString());
         }
         return result.toString();
     }
 
     private String imprimirTodasLasCuentas() {
         StringBuilder result = new StringBuilder();
-        for (int i = 0; i < contadorDeCuentas; i++) {
-            result.append("\n\t").append(cuentas[i].toString());
+        for (Cuenta magia : cuentas) {
+            result.append("\n\t").append(cuentas.toString());
         }
         return result.toString();
     }

@@ -1,4 +1,4 @@
-package ContenidoMultimedia;
+package BusinessLogic.ContenidoMultimedia;
 
 public class Serie {
     private String genero;
