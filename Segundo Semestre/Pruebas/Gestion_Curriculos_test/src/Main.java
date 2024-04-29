@@ -47,7 +47,6 @@ public class Main {
         empresa.addCV(cv2);
         //----------------------------------CASOS-------------------------
         System.out.println("\n\t\u001B[34m Caso 1. Presentar Currículos ordenado por cantidad de Competencias  ______________________\u001B[0m");
-
         empresa.ordenarPorCompetencias();
         empresa.imprimirCVs();
 
