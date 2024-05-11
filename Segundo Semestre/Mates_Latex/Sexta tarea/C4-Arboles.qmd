@@ -1,0 +1,30 @@
+---
+title: "EJERCICIOS C4-Árboles"
+author:
+- Huilca Fernando
+toc: true
+toc-title: "Contenido"
+number-sections: true   
+highlight-style: pygments
+format:
+  html:
+    code-fold: true
+    embed-resources: true
+    html-math-method: katex
+  pdf:
+    code-line-numbers: true
+    geometry: 
+      - top=30mm
+      - left=30mm
+  docx: default
+---
+
+# EJERCICIO 02
+
+**Cuáles gráficas en los ejercicios 1 al 4 son árboles? Explique.**
+
+ 
+![Solución](https://imgur.com/rRThboO)
+El gráfico no es un árbol porque no cumple con el requsito de N-1.
+El cual dice: el número de aristas es igual a n - 1 donde n 
+es el número de vertices en el grafo 

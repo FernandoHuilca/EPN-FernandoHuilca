@@ -1,0 +1,32 @@
+2.	Ejercicio para visualizar su creatividad en cuánto a una solución propuesta de acuerdo con problema planteado.
+A.	Escribir un algoritmo Pseudocódigo y Diagrama de Flujo (este lo realizarán en draw.io).
+
+Problema: Planificador de Viajes Inteligente
+
+Suponga que usted es un viajero ávido que desea crear un sistema de planificación de viajes que le ayude a organizar
+su equipaje de manera eficiente y a elegir la ropa adecuada para cada destino, considerando diversos factores como
+el clima, las actividades previstas y la duración del viaje. Deberá desarrollar un algoritmo y un diagrama de flujo
+para este propósito.
+
+El objetivo es diseñar un algoritmo y diagrama de flujo que le permita:
+
+• Ingresar información sobre la ropa y accesorios que tiene disponibles para su viaje, incluyendo una
+descripción detallada de cada prenda y su adecuación a diferentes climas y actividades (por ejemplo,
+caminatas, visitas turísticas, cenas formales, etc.).
+
+• Obtener datos sobre el clima y las condiciones atmosféricas de los destinos que visitará, incluyendo
+la temperatura, la humedad, la posibilidad de lluvia u otras inclemencias del tiempo.
+
+• Registrar las actividades planificadas para cada día del viaje, teniendo en cuenta horarios, ubicaciones
+y posibles cambios en el itinerario.
+
+• Utilizar esta información para recomendar un conjunto de ropa y accesorios apropiados para cada día del viaje,
+ considerando el clima, las actividades programadas y la duración del mismo.
+
+Deberá considerar cómo representar y almacenar la información sobre su equipaje, el clima en los destinos y las
+actividades planificadas, y luego diseñar un algoritmo que tome decisiones inteligentes para recomendar el equipaje
+más adecuado para cada día del viaje.
+
+Este ejercicio promueve la aplicación práctica de conceptos de estructuras de datos y algoritmos para resolver un
+problema real y cotidiano, ayudando a los estudiantes a desarrollar habilidades de planificación y optimización
+en sus viajes.

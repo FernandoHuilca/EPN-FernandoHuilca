@@ -1,0 +1,12 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class Empresa {
+}
+enum Servicio {
+}
+Empresa --> "*" Mascota
+Empresa --> Servicio
+Mascota --> HistorialMédico
+HistorialMédico --u> "*" Servicio
+@enduml

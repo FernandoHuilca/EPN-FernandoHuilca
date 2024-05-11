@@ -1,0 +1,26 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class Empresa {
+}
+
+enum Tamaño {
+    PEQUENIA
+    MEDIANA
+    GRANDE
+}
+
+class Orden {
+
+}
+
+Empresa -->"*" Orden
+Orden --> "*" Pizza
+Pizza ..> Tamaño
+Pizza -->"*" Ingrediente
+class Ingrediente {
+    - Ingrediente : String
+}
+
+
+@enduml

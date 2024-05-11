@@ -1,0 +1,16 @@
+@startuml
+class Ropa {
+ - climaDeUsoOptimo : <ArrayList>Clima
+ - actividadesDeUsoOptimo :   <ArrayList>Actividad
+}
+class Destino {
+    - tipoDeClima : Clima
+    - posibilidadDeLluvia : double
+}
+
+class Actividad {
+    - nombre : String
+}
+
+
+@enduml
