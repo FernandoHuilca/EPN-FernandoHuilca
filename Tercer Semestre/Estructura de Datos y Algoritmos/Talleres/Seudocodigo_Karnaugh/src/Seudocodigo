@@ -1,0 +1,64 @@
+1 Inicio del Algoritmo
+
+    1.1 Preguntar al usuario --> por la ecuación
+
+    1.2 Si no es canónica entonces transformarla
+
+    1.3 Obtener de la expresión los bits
+
+2 Armar la tabla de Karnaugh
+
+    2.1 hacer los grupos de uno en potencias de dos
+
+    2.3 de los grupos de uno reducir las variables y guardarlas
+
+3 Presentar resultados mostrando las variables guardadas (expresión reducida)
+
+4 Fin del Algoritmo
+
+
+
+
+
+
+__________________ ESCUELA POLITÉCNICA NACIONAL __________________________________
+Nombres: Fernando Huilca, Jhordy Parra, Juan Cofre y Jeremy Jimenez
+
+SeudoCódigo sobre mapas de Karnaugh:
+Inicio
+    Entrada: Expresión General o canónica booleana en bits (ceros y unos)
+    expresión <- entrada
+
+    // Paso 0: Separar los términos de la expresión de entrada
+    list_términos <- separar_expresión_en_términos(expresión);
+
+    // Paso 1: Determinar el número de variables
+    num_variables <- contar_num_variables(expresión)
+
+    // Paso 2: Crear el mapa de Karnaugh
+    mapa <- crear_kmap(num_variables)
+
+    // Paso 3: Colocar los unos de la expresión de entrada en el Kmap
+        posición <- convertir_a_coordenadas(cada uno de los términos en list_términos)
+        mapa[posición] <- 1
+
+    // Paso 4: Buscar y agrupar los unos (1s) en el mapa
+        list_grupos <- agrupar_unos(mapa)
+    código para  buscar la agrupación más grande posible de unos (1s) en función de
+    las potencias de dos
+
+    // Paso 5: Convertir los grupos en términos simplificados
+    list_términos_simplificados <- lista_vacía
+    para cada grupo en lista_grupos: //for each
+        list_término <- convertir_a_términos_simplificados(list_grupos)
+
+    // Paso 6: Formar la expresión simplificada
+    expresión_simplificada <- unir_términos(lista_términos_simplificados)
+
+    // Paso 7: Mostrar la expresión booleana simplificada
+        imprimir expresión_simplificada
+Fin
+
+
+
+

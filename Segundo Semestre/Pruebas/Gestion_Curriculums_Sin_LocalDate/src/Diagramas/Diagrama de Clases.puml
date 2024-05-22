@@ -1,0 +1,34 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class Empresa {
+}
+
+class CV {
+    - nombreCandidato: string
+}
+
+class Título {
+}
+class Trabajo {
+}
+class Competencia {
+}
+
+
+Empresa --> "*" CV
+CV --> "*" Título
+CV --> "*" Trabajo
+CV --> "*" Competencia
+
+Título ..> LocalDate
+Trabajo ..> LocalDate
+
+Título ..> FechaInicialYFinalIncorrectas
+Trabajo ..> FechaInicialYFinalIncorrectas
+
+CV ..u OrdenarPorCompetencias
+CV ..u|> OrdenarPorExperiencia
+CV ..u|> OrdenarPorTitulación
+
+@enduml

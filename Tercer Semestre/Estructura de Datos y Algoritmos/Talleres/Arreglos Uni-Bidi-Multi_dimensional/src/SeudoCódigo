@@ -1,0 +1,12 @@
+//Supongamos que se deben leer los elementos de un
+//arreglo A con índices comprendidos entre el 1 y el
+//30. Cuál es el algoritmo que esta estructura de
+//datos necesita para especificar dicha operación
+
+
+AlgoritmoDeLectura()
+Inicio
+ArregloLectura = Arreglo[1 ... 30] de
+
+
+Fin

@@ -1,0 +1,26 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class Invernadero {
+     - areaDelInvernadero : double
+     - numeroDeCultivos : int
+     - modeloDeSistemaRiego : String
+     - estadoDeVentilacion : boolean
+
+     + invernadero()
+     + obtenerNumeroDeCultivos()
+     + obtenerAreaDelInvernadero()
+     + encenderVentilacion()
+     + apagarVentilacion()
+     + estado()
+     + modificarArea()
+     + modificarNumeroDeCultivos()
+     + modificarModeloDeRiego()
+     + modificarArea()
+
+
+
+
+}
+
+@enduml
