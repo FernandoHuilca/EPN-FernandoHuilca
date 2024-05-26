@@ -47,4 +47,4 @@ Mucha suerte.
 
 ---
 
-_**Ingeniería de Software** | **Escuela Politécnica Nacional | **Fernando Huilca**_
+_**Ingeniería de Software** | **Escuela Politécnica Nacional** | **Fernando Huilca**_
