@@ -1,6 +1,6 @@
 # Programación I
 
-**Programación I** es una materia del primer semestre en la carrera de Ingeniería de Software en la Escuela Politécnica Nacional.
+**Programación I** Materia del primer semestre en la carrera de Ingeniería de Software en la Escuela Politécnica Nacional.
 
 ## Profesor
 
@@ -9,7 +9,7 @@ La materia fue impartida por el Profesor Richar Rivera.
 
 ## Contenidos del Repositorio
 
-En este repositorio podrás encontrar material de estudio, ejemplos de ejercicios realizados, tareas, talleres, repasos para pruebas y exámenes, ejemplos del proyecto final, mi proyecto final (un juego donde se utilizan estructuras de datos), entre muchos otros recursos. Espero que te sirva.
+En este repositorio podrás encontrar material de estudio, ejemplos de ejercicios realizados, tareas, talleres, repasos para pruebas y exámenes, juego de undir barcos, ejemplos del proyecto final, mi proyecto final (programa para administrar libros de una biblioteca), entre muchos otros recursos. Espero que te sirva.
 
 
 ## Contenidos del Curso
@@ -47,4 +47,4 @@ Mucha suerte.
 
 ---
 
-_**Ingeniería de Software** | **Escuela Politécnica Nacional**_
+_**Ingeniería de Software** | **Escuela Politécnica Nacional | **Fernando Huilca**_
