@@ -4,7 +4,7 @@
 
 ## Profesor
 
-Este curso fue impartido por el Profesor Andrés Larco.
+Este curso fue impartido por el Profesor Andrés Larco y la otra mitad de la materia por Marco Molina.
 
 
 ## Contenidos del Repositorio
@@ -13,6 +13,7 @@ En este repositorio podrás encontrar:
 
 - Talleres y tareas realizadas en **LaTeX**, **R** y **MATLAB**.
 - Ejemplos de exámenes y pruebas.
+- Tareas, talleras y proyecto final con Marco Molina
 - Ejercicios prácticos.
 
 
