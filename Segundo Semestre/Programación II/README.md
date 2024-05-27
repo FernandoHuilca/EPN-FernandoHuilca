@@ -43,7 +43,6 @@ El proyecto final consiste en la implementación de todos los conocimientos adqu
 ## Recursos Adicionales
 
 Para reforzar nuestro aprendizaje, utilizamos diversos recursos adicionales:
-## Recursos Adicionales
 
 - **Documentación Oficial de Java**: [Java Official Website](https://www.java.com/es/)
 - **Para aprender sintaxis y conceptos**:[W3Schools Java OOP Tutorial](https://www.w3schools.com/java/java_oop.asp)
