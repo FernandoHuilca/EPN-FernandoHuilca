@@ -66,8 +66,8 @@ Buena suerte.
 ### Imágenes del Proyecto Final
 
 <p align="center">
-  <img src="https://github.com/FernandoHuilca/EPN-FernandoHuilca/assets/134117009/caadfe85-fb4b-4206-98e4-558b657b77de" alt="Presentación del proyecto" width="45%" />
   <img src="https://github.com/FernandoHuilca/EPN-FernandoHuilca/assets/134117009/e50e6d21-1d16-4845-8350-b9d446e4f1d1" alt="Reunión en grupo (Falta Mateo jeje)" width="45%" />
+  <img src="https://github.com/FernandoHuilca/EPN-FernandoHuilca/assets/134117009/caadfe85-fb4b-4206-98e4-558b657b77de" alt="Presentación del proyecto" width="45%" />
 </p>
 
 ---
