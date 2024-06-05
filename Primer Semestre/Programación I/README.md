@@ -47,6 +47,7 @@ Mucha suerte.
 
 ## Proyecto final
 El proyecto consiste en un programa destinado a la gestión de libros en una biblioteca, enfocado en la aplicación de los conceptos aprendidos durante el semestre. Además, he decidido agregar una interfaz gráfica rudimentaria, aunque el proyecto en sí no exigía esta funcionalidad. 
+
 <div style="display: flex; flex-wrap: wrap;">
     <div style="flex: 1; padding: 5px;">
         <img src="https://github.com/FernandoHuilca/EPN-FernandoHuilca/assets/134117009/99daad34-db70-4bec-baba-7acc17461a1f" alt="imagen1" style="max-width: 100%;">
