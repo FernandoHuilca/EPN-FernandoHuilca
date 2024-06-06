@@ -43,7 +43,7 @@ Si bien resulta fácil hacer los ejercicios con inteligencia artificial parcial 
 
 El mejor consejo que te puedo dar es que la programación se aprende programando: practica mucho y haz ejercicios por tu cuenta además de los que te asignen en talleres o deberes.
 
-Mucha suerte.
+Mucha suerte. ❤️
 
 ## Proyecto final
 El proyecto consiste en un programa destinado a la gestión de libros en una biblioteca, enfocado en la aplicación de los conceptos aprendidos durante el semestre. Además, fue realizado en grupo junto con mis compañeros [@JuanMateoQ](https://github.com/JuanMateoQ) y [@jeremyjimenez11](https://github.com/jeremyjimenez11) juntos hemos decidido agregar una interfaz gráfica rudimentaria, aunque el proyecto en sí no exigía esta funcionalidad. 
