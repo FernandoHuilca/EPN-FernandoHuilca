@@ -24,6 +24,7 @@ Durante mi estancia en la EPN guardaré todo lo que hago desde el inicio hasta e
     - [Juego Bad Ice Cream](#3-juego-bad-ice-cream)
     - [Estructura de Von Neumann](#4-estructura-de-von-neumann)
     - [Lector de Huella](#5-lector-de-huella)
+    - [Estudio Estadístico Ventas](#6-estudio-estadístico-ventas)
 2. [Contacto](#contacto)
 
 ## Proyectos Destacados
@@ -140,6 +141,29 @@ Aquí encontrarás una selección de los proyectos más relevantes que he desarr
 </tr>
 </table>
 
+
+
+### 6. [Estudio Estadístico Ventas](https://fernandohuilca3.wixsite.com/probabilidad-y-estad/blog)
+<table>
+<tr>
+<td>
+
+**Descripción:** En la materia de Probabilidad y Estadística, hemos llevado a cabo un estudio exhaustivo de las ventas realizadas por una empresa. Analizamos un conjunto de mil datos, lo que nos permitió obtener una comprensión clara y objetiva de los datos recogidos en el registro de ventas. Este análisis estadístico facilita la toma de decisiones informadas y estratégicas para la empresa. <br><br>
+**Tecnologías:** Microsoft Exel.  <br><br>
+**Características:**  
+- Medidas de Centralización: Análisis de la media, mediana y moda para entender la tendencia central de los datos.
+- Medidas de Posición: Cálculo de percentiles, deciles y cuartiles para conocer la distribución de los datos.
+- Medidas de Dispersión: Evaluación de la desviación estándar y el rango intercuartílico para medir la variabilidad de los datos.
+- Visualización de Datos: Uso de gráficos de barras, histogramas, diagramas de caja y gráficos de dispersión para representar los datos de manera clara y comprensible.
+- Interpretación de Resultados: Análisis detallado de los resultados para proporcionar insights útiles y accionables.
+</td>
+<td>
+
+<img src="https://github.com/FernandoHuilca/EPN-FernandoHuilca/assets/134117009/2c52a4f3-cbc1-4f2c-8428-a19ac57f4f48" alt="Imagen Proyecto 4" width="2100">
+
+</td>
+</tr>
+</table>
 
 
 
