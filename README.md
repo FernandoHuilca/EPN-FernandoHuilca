@@ -10,7 +10,7 @@
 # EPN - Fernando Huilca
 
 Durante mi estancia en la EPN guardaré todo lo que hago desde el inicio hasta el final en este repositorio. Si te resulta útil, úsalo, recuerda: 
-"La ciencia al servicio de la humanidad". ¡Buena suerte, búho!"
+"La ciencia al servicio de la humanidad". ¡Buena suerte, búho!" 🆗🦉
 
 </td>
 </tr>
@@ -22,6 +22,7 @@ Durante mi estancia en la EPN guardaré todo lo que hago desde el inicio hasta e
     - [Gestión de una librería](#1-gestión-de-una-librería)
     - [Juego del ahorcado](#2-juego-del-ahorcado)
     - [Juego Bad Ice Cream](#3-juego-bad-ice-cream)
+    - [Estructura de Von Neumann](#4-estructura-de-von-neumann)
 2. [Contacto](#contacto)
 
 ## Proyectos Destacados
@@ -33,7 +34,7 @@ Aquí encontrarás una selección de los proyectos más relevantes que he desarr
 <tr>
 <td>
 
-**Descripción:** Es un programa destinado a la gestión de libros en una biblioteca, donde se puede alquilar libros y buscarlos en la base de datos.  
+**Descripción:** Es un programa destinado a la gestión de libros en una biblioteca, donde se puede alquilar libros, devolver libros, buscarlos en la base de datos, agregar mas libros, entre otras opciones.  
 **Tecnologías:** Hecho en C++.  
 **Características:**  
 - Uso de un login
@@ -44,7 +45,7 @@ Aquí encontrarás una selección de los proyectos más relevantes que he desarr
 </td>
 <td>
 
-<img src="https://github.com/FernandoHuilca/EPN-FernandoHuilca/assets/134117009/d487c99e-03b0-4635-a6e0-2ea736a3ae92" alt="Imagen Proyecto 1" width="900">
+<img src="https://github.com/FernandoHuilca/EPN-FernandoHuilca/assets/134117009/d487c99e-03b0-4635-a6e0-2ea736a3ae92" alt="Imagen Proyecto 1" width="1200">
 
 </td>
 </tr>
@@ -92,6 +93,29 @@ Aquí encontrarás una selección de los proyectos más relevantes que he desarr
 </td>
 </tr>
 </table>
+
+
+### 4. [Estructura de Von Neumann](https://github.com/FernandoHuilca/Arquitectura_de_Von_Neumann)
+<table>
+<tr>
+<td>
+
+**Descripción:** Este es un programa que simula el funcionamient del modelo de Von Neumann, una de las bases fundamentales de la arquitectura de las computadoras modernas
+**Tecnologías:** Java, paradigma orientado a objetos, Arquitectura de computadores.  
+**Características:**  
+- administración de procesos
+- Arquitectura de computadores
+- Explicación detallada 
+
+</td>
+<td>
+
+<img src="https://github.com/FernandoHuilca/EPN-FernandoHuilca/assets/134117009/737bb945-79fa-42e8-82e1-549b1eb66bdb" alt="Imagen Proyecto 4" width="1800">
+
+</td>
+</tr>
+</table>
+
 
 ## Contacto
 
