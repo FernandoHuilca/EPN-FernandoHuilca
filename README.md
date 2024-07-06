@@ -90,8 +90,8 @@ Aquí encontrarás una selección de los proyectos más relevantes que he desarr
 
 </td>
 <td>
+<img src="https://github.com/FernandoHuilca/EPN-FernandoHuilca/assets/134117009/6fe8b13c-75fc-4401-9d96-d29a2f5620ae" alt="Gif Proyecto 3" width="425">
 
-<img src="https://github.com/FernandoHuilca/EPN-FernandoHuilca/assets/134117009/dcf8eb8c-5841-48f0-8090-6454426843e7" alt="Imagen Proyecto 3" width="1800">
 
 </td>
 </tr>
