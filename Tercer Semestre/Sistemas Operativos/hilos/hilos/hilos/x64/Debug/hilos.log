@@ -1,0 +1,2 @@
+﻿  hilos.cpp
+C:\Users\Fernando_Huilca\Desktop\EPN-FernandoHuilca\Tercer Semestre\Sistemas Operativos\hilos\hilos\hilos\hilos.cpp(3,10): fatal  error C1083: No se puede abrir el archivo incluir: 'pthread.h': No such file or directory

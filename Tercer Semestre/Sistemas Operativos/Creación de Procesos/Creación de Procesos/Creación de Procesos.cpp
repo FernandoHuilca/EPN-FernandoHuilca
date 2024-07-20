@@ -1,19 +1,26 @@
-// Creaci贸n de Procesos.cpp : Este archivo contiene la funci贸n "main". La ejecuci贸n del programa comienza y termina ah铆.
-//
+#include <stdio.h>
+#include <unistd.h>
+#include <stdlib.h>
+#include <sys/wait.h>  // Incluir la biblioteca para la funci髇 wait
 
-#include <iostream>
-
-int main()
-{
-    std::cout << "Hello World!\n";
+int main() {
+    int pid;
+    pid = fork();
+    switch (pid) {
+    case -1:
+        printf("\nNo he podido crear el proceso hijo");
+        break;
+    case 0:
+        printf("\nSoy el hijo, mi PID es %d y mi PPID es %d", getpid(), getppid());
+        sleep(10);
+        break;
+    default:
+        // Esperar a que el proceso hijo termine
+        wait(0);
+        sleep(10);  // Dormir 10 segundos m醩 despu閟 de que el hijo termine
+        printf("Soy el padre, mi PID es %d y el PID de mi hijo es %d", getpid(), pid);
+        printf("\nFinal de ejecuci髇 de padre");
+        exit(0);
+        return 0;
+    }
 }
-
-// Ejecutar programa: Ctrl + F5 o men煤 Depurar > Iniciar sin depurar
-// Depurar programa: F5 o men煤 Depurar > Iniciar depuraci贸n
-
-// Sugerencias para primeros pasos: 1. Use la ventana del Explorador de soluciones para agregar y administrar archivos
-//   2. Use la ventana de Team Explorer para conectar con el control de c贸digo fuente
-//   3. Use la ventana de salida para ver la salida de compilaci贸n y otros mensajes
-//   4. Use la ventana Lista de errores para ver los errores
-//   5. Vaya a Proyecto > Agregar nuevo elemento para crear nuevos archivos de c贸digo, o a Proyecto > Agregar elemento existente para agregar archivos de c贸digo existentes al proyecto
-//   6. En el futuro, para volver a abrir este proyecto, vaya a Archivo > Abrir > Proyecto y seleccione el archivo .sln

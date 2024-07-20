@@ -1,0 +1,4 @@
+﻿  Creación de Procesos.cpp
+C:\Users\Fernando_Huilca\Desktop\EPN-FernandoHuilca\Tercer Semestre\Sistemas Operativos\Creación de Procesos\Creación de Procesos\Creación de Procesos.cpp(1,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+MSVCRTD.lib(exe_main.obj) : error LNK2019: símbolo externo main sin resolver al que se hace referencia en la función "int __cdecl invoke_main(void)" (?invoke_main@@YAHXZ)
+C:\Users\Fernando_Huilca\Desktop\EPN-FernandoHuilca\Tercer Semestre\Sistemas Operativos\Creación de Procesos\x64\Debug\Creación de Procesos.exe : fatal error LNK1120: 1 externos sin resolver

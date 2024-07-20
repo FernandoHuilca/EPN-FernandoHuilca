@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="7eaca21e-3527-4af3-802b-8fbb89558c46" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../../../Sistemas Operativos/Creación de Procesos/.vs/Creación de Procesos/FileContentIndex/e580f16c-3dab-4fb0-b7be-b835638a70ba.vsidx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Sistemas Operativos/Creación de Procesos/.vs/Creación de Procesos/v17/.suo" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Sistemas Operativos/Creación de Procesos/.vs/Creación de Procesos/v17/.suo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Sistemas Operativos/Creación de Procesos/.vs/Creación de Procesos/v17/Browse.VC.db" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Sistemas Operativos/Creación de Procesos/.vs/Creación de Procesos/v17/Browse.VC.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Sistemas Operativos/Creación de Procesos/.vs/Creación de Procesos/v17/ipch/AutoPCH/86952b67387e0893/CREACIÓN DE PROCESOS.ipch" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Sistemas Operativos/Creación de Procesos/.vs/Creación de Procesos/v17/ipch/AutoPCH/86952b67387e0893/CREACIÓN DE PROCESOS.ipch" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Sistemas Operativos/Creación de Procesos/Creación de Procesos/Creación de Procesos.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Sistemas Operativos/Creación de Procesos/Creación de Procesos/Creación de Procesos.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Sistemas Operativos/FORMATO informes SO.docx" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../.." />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 2
+}]]></component>
+  <component name="ProjectId" id="2jF0y98FipSCqiBCmd6gXJjfiXz" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "C:/Users/Fernando_Huilca/Desktop/EPN-FernandoHuilca/Tercer Semestre/Estructura de Datos y Algoritmos/proyecto final/aprender_como_funciona_Interfaz_Grafica/src/Imagenes",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "onboarding.tips.debug.path": "C:/Users/Fernando_Huilca/Desktop/EPN-FernandoHuilca/Tercer Semestre/Estructura de Datos y Algoritmos/proyecto final/aprender_como_funciona_Interfaz_Grafica/src/Main.java",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Fernando_Huilca\Desktop\EPN-FernandoHuilca\Tercer Semestre\Estructura de Datos y Algoritmos\proyecto final\aprender_como_funciona_Interfaz_Grafica\src\Imagenes" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="7eaca21e-3527-4af3-802b-8fbb89558c46" name="Changes" comment="" />
+      <created>1720967770788</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1720967770788</updated>
+      <workItem from="1720967771939" duration="3124000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/ImageFrame.java</url>
+          <line>30</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
