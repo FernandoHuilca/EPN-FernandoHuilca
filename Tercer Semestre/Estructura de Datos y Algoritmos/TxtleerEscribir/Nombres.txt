@@ -1,0 +1,2 @@
+Hola, este es el contenido del archivo.
+Esta es una nueva línea en el archivo.
