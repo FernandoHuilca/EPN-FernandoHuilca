@@ -68,4 +68,53 @@ public class OrdenamientoPorMergeSort {
         JOptionPane.showMessageDialog(null, "El arreglo paso a paso es:\n" + sb.toString()); // Muestra el arreglo en un mensaje emergente
     }
 
+
+
+    // Método para ordenar arreglos de double[]
+    public void ordenar(double[] arreglo) {
+        mergeSortDouble(arreglo, 0, arreglo.length - 1);
+    }
+
+    private void mergeSortDouble(double[] arreglo, int left, int right) {
+        if (left < right) {
+            int mid = (left + right) / 2;
+            mergeSortDouble(arreglo, left, mid);
+            mergeSortDouble(arreglo, mid + 1, right);
+            mergeDouble(arreglo, left, mid, right);
+        }
+    }
+
+    private void mergeDouble(double[] arreglo, int left, int mid, int right) {
+        int n1 = mid - left + 1;
+        int n2 = right - mid;
+        double[] L = new double[n1];
+        double[] R = new double[n2];
+        System.arraycopy(arreglo, left, L, 0, n1);
+        System.arraycopy(arreglo, mid + 1, R, 0, n2);
+        int i = 0;
+        int j = 0;
+        int k;
+
+        for (k = left; i < n1 && j < n2; ++k) {
+            if (L[i] <= R[j]) {
+                arreglo[k] = L[i];
+                ++i;
+            } else {
+                arreglo[k] = R[j];
+                ++j;
+            }
+        }
+
+        while (i < n1) {
+            arreglo[k] = L[i];
+            ++i;
+            ++k;
+        }
+
+        while (j < n2) {
+            arreglo[k] = R[j];
+            ++j;
+            ++k;
+        }
+    }
 }

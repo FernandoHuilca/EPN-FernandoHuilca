@@ -1,4 +1,5 @@
 import javax.swing.*;
+import java.util.Arrays;
 
 // Autor: Fernando Huilca
 public class Main {
@@ -14,6 +15,7 @@ public class Main {
         OrdenamientoPorMergeSort ordenamientoPorMergeSort = new OrdenamientoPorMergeSort();
 
         do {
+
             opciónMenúPrincipal = Integer.parseInt(JOptionPane.showInputDialog(null,
                     " _______________ ELIJA UNA OPERACIÓN _______________ \n\n" +
                             "       _________ BÚSQUEDA _________\n" +
