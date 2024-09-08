@@ -25,6 +25,8 @@ Durante mi estancia en la EPN guardaré todo lo que hago desde el inicio hasta e
     - [Estructura de Von Neumann](#4-estructura-de-von-neumann)
     - [Lector de Huella](#5-lector-de-huella)
     - [Estudio Estadístico Ventas](#6-estudio-estadístico-ventas)
+    - [Poli Eats](#7-poli-eats)
+    - [Emulador Computacional](#8-emulador-computacional)
 2. [Contacto](#contacto)
 
 ## Proyectos Destacados
@@ -135,7 +137,7 @@ Aquí encontrarás una selección de los proyectos más relevantes que he desarr
 </td>
 <td>
 
-<img src="https://github.com/FernandoHuilca/EPN-FernandoHuilca/assets/134117009/30840673-4efe-48db-a725-07ff29d5ebae" alt="Imagen Proyecto 4" width="2100">
+<img src="https://github.com/FernandoHuilca/EPN-FernandoHuilca/assets/134117009/30840673-4efe-48db-a725-07ff29d5ebae" alt="Imagen Proyecto 5" width="2100">
 
 </td>
 </tr>
@@ -159,12 +161,56 @@ Aquí encontrarás una selección de los proyectos más relevantes que he desarr
 </td>
 <td>
 
-<img src="https://github.com/FernandoHuilca/EPN-FernandoHuilca/assets/134117009/2c52a4f3-cbc1-4f2c-8428-a19ac57f4f48" alt="Imagen Proyecto 4" width="2100">
+<img src="https://github.com/FernandoHuilca/EPN-FernandoHuilca/assets/134117009/2c52a4f3-cbc1-4f2c-8428-a19ac57f4f48" alt="Imagen Proyecto 6" width="2100">
 
 </td>
 </tr>
 </table>
 
+
+
+
+### 7. [Poli Eats](https://github.com/FernandoHuilca/PoliEats_ProyectoEDA)
+<table>
+<tr>
+<td>
+
+**Descripción:** PoliEats es un sistema de gestión para el restaurante de la Escuela Politécnica Nacional. Utiliza estructuras de datos avanzadas y algoritmos para optimizar el manejo de pedidos, inventarios y reservas, aplicando conceptos aprendidos en la materia de Estructura de Datos y Algoritmos para mejorar la eficiencia y funcionalidad del servicio. 🍔🍗 <br><br>
+**Tecnologías:** Java, Scene Builder, JavaFX, IntelliJ, NetBeans  <br><br>
+**Características:**  
+- Gestión de Pedidos: Utiliza listas doblemente enlazadas para manejar los pedidos de manera eficiente, permitiendo inserciones y eliminaciones rápidas.
+- Manejo de Inventario y Menú: Implementa colas para gestionar el inventario y el menú, asegurando un procesamiento en el orden de llegada (FIFO). 
+- Análisis Estadístico: Incorpora medidas de centralización y posición como media, mediana, moda, percentiles, deciles y cuartiles para analizar y comprender los datos de operaciones del restaurante.
+</td>
+<td>
+
+<img src="https://github.com/user-attachments/assets/71a11fca-64c9-4acc-af7b-f3b62b103ddb" alt="Imagen Proyecto 7" width="2100">
+
+</td>
+</tr>
+</table>
+
+
+
+### 8. [Emulador Computacional](https://github.com/FernandoHuilca/Emulador_Arquitectura_Computacional)
+<table>
+<tr>
+<td>
+
+**Descripción:**  simula el funcionamiento de una Unidad Central de Procesamiento (CPU), incluyendo una Unidad Aritmético-Lógica (ALU), una Unidad de Control (CU), registros, memoria principal y caché. El emulador permite ejecutar instrucciones básicas de manipulación de datos y operaciones aritméticas, así como visualizar el estado interno de la CPU durante la ejecución de las instrucciones. <br><br>
+**Tecnologías:** Java, Scene Builder, JavaFX, IntelliJ, NetBeans  <br><br>
+**Características:**  
+- Operaciones Soportadas: Incluye instrucciones para movimiento de datos (LOAD, STORE, MOVE) y operaciones aritméticas (ADD, SUB, MUL).
+- Gestión de Estado de la CPU: Permite visualizar el estado interno de la CPU, incluyendo los registros, memoria y resultados de operaciones aritméticas.
+- Ejemplo de Uso: Implementa el algoritmo de ordenamiento Bubble Sort como ejemplo para demostrar el funcionamiento del emulador.
+</td>
+<td>
+
+<img src="https://github.com/user-attachments/assets/1c4fc1fa-5566-456d-913d-83edb9f712f6" alt="Imagen Proyecto 7" width="2100">
+
+</td>
+</tr>
+</table>
 
 
 ## Contacto
