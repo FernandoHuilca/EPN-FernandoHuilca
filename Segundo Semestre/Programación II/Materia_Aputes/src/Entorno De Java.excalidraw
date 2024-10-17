@@ -6,5 +6,6 @@
   "appState": {
     "gridSize": null,
     "viewBackgroundColor": "#ffffff"
-  }
+  },
+  "files": {}
 }
