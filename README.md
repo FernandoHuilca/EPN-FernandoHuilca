@@ -92,7 +92,7 @@ Aquí encontrarás una selección de los proyectos más relevantes que he desarr
 
 </td>
 <td>
-<img src="https://github.com/FernandoHuilca/EPN-FernandoHuilca/assets/134117009/6fe8b13c-75fc-4401-9d96-d29a2f5620ae" alt="Gif Proyecto 3" width="1800">
+<img src="https://github.com/FernandoHuilca/EPN-FernandoHuilca/assets/134117009/6fe8b13c-75fc-4401-9d96-d29a2f5620ae" alt="Gif Proyecto 3" width="400">
 
 
 </td>
@@ -184,7 +184,7 @@ Aquí encontrarás una selección de los proyectos más relevantes que he desarr
 </td>
 <td>
 
-<img src="https://github.com/user-attachments/assets/71a11fca-64c9-4acc-af7b-f3b62b103ddb" alt="Imagen Proyecto 7" width="2100">
+<img src="https://github.com/user-attachments/assets/71a11fca-64c9-4acc-af7b-f3b62b103ddb" alt="Imagen Proyecto 7" width="400">
 
 </td>
 </tr>
@@ -206,7 +206,7 @@ Aquí encontrarás una selección de los proyectos más relevantes que he desarr
 </td>
 <td>
 
-<img src="https://github.com/user-attachments/assets/1c4fc1fa-5566-456d-913d-83edb9f712f6" alt="Imagen Proyecto 7" width="2100">
+<img src="https://github.com/user-attachments/assets/1c4fc1fa-5566-456d-913d-83edb9f712f6" alt="Imagen Proyecto 7" width="400">
 
 </td>
 </tr>
