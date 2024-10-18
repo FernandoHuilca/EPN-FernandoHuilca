@@ -14,7 +14,7 @@ public class Main {
         NodoGrafo<String> nodo4 = new NodoGrafo<String>("D");
         NodoGrafo<String> nodo5 = new NodoGrafo<String>("E");
         NodoGrafo<String> nodo6 = new NodoGrafo<String>("F");
-        NodoGrafo<String> nodo7 = new NodoGrafo<String>("G");
+        NodoGrafo<String> nodo7 = new NodoGrafo("G");
 
 
         System.out.println("CASO 1 Agregar un grafo dirigido a la App _______________________________");
@@ -82,6 +82,17 @@ public class Main {
 
         System.out.println("CASO 6 Imprimir recorrido en profundidad grafo Dirigido _________________");
         app.imprimirTrazaRecorridoProfundidadGrafoDirigido(nodo11, app.getGrafoDirigido(0));
+
+        System.out.println("CASO 7 Imprimir recorrido en profundidad grafo No Dirigido _________________");
+        app.imprimirTrazaRecorridoProfundidadGrafoNoDirigido(nodo1,app.getGrafoNoDirigido(0));
+
+
+        System.out.println("CASO 8 Imprimir recorrido en anchura grafo Dirigido _________________");
+        app.imprimirTrazaRecorridoAnchuraGrafoDirigido(nodo11,app.getGrafoDirigido(0));
+
+
+        System.out.println("CASO 9 Imprimir recorrido en anchura grafo No Dirigido _________________");
+        app.imprimirTrazaRecorridoAnchuraGrafoNoDirigido(nodo1,app.getGrafoNoDirigido(0));
 
 
     }

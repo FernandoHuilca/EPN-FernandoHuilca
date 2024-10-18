@@ -52,4 +52,16 @@ public class GrafoNoDirigido {
         actualizarMatrizDeAdyacencia();
         return matrizDeAdyacencia;
     }
+
+
+
+    public NodoGrafo<String> getNoVisitado() {
+        // Devuelve el primer nodo que no ha sido visitado
+        for (NodoGrafo<String> nodo : nodosDelGrafo) {
+            if (nodo != null && !nodo.estaVisitado()) {
+                return nodo;
+            }
+        }
+        return null; // Si todos los nodos han sido visitados, retorna null
+    }
 }
