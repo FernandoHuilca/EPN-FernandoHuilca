@@ -1,21 +1,21 @@
 public class GrafoDirigido {
     public static final int TAMAÑO_NODOS_ACEPTADOS = 100;
-    private Nodo[] nodosDelGrafo;
+    private NodoGrafo<String>[] nodosDelGrafo;
     private int contadorDeNodos;
     private boolean[][] matrizDeAdyacencia;
 
     public GrafoDirigido() {
-        this.nodosDelGrafo = new Nodo[TAMAÑO_NODOS_ACEPTADOS];
+        this.nodosDelGrafo = new NodoGrafo[TAMAÑO_NODOS_ACEPTADOS];
         this.contadorDeNodos = 0;
         this.matrizDeAdyacencia = new boolean[100][100];
     }
 
-    public boolean agregarNodosDelGrafo(Nodo[] nodos) {
+    public boolean agregarNodosDelGrafo(NodoGrafo[] nodos) {
         this.nodosDelGrafo = nodos;
         return true;
     }
 
-    public boolean agregarNodo(Nodo nuevoNodo) {
+    public boolean agregarNodo(NodoGrafo nuevoNodo) {
         if (contadorDeNodos == TAMAÑO_NODOS_ACEPTADOS){
             return false;
         }
@@ -28,7 +28,7 @@ public class GrafoDirigido {
         return true;
     }
 
-    public Nodo[] getNodos() {
+    public NodoGrafo[] getNodos() {
     return nodosDelGrafo;
     }
     private void actualizarMatrizDeAdyacencia() {
@@ -49,4 +49,15 @@ public class GrafoDirigido {
     public int getCantidadDeNodos() {
         return contadorDeNodos;
     }
+
+    public NodoGrafo<String> getNoVisitado() {
+        // Devuelve el primer nodo que no ha sido visitado
+        for (NodoGrafo<String> nodo : nodosDelGrafo) {
+            if (nodo != null && !nodo.estaVisitado()) {
+                return nodo;
+            }
+        }
+        return null; // Si todos los nodos han sido visitados, retorna null
+    }
+
 }

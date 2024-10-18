@@ -1,6 +1,6 @@
 public class GrafoNoDirigido {
     public static final int TAMAÑO_NODOS_ACEPTADOS = 100;
-    private Nodo[] nodosDelGrafo;
+    private NodoGrafo<String>[] nodosDelGrafo;
     private int contadorDeNodos;
     private boolean[][] matrizDeAdyacencia;
 
@@ -11,12 +11,12 @@ public class GrafoNoDirigido {
     // que busca ser mas educativo es suficiente.
 
     public GrafoNoDirigido() {
-        this.nodosDelGrafo = new Nodo[TAMAÑO_NODOS_ACEPTADOS];
+        this.nodosDelGrafo = new NodoGrafo[TAMAÑO_NODOS_ACEPTADOS];
         this.contadorDeNodos = 0;
         this.matrizDeAdyacencia = new boolean[100][100];
     }
 
-    public boolean agregarNodo(Nodo nuevoNodo) {
+    public boolean agregarNodo(NodoGrafo nuevoNodo) {
         if (contadorDeNodos == TAMAÑO_NODOS_ACEPTADOS){
             return false;
         }
@@ -30,7 +30,7 @@ public class GrafoNoDirigido {
         return true;
     }
 
-    public Nodo[] getNodos() {
+    public NodoGrafo[] getNodos() {
         return nodosDelGrafo;
     }
 
