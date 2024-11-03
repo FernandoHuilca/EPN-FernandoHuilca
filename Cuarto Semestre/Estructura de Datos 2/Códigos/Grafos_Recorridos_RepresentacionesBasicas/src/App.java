@@ -1,4 +1,6 @@
 import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.Queue;
 
 public class App {
     private static App app;
@@ -163,8 +165,44 @@ public class App {
     }
 
 
-    public void imprimirTrazaRecorridoAnchuraGrafoDirigido(NodoGrafo<String> nodo11, GrafoDirigido grafoDirigido) {
 
+    public void imprimirTrazaRecorridoAnchuraGrafoDirigido(NodoGrafo<String> nodoInicial, GrafoDirigido grafoAlQuePertenece) {
+        if (nodoInicial == null) return;  // Verifica que el nodo no sea nulo
+
+        // Cola para gestionar el recorrido en anchura
+        Queue<NodoGrafo<String>> cola = new LinkedList<>();
+        cola.add(nodoInicial);
+        nodoInicial.setEstadoVisitado(true);  // Marcamos el nodo inicial como visitado
+
+        // Lista para acumular la salida del recorrido
+        ArrayList<String> salidaAnchura = new ArrayList<>();
+
+        // Mientras la cola no esté vacía
+        while (!cola.isEmpty()) {
+            NodoGrafo<String> nodoActual = cola.poll();  // Extraemos el nodo al frente de la cola
+            salidaAnchura.add(nodoActual.getInfo());  // Agregamos la información del nodo a la salida
+
+            // Imprimimos el estado actual de la cola
+            System.out.print("Cola: ");
+            for (NodoGrafo<String> nodo : cola) {
+                System.out.print(" " + nodo.getInfo());
+            }
+            System.out.println();
+
+            // Recorremos los nodos adyacentes (nodos apuntados)
+            for (int i = 0; i < nodoActual.getNumNodosApuntados(); i++) {
+                NodoGrafo<String> nodoApuntado = nodoActual.getNodosApuntados().get(i);
+
+                // Si el nodo no ha sido visitado, lo marcamos como visitado y lo agregamos a la cola
+                if (!nodoApuntado.estaVisitado()) {
+                    nodoApuntado.setEstadoVisitado(true);
+                    cola.add(nodoApuntado);
+                }
+            }
+        }
+
+        // Mostrar la salida solo al final del recorrido completo
+        System.out.println("La salida del recorrido en anchura es la siguiente: " + salidaAnchura);
     }
 
     public void imprimirTrazaRecorridoAnchuraGrafoNoDirigido(NodoGrafo<String> nodo1, GrafoNoDirigido grafoNoDirigido) {
