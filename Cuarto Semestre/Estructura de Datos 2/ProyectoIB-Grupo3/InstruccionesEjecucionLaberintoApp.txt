@@ -1,0 +1,36 @@
+Instrucciones de ejecución de LaberintoApp
+
+1. Requisitos previos
+
+	Java Development Kit (JDK): Versión 23.0.1.
+	JavaFX: Versión 17.0.6 (incluye las librerías necesarias).
+	IDE recomendado: IntelliJ IDEA (Community o Ultimate Edition).
+
+2. Instalación
+
+	2.1 Descarga o clona el repositorio del proyecto:
+
+		https://github.com/FernandoHuilca/GraphWorks.git
+
+	O descarga el archivo comprimido directamente desde el repositorio y extráelo en tu equipo.
+
+	2.2 Abre IntelliJ IDEA:
+
+		Selecciona "Open" en la pantalla de inicio.
+		Navega hasta la carpeta raíz del proyecto y ábrela.
+
+3. Configura el SDK y JavaFX en IntelliJ:
+
+	Ve a File > Project Structure > SDK y selecciona la versión 23.0.1 de Java.
+	En las opciones del proyecto, verifica que la librería de JavaFX esté correctamente configurada:
+		Si no está configurada, añade la ruta del SDK de JavaFX a las configuraciones del proyecto.
+
+3. Ejecución del Proyecto
+
+	3.1 Asegúrate de que el archivo principal esté configurado como clase de inicio:
+
+		Ve a Run > Edit Configurations en IntelliJ.
+		Selecciona la clase principal, por ejemplo: LaberintoApplication.java
+
+	3.2 Haz clic en el botón "Run" o presiona Shift + F10.
+
