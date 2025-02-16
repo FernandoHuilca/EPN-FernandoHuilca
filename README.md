@@ -27,6 +27,7 @@ Durante mi estancia en la EPN guardaré todo lo que hago desde el inicio hasta e
     - [Estudio Estadístico Ventas](#6-estudio-estadístico-ventas)
     - [Poli Eats](#7-poli-eats)
     - [Emulador Computacional](#8-emulador-computacional)
+    - [Knockout Game](#9-knockout-game)
 2. [Contacto](#contacto)
 
 ## Proyectos Destacados
@@ -206,7 +207,31 @@ Aquí encontrarás una selección de los proyectos más relevantes que he desarr
 </td>
 <td>
 
-<img src="https://github.com/user-attachments/assets/1c4fc1fa-5566-456d-913d-83edb9f712f6" alt="Imagen Proyecto 7" width="400">
+<img src="https://github.com/user-attachments/assets/1c4fc1fa-5566-456d-913d-83edb9f712f6" alt="Imagen Proyecto 8" width="400">
+
+</td>
+</tr>
+</table>
+
+
+### 9. [Knockout Game](https://github.com/FernandoHuilca/Knockout-Game)
+<table>
+<tr>
+<td>
+
+**Descripción:** Knockout es un juego de peleas en 2D, desarrollado en Unity y programado en C#. Ofrece combates intensos 1vs1 en diversos escenarios. Este proyecto fue creado como parte de la materia de Ingeniería en Software y Requerimientos, aplicando conceptos de diseño de software y desarrollo en equipo. 🎮💥 <br><br>
+**Tecnologías:**  Unity, C#, Git, GitHub <br><br>
+**Características:**  
+- Sistema de Combate: Movimientos básicos (puñetazos, patadas, bloqueos) y habilidades especiales únicas por personaje.
+- Multijugador Local: Combates en el mismo dispositivo, fomentando la interacción y competencia.
+- Selección de Personajes: Variedad de personajes con habilidades y estilos de lucha únicos.
+- Escenarios Dinámicos: Escenarios únicos con eventos sorpresa y detalles visuales que enriquecen la experiencia.
+
+**Autores:** Gregory Salazar, Alison Betancourt, Mateo Simbaña y Fernando Huilca
+</td>
+<td>
+
+<img src="https://github.com/user-attachments/assets/4792d064-92c6-489a-9103-e1878fb2fd99" alt="Imagen Proyecto 8" width="400">
 
 </td>
 </tr>
