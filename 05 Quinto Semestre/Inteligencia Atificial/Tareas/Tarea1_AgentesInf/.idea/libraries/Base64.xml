@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Base64">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../../Libreria Henry GitHub/Base64.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../Libreria Henry GitHub/commons-codec-1.3.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../Libreria Henry GitHub/jade.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

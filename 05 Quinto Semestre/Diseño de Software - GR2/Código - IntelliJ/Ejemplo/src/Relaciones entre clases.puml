@@ -1,0 +1,13 @@
+@startuml
+Profesor ..> "Dependencia" Curso
+note left : "Relacion Débil"
+Profesor --> "Asociacion" Estudiante
+note right : "Relacion Fuerte"
+Departamento o--> "Agregacion" Profesor
+note left : "Departamento tiene\nmuchos profesores"
+Universidad *--> "Composición" Departamento
+note left : "Sin universidad\nno hay departamentos"
+
+note on link #red : "Relaciones entre Clases"
+
+@enduml

@@ -1,0 +1,29 @@
+@startuml
+Aeropuerto ..>"La flecha normal entrecortada\nsignifica dependencia" TransporteAereo
+Aeroplano ..u|>"La flecha entre cortada comopleta\nsignifica implementa" TransporteAereo
+GrythoDomesticado ..u|> TransporteAereo
+Elicoptero ..u|> TransporteAereo
+
+class Aeropuerto{
+...
++ acceptar(vehiculo : TransporteAereo)
+}
+
+abstract class TransporteAereo <<Interface>>{
++ volar(origen, destino, pasajeros)
+}
+note right : "Una interface es una clase\ncon métodos abstractos no definidos"
+
+class Elicoptero {
++ volar(origen, destino, pasajeros)
+
+}
+note left : clase aceptada\nen aeropuerto
+class Aeroplano{
++ volar(origen, destino, pasajeros)
+
+}
+class GrythoDomesticado{
++ volar(origen, destino, pasajeros)
+}
+@enduml

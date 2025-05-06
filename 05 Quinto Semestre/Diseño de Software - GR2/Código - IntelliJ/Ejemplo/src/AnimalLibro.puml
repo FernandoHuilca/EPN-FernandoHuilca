@@ -1,0 +1,32 @@
+@startuml
+Note "Diagrama del libro" as Note1
+Dog --|> Animal
+Cat --|> Animal : Hereda
+class Cat{
+- esAmigable : bool
++ maullar()
+}
+
+class Dog{
+- mejorAmigo : Humano
++ ladrar()
+}
+note right : Clase hija
+
+abstract class Animal{
+- nombre : String
+- peso : double
+- sexo : String
+- edad : int
+- color : String
++ respirar()
++ comer(food)
++ correr()
++ dormir()
+
+}
+note left: Clase padre
+
+
+
+@enduml
