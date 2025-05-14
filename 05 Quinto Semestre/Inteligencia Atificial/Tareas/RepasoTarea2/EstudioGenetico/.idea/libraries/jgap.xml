@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="jgap">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../../../Libreria Henry GitHub/Genetica/jgap.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

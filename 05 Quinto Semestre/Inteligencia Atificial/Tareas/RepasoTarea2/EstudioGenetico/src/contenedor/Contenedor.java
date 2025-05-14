@@ -5,6 +5,7 @@ import jade.core.ProfileImpl;
 import jade.wrapper.AgentContainer;
 import jade.wrapper.AgentController;
 import jade.wrapper.StaleProxyException;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -80,6 +81,18 @@ public class Contenedor {
             }
         }
         return exitoTotal;
+    }
+    public boolean detenerContenedor(AgentContainer contenedor) {
+        if (!contenedorYAgentes.containsKey(contenedor)) {
+            return false;
+        }
+        try {
+            contenedor.kill();
+            contenedorYAgentes.remove(contenedor);
+            return true;
+        } catch (StaleProxyException e) {
+            return false;
+        }
     }
     // Métodos auxiliares
     public AgentContainer getMainContainer() {
