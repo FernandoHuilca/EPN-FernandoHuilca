@@ -5,207 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bb5883e7-2393-4ea4-92e5-bb617f1cb230" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../Banco_VF/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Banco_VF/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Banco_VF/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Banco_VF/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Banco_VF/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Banco_VF/Banco.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Banco_VF/src/Banco.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Banco_VF/src/Cliente.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Banco_VF/src/Cuenta.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Banco_VF/src/Diagrama.puml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Banco_VF/src/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Banco_VF/src/Transferencia.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Botella_Herencia_VF/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Botella_Herencia_VF/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Botella_Herencia_VF/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Botella_Herencia_VF/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Botella_Herencia_VF/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Botella_Herencia_VF/Botella.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Botella_Herencia_VF/Botella/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Botella_Herencia_VF/Botella/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Botella_Herencia_VF/Botella/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Botella_Herencia_VF/Botella/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Botella_Herencia_VF/Botella/Botella.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Botella_Herencia_VF/Botella/src/Botella.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Botella_Herencia_VF/Botella/src/Botella.puml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Botella_Herencia_VF/Botella/src/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Botella_Herencia_VF/Botella/src/Recipiente.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Botella_Herencia_VF/__MACOSX/._Botella" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Botella_Herencia_VF/__MACOSX/Botella/._.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Botella_Herencia_VF/__MACOSX/Botella/._.idea" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Botella_Herencia_VF/__MACOSX/Botella/._Botella.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Botella_Herencia_VF/__MACOSX/Botella/._out" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Botella_Herencia_VF/__MACOSX/Botella/._src" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Botella_Herencia_VF/__MACOSX/Botella/.idea/._.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Botella_Herencia_VF/__MACOSX/Botella/.idea/._misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Botella_Herencia_VF/__MACOSX/Botella/.idea/._modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Botella_Herencia_VF/__MACOSX/Botella/.idea/._workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Botella_Herencia_VF/__MACOSX/Botella/src/._Botella.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Botella_Herencia_VF/__MACOSX/Botella/src/._Botella.puml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Botella_Herencia_VF/__MACOSX/Botella/src/._Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Botella_Herencia_VF/__MACOSX/Botella/src/._Recipiente.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Botella_Herencia_VF/src/Botella.puml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Botella_Herencia_VF/src/Botella/Botella.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Botella_Herencia_VF/src/Botella/apuntesPrueba.excalidraw" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Botella_Herencia_VF/src/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Calculadora_VF/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Calculadora_VF/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Calculadora_VF/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Calculadora_VF/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Calculadora_VF/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Calculadora_VF/Calculadora.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Calculadora_VF/src/Binario.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Calculadora_VF/src/Calculadora.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Calculadora_VF/src/Decimal.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Calculadora_VF/src/Diagramas.puml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Calculadora_VF/src/Division.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Calculadora_VF/src/Hexadecimal.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Calculadora_VF/src/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Calculadora_VF/src/Multiplicacion.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Calculadora_VF/src/Octal.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Calculadora_VF/src/Operacion.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Calculadora_VF/src/Resta.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Calculadora_VF/src/Romano.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Calculadora_VF/src/SistemaNumerico.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Calculadora_VF/src/Suma.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Camiseta2.1_VF/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Camiseta2.1_VF/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Camiseta2.1_VF/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Camiseta2.1_VF/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Camiseta2.1_VF/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Camiseta2.1_VF/Camiseta2.1.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Camiseta2.1_VF/src/Camiseta.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Camiseta2.1_VF/src/DiagramaDeClases.puml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Camiseta2.1_VF/src/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Clase_1/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Clase_1/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Clase_1/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Clase_1/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Clase_1/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Clase_1/Clase_1.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Clase_1/src/Apuntes.excalidraw" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Clase_1/src/Estudiante.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Clase_1/src/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Clase_2/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Clase_2/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Clase_2/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Clase_2/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Clase_2/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Clase_2/Clase2.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Clase_2/src/Apuntes.excalidraw" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Clase_2/src/Estudiante.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Clase_2/src/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CyberTuPapa/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CyberTuPapa/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CyberTuPapa/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CyberTuPapa/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CyberTuPapa/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CyberTuPapa/CyberTuPapa.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CyberTuPapa/src/CYBER.puml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CyberTuPapa/src/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Facturas Version Final Final/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Facturas Version Final Final/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Facturas Version Final Final/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Facturas Version Final Final/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Facturas Version Final Final/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Facturas Version Final Final/Facturas Version Final Final.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Facturas Version Final Final/src/Cliente.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Facturas Version Final Final/src/ClienteManaba.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Facturas Version Final Final/src/ClienteNormal.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Facturas Version Final Final/src/ClienteQuiteño.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Facturas Version Final Final/src/Diagrama.puml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Facturas Version Final Final/src/Empresa.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Facturas Version Final Final/src/Factura.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Facturas Version Final Final/src/Item.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Facturas Version Final Final/src/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Facturas Version Final Final/src/ProductoConIVA.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Facturas Version Final Final/src/ProductoDeVenta.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Facturas Version Final Final/src/ProductoSinIva.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Facturas Vesion Final/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Facturas Vesion Final/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Facturas Vesion Final/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Facturas Vesion Final/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Facturas Vesion Final/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Facturas Vesion Final/Facturas Vesion Final.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Facturas Vesion Final/src/Cliente.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Facturas Vesion Final/src/ClienteManaba.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Facturas Vesion Final/src/ClienteQuiteño.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Facturas Vesion Final/src/Diagramas.puml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Facturas Vesion Final/src/Empresa.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Facturas Vesion Final/src/Factura.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Facturas Vesion Final/src/Item.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Facturas Vesion Final/src/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Facturas Vesion Final/src/ProductoConIVA.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Facturas Vesion Final/src/ProductoDeVenta.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Facturas Vesion Final/src/ProductoSinIva.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Herencia_Armario/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Herencia_Armario/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Herencia_Armario/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Herencia_Armario/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Herencia_Armario/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Herencia_Armario/Extencion_Armario.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Herencia_Armario/src/Armario.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Herencia_Armario/src/Diagramas.puml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Herencia_Armario/src/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Herencia_Armario/src/PrendaDeVestir.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Herencia_Armario/src/Tanga.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Netflix2.0/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Netflix2.0/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Netflix2.0/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Netflix2.0/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Netflix2.0/.idea/uiDesigner.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Netflix2.0/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Netflix2.0/Netflix2.0.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Netflix2.0/src/Animacion.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Netflix2.0/src/Cuenta.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Netflix2.0/src/Diagrama 2.puml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Netflix2.0/src/Diagrama 3.puml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Netflix2.0/src/Diagramas.puml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Netflix2.0/src/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Netflix2.0/src/Netflix.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Netflix2.0/src/Pelicula.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Netflix2.0/src/Perfil.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Netflix2.0/src/Serie.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Netflix2.0/src/Suscripcion.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Raton/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Raton/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Raton/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Raton/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Raton/src/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Raton/src/Raton.puml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Raton/src/UML.excalidraw" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Raton_de_Carlos/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Raton_de_Carlos/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Raton_de_Carlos/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Raton_de_Carlos/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Raton_de_Carlos/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Raton_de_Carlos/Raton_de_Carlos.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Raton_de_Carlos/src/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Raton_de_Carlos/src/Raton.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Vehiculos/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Vehiculos/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Vehiculos/.idea/kotlinc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Vehiculos/.idea/libraries/KotlinJavaRuntime.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Vehiculos/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Vehiculos/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Vehiculos/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Vehiculos/Vehiculos.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Vehiculos/src/Asiento.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Vehiculos/src/Bicicleta.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Vehiculos/src/Bus.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Vehiculos/src/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Vehiculos/src/Moto.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Vehiculos/src/VehiculoConMotor.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Vuelo2.3/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Vuelo2.3/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Vuelo2.3/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Vuelo2.3/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Vuelo2.3/Vuelo2.3.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Vuelo2.3/src/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Vuelo2.3/src/Ticket.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Vuelo2.3/src/Vuelo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../03 Tercer Semestre/Fundamentos de Redes y conectividad/Ejercicios De Cisco Prácticas/2.3.8 Packet Tracer - Navigate the IOS Using a Terminal Client for Console Connectivity - Physical Mode.pka" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../03 Tercer Semestre/Fundamentos de Redes y conectividad/Ejercicios De Cisco Prácticas/2.3.8 Packet Tracer - Navigate the IOS Using a Terminal Client for Console Connectivity - Physical Mode.pka" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../04 Cuarto Semestre/Sistemas de la información/~$ia-Formato-CriticalThinking - Copy.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../05 Quinto Semestre/Compiladores - GR2/Bibliografía - Libros Sílabo/Compiladores;_Principios,_Técnicas_y_Herramientas_Alfred.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../05 Quinto Semestre/Compiladores - GR2/Bibliografía - Libros Sílabo/Silabo.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../05 Quinto Semestre/Diseño de Software - GR2/Fer.excalidraw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../05 Quinto Semestre/Diseño de Software - GR2/desktop.ini" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../05 Quinto Semestre/Diseño de Software - GR2/desktop.ini" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../05 Quinto Semestre/Inteligencia Atificial/Codigos por clase/AgentesInteligentesClass3/src/agentes2025a/agentes/Agh.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../05 Quinto Semestre/Inteligencia Atificial/Codigos por clase/AgentesInteligentesClass3/src/agentes2025a/agentes/Agh.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../05 Quinto Semestre/Inteligencia Atificial/Proyecto Final/BlackJackMazoAula/src/BlackJack.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../05 Quinto Semestre/Inteligencia Atificial/Proyecto Final/BlackJackMazoAula/src/BlackJack.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../05 Quinto Semestre/Inteligencia Atificial/Proyecto Final/BlackJackMazoAula/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../05 Quinto Semestre/Inteligencia Atificial/Proyecto Final/BlackJackMazoAula/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../05 Quinto Semestre/Inteligencia Atificial/Tareas/Tarea2_Agenetica/EstudioGenetico/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../05 Quinto Semestre/Inteligencia Atificial/Tareas/Tarea2_Agenetica/EstudioGenetico/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../05 Quinto Semestre/Inteligencia Atificial/Tareas/Tarea2_Agenetica/EstudioGenetico/src/agentes/Agente2.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../05 Quinto Semestre/Inteligencia Atificial/Tareas/Tarea2_Agenetica/EstudioGenetico/src/agentes/Agente2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../05 Quinto Semestre/Inteligencia Atificial/Tareas/Tarea2_Agenetica/out/production/Tarea2 Agenetica/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../05 Quinto Semestre/Inteligencia Atificial/Tareas/Tarea2_Agenetica/out/production/Tarea2 Agenetica/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../desktop.ini" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -221,7 +33,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../.." />
   </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
@@ -240,18 +52,29 @@
     "DefaultPlantUmlFileTemplate": "UML Class",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/Users/Fernando_Huilca/Documents/Git-Fernando_Huilca/EPN-FernandoHuilca/Segundo Semestre/Clases/2_Raton_De_Carlos",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "C:/Users/ferna/OneDrive - Escuela Politécnica Nacional/EPN-FernandoHuilca/02 Segundo Semestre/Programación II/Clases/2_Raton_De_Carlos",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
     "onboarding.tips.debug.path": "C:/Users/Fernando_Huilca/Documents/Git-Fernando_Huilca/EPN-FernandoHuilca/Segundo Semestre/Clases/Raton/src/Main.java",
     "settings.editor.selected.configurable": "preferences.pluginManager",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-fbdcb00ec9e3-intellij.indexing.shared.core-IU-251.23774.435" />
+        <option value="bundled-js-predefined-d6986cc7102b-f27c65a3e318-JavaScript-IU-251.23774.435" />
+      </set>
+    </attachedChunks>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -265,6 +88,7 @@
       <workItem from="1700116529813" duration="13000" />
       <workItem from="1705079712502" duration="74000" />
       <workItem from="1705085965898" duration="19000" />
+      <workItem from="1752436625891" duration="269000" />
     </task>
     <servers />
   </component>
