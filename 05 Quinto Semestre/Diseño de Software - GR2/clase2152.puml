@@ -1,0 +1,42 @@
+@startuml
+skinparam class {
+    BackgroundColor<<Interface>> LightGray
+    ArrowColor #0078D7
+    BorderColor #333
+}
+
+' Definición de interfaces
+interface ICuenta {
+  + verificarSaldo(): boolean
+}
+
+interface IRestriccion {
+  + verificarRestriccion(): boolean
+}
+
+' Clases concretas
+class CuentaAhorros {
+  - saldo: double
+  + verificarSaldo(): boolean
+}
+
+class RestriccionLegal {
+  - tipo: String
+  + verificarRestriccion(): boolean
+}
+
+' Clase Cajero con inyección de dependencias
+class Cajero {
+  - cuenta: ICuenta
+  + darDinero(double): void
+}
+
+' Relaciones de implementación
+CuentaAhorros -up-|> ICuenta
+RestriccionLegal -up-|> IRestriccion
+
+' Dependencias del Cajero (inyección)
+Cajero --> ICuenta
+ICuenta --R> IRestriccion
+
+@enduml

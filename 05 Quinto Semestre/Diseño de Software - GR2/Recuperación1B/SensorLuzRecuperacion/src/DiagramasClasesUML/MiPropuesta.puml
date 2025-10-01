@@ -1,0 +1,65 @@
+@startuml
+Title Patron Observer - Diagrama Clases
+
+class Habitación {
+    - listaFocos : Foco
+    - listaSensores: Sensor
+    - luminosidad : Luminosidad
+    + agregarFoco(foco : Foco)
+    + agregarSensor(sensor : Sensor)
+    + prenderFocos() : void
+}
+class Foco {
+ - lumenesEmitidos : double
+ - estadoPrendido : bolean
+ + prender() : void
+ + apagar() : void
+ + getLumenesEmitidos() : double
+}
+
+
+
+class Luminosidad{
+ - cantidadDeLuminosidad : double
+ - listSensoresEscuchadores : Sensor
+ + sumarLumenes(double : lumenes)
+ + agregarSensor(sensor : Sensor)
+ + eliminarSensor(sensor : Sensor)
+ + notificar(cantidadDeLuminosidad)
+ + getCantidadLuminosidad() : double
+}
+interface Sensor<<Interface>> {
+ + {abstract} actualizar(data)
+}
+
+class SensorLuminosidad {
+    - focoAsignado : Foco
+    - verificadorUmbral : VerificadorUmbral
+    + actualizar(cantidadLuminosidad) : void
+}
+abstract class VerificadorUmbral {
+    # valorMaximo : double
+    # valorMinimo : double
+    + verificarMax(cantidad)
+    + verificarMin(cantidad)
+}
+class UmbralLuz {
+    - cantidadMax = 400;
+    - cantidadMin = 200;
+    + verificarMax(cantidad : double)
+    + verificarMin(cantidad : double)
+}
+
+UmbralLuz --|> VerificadorUmbral
+
+SensorLuminosidad ..U|> Sensor : implementa
+Luminosidad o-- Sensor
+
+
+
+
+Habitación o--L Foco
+Habitación --> Luminosidad
+SensorLuminosidad --R> VerificadorUmbral
+
+@enduml

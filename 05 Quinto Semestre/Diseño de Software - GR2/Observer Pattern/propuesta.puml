@@ -1,0 +1,40 @@
+@startuml propuestaSolucion 
+
+interface Suscriptor <<interface>> {
+    + update(estado: double) : void
+}
+
+class SensorLuz {
+    - umbral : Umbral
+    + update(estado: double) : void
+
+}
+
+class SensorManager {
+    - listaSuscriptores : hashMap<tipoSuscritor: String , suscriptor : Suscriptor>
+    + agregarSuscriptor(tipoSuscritor: String , suscriptor: Suscriptor) 
+    + eliminarSuscriptor(tipoSuscritor: String , suscriptor: Suscriptor)
+    + notificarSuscriptores(tipoSuscriptor : String , data : double)
+}
+
+class Luz {
+  - gestor : SensorManager
+  + getGestor() : SensorManager
+}
+class ObjetoDetectar{
+    - dimension : double
+    + getDimension() : double
+}
+
+SensorLuz ..U|>  Suscriptor : "implementa"
+SensorMovimiento ..U|>  Suscriptor : "implementa"
+SensorManager o-->  Suscriptor : "Agregación"
+Luz --R> SensorManager : "Asociación"
+ObjetoDetectar --L> SensorManager : "Asociación"
+SensorLuz --L Umbral
+Umbral --U Foco 
+Foco --R Luz 
+SensorMovimiento --R Dimension
+Dimension --U Alarma
+Alarma --L ObjetoDetectar
+@enduml

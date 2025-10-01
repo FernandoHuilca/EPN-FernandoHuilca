@@ -1,0 +1,28 @@
+@startuml EjemploEnClases
+
+class Luz {
+    - cantidadDeLuz : double
+    + receptarLuz()
+    + getLuz()
+    + notificarCambio()
+}
+class Foco {
+    + encender()
+    + apagar()
+}
+class Umbral {
+    - umbral : double
+    + verificarUmbral()
+}
+class Sensor {
+    + sensar()
+    + actualizar()
+}
+
+
+Luz <--> Sensor 
+Luz -- Foco 
+Sensor --R Umbral
+Umbral --U Foco
+
+@enduml

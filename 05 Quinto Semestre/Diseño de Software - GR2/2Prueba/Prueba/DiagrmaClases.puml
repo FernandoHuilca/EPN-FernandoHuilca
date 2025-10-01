@@ -1,0 +1,87 @@
+@startuml PruebaSegunda
+title Reserva Habitaciones : 
+
+' Patrón Singleton
+class Hotel {
+    - habitaciones: List<Habitacion>
+    - clientes: List<Cliente>
+    - static instancia: Hotel
+    - Hotel()
+    + getInstancia(): Hotel
+    + solicitarReserva(cliente, habitacion, fecha)
+    
+}
+
+abstract class Habitacion<<abstract>>{
+    - estadoDisponibilidad : EstadoHabitacion
+    - nunCamas : int 
+    - dimensiones : double 
+    + {abstract} verificarDisponibilidad(fecha : Fecha) : boolean
+
+}
+
+class Cliente {
+    - nombre: String
+    - reservas: List<Reserva>
+    + agregarReserva(nuevaReserva : Reserva)
+    + eliminarReserva(reserva : Reserva)
+}
+
+class Reserva {
+    - fecha: Fecha
+    - habitacion: Habitacion
+    - cliente: Cliente
+    + crearReserva(cliente, habitacion , fecha) : Reserva 
+    + cancelarReserva()
+
+}
+
+class HabitacionSimple{
+    + verificarDisponibilidad(fecha : Fecha) : boolean
+}
+
+class HabitacionDoble {
+    + verificarDisponibilidad(fecha : Fecha) : boolean
+
+}
+
+class HabitacionPetFriendly{
+    + verificarDisponibilidad(fecha : Fecha) : boolean
+}
+
+
+
+class Fecha {
+    - dia: int
+    - mes: int
+    - anio: int
+    + getFechaTotal()
+}
+
+
+enum EstadoHabitacion{
+    RESERVADA
+    OCUPADA
+    DISPONIBLE
+}
+
+
+
+
+'Relaciones entre clases _________________________
+Hotel *--> Habitacion
+Reserva --> Fecha
+HabitacionSimple --u|> Habitacion
+HabitacionDoble --u|> Habitacion
+HabitacionPetFriendly --u|> Habitacion
+Habitacion --L> EstadoHabitacion
+Cliente o--> Reserva 
+Hotel o--R> Cliente
+
+Hotel ..> Reserva : Crea una reserva
+
+
+Hotel ..L> Hotel : <<Singleton>>
+
+
+@enduml

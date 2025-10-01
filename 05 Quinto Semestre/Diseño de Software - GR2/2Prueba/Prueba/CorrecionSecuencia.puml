@@ -1,0 +1,55 @@
+@startuml
+title Diagrama de Secuencia - Reserva de Habitación Pet Friendly
+
+' 1. Participantes correctamente declarados
+actor Usuario
+participant "App" as App
+participant "Hotel" as Hotel
+participant "HabitacionPetFriendly" as Habitacion
+participant "Reserva" as Reserva
+participant "Cliente" as Cliente
+
+' 2. Flujo principal completo
+Usuario -> App: solicitarReserva(cliente, habitacion, fecha)
+activate App
+App -> Hotel: solicitarReserva(cliente, habitacion, fecha)
+activate Hotel
+
+' 3. Verificación de disponibilidad
+Hotel -> Habitacion: verificarDisponibilidad(fecha)
+activate Habitacion
+
+' 4. Flujo alternativo (éxito/error)
+alt Habitación Disponible
+    Habitacion --> Hotel: true
+    deactivate Habitacion
+    
+    ' 5. Creación explícita de objeto
+    create Reserva
+    Hotel -> Reserva : new(cliente, habitacion, fecha)
+    activate Reserva
+    
+    ' 6. Auto-registro en cliente
+    Reserva -> Cliente: agregarReserva(this)
+    activate Cliente
+    Cliente --> Reserva: ok
+    deactivate Cliente
+    
+    Reserva --> Hotel: nuevaReserva
+    deactivate Reserva
+    
+    ' 7. Confirmación al usuario
+    Hotel --> App: confirmarReservaExitosa(reserva)
+    deactivate Hotel
+    App --> Usuario: "¡Reserva exitosa!"
+    
+else Habitación No Disponible
+    Habitacion --> Hotel: false
+    deactivate Habitacion
+    Hotel --> App: notificarError("Habitación no disponible")
+    deactivate Hotel
+    App --> Usuario: "Error: Habitación no disponible"
+end
+
+deactivate App
+@enduml

@@ -1,0 +1,106 @@
+@startuml
+title Gestión de Reclamaciones - Cadena de Responsabilidad
+
+class EmpresaVehiculos {
+    + procesarReclamo(reclamo : Reclamo)
+}
+
+abstract class ManejadorDeReclamos {
+    # siguiente : ManejadorDeReclamos
+    + setSiguiente(manejador: ManejadorDeReclamos)
+    + {abstract} manejar(reclamo: Reclamo)
+}
+
+class RegistroHandler {
+    + manejar(reclamo: Reclamo)
+}
+
+class ClasificacionHandler {
+    + manejar(reclamo: Reclamo)
+}
+
+class ComprobacionHandler {
+    + manejar(reclamo: Reclamo)
+}
+
+class ResolucionHandler {
+    + manejar(reclamo: Reclamo)
+}
+
+class AprobacionHandler {
+    + manejar(reclamo: Reclamo)
+}
+
+class NotificacionHandler {
+    + manejar(reclamo: Reclamo)
+}
+
+class Reclamo {
+    - id: String
+    - descripcion: String
+    - tipo: TipoDeReclamo
+    - resolucion: Resolucion
+    + esSimple(): boolean
+    + comprobarSeguro(): boolean
+    + comprobarDaño(): boolean
+    + generarResolucion(): void
+}
+
+class Resolucion {
+    - estado: EstadoResolucion
+    - motivo: String
+}
+
+enum TipoDeReclamo {
+    SIMPLE
+    COMPLEJO
+}
+
+enum EstadoResolucion {
+    APROBADA
+    RECHAZADA
+}
+
+' Comprobadores como componentes internos (NO heredan de Manejador)
+class ComprobadorSeguro {
+    + comprobar(reclamo: Reclamo): boolean
+}
+
+class ComprobadorDañoVehiculo {
+    + comprobar(reclamo: Reclamo): boolean
+}
+
+' Notificadores como componentes internos (NO heredan de Manejador)
+class NotificadorCliente {
+    + notificar(reclamo: Reclamo)
+}
+
+class NotificadorMecanica {
+    + notificar(reclamo: Reclamo)
+}
+
+' Relaciones CORRECTAS
+EmpresaVehiculos --> ManejadorDeReclamos : primerManejador
+
+ManejadorDeReclamos <|-- RegistroHandler
+ManejadorDeReclamos <|-- ClasificacionHandler
+ManejadorDeReclamos <|-- ComprobacionHandler
+ManejadorDeReclamos <|-- ResolucionHandler
+ManejadorDeReclamos <|-- AprobacionHandler
+ManejadorDeReclamos <|-- NotificacionHandler
+
+ManejadorDeReclamos o--> ManejadorDeReclamos : siguiente
+
+ComprobacionHandler --> ComprobadorSeguro : usa
+ComprobacionHandler --> ComprobadorDañoVehiculo : usa
+AprobacionHandler --> NotificadorMecanica : usa
+NotificacionHandler --> NotificadorCliente : usa
+
+Reclamo --> Resolucion
+Reclamo --> TipoDeReclamo
+Resolucion --> EstadoResolucion
+
+
+EmpresaVehiculos ..R> Reclamo : "Procesa"
+
+@enduml

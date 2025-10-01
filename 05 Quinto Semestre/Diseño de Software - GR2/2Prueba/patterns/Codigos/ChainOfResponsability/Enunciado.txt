@@ -1,0 +1,10 @@
+Contexto: Estás construyendo un sistema de moderación para una red social. Los mensajes deben pasar por varios filtros sucesivos. Cada filtro verifica una condición específica y decide si aprueba, rechaza o pasa el mensaje al siguiente filtro.
+
+Reglas de Filtrado:
+Filtro de Palabras Prohibidas: Bloquea mensajes con palabras como spam, estafa.
+
+Filtro de Longitud: Rechaza mensajes con más de 200 caracteres.
+
+Filtro de Enlaces: Aprueba automáticamente mensajes sin enlaces, pero si contienen enlaces, requieren aprobación manual.
+
+Aprobador Final: Si pasa todos los filtros, se aprueba para publicación.

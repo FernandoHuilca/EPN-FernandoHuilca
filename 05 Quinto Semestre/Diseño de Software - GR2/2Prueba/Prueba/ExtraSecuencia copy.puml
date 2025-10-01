@@ -1,0 +1,19 @@
+@startuml
+title Diagrama de Secuencia - Reserva de Habitación Pet Friendly
+
+actor "Cliente" as Cliente
+participant "Hotel" as Hotel
+participant "HabitacionPetFriendly" as HabitacionPetFriendly
+participant "Reserva" as Reserva
+
+Cliente -> Hotel : solicitarReserva(TipoHabitacion.PET_FRIENDLY, fecha)
+Hotel -> HabitacionPetFriendly : esDisponible(fecha)
+HabitacionPetFriendly --> Hotel : disponible / no disponible
+
+alt disponible
+    Hotel -> Reserva : crearReserva(cliente, habitacion, fecha)
+    Reserva --> Hotel : reservaConfirmada
+    Hotel -> Cliente : confirmarReserva()
+end
+
+@enduml

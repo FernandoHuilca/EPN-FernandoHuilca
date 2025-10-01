@@ -1,0 +1,21 @@
+@startuml
+title Diagrama de Secuencia - Reserva de Habitación Pet Friendly
+
+actor "App" as App
+participant "hotel" as Hotel
+participant "habitacionPetFriendly" as HabitacionPetFriendly
+participant "reserva" as Reserva
+participant "cliente" as Usuario
+
+App -> Hotel : solicitarReserva(cliente, habitacion, fecha)
+Hotel -> HabitacionPetFriendly : verificarDisponibilidad() 
+HabitacionPetFriendly --> Hotel : boolean "True"
+Hotel -> Reserva : crearReserva(cliente, habitacion , fecha)
+Reserva -> Usuario : agregarReserva(nuevaReserva)
+Usuario --> Reserva : boolean "True" 
+Reserva --> Hotel : boolean "True"
+Hotel -> App : "ReservaExitosa"
+
+
+
+@enduml

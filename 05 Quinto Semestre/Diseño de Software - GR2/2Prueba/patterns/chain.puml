@@ -1,0 +1,33 @@
+@startuml chainOfResponsability
+' Patrón Cadena de Responsabilidad en español
+' Permite pasar una solicitud a lo largo de una cadena de manejadores
+
+title Chain of Responsibility Pattern
+
+interface Manejador {
+    +manejarSolicitud(solicitud)
+}
+
+abstract class ManejadorBase {
+    -siguiente: Manejador
+    +establecerSiguiente(m: Manejador)
+    +manejarSolicitud(solicitud)
+}
+
+class ManejadorConcretoA {
+    +manejarSolicitud(solicitud)
+}
+
+class ManejadorConcretoB {
+    +manejarSolicitud(solicitud)
+}
+
+class Cliente
+
+Manejador <|.. ManejadorBase
+ManejadorBase <|-- ManejadorConcretoA
+ManejadorBase <|-- ManejadorConcretoB
+ManejadorBase o-- Manejador : "siguiente"
+Cliente --> Manejador : "solicitud"
+
+@enduml

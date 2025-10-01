@@ -1,0 +1,36 @@
+@startuml cade
+' Diagrama real según la implementación en código
+' Patrón Cadena de Responsabilidad en español
+
+title Cadena de Responsabilidad (Implementación real)
+
+abstract class FiltroMensaje {
+    - siguiente : FiltroMensaje 
+    + cambiarSiguiente(FiltroMensaje siguiente)
+    + filtrarMensaje(String mensaje) : boolean 
+    # {abstract} filtrar(String mensaje) : boolean 
+}
+
+class FiltroPalabrasProhibidas {
+    + filtrar(String mensaje) : boolean 
+}
+
+class FiltroDeLongitud {
+    + filtrar(String mensaje) : boolean 
+}
+
+class FiltroDeEnlace {
+    + filtrar(String mensaje) : boolean
+}
+
+class RedSocial {
+    - filtroMensaje : FiltroMensaje 
+    + void enviarMensaje(String mensaje)
+}
+
+FiltroMensaje <|-- FiltroPalabrasProhibidas
+FiltroMensaje <|-- FiltroDeLongitud
+FiltroMensaje <|-- FiltroDeEnlace
+RedSocial --> FiltroMensaje : "usa"
+
+@enduml 

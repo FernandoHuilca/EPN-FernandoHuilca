@@ -1,0 +1,24 @@
+@startuml
+
+Cuenta --R> Restriccion 
+Cajero --R> Cuenta
+
+
+class Cajero{
+- cantidad 
++ darDinero()
+}
+
+class Restriccion{
+    - tipoDeRestriccion
+    + verificarRestriccion()
+}
+
+class Cuenta{
+    - saldo
+    + verificarSaldo()
+    + verificarRestricciones() 
+}
+
+
+@enduml

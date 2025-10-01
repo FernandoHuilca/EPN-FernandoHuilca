@@ -1,0 +1,129 @@
+@startuml
+
+
+package "Módulo de Ejercicios y Evaluación" {
+
+    interface TipoEjercicio {
+        +ejecutar(): void
+        +validarRespuesta(respuesta: Respuesta): Resultado
+        +generarFeedback(resultado: Resultado): Retroalimentacion
+    }
+
+    class Quiz {
+        -preguntas: List<Pregunta>
+        -opcionesCorrectas: List<String>
+        +ejecutar(): void
+        +validarRespuesta(respuesta: Respuesta): Resultado
+        +generarFeedback(resultado: Resultado): Retroalimentacion
+    }
+    Quiz ..|> TipoEjercicio
+
+    note bottom of Quiz
+        Ejercicio de preguntas con opciones múltiples.
+        Valida selecciones correctas.
+    end note
+
+    class Seleccionar {
+        -elementos: List<Elemento>
+        -zonasDestino: List<Zona>
+        +ejecutar(): void
+        +validarRespuesta(respuesta: Respuesta): Resultado
+        +generarFeedback(resultado: Resultado): Retroalimentacion
+    }
+    Seleccionar ..|> TipoEjercicio
+
+    note bottom of Seleccionar
+        Ejercicio de arrastrar y soltar elementos.
+        Valida posiciones y coincidencias correctas.
+    end note
+
+    class CompletarCampos {
+        -campos: List<Campo>
+        -respuestasCorrectas: Map<String, String>
+        +ejecutar(): void
+        +validarRespuesta(respuesta: Respuesta): Resultado
+        +generarFeedback(resultado: Resultado): Retroalimentacion
+    }
+    CompletarCampos ..|> TipoEjercicio
+
+    note bottom of CompletarCampos
+        Ejercicio de completar espacios en blanco.
+        Valida texto ingresado en campos específicos.
+    end note
+
+    class Ejercicio {
+        +id: String
+        +titulo: String
+        +instrucciones: String
+        +dificultad: int
+        -tipoEjercicio: TipoEjercicio
+        +setTipoEjercicio(tipo: TipoEjercicio): void
+        +ejecutarEjercicio(): void
+        +procesarRespuesta(respuesta: Respuesta): Resultado
+    }
+
+    note top of Ejercicio
+        CONTEXTO del patrón Strategy.
+        Contiene un TipoEjercicio y delega
+        toda la lógica específica a él.
+    end note
+
+    class EjerciciosInteractivos {
+        -ejercicios: List<Ejercicio>
+        +agregarEjercicio(ejercicio: Ejercicio): void
+        +obtenerEjercicio(id: String): Ejercicio
+        +obtenerEjerciciosPorDificultad(nivel: int): List<Ejercicio>
+        +ejecutarListaEjercicios(): void
+    }
+
+    note right of EjerciciosInteractivos
+        Colección que gestiona múltiples ejercicios.
+        Permite organizar por dificultad y tipo.
+    end note
+
+    class Intento {
+        +id: String
+        +estudianteId: String
+        +ejercicioId: String
+        +tipoEjercicioId: String
+        +respuesta: Respuesta
+        +resultado: Resultado
+        +fecha: Date
+        +tiempoTranscurrido: int
+        --
+        +crear(idEstudiante: String, idEjercicio: String, respuesta: Respuesta): void
+        +obtenerRespuesta(): Respuesta
+    }
+
+    class Resultado {
+        +id: String
+        +retroalimentacion: Retroalimentacion
+        +esCorrecto: Boolean
+        +puntaje: int
+        --
+        +generar(intento: Intento, esCorrecto: Boolean, puntaje: int, retroalimentacion: Retroalimentacion, diagnosticoError: DiagnosticoError): void
+        +esCorrecto(): Boolean
+        +obtenerPuntaje(): int
+        +obtenerRetroalimentacion(): Retroalimentacion
+        +obtenerDiagnosticoError(): DiagnosticoError
+        +compararConSolucionCorrecta(solucionEsperada: String): void
+ 
+    }
+
+    ' Relaciones principales del Strategy Pattern
+    Ejercicio --> TipoEjercicio : contiene y delega
+    EjerciciosInteractivos ||--o{ Ejercicio : gestiona
+    
+    ' Las estrategias concretas generan los intentos (lógica específica)
+    Quiz ||--o{ Intento : genera
+    Seleccionar ||--o{ Intento : genera  
+    CompletarCampos ||--o{ Intento : genera
+    
+    ' Relaciones de datos comunes
+    Intento ||--|| Resultado : almacena
+
+
+
+
+}
+@enduml

@@ -1,0 +1,63 @@
+@startuml Reclamos 
+title Reclamos - Ejercicio
+class EmpresaVehiculos{
+    + procesarReclamo(reclamo : Reclamo)
+
+}
+
+abstract class ManejadorDeReclamos{
+    # siguiente : ManejadorDeReclamos
+    + {abstract} procesarReclamo(reclamo : Reclamo)
+}
+
+class RegistroReclamos{
+    + registrar(Reclamo, Usuario) : boolean
+}
+
+class ClasificadorDeReclamos{
+    + clasificarReclamo(reclamo : Reclamo) : TipoDeReclamo
+}
+
+enum TipoDeReclamo{
+    SIMPLE
+    COMPLEJO
+}
+
+abstract class Comprobador{
+    + {abstract} comprobar()
+}
+
+class ComprobadorSeguro{
+    + comprobar()
+}
+class ComprobadorDañoVehiculo{
+    + comprobar()
+}
+
+class ResolucionReclamo {
+    + generarResolucion
+}
+
+class AceptadorDeResolucion{
+    procesarResolucion(resolucion : Resolucion) : tipoAceptacion
+}
+abstract class Notificador{}
+
+
+class notificadorCliente{}
+class notificadorMecanica{}
+
+notificadorCliente --|> Notificador
+notificadorMecanica --|> Notificador
+
+ManejadorDeReclamos --> ResolucionReclamo : "Genera"
+ComprobadorSeguro --u|> Comprobador
+ComprobadorDañoVehiculo --u|> Comprobador
+AceptadorDeResolucion --u|> ManejadorDeReclamos 
+EmpresaVehiculos --L> RegistroReclamos
+EmpresaVehiculos --> ManejadorDeReclamos
+ManejadorDeReclamos --L> Comprobador
+ClasificadorDeReclamos ..> TipoDeReclamo : "Retorna"
+ClasificadorDeReclamos --u|> ManejadorDeReclamos
+ManejadorDeReclamos --R> Notificador
+@enduml

@@ -1,0 +1,19 @@
+@startuml
+interface Sensor {
+ + {abstract}sensar()
+}
+class SensorTemperatura {
+ + sensar()
+}
+class SensorDecorado {
++ sensorDecorado(s : Sensor)
++ sensar()
+}
+class SensorConFiltro {
+}
+SensorConFiltro --U|> SensorDecorado
+SensorTemperatura ..u|> Sensor
+SensorDecorado ..U|> Sensor
+SensorConAlerta --U|> SensorDecorado
+Sensor --o SensorDecorado
+@enduml

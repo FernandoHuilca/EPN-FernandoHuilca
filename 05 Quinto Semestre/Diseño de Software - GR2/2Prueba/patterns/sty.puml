@@ -1,0 +1,23 @@
+@startuml sty
+title Strategy Pattern
+
+class Contexto{
+    - estrategia : Estrategia
+    + setEstrategia(estrategia : Estrategia)
+    + ejecutarEstrategia(data)
+}
+
+interface Estrategia{
+    + {abstract} ejecutar(data)
+}
+
+class Estrategia_Concreta{
+    - nombre : String
+    + ejecutar(data)
+}
+
+Contexto o--R> Estrategia
+
+Estrategia_Concreta ..up|> Estrategia
+
+@enduml

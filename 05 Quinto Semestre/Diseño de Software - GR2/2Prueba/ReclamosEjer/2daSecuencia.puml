@@ -1,0 +1,35 @@
+@startuml
+title Secuencia - Gestión de Reclamaciones (Cadena de Responsabilidad)
+
+actor Cliente
+participant EmpresaVehiculos
+participant RegistroHandler
+participant ClasificacionHandler
+participant ComprobacionHandler
+participant ComprobadorSeguro
+participant ComprobadorDañoVehiculo
+participant ResolucionHandler
+participant AprobacionHandler
+participant NotificadorMecanica
+participant NotificacionHandler
+participant NotificadorCliente
+participant Reclamo
+
+Cliente -> EmpresaVehiculos : procesarReclamo(reclamo)
+EmpresaVehiculos -> RegistroHandler : manejar(reclamo)
+RegistroHandler -> ClasificacionHandler : manejar(reclamo)
+ClasificacionHandler -> ComprobacionHandler : manejar(reclamo)
+
+ComprobacionHandler -> ComprobadorSeguro : comprobar(reclamo)
+ComprobacionHandler -> ComprobadorDañoVehiculo : comprobar(reclamo)
+
+ComprobacionHandler -> ResolucionHandler : manejar(reclamo)
+ResolucionHandler -> Reclamo : generarResolucion()
+
+ResolucionHandler -> AprobacionHandler : manejar(reclamo)
+AprobacionHandler -> NotificadorMecanica : notificar(reclamo)
+
+AprobacionHandler -> NotificacionHandler : manejar(reclamo)
+NotificacionHandler -> NotificadorCliente : notificar(reclamo)
+NotificadorCliente --> EmpresaVehiculos : reclamoProcesado
+@enduml

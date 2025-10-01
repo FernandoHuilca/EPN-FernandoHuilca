@@ -1,0 +1,25 @@
+@startuml diseñoFer
+   
+   Cajero --R> Cuenta
+   Cuenta --R> Restriccion
+   CuentaAhorros --U|> Cuenta 
+    class Cajero{
+        - cantidad 
+        + darDinero(cantidad)
+    }
+
+
+    class CuentaAhorros{
+        - saldo
+        + verificarSaldo()
+    }
+
+    class Restriccion{
+        - tipoRestriccion 
+        +verificarRestriccion()
+    }
+
+    abstract class Cuenta <<Interface>> {
+        verificarSaldo()
+    }
+@enduml

@@ -1,0 +1,49 @@
+
+'### DIAGRAMA DE SECUENCIAS (Resolución Aprobada) ###
+
+actor Cliente as "Cliente"
+participant Sistema as "Sistema"
+participant RegistroHandler
+participant ClasificacionHandler
+participant ComprobacionSimpleHandler
+participant ResolucionHandler
+participant AprobacionHandler
+participant NotificacionHandler
+
+Cliente -> Sistema: "Nueva reclamación"
+activate Sistema
+
+Sistema -> RegistroHandler: "manejar(reclamacion)"
+activate RegistroHandler
+RegistroHandler -> Reclamacion: "registrar()"
+RegistroHandler -> ClasificacionHandler: "manejar(reclamacion)"
+deactivate RegistroHandler
+
+activate ClasificacionHandler
+ClasificacionHandler -> Reclamacion: "esSimple()? (true)"
+ClasificacionHandler -> ComprobacionSimpleHandler: "manejar(reclamacion)"
+deactivate ClasificacionHandler
+
+activate ComprobacionSimpleHandler
+ComprobacionSimpleHandler -> Reclamacion: "comprobarSeguro()"
+ComprobacionSimpleHandler -> ResolucionHandler: "manejar(reclamacion)"
+deactivate ComprobacionSimpleHandler
+
+activate ResolucionHandler
+ResolucionHandler -> Reclamacion: "generarResolucion(APROBADA)"
+ResolucionHandler -> AprobacionHandler: "manejar(reclamacion)"
+deactivate ResolucionHandler
+
+activate AprobacionHandler
+AprobacionHandler -> Reclamacion: "informarMecanica()"
+AprobacionHandler -> Reclamacion: "planificarPago()"
+AprobacionHandler -> NotificacionHandler: "manejar(reclamacion)"
+deactivate AprobacionHandler
+
+activate NotificacionHandler
+NotificacionHandler -> Reclamacion: "enviarCarta()"
+NotificacionHandler --> Sistema: "Fin del proceso"
+deactivate NotificacionHandler
+
+Sistema --> Cliente: "Carta enviada (Resolución: APROBADA)"
+deactivate Sistema

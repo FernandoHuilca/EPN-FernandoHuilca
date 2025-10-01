@@ -1,0 +1,12 @@
+@startuml sin
+title Singleton Pattern
+
+class Singleton{
+    - instancia : Singleton
+    - Singleton()
+    + getInstancia() : Singleton
+}
+
+Singleton o-- Singleton
+
+@enduml

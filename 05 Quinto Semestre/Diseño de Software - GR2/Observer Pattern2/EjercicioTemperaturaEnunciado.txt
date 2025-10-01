@@ -1,0 +1,9 @@
+Un servidor de aplicaciones con alta disponibilidad cuenta con un
+ dispositivo que permite registrar la temperatura, el tiempo que 
+ está arriba y abajo, el procesamiento y la memoria que está ocupando.
+Es necesario realizar una aplicación que permita en función de un 
+valor umbral enviar una alerta en caso de que el valor registrado 
+esté cerca del valor umbral y en caso de que se sobrepase que la 
+aplicación permita tomar una acción automática sobre los parámetros 
+del servidor.  Diseñe un diagrama de clases de manera eficiente para 
+esta aplicacióntos), aplique un patrón de diseño.

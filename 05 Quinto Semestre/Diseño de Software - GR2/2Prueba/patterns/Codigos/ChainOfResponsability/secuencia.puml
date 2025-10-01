@@ -1,0 +1,16 @@
+@startuml
+actor Usuario
+participant "RedSocial" as RS
+participant "FiltroPalabrasProhibidas" as FPP
+participant "FiltroDeLongitud" as FDL
+
+
+Usuario -> RS : enviarMensaje("Mensaje muy largo...")
+RS -> FPP : filtrarMensaje("Mensaje muy largo...")
+FPP -> FPP : filtrar("Mensaje muy largo...")
+FPP --> RS : true
+RS -> FDL : filtrarMensaje("Mensaje muy largo...")
+FDL -> FDL : filtrar("Mensaje muy largo...")
+FDL --> RS : false
+RS -> Usuario : System.out.println("ERROR: mensaje no enviado")
+@enduml

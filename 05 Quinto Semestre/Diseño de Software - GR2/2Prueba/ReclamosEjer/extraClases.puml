@@ -1,0 +1,83 @@
+@startuml
+title Gestión de Reclamaciones - Cadena de Responsabilidad
+
+class EmpresaVehiculos {
+    + procesarReclamo(reclamo : Reclamo)
+}
+
+abstract class ManejadorDeReclamos {
+    # siguiente : ManejadorDeReclamos
+    + setSiguiente(manejador: ManejadorDeReclamos)
+    + {abstract} manejar(reclamo: Reclamo)
+}
+
+class RegistroHandler {
+    + manejar(reclamo: Reclamo)
+}
+
+class ClasificacionHandler {
+    + manejar(reclamo: Reclamo)
+}
+
+class ComprobacionHandler {
+    + manejar(reclamo: Reclamo)
+}
+
+class ResolucionHandler {
+    + manejar(reclamo: Reclamo)
+}
+
+class AprobacionHandler {
+    + manejar(reclamo: Reclamo)
+}
+
+class NotificacionHandler {
+    + manejar(reclamo: Reclamo)
+}
+
+class Reclamo {
+    - id: String
+    - descripcion: String
+    - tipo: TipoDeReclamo
+    - estado: EstadoReclamo
+    + esSimple(): boolean
+    + comprobarSeguro()
+    + comprobarDaño()
+    + generarResolucion()
+}
+
+enum TipoDeReclamo {
+    SIMPLE
+    COMPLEJO
+}
+
+enum EstadoReclamo {
+    REGISTRADO
+    CLASIFICADO
+    COMPROBADO
+    RESUELTO
+    APROBADO
+    NOTIFICADO
+}
+
+' Relaciones correctas
+EmpresaVehiculos --> ManejadorDeReclamos : usa >
+ManejadorDeReclamos <|-- RegistroHandler
+ManejadorDeReclamos <|-- ClasificacionHandler
+ManejadorDeReclamos <|-- ComprobacionHandler
+ManejadorDeReclamos <|-- ResolucionHandler
+ManejadorDeReclamos <|-- AprobacionHandler
+ManejadorDeReclamos <|-- NotificacionHandler
+ManejadorDeReclamos --> ManejadorDeReclamos : siguiente >
+
+' Conexión con Reclamo
+ManejadorDeReclamos --> Reclamo : procesa >
+ComprobacionHandler --> Reclamo : comprueba >
+ResolucionHandler --> Reclamo : resuelve >
+AprobacionHandler --> Reclamo : aprueba >
+
+' Enums
+Reclamo --> TipoDeReclamo
+Reclamo --> EstadoReclamo
+
+@enduml

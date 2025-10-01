@@ -1,0 +1,97 @@
+@startuml
+title DIAGRAMA DE CLASES
+
+class SENSOR {
+     posicion: double
+    --
+     detectarInformacion()
+     {abstract} verificarRegla()
+     accion()
+}
+
+class SENSOR_MOVIMIENTO {
+     limiteTamaño: double
+    --
+     detectarInformacion()
+     accion()
+}
+
+class SENSOR_LUZ {
+     intensidadLuzPermitida: int
+    --
+     detectarInformacion()
+     accion()
+}
+
+class SENSOR_OTROS {
+     reglaLimite: string
+    --
+     detectarInformacion()
+     accion()
+}
+
+class HABITACION {
+     dimensiones: double
+    --
+     verificarNumeroSensores()
+     verificarPosicionSensores()
+}
+
+class OBJETO {
+     tamaño: double
+     posicion: double
+    --
+     mover()
+}
+
+class ACTUADOR {
+    --
+     encender()
+     apagar()
+}
+
+class BOMBILLO {
+     nivelLuz: int
+     posicion: double
+    --
+     encender()
+     apagar()
+}
+
+class ALARMA {
+     volumen: int
+     tiempoDuracion: double
+    --
+     encender()
+     apagar()
+}
+
+class ACCIONADOR_LUZ {
+     nivelLuz: int
+     tiempoTardanza: double
+    --
+     encender()
+     apagar()
+}
+
+'Sensor es clase abstracta base
+SENSOR <|-- SENSOR_MOVIMIENTO
+SENSOR <|-- SENSOR_LUZ
+SENSOR <|-- SENSOR_OTROS
+
+'SENSOR está contenido en HABITACION
+HABITACION --L SENSOR
+
+'HABITACION conoce OBJETOS
+HABITACION -- OBJETO
+
+'BOMBILLO es una clase independiente, pero relacionada con habitación
+HABITACION -- BOMBILLO
+
+'ACTUADOR es clase base
+ACTUADOR <|-- ALARMA
+ACTUADOR <|-- ACCIONADOR_LUZ
+
+SENSOR *-- ACTUADOR
+
+@enduml

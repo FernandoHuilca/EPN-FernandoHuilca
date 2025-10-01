@@ -1,0 +1,99 @@
+@startuml
+title Sistema de Reserva de Hotel - Diagrama de Clases
+
+' 1. Patrón Singleton implementado correctamente
+class Hotel {
+  - {static} instancia : Hotel
+  - habitaciones : List<Habitacion>
+  - clientes : List<Cliente>
+  --
+  - Hotel()
+  + {static} getInstancia() : Hotel
+  + solicitarReserva(cliente: Cliente, habitacion: Habitacion, fecha: Fecha) : Reserva
+}
+
+' 2. Jerarquía de habitaciones bien estructurada
+abstract class Habitacion {
+  - estado : EstadoHabitacion
+  - numCamas : int
+  - dimensiones : double
+  --
+  + {abstract} verificarDisponibilidad(fecha: Fecha) : boolean
+  + setEstado(estado: EstadoHabitacion)
+}
+
+class HabitacionSimple {
+  + verificarDisponibilidad(fecha: Fecha) : boolean
+}
+
+class HabitacionDoble {
+  + verificarDisponibilidad(fecha: Fecha) : boolean
+}
+
+class HabitacionPetFriendly {
+  - tamanoMaxMascota : double
+  + verificarDisponibilidad(fecha: Fecha) : boolean
+}
+
+' 3. Cliente con gestión de reservas
+class Cliente {
+  - nombre : String
+  - reservas : List<Reserva>
+  --
+  + agregarReserva(reserva: Reserva)
+  + eliminarReserva(reserva: Reserva)
+}
+
+' 4. Reserva con relaciones explícitas
+class Reserva {
+  - fecha : Fecha
+  - habitacion : Habitacion
+  - cliente : Cliente
+  --
+  + crearReserva(cliente: Cliente, habitacion: Habitacion, fecha: Fecha)
+  + cancelarReserva()
+}
+
+' 5. Objeto de valor para fecha
+class Fecha {
+  - dia : int
+  - mes : int
+  - anio : int
+  --
+  + toString() : String
+  + esPosteriorA(fecha: Fecha) : boolean
+}
+
+' 6. Enum para estados
+enum EstadoHabitacion {
+  DISPONIBLE
+  RESERVADA
+  OCUPADA
+}
+
+' 7. Relaciones con multiplicidades explícitas
+Hotel "1" *--> "1..*" Habitacion
+Hotel "1" *--> "0..*" Cliente
+Cliente "1" *--> "0..*" Reserva
+Reserva "1" --> "1" Habitacion
+Reserva "1" --> "1" Cliente
+Reserva "1" --> "1" Fecha
+Habitacion --> EstadoHabitacion
+
+' 8. Herencia correctamente representada
+Habitacion <|-- HabitacionSimple
+Habitacion <|-- HabitacionDoble
+Habitacion <|-- HabitacionPetFriendly
+
+' 9. Notación Singleton
+note top of Hotel
+  Singleton
+  instancia: Hotel
+  getInstancia()
+end note
+
+' 10. Notas adicionales para claridad
+note "Las habitaciones verifican\ndisponibilidad por fecha" as N1
+N1 .. Habitacion
+
+@enduml

@@ -1,0 +1,10 @@
+@startuml state
+title State Pattern
+
+class Contexto{
+    - estado : Estado
+    + setEstado(estado : Estado)
+    + ejecutar()
+}
+
+@enduml

@@ -1,0 +1,17 @@
+Se solicita modelar el proceso de gestión de reclamaciones
+ en una compañía aseguradora de vehículos.
+El proceso es el siguiente: Cuando se recibe una reclamación,
+ ésta se registra en el sistema, luego del registro, 
+la reclamación se clasifica en simple o compleja. Si la 
+reclamación queda registrada como simple, se comprueba 
+el seguro del cliente, mientras que para las complejas se 
+comprueba independientemente el seguro y el daño en 
+el vehículo. Después de la comprobación/nes se genera una 
+resolución de la reclamación, que puede ser aprobada 
+o rechazado. Si la resolución es aprobada se informa a la 
+mecánica para autorizar la reparación y se planifica el pago 
+a la misma. Para cualquier tipo de resolución (aprobada o 
+rechazada) se envía una carta al cliente y el proceso termina.  
+Realice el diagrama de clases y el diagrama de secuencias de 
+cuando se realiza la resolución aprobada. 
+Aplique un patrón de diseño.

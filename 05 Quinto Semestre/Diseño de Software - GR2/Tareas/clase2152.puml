@@ -1,0 +1,57 @@
+@startuml
+skinparam class {
+    BackgroundColor<<Interface>> LightGray
+    ArrowColor #0078D7
+    BorderColor #333
+}
+
+' Definición de interfaces
+interface ICuenta {
+  + getSaldo(): double
+  + verificarRestricciones(IRestriccion): boolean
+}
+
+interface IRestriccion {
+  + verificarRestriccion(double): boolean
+}
+
+' Clases concretas
+class Cuenta {
+  - saldo: double
+  + getSaldo(): double
+  + verificarRestricciones(IRestriccion): boolean
+}
+
+class Restriccion {
+  - tipo: String
+  + verificarRestriccion(double): boolean
+}
+
+' Clase Cajero con inyección de dependencias
+class Cajero {
+  - cuenta: ICuenta
+  - restriccion: IRestriccion
+  + darDinero(double): void
+}
+
+' Relaciones de implementación
+Cuenta .up.|> ICuenta
+Restriccion .up.|> IRestriccion
+
+' Dependencias del Cajero (inyección)
+Cajero --> ICuenta : depends on
+Cajero --> IRestriccion : depends on
+
+' Notas SOLID
+note top of ICuenta 
+  <b>DIP Cumplido:</b> 
+  Cajero depende de la abstracción ICuenta, 
+  no de la clase concreta.
+end note
+
+note right of IRestriccion 
+  <b>OCP Cumplido:</b> 
+  Nuevas restricciones se añaden 
+  implementando IRestriccion.
+end note
+@enduml

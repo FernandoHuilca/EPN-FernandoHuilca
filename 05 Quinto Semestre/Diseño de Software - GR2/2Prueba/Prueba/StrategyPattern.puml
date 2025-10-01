@@ -1,0 +1,130 @@
+@startuml  
+title Sistema de Reserva de Hotel - Diagrama de Clases con Patrones  
+
+' 1. Singleton (Hotel)  
+class Hotel {  
+  - {static} instancia : Hotel  
+  - habitaciones : List<Habitacion>  
+  - clientes : List<Cliente>  
+  --  
+  - Hotel()  
+  + {static} getInstancia() : Hotel  
+  + solicitarReserva(cliente: Cliente, habitacion: Habitacion, fecha: Fecha)  
+}  
+
+' 2. State (Estado de Habitación - Patrón State)  
+interface EstadoHabitacion {  
+  + reservar()  
+  + ocupar()  
+  + liberar()  
+}  
+
+class EstadoDisponible {  
+  + reservar()  
+  + ocupar()  
+  + liberar()  
+}  
+
+class EstadoReservada {  
+  + reservar()  
+  + ocupar()  
+  + liberar()  
+}  
+
+class EstadoOcupada {  
+  + reservar()  
+  + ocupar()  
+  + liberar()  
+}  
+
+' 3. Strategy (Verificación de Disponibilidad - Patrón Strategy)  
+interface EstrategiaDisponibilidad {  
+  + verificar(fecha: Fecha): boolean  
+}  
+
+class EstrategiaSimple {  
+  + verificar(fecha: Fecha): boolean  
+}  
+
+class EstrategiaDoble {  
+  + verificar(fecha: Fecha): boolean  
+}  
+
+class EstrategiaPetFriendly {  
+  + verificar(fecha: Fecha): boolean  
+}  
+
+' 4. Jerarquía principal  
+abstract class Habitacion {  
+  - numCamas : int  
+  - dimensiones : double  
+  - estado : EstadoHabitacion  
+  - estrategia : EstrategiaDisponibilidad  
+  --  
+  + setEstado(estado: EstadoHabitacion)  
+  + verificarDisponibilidad(fecha: Fecha): boolean  
+}  
+
+class HabitacionSimple {  
+}  
+
+class HabitacionDoble {  
+}  
+
+class HabitacionPetFriendly {  
+  - tamanoMaxMascota : double  
+}  
+
+' 5. Clases complementarias  
+class Cliente {  
+  - nombre : String  
+  - reservas : List<Reserva>  
+  --  
+  + agregarReserva(reserva: Reserva)  
+}  
+
+class Reserva {  
+  - fecha : Fecha  
+  --  
+  + cancelarReserva()  
+}  
+
+class Fecha {  
+  - dia : int  
+  - mes : int  
+  - anio : int  
+  --  
+  + esPosteriorA(fecha: Fecha): boolean  
+}  
+
+' 6. Relaciones  
+Hotel "1" *--> "1..*" Habitacion  
+Hotel "1" *--> "0..*" Cliente  
+Cliente "1" *--> "0..*" Reserva  
+Reserva "1" --> "1" Habitacion  
+Reserva "1" --> "1" Cliente  
+Reserva "1" --> "1" Fecha  
+
+Habitacion *--> EstadoHabitacion  
+Habitacion *--> EstrategiaDisponibilidad  
+
+Habitacion <|-- HabitacionSimple  
+Habitacion <|-- HabitacionDoble  
+Habitacion <|-- HabitacionPetFriendly  
+
+EstadoHabitacion <|.. EstadoDisponible  
+EstadoHabitacion <|.. EstadoReservada  
+EstadoHabitacion <|.. EstadoOcupada  
+
+EstrategiaDisponibilidad <|.. EstrategiaSimple  
+EstrategiaDisponibilidad <|.. EstrategiaDoble  
+EstrategiaDisponibilidad <|.. EstrategiaPetFriendly  
+
+' 7. Notas de patrones  
+note top of Hotel: <<Singleton>>  
+note "Cambia comportamiento según estado\n- Disponible: permite reservar\n- Reservada: permite ocupar\n- Ocupada: permite liberar" as N1  
+N1 .. EstadoHabitacion  
+note "Estrategia intercambiable para verificación\nSimple/Doble/PetFriendly tienen reglas diferentes" as N2  
+N2 .. EstrategiaDisponibilidad  
+
+@enduml  

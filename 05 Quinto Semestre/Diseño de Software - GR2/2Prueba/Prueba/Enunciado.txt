@@ -1,0 +1,18 @@
+Esta aplicacion se encarga de realizar la reserva de habitaciones
+en un hotel. 
+
+Se debe considerear que:
+Cliente puede elegir entre tipos de habitacion
+    1. Habitacion simple 
+    2. Habitacion Doble 
+    3. habitacion pet friendly 
+
+La reserva debe considerar:
+    1. Fecha de reserva 
+    2. Verificar Disponibilidad de habitacion 
+
+
+Se pide: 
+Diagrama de clases 
+Aplicar algun patron 
+Diagrama secuencia para reserva de habitacion pet friendly 

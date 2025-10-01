@@ -1,0 +1,64 @@
+@startuml
+title: Máquina de chicles.
+
+abstract class Estado {
+    # maquina : MaquinaDeChicles
+    + {abstract} insertarCuarto();
+    + {abstract} expulsarCuarto();
+    + {abstract} girarManivela();
+    + {abstract} dispensar();
+}
+
+class MaquinaDeChicles{
+    - estadoActual : Estado
+    - contadorChicles : int
+    --
+    + insertarCuarto() : void
+    + expulsarCuarto() : void
+    + girarManivela() : void
+    # liberarChicle() : void
+    # setEstado() : void
+}
+
+
+class EstadoVendido{
+    --
+     + insertarCuarto();
+     + expulsarCuarto();
+     + girarManivela();
+     + dispensar();
+}
+class EstadoAgotado{
+    --
+     + insertarCuarto();
+     + expulsarCuarto();
+     + girarManivela();
+     + dispensar();
+}
+class EstadoNoCuarto{
+    --
+     + insertarCuarto();
+     + expulsarCuarto();
+     + girarManivela();
+     + dispensar();
+}
+class EstadoTieneCuarto{
+    - ganadorRandom : Random
+    --
+     + insertarCuarto();
+     + expulsarCuarto();
+     + girarManivela();
+     + dispensar();
+}
+
+
+
+MaquinaDeChicles --R> Estado
+EstadoAgotado ..U|> Estado
+EstadoVendido ..U|> Estado
+EstadoNoCuarto ..U|> Estado
+EstadoTieneCuarto ..L|> Estado
+
+
+
+@enduml

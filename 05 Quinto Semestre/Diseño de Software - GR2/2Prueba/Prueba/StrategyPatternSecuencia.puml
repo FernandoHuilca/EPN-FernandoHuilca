@@ -1,0 +1,62 @@
+@startuml  
+title Reserva con State y Strategy  
+
+actor Usuario  
+participant "App" as App  
+participant "Hotel (Singleton)" as Hotel  
+participant "HabitacionPetFriendly" as Habitacion  
+participant "EstadoDisponible" as Estado  
+participant "EstrategiaPetFriendly" as Estrategia  
+participant "Reserva" as Reserva  
+participant "Cliente" as Cliente  
+
+Usuario -> App: solicitarReserva(cliente, habitacion, fecha)  
+activate App  
+
+App -> Hotel: getInstancia()  
+activate Hotel  
+Hotel --> App: instancia  
+deactivate Hotel  
+
+App -> Hotel: solicitarReserva(cliente, habitacion, fecha)  
+activate Hotel  
+
+Hotel -> Habitacion: verificarDisponibilidad(fecha)  
+activate Habitacion  
+
+Habitacion -> Estado: reservar()  
+activate Estado  
+Estado --> Habitacion: OK  
+deactivate Estado  
+
+Habitacion -> Estrategia: verificar(fecha)  
+activate Estrategia  
+Estrategia --> Habitacion: true  
+deactivate Estrategia  
+
+Habitacion --> Hotel: true  
+deactivate Habitacion  
+
+create Reserva  
+Hotel -> Reserva : new(cliente, habitacion, fecha)  
+activate Reserva  
+
+Reserva -> Cliente: agregarReserva(this)  
+activate Cliente  
+Cliente --> Reserva: ok  
+deactivate Cliente  
+
+Reserva --> Hotel: nuevaReserva  
+deactivate Reserva  
+
+Hotel -> Habitacion: setEstado(EstadoReservada)  
+activate Habitacion  
+Habitacion --> Hotel: ok  
+deactivate Habitacion  
+
+Hotel --> App: confirmarReserva()  
+deactivate Hotel  
+
+App --> Usuario: "Reserva exitosa!"  
+deactivate App  
+@enduml  

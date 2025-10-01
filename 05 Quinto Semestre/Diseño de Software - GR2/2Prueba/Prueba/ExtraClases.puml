@@ -1,0 +1,63 @@
+@startuml
+title Diagrama de Clases - Reserva de Hotel
+
+class Cliente {
+    - nombre: String
+    - id: String
+    + reservarHabitacion(tipo: TipoHabitacion, fecha: Fecha): Reserva
+}
+
+class Reserva {
+    - fecha: Fecha
+    - habitacion: Habitacion
+    - cliente: Cliente
+    + confirmar(): boolean
+}
+
+abstract class Habitacion {
+    - numero: int
+    - disponible: boolean
+    + esDisponible(fecha: Fecha): boolean
+}
+
+class HabitacionSimple {
+}
+
+class HabitacionDoble {
+}
+
+class HabitacionPetFriendly {
+    - mascotasPermitidas: boolean
+}
+
+enum TipoHabitacion {
+    SIMPLE
+    DOBLE
+    PET_FRIENDLY
+}
+
+class Hotel {
+    - habitaciones: List<Habitacion>
+    + buscarHabitacion(tipo: TipoHabitacion, fecha: Fecha): Habitacion
+    + reservar(cliente: Cliente, tipo: TipoHabitacion, fecha: Fecha): Reserva
+}
+
+class Fecha {
+    - dia: int
+    - mes: int
+    - anio: int
+}
+
+Cliente --> Reserva : realiza
+Reserva --> Habitacion : reserva
+Reserva --> Cliente : pertenece a
+Habitacion <|-- HabitacionSimple
+Habitacion <|-- HabitacionDoble
+Habitacion <|-- HabitacionPetFriendly
+Hotel --> Habitacion : administra
+Hotel --> Reserva : gestiona
+Habitacion --> TipoHabitacion
+Reserva --> Fecha
+Habitacion --> Fecha : disponibilidad
+
+@enduml

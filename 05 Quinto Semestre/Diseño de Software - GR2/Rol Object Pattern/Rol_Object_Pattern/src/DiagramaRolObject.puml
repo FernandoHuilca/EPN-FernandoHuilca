@@ -1,0 +1,81 @@
+@startuml
+!theme plain
+
+skinparam groupInheritance 2
+skinparam class {
+    BackgroundColor White
+    ArrowColor #0078D7
+    BorderColor #0078D7
+}
+
+package "Usuario Base" {
+    interface Usuario {
+        + getId(): String
+        + getNombre(): String
+        + getBalance(): double
+        + actualizarBalance(double monto): void
+    }
+
+    class UsuarioImpl {
+        - id: String
+        - nombre: String
+        - balance: double
+        + UsuarioImpl(id, nombre, balance)
+        + getId(): String
+        + getNombre(): String
+        + getBalance(): double
+        + actualizarBalance(double monto): void
+    }
+
+    Usuario <|.. UsuarioImpl
+}
+
+package "Roles de Juego" {
+    interface JugadorBlackJack {
+        + iniciarMano(): void
+        + pedirCarta(): void
+        + plantarse(): void
+        + apostar(double monto): double
+    }
+
+    class JugadorBlackJackImpl {
+        - usuario: Usuario
+        + JugadorBlackJackImpl(Usuario)
+        + iniciarMano(): void
+        + pedirCarta(): void
+        + plantarse(): void
+        + apostar(double monto): double
+    }
+
+    interface JugadorPoker {
+        + unirseAMesa(int mesaId): void
+        + pagarCiega(double monto): void
+        + retirarse(): void
+    }
+
+    class JugadorPokerImpl {
+        - usuario: Usuario
+        + JugadorPokerImpl(Usuario)
+        + unirseAMesa(int mesaId): void
+        + pagarCiega(double monto): void
+        + retirarse(): void
+    }
+
+    JugadorBlackJack <|.. JugadorBlackJackImpl
+    JugadorPoker <|.. JugadorPokerImpl
+    JugadorBlackJackImpl --> Usuario : depende
+    JugadorPokerImpl --> Usuario : depende
+}
+
+package "Fábrica de Roles" {
+    class RoleFactory {
+        + comoJugadorBlackJack(Usuario): JugadorBlackJack
+        + comoJugadorPoker(Usuario): JugadorPoker
+    }
+
+    RoleFactory --> JugadorBlackJackImpl : crea
+    RoleFactory --> JugadorPokerImpl : crea
+}
+
+UsuarioImpl -[hidden]^ RoleFactory
+@enduml

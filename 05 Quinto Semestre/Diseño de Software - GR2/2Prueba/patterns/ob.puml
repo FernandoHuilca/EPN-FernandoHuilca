@@ -1,0 +1,26 @@
+@startuml ob
+title Observer Pattern
+class Publicador_Observado{
+    - listObservadores : List<Observador>
+    + suscribir(observador : Observador)
+    + desuscribir(observador : Observador)
+    + notificar()
+}
+
+interface Observador <<Interface>>{
+    + {abstract} actualizar(contexto)
+}
+
+class Observador_Concreto{
+    - nombre : String
+    + actualizar(contexto : String)
+}
+
+Publicador_Observado o--R> Observador
+
+Observador_Concreto ..up|> Observador
+
+
+
+
+@enduml

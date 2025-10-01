@@ -1,0 +1,36 @@
+@startuml Teory about observer pattern
+
+
+
+abstract class PublicadorSujetoObservado {
+    - estado : string
+    - listSuscriptores : List<Suscriptor>
+    + agregarSuscriptor(suscriptor: Suscriptor) : void
+    + eliminarSuscriptor(suscriptor: Suscriptor) : void
+    + notificarSuscriptores() : void
+    + getEstado() : string
+}
+
+
+
+interface SuscriptorObservador <<Interface>> {
+    + actualizar() : void
+}
+class SuscriptorConcreto{
+    - nombre : string
+    + actualizar(estado: string) : void
+}
+
+
+
+PublicadorSujetoObservado o--> SuscriptorObservador : "notifica a"
+SuscriptorObservador <|.. SuscriptorConcreto : "implementa"
+
+
+
+
+note left of PublicadorSujetoObservado
+    for each suscriptor en listSuscriptores
+        suscriptor.actualizar(this.estado)
+    end for
+end note

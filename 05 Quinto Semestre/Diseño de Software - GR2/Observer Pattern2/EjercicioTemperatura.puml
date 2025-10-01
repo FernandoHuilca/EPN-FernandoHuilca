@@ -1,0 +1,74 @@
+@startuml Temperatura
+
+class Servidor {
+    - servidorManager 
+    - temperatura : Temperatura
+    - amacenamiento : Almacenamiento
+    - upDown : UpDown
+    + almacenarDatos()
+    + ocuparCPU()
+    + apagar()
+    + prender()
+    + monitoriarCambio()
+}
+
+class ServidorManager {
+    - hashMap <tipo , EscuchadorCambios>
+    + agregarSuscriptor(tipoSuscritor: String) 
+    + eliminarSuscriptor(tipoSuscritor: String)
+    + notificarSuscriptores(tipoSuscriptor : String , data : double)
+}
+
+interface  EscuchadorCambios <<Interface>>{
+    + actualizar(data) : void 
+}
+
+class AlertaTemperatura {
+    + actualizar(data)
+    + accionConcreta()
+}
+class AlertaUpDown {
+    + actualizar(data)
+    + accionConcreta()
+}
+class AlertaMemoria {
+    + actualizar(data)
+    + accionConcreta()
+}
+
+abstract class Umbral {
+ - minimo : doble 
+ - maximo : double 
+ + getUmbral() 
+}
+
+class UmbralTemperatura{
+
+}
+
+
+
+
+Servidor --R> ServidorManager
+ServidorManager o--> EscuchadorCambios
+
+EscuchadorCambios <|.. AlertaTemperatura
+EscuchadorCambios <|.. AlertaUpDown
+EscuchadorCambios <|.. AlertaMemoria
+
+Servidor o--U> Umbral
+
+
+UmbralTemperatura --|> Umbral
+UmbralUpDonw --|> Umbral
+UmbralAmacenamiento --|> Umbral
+
+note left of Servidor
+    public void almacenarDatows(){
+    if(superóUmbral())
+    servidorManager.notificar("ALMACENAMIENTO", almacenamiento);
+    }
+end note
+
+
+@enduml

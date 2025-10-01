@@ -1,0 +1,34 @@
+@startuml deco
+' Patrón Decorador en español
+' Permite añadir responsabilidades a un objeto de manera dinámica
+
+title Patrón Decorador (Decorator)
+
+interface Componente {
+    +operacion()
+}
+
+class ComponenteConcreto {
+    +operacion()
+}
+
+abstract class Decorador {
+    -componente: Componente
+    +operacion()
+}
+
+class DecoradorConcretoA {
+    +operacion()
+}
+
+class DecoradorConcretoB {
+    +operacion()
+}
+
+Componente <|.. ComponenteConcreto
+Componente <|.. Decorador
+Decorador <|-- DecoradorConcretoA
+Decorador <|-- DecoradorConcretoB
+Decorador o-- Componente : "componente"
+
+@enduml

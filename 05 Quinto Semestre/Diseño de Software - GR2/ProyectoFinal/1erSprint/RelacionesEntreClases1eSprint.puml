@@ -1,0 +1,143 @@
+@startuml
+!theme plain
+skinparam groupInheritance 2
+
+class Ejercicio {
+  - tipo: TipoEjercicio
+  - enunciado: Text
+  - solucion: String
+  - dificultad: Dificultad
+  - puntos: int
+  - intentosPermitidos: int
+  - tiempoEstimado: int
+  
+  + cargarInstrucciones(): String
+  + verificarRespuesta(respuesta: Respuesta): Resultado
+  + generarRetroalimentacion(resultado: Resultado): String
+  + pausarEjercicio(): boolean
+  + reanudarEjercicio(): boolean
+  + permitirReintento(): boolean
+}
+
+class Respuesta {
+  - contenido: String
+  - fechaHora: DateTime
+  - tiempoUtilizado: int
+  - estadoEvaluacion: EstadoEvaluacion
+  
+  + registrarContenido(contenido: String)
+  + calcularTiempoUtilizado(): int
+  + cambiarEstado(estado: EstadoEvaluacion)
+}
+
+class Resultado {
+  - puntuacion: int
+  - esCorrecto: boolean
+  - tiempoTotal: int
+  - erroresCount: int
+  
+  + calcularPuntuacion(): int
+  + determinarCorreccion(): boolean
+  + contarErrores(): int
+  + generarDiagnostico(): Diagnóstico
+}
+
+class Diagnóstico {
+  - tipoError: TipoError
+  - descripcion: String
+  - ubicacionError: String
+  - sugerencias: String[]
+  
+  + identificarTipoError(): TipoError
+  + ubicarError(): String
+  + generarSugerencias(): String[]
+  + mostrarPista(nivel: int): String
+  + mostrarSolucion(): String
+}
+
+class MotorEvaluación {
+  - version: String
+  - lenguajesSoportados: String[]
+  - configuracion: Map<String, String>
+  
+  + evaluarCodigo(codigo: String): Resultado
+  + evaluarOpcionMultiple(opciones: String[]): Resultado
+  + configurarParametros(config: Map<String, String>)
+  + verificarConexion(): boolean
+}
+
+class MotorRetroalimentación {
+  - plantillas: Map<TipoEjercicio, String>
+  - nivelDetalle: int
+  - idioma: String
+  - estrategia: TipoRetroalimentacion
+  
+  + generarMensaje(resultado: Resultado): String
+  + personalizarRetroalimentacion(nivel: int): String
+  + cambiarEstrategia(estrategia: TipoRetroalimentacion)
+}
+
+class ColaEvaluación {
+  - fechaCreacion: DateTime
+  - estado: EstadoCola
+  - reintentos: int
+  - maxIntentos: int
+  - intervaloReintento: int
+  
+  + encolarRespuesta(respuesta: Respuesta)
+  + procesarSiguiente(): Respuesta
+  + reintentarEvaluacion()
+  + verificarEstado(): EstadoCola
+  + monitorearConexion(): boolean
+}
+
+' Relaciones clave
+Ejercicio "1" *-- "1..*" Respuesta : contiene >
+Ejercicio "1" --> "1" MotorEvaluación : usa >
+Ejercicio "1" --> "1" MotorRetroalimentación : usa >
+Ejercicio "1" *-- "1" ColaEvaluación : contiene >
+Respuesta "1" --> "1" Resultado : genera >
+Resultado "1" --> "0..1" Diagnóstico : contiene >
+MotorEvaluación ..> Resultado : produce >
+MotorRetroalimentación ..> Diagnóstico : usa >
+ColaEvaluación "1" o-- "0..*" Respuesta : maneja >
+
+' Relaciones de dependencia
+Ejercicio .> Resultado : crea
+MotorRetroalimentación .> Resultado : consume
+Diagnóstico .> MotorEvaluación : consulta
+
+' Enums
+enum TipoEjercicio {
+  CODIGO
+  OPCIÓN_MÚLTIPLE
+  COMPLETAR
+  DEBUGGING
+}
+
+enum EstadoEvaluacion {
+  PENDIENTE
+  CORRECTO
+  INCORRECTO
+}
+
+enum TipoError {
+  SINTAXIS
+  LÓGICO
+  RUNTIME
+  SEMÁNTICO
+}
+
+enum EstadoCola {
+  PENDIENTE
+  PROCESANDO
+  COMPLETADO
+  FALLIDO
+}
+
+enum TipoRetroalimentacion {
+  BASICA
+  AVANZADA
+  ADAPTATIVA
+}
+@enduml
