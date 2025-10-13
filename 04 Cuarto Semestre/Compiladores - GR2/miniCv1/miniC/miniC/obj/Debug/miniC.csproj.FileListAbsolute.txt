@@ -1,0 +1,21 @@
+D:\Cuarto semestre\Compiladores y Lenguajes\CompiladorC#\miniC\miniC\bin\Debug\miniC.exe.config
+D:\Cuarto semestre\Compiladores y Lenguajes\CompiladorC#\miniC\miniC\bin\Debug\miniC.exe
+D:\Cuarto semestre\Compiladores y Lenguajes\CompiladorC#\miniC\miniC\bin\Debug\miniC.pdb
+D:\Cuarto semestre\Compiladores y Lenguajes\CompiladorC#\miniC\miniC\obj\Debug\miniC.csproj.AssemblyReference.cache
+D:\Cuarto semestre\Compiladores y Lenguajes\CompiladorC#\miniC\miniC\obj\Debug\miniC.frmEditor.resources
+D:\Cuarto semestre\Compiladores y Lenguajes\CompiladorC#\miniC\miniC\obj\Debug\miniC.Properties.Resources.resources
+D:\Cuarto semestre\Compiladores y Lenguajes\CompiladorC#\miniC\miniC\obj\Debug\miniC.csproj.GenerateResource.cache
+D:\Cuarto semestre\Compiladores y Lenguajes\CompiladorC#\miniC\miniC\obj\Debug\miniC.csproj.CoreCompileInputs.cache
+D:\Cuarto semestre\Compiladores y Lenguajes\CompiladorC#\miniC\miniC\obj\Debug\miniC.exe
+D:\Cuarto semestre\Compiladores y Lenguajes\CompiladorC#\miniC\miniC\obj\Debug\miniC.pdb
+D:\Cuarto semestre\Compiladores y Lenguajes\CompiladorC#\miniC\miniC\obj\Debug\miniC.exe.config
+C:\Users\ferna\OneDrive - Escuela Politécnica Nacional\EPN-FernandoHuilca\05 Quinto Semestre\Compiladores - GR2\miniCv1\miniC\miniC\bin\Debug\miniC.exe.config
+C:\Users\ferna\OneDrive - Escuela Politécnica Nacional\EPN-FernandoHuilca\05 Quinto Semestre\Compiladores - GR2\miniCv1\miniC\miniC\bin\Debug\miniC.exe
+C:\Users\ferna\OneDrive - Escuela Politécnica Nacional\EPN-FernandoHuilca\05 Quinto Semestre\Compiladores - GR2\miniCv1\miniC\miniC\bin\Debug\miniC.pdb
+C:\Users\ferna\OneDrive - Escuela Politécnica Nacional\EPN-FernandoHuilca\05 Quinto Semestre\Compiladores - GR2\miniCv1\miniC\miniC\obj\Debug\miniC.csproj.AssemblyReference.cache
+C:\Users\ferna\OneDrive - Escuela Politécnica Nacional\EPN-FernandoHuilca\05 Quinto Semestre\Compiladores - GR2\miniCv1\miniC\miniC\obj\Debug\miniC.frmEditor.resources
+C:\Users\ferna\OneDrive - Escuela Politécnica Nacional\EPN-FernandoHuilca\05 Quinto Semestre\Compiladores - GR2\miniCv1\miniC\miniC\obj\Debug\miniC.Properties.Resources.resources
+C:\Users\ferna\OneDrive - Escuela Politécnica Nacional\EPN-FernandoHuilca\05 Quinto Semestre\Compiladores - GR2\miniCv1\miniC\miniC\obj\Debug\miniC.csproj.GenerateResource.cache
+C:\Users\ferna\OneDrive - Escuela Politécnica Nacional\EPN-FernandoHuilca\05 Quinto Semestre\Compiladores - GR2\miniCv1\miniC\miniC\obj\Debug\miniC.csproj.CoreCompileInputs.cache
+C:\Users\ferna\OneDrive - Escuela Politécnica Nacional\EPN-FernandoHuilca\05 Quinto Semestre\Compiladores - GR2\miniCv1\miniC\miniC\obj\Debug\miniC.exe
+C:\Users\ferna\OneDrive - Escuela Politécnica Nacional\EPN-FernandoHuilca\05 Quinto Semestre\Compiladores - GR2\miniCv1\miniC\miniC\obj\Debug\miniC.pdb

@@ -1,0 +1,41 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\ferna\\OneDrive - Escuela Polit\u00E9cnica Nacional\\EPN-FernandoHuilca\\05 Quinto Semestre\\Compiladores - GR2\\miniCv1\\miniC\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{8EBB3194-DD08-47FC-949D-A66159E2D10D}|miniC\\miniC.csproj|C:\\Users\\ferna\\OneDrive - Escuela Polit\u00E9cnica Nacional\\EPN-FernandoHuilca\\05 Quinto Semestre\\Compiladores - GR2\\miniCv1\\miniC\\minic\\analizarlexico.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8EBB3194-DD08-47FC-949D-A66159E2D10D}|miniC\\miniC.csproj|solutionrelative:minic\\analizarlexico.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AnalizarLexico.cs",
+              "DocumentMoniker": "C:\\Users\\ferna\\OneDrive - Escuela Polit\u00E9cnica Nacional\\EPN-FernandoHuilca\\05 Quinto Semestre\\Compiladores - GR2\\miniCv1\\miniC\\miniC\\AnalizarLexico.cs",
+              "RelativeDocumentMoniker": "miniC\\AnalizarLexico.cs",
+              "ToolTip": "C:\\Users\\ferna\\OneDrive - Escuela Polit\u00E9cnica Nacional\\EPN-FernandoHuilca\\05 Quinto Semestre\\Compiladores - GR2\\miniCv1\\miniC\\miniC\\AnalizarLexico.cs",
+              "RelativeToolTip": "miniC\\AnalizarLexico.cs",
+              "ViewState": "AgIAADgAAAAAAAAAAAAiwEEAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-27T12:54:49.213Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
